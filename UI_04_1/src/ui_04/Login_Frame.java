@@ -36,18 +36,6 @@ public class Login_Frame extends javax.swing.JFrame {
         txtPassword.setBackground(new Color(0, 0, 0, 1));
         txtPassword.setBackground(new Color(0, 0, 0, 1));
 
-//        UserName recent
-        if(Main_Frame.checkBox1 == true){
-            LoginAcountRecent1 = Main_Frame.LoginAccount1;
-            txtUserName.setText(LoginAcountRecent1);
-            return;
-        }
-        
-        if(Main_Frame.checkBox2 == true){
-            LoginAcountRecent2 = Main_Frame.LoginAccount2;
-            txtUserName.setText(LoginAcountRecent2);
-        }
-
 //        Password
         lblSlash.setVisible(false);
 
