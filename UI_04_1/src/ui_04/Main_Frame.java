@@ -54,6 +54,8 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     void init() {
+        
+        //test commit
 //        Display name user
         userLoginName = Login_Frame.userName;
         lblUserNameLogin.setText(userLoginName);
