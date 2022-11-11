@@ -71,7 +71,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icons/icons8_menu_35px_2.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/icons/icons8_menu_35px_2.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -87,7 +87,7 @@
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icons/icons8_Close_Window_35px_1.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/icons/icons8_Close_Window_35px_1.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -121,7 +121,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/Rectangle 6.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/img/Rectangle 6.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -133,7 +133,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/Rectangle 5.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/img/Rectangle 5.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -291,7 +291,7 @@
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/icons8_Old_Live_Journal_logo_100px.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/img/icons8_Old_Live_Journal_logo_100px.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -1141,7 +1141,7 @@
                       <Properties>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/img/icons8_tiny_desicion_logo_100px.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/img/icons8_tiny_desicion_logo_100px.png"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -1249,7 +1249,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel24">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/icons/icons8_done_25px.png"/>
+                              <Image iconType="3" name="/phoneSys/edu/icons/icons8_done_25px.png"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -1302,7 +1302,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel26">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/icons/icons8_done_25px.png"/>
+                              <Image iconType="3" name="/phoneSys/edu/icons/icons8_done_25px.png"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -1355,7 +1355,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel28">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/icons/icons8_done_25px.png"/>
+                              <Image iconType="3" name="/phoneSys/edu/icons/icons8_done_25px.png"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -1408,7 +1408,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel30">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/icons/icons8_close_25px_1.png"/>
+                              <Image iconType="3" name="/phoneSys/edu/icons/icons8_done_25px.png"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -1508,10 +1508,6 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="22" max="32767" attributes="0"/>
-                              <Component id="jLabel32" min="-2" pref="128" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
@@ -1519,26 +1515,12 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="42" max="32767" attributes="0"/>
+                              <EmptySpace pref="64" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel32">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="20" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="98" green="58" red="61" type="rgb"/>
-                        </Property>
-                        <Property name="horizontalAlignment" type="int" value="2"/>
-                        <Property name="text" type="java.lang.String" value="100"/>
-                      </Properties>
-                    </Component>
                     <Container class="javax.swing.JPanel" name="jPanel3">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1549,15 +1531,43 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
+                              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                      <Component id="jLabel32" min="-2" pref="128" max="-2" attributes="0"/>
+                                      <EmptySpace pref="11" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
+                              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="jLabel32">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Arial" size="20" style="1"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="98" green="58" red="61" type="rgb"/>
+                            </Property>
+                            <Property name="horizontalAlignment" type="int" value="2"/>
+                            <Property name="text" type="java.lang.String" value="100"/>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
                     </Container>
                   </SubComponents>
                 </Container>
@@ -1849,7 +1859,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/icons/icons8_onedrive_35px.png"/>
+                      <Image iconType="3" name="/phoneSys/edu/icons/icons8_onedrive_35px.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Login"/>
                     <Property name="verticalAlignment" type="int" value="1"/>
@@ -1900,7 +1910,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/icons/icons8_onedrive_35px.png"/>
+                      <Image iconType="3" name="/phoneSys/edu/icons/icons8_onedrive_35px.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Forgot Pass"/>
                     <Property name="verticalAlignment" type="int" value="1"/>
@@ -1951,7 +1961,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/icons/icons8_onedrive_35px.png"/>
+                      <Image iconType="3" name="/phoneSys/edu/icons/icons8_onedrive_35px.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Web version"/>
                     <Property name="verticalAlignment" type="int" value="1"/>
@@ -2002,7 +2012,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/icons/icons8_onedrive_35px.png"/>
+                      <Image iconType="3" name="/phoneSys/edu/icons/icons8_onedrive_35px.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="About App"/>
                     <Property name="verticalAlignment" type="int" value="1"/>
@@ -2117,7 +2127,7 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/icons/icons8_html_5_35px.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/icons/icons8_biohazard_35px.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="T&#xe0;i kho&#x1ea3;n"/>
                       </Properties>
@@ -2172,7 +2182,7 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/icons/icons8_html_5_35px.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/icons/icons8_biohazard_35px.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="L&#x1b0;&#x1a1;ng"/>
                       </Properties>
@@ -2227,7 +2237,7 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/icons/icons8_html_5_35px.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/icons/icons8_biohazard_35px.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Nh&#xe2;n vi&#xea;n"/>
                       </Properties>
@@ -2282,7 +2292,7 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/icons/icons8_html_5_35px.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/icons/icons8_biohazard_35px.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Kh&#xe1;ch h&#xe0;ng"/>
                       </Properties>
@@ -2337,7 +2347,7 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/icons/icons8_html_5_35px.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/icons/icons8_biohazard_35px.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec3;m danh"/>
                       </Properties>
@@ -2392,7 +2402,7 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/icons/icons8_html_5_35px.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/icons/icons8_biohazard_35px.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="S&#x1ea3;n ph&#x1ea9;m"/>
                       </Properties>
@@ -2479,7 +2489,7 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/icons/icons8_html_5_35px.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/icons/icons8_biohazard_35px.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="H&#xf3;a &#x111;&#x1a1;n"/>
                       </Properties>
@@ -2534,7 +2544,7 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/icons/icons8_html_5_35px.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/icons/icons8_biohazard_35px.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Khuy&#x1ebf;n m&#xe3;i"/>
                       </Properties>
@@ -2589,7 +2599,7 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/icons/icons8_html_5_35px.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/icons/icons8_biohazard_35px.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Th&#x1ed1;ng k&#xea;"/>
                       </Properties>
@@ -2728,7 +2738,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel76">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/icons/submit.png"/>
+                          <Image iconType="3" name="/phoneSys/edu/icons/submit.png"/>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                           <Color id="Hand Cursor"/>
@@ -2852,7 +2862,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel49">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/changePassword.jpg"/>
+                      <Image iconType="3" name="/phoneSys/edu/img/changePassword.jpg"/>
                     </Property>
                   </Properties>
                   <Constraints>

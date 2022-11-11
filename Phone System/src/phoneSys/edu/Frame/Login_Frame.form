@@ -55,10 +55,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -71,7 +68,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/login_img.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/img/login_img.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -91,7 +88,7 @@
             <Component class="javax.swing.JLabel" name="lblEye">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icons/icons8_eye_23px.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/icons/icons8_eye_23px.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -109,7 +106,7 @@
             <Component class="javax.swing.JLabel" name="lblSlash">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icons/icons8_blind_23px.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/icons/icons8_blind_23px.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -146,7 +143,7 @@
                   <Color blue="71" green="71" red="71" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icons/icons8_user_23px.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/icons/icons8_user_23px.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -158,7 +155,7 @@
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icons/icons8_forgot_password_23px_1.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/icons/icons8_forgot_password_23px_1.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -242,7 +239,7 @@
             <Component class="javax.swing.JLabel" name="lblLogin">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/Login.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/img/login.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -277,7 +274,7 @@
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/Login_with_Google.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/img/Login_with_Google.png"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>

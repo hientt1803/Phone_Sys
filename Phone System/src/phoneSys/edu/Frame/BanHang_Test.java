@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui_04;
+package phoneSys.edu.Frame;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import javax.swing.UIManager;

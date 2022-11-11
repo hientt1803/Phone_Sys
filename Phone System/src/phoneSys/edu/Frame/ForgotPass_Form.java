@@ -3,10 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui_04;
+package phoneSys.edu.Frame;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.awt.Color;
+import java.util.Properties;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -19,6 +30,9 @@ public class ForgotPass_Form extends javax.swing.JFrame {
     /**
      * Creates new form Register_Form
      */
+    Random rand = new Random();
+    int randomOTP = rand.nextInt(10000) * 5;
+
     public ForgotPass_Form() {
         initComponents();
         this.init();
@@ -26,6 +40,47 @@ public class ForgotPass_Form extends javax.swing.JFrame {
 
     private void init() {
         txtEmail.setBackground(new Color(0, 0, 0, 1));
+        System.out.println(randomOTP);
+    }
+
+    private void SendEmail() {
+        try {
+            Properties props = new Properties();
+
+            props.put("mail.smtp.starttls.enable","true");
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.put("mail.smtp.port", 587);
+
+            String accountName = txtEmail.getText();
+            String passWord = txtPassword.getText();
+            Session s = Session.getInstance(props,
+                    new javax.mail.Authenticator() {
+                @Override
+                protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+                    return new javax.mail.PasswordAuthentication(accountName, String.valueOf(passWord));
+                }
+            });
+            String from = "tronghientran8@gmail.com";
+            String to = txtEmail.getText();
+            String subject = "Mã OTP";
+            String body = "Mã OTP của bạn là: " + randomOTP;
+
+            Message msg = new MimeMessage(s);
+
+            msg.setFrom(new InternetAddress(from));
+            msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+            msg.setSubject(subject);
+            msg.setText(body);
+           
+            Transport.send(msg);
+            JOptionPane.showMessageDialog(null, "Mail was sent successfully.", "Message",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (MessagingException ex) {
+            Logger.getLogger(ForgotPass_Form.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**
@@ -46,6 +101,7 @@ public class ForgotPass_Form extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(308, 519));
@@ -57,8 +113,8 @@ public class ForgotPass_Form extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(300, 519));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ForgotPassword.png"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/ForgotPassword.png"))); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 260));
 
         jPanel1.add(jPanel2);
 
@@ -77,8 +133,8 @@ public class ForgotPass_Form extends javax.swing.JFrame {
         jLabel3.setText("<html>Don't worry!! it happens. Please enter the address associated with your account. </html>");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 261, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_at_sign_18px.png"))); // NOI18N
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 146, -1, 21));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_at_sign_18px.png"))); // NOI18N
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 21));
 
         txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(113, 113, 113));
@@ -92,9 +148,9 @@ public class ForgotPass_Form extends javax.swing.JFrame {
                 txtEmailFocusLost(evt);
             }
         });
-        jPanel3.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 146, 239, -1));
+        jPanel3.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 239, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ForgotPassbutton.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/ForgotPassbutton.png"))); // NOI18N
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -102,6 +158,9 @@ public class ForgotPass_Form extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, 33));
+
+        txtPassword.setText("Password");
+        jPanel3.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 240, -1));
 
         jPanel1.add(jPanel3);
 
@@ -112,19 +171,20 @@ public class ForgotPass_Form extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        new Enter_OPT_Form().setVisible(true);
-        this.dispose();
+//        new Enter_OPT_Form().setVisible(true);
+//        this.dispose();
+        this.SendEmail();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
-        if(txtEmail.getText().equals("Email ID")){
+        if (txtEmail.getText().equals("Email ID")) {
             txtEmail.setText("");
             txtEmail.requestFocus();
         }
     }//GEN-LAST:event_txtEmailFocusGained
 
     private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
-        if(txtEmail.getText().length() == 0){
+        if (txtEmail.getText().length() == 0) {
             txtEmail.setText("Email ID");
         }
     }//GEN-LAST:event_txtEmailFocusLost
@@ -180,5 +240,6 @@ public class ForgotPass_Form extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui_04;
+package phoneSys.edu.Frame;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.awt.Color;
@@ -76,15 +76,13 @@ public class Login_Frame extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login_img.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/login_img.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 2, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,7 +94,7 @@ public class Login_Frame extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_eye_23px.png"))); // NOI18N
+        lblEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_eye_23px.png"))); // NOI18N
         lblEye.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblEye.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -105,7 +103,7 @@ public class Login_Frame extends javax.swing.JFrame {
         });
         jPanel3.add(lblEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 112, 30, 23));
 
-        lblSlash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_blind_23px.png"))); // NOI18N
+        lblSlash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_blind_23px.png"))); // NOI18N
         lblSlash.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblSlash.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -120,10 +118,10 @@ public class Login_Frame extends javax.swing.JFrame {
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 6, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(113, 113, 113));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_user_23px.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_user_23px.png"))); // NOI18N
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 69, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_forgot_password_23px_1.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_forgot_password_23px_1.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 114, 22, -1));
 
         txtUserName.setForeground(new java.awt.Color(113, 113, 113));
@@ -157,7 +155,7 @@ public class Login_Frame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Login.png"))); // NOI18N
+        lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/login.png"))); // NOI18N
         lblLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -172,7 +170,7 @@ public class Login_Frame extends javax.swing.JFrame {
         jLabel7.setText("OR");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 59, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Login_with_Google.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/Login_with_Google.png"))); // NOI18N
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 89, -1, 29));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 67, 114, 10));

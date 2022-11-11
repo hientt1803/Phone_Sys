@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui_04;
+package phoneSys.edu.Frame;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.awt.CardLayout;
@@ -45,7 +45,6 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     void init() {
-
 //        Display name user
         userLoginName = Login_Frame.userName;
         lblUserNameLogin.setText(userLoginName);
@@ -165,8 +164,8 @@ public class Main_Frame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -258,12 +257,12 @@ public class Main_Frame extends javax.swing.JFrame {
 
         lblOpen.setForeground(new java.awt.Color(97, 88, 152));
         lblOpen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOpen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_menu_35px_2.png"))); // NOI18N
+        lblOpen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_menu_35px_2.png"))); // NOI18N
         lblOpen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(lblOpen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 70));
 
         lbl_Close_Windows.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_Close_Windows.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_Close_Window_35px_1.png"))); // NOI18N
+        lbl_Close_Windows.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_Close_Window_35px_1.png"))); // NOI18N
         lbl_Close_Windows.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbl_Close_Windows.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -277,10 +276,10 @@ public class Main_Frame extends javax.swing.JFrame {
         lblTimer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel2.add(lblTimer, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, 110, 33));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle 6.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/Rectangle 6.png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 0, 50, 70));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle 5.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/Rectangle 5.png"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, -3, 110, 36));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -312,7 +311,7 @@ public class Main_Frame extends javax.swing.JFrame {
         Panel_Menu.setPreferredSize(new java.awt.Dimension(150, 555));
 
         lbl_logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_Old_Live_Journal_logo_100px.png"))); // NOI18N
+        lbl_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/icons8_Old_Live_Journal_logo_100px.png"))); // NOI18N
 
         lbl_DangXuat.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         lbl_DangXuat.setForeground(new java.awt.Color(181, 77, 180));
@@ -824,7 +823,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_tiny_desicion_logo_100px.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/icons8_tiny_desicion_logo_100px.png"))); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 0, 0));
@@ -852,7 +851,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel23.setForeground(new java.awt.Color(51, 51, 51));
         jLabel23.setText("Task 1:");
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_done_25px.png"))); // NOI18N
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_done_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -881,7 +880,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel25.setForeground(new java.awt.Color(51, 51, 51));
         jLabel25.setText("Task 2:");
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_done_25px.png"))); // NOI18N
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_done_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -910,7 +909,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel27.setForeground(new java.awt.Color(51, 51, 51));
         jLabel27.setText("Task 3:");
 
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_done_25px.png"))); // NOI18N
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_done_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -939,7 +938,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel29.setForeground(new java.awt.Color(51, 51, 51));
         jLabel29.setText("Task 4:");
 
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_close_25px_1.png"))); // NOI18N
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_done_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1043,40 +1042,45 @@ public class Main_Frame extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel3.setBackground(new java.awt.Color(236, 206, 232));
+
         jLabel32.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(97, 88, 152));
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel32.setText("100");
 
-        jPanel3.setBackground(new java.awt.Color(236, 206, 232));
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 150, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(11, 11, 11)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(11, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 22, Short.MAX_VALUE)
+            .addGap(0, 36, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel32)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel32)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         card_NhanVien.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 150, 100));
@@ -1220,7 +1224,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(8, 61, 65));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_onedrive_35px.png"))); // NOI18N
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_onedrive_35px.png"))); // NOI18N
         jLabel31.setText("Login");
         jLabel31.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel31.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -1239,7 +1243,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel37.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(8, 61, 65));
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_onedrive_35px.png"))); // NOI18N
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_onedrive_35px.png"))); // NOI18N
         jLabel37.setText("Forgot Pass");
         jLabel37.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel37.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -1258,7 +1262,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel44.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(8, 61, 65));
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_onedrive_35px.png"))); // NOI18N
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_onedrive_35px.png"))); // NOI18N
         jLabel44.setText("Web version");
         jLabel44.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel44.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -1277,7 +1281,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel46.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(8, 61, 65));
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_onedrive_35px.png"))); // NOI18N
+        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_onedrive_35px.png"))); // NOI18N
         jLabel46.setText("About App");
         jLabel46.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel46.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -1306,7 +1310,7 @@ public class Main_Frame extends javax.swing.JFrame {
         lblOpenTaiKhoan.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblOpenTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
         lblOpenTaiKhoan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOpenTaiKhoan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_html_5_35px.png"))); // NOI18N
+        lblOpenTaiKhoan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_biohazard_35px.png"))); // NOI18N
         lblOpenTaiKhoan.setText("Tài khoản");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -1334,7 +1338,7 @@ public class Main_Frame extends javax.swing.JFrame {
         lblOpenLuong.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblOpenLuong.setForeground(new java.awt.Color(255, 255, 255));
         lblOpenLuong.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOpenLuong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_html_5_35px.png"))); // NOI18N
+        lblOpenLuong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_biohazard_35px.png"))); // NOI18N
         lblOpenLuong.setText("Lương");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
@@ -1362,7 +1366,7 @@ public class Main_Frame extends javax.swing.JFrame {
         lblOpenNhanVien.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblOpenNhanVien.setForeground(new java.awt.Color(255, 255, 255));
         lblOpenNhanVien.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOpenNhanVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_html_5_35px.png"))); // NOI18N
+        lblOpenNhanVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_biohazard_35px.png"))); // NOI18N
         lblOpenNhanVien.setText("Nhân viên");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -1390,7 +1394,7 @@ public class Main_Frame extends javax.swing.JFrame {
         lblOpenKhachHang.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblOpenKhachHang.setForeground(new java.awt.Color(255, 255, 255));
         lblOpenKhachHang.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOpenKhachHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_html_5_35px.png"))); // NOI18N
+        lblOpenKhachHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_biohazard_35px.png"))); // NOI18N
         lblOpenKhachHang.setText("Khách hàng");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -1418,7 +1422,7 @@ public class Main_Frame extends javax.swing.JFrame {
         lblOpenDiemDanh.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblOpenDiemDanh.setForeground(new java.awt.Color(255, 255, 255));
         lblOpenDiemDanh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOpenDiemDanh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_html_5_35px.png"))); // NOI18N
+        lblOpenDiemDanh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_biohazard_35px.png"))); // NOI18N
         lblOpenDiemDanh.setText("Điểm danh");
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
@@ -1446,7 +1450,7 @@ public class Main_Frame extends javax.swing.JFrame {
         lblOpenSanPham.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblOpenSanPham.setForeground(new java.awt.Color(255, 255, 255));
         lblOpenSanPham.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOpenSanPham.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_html_5_35px.png"))); // NOI18N
+        lblOpenSanPham.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_biohazard_35px.png"))); // NOI18N
         lblOpenSanPham.setText("Sản phẩm");
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
@@ -1484,7 +1488,7 @@ public class Main_Frame extends javax.swing.JFrame {
         lblOpenHoaDon.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblOpenHoaDon.setForeground(new java.awt.Color(255, 255, 255));
         lblOpenHoaDon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOpenHoaDon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_html_5_35px.png"))); // NOI18N
+        lblOpenHoaDon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_biohazard_35px.png"))); // NOI18N
         lblOpenHoaDon.setText("Hóa đơn");
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
@@ -1512,7 +1516,7 @@ public class Main_Frame extends javax.swing.JFrame {
         lblOpenKhuyenMai.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblOpenKhuyenMai.setForeground(new java.awt.Color(255, 255, 255));
         lblOpenKhuyenMai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOpenKhuyenMai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_html_5_35px.png"))); // NOI18N
+        lblOpenKhuyenMai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_biohazard_35px.png"))); // NOI18N
         lblOpenKhuyenMai.setText("Khuyến mãi");
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
@@ -1540,7 +1544,7 @@ public class Main_Frame extends javax.swing.JFrame {
         lblOpenThongKe.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblOpenThongKe.setForeground(new java.awt.Color(255, 255, 255));
         lblOpenThongKe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblOpenThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_html_5_35px.png"))); // NOI18N
+        lblOpenThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_biohazard_35px.png"))); // NOI18N
         lblOpenThongKe.setText("Thống kê");
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
@@ -1581,7 +1585,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel21.setBackground(new java.awt.Color(255, 255, 255));
         jPanel21.setPreferredSize(new java.awt.Dimension(360, 293));
 
-        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/submit.png"))); // NOI18N
+        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/submit.png"))); // NOI18N
         jLabel76.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -1675,7 +1679,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel70.setText("Forgot your password ? Don't worry");
         card_SanPham.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 1050, -1));
 
-        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/changePassword.jpg"))); // NOI18N
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/changePassword.jpg"))); // NOI18N
         card_SanPham.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, 350, 310));
 
         pnl_MainDisplayCard.add(card_SanPham, "card_SanPham");

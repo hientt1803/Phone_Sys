@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui_04;
+package phoneSys.edu.Frame;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.awt.Color;
@@ -60,7 +60,7 @@ public class ResetPassword_Frame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ResetPassword_1.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/ResetPassword_1.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,30 +75,30 @@ public class ResetPassword_Frame extends javax.swing.JFrame {
                 .addGap(0, 6, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_eye_23px.png"))); // NOI18N
+        lblEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_eye_23px.png"))); // NOI18N
         lblEye.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblEye.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblEyeMouseClicked(evt);
             }
         });
-        jPanel2.add(lblEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 130, 30, -1));
+        jPanel2.add(lblEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 130, 20, -1));
 
-        lblSlash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_blind_23px.png"))); // NOI18N
+        lblSlash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_blind_23px.png"))); // NOI18N
         lblSlash.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblSlash.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblSlashMouseClicked(evt);
             }
         });
-        jPanel2.add(lblSlash, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 130, 30, -1));
+        jPanel2.add(lblSlash, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 130, 20, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_forgot_password_23px_1.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_forgot_password_23px_1.png"))); // NOI18N
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 167, 22, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
@@ -138,10 +138,10 @@ public class ResetPassword_Frame extends javax.swing.JFrame {
         });
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 130, 232, 25));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_forgot_password_23px_1.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_forgot_password_23px_1.png"))); // NOI18N
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 130, 22, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ForgotPassbutton.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/ForgotPassbutton.png"))); // NOI18N
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
