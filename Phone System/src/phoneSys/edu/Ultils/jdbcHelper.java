@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package phoneSys.edu.JbdcHelper;
+package phoneSys.edu.Ultils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -21,7 +21,7 @@ public class jdbcHelper {
     static String dburl = "jdbc:sqlserver://localhost:1433; databaseName = PhoneSys"
             + ";encrypt=true;trustServerCertificate=true;";
     static String user = "sa";
-    static String pass = "12345";
+    static String pass = "123";
 
     static {
         try {
@@ -73,5 +73,19 @@ public class jdbcHelper {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    
+    public static void main(String[] args) throws SQLException {
+        try {
+             ResultSet rs = jdbcHelper.query("SELECT * FROM NhanVien");
+             while(rs.next()){
+                 System.out.println(rs.getString(1));
+             }
+        } catch (Exception e) {
+        }
+       
+        
+        
+        
     }
 }
