@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package phoneSys.edu.Ultils;
+package phoneSys.edu.ultil;
 
 import java.awt.Component;
 import javax.swing.JOptionPane;

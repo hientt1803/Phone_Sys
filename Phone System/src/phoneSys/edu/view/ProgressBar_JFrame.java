@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package phoneSys.edu.Frame;
+package phoneSys.edu.view;
 
 import AppPackage.AnimationClass;
 import com.formdev.flatlaf.FlatIntelliJLaf;
