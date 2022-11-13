@@ -180,7 +180,7 @@ public class ProgressBar_JFrame extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/logo_fpt_mini-size.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/logo_fpt_mini-size.png"))); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 60));
         jPanel2.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 620, -1));
 
@@ -192,16 +192,16 @@ public class ProgressBar_JFrame extends javax.swing.JFrame {
         lblDetail.setForeground(new java.awt.Color(0, 51, 204));
         jPanel2.add(lblDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 180, 20));
 
-        lblLoading.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/Spinner-1s-44px.gif"))); // NOI18N
+        lblLoading.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/Spinner-1s-44px.gif"))); // NOI18N
         jPanel2.add(lblLoading, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, -1, -1));
 
-        img1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/img1.jpg"))); // NOI18N
+        img1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/img1.jpg"))); // NOI18N
         jPanel2.add(img1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));
 
-        img2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/img2.jpg"))); // NOI18N
+        img2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/img1.jpg"))); // NOI18N
         jPanel2.add(img2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 700, 450));
 
-        img3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/img3.jpg"))); // NOI18N
+        img3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/img1.jpg"))); // NOI18N
         jPanel2.add(img3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 0, 700, 450));
 
         container.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 450));

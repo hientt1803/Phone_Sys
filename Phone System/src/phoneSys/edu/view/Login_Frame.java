@@ -61,7 +61,6 @@ public class Login_Frame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
-        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblLogin = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -76,7 +75,7 @@ public class Login_Frame extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/login_img.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/login_img.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -94,7 +93,7 @@ public class Login_Frame extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_eye_23px.png"))); // NOI18N
+        lblEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_eye_23px.png"))); // NOI18N
         lblEye.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblEye.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -103,7 +102,7 @@ public class Login_Frame extends javax.swing.JFrame {
         });
         jPanel3.add(lblEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 112, 30, 23));
 
-        lblSlash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_blind_23px.png"))); // NOI18N
+        lblSlash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_blind_23px.png"))); // NOI18N
         lblSlash.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblSlash.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,10 +117,10 @@ public class Login_Frame extends javax.swing.JFrame {
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 6, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(113, 113, 113));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_user_23px.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_user_23px.png"))); // NOI18N
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 69, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/icons/icons8_forgot_password_23px_1.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_forgot_password_23px_1.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 114, 22, -1));
 
         txtUserName.setForeground(new java.awt.Color(113, 113, 113));
@@ -140,29 +139,19 @@ public class Login_Frame extends javax.swing.JFrame {
         txtPassword.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(131, 131, 131)));
         jPanel3.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 111, 232, 25));
 
-        jLabel5.setForeground(new java.awt.Color(97, 88, 152));
-        jLabel5.setText("Forgot Password?");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 151, -1, -1));
-
         jPanel1.add(jPanel3);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/login.png"))); // NOI18N
+        lblLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/login.png"))); // NOI18N
         lblLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblLoginMouseClicked(evt);
             }
         });
-        jPanel2.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 18, 260, 29));
+        jPanel2.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 29));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(113, 113, 113));
@@ -170,7 +159,7 @@ public class Login_Frame extends javax.swing.JFrame {
         jLabel7.setText("OR");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 59, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/img/Login_with_Google.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/Login_with_Google.png"))); // NOI18N
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 89, -1, 29));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 67, 114, 10));
@@ -220,11 +209,6 @@ public class Login_Frame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtUserNameFocusLost
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        new ForgotPass_Form().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel5MouseClicked
-
     private void lblLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLoginMouseClicked
         userName = txtUserName.getText();
 
@@ -260,7 +244,6 @@ public class Login_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;

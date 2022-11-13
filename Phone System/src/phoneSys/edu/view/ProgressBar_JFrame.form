@@ -48,7 +48,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/phoneSys/edu/img/logo_fpt_mini-size.png"/>
+                  <Image iconType="3" name="/phoneSys/edu/view/img/logo_fpt_mini-size.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -97,7 +97,7 @@
             <Component class="javax.swing.JLabel" name="lblLoading">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/phoneSys/edu/img/Spinner-1s-44px.gif"/>
+                  <Image iconType="3" name="/phoneSys/edu/view/img/Spinner-1s-44px.gif"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -109,7 +109,7 @@
             <Component class="javax.swing.JLabel" name="img1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/phoneSys/edu/img/img1.jpg"/>
+                  <Image iconType="3" name="/phoneSys/edu/view/img/img1.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -121,7 +121,7 @@
             <Component class="javax.swing.JLabel" name="img2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/phoneSys/edu/img/img2.jpg"/>
+                  <Image iconType="3" name="/phoneSys/edu/view/img/img1.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -133,7 +133,7 @@
             <Component class="javax.swing.JLabel" name="img3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/phoneSys/edu/img/img3.jpg"/>
+                  <Image iconType="3" name="/phoneSys/edu/view/img/img1.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
