@@ -3533,5 +3533,30 @@ public class Main_Frame extends javax.swing.JFrame {
 //             
         }
     }
-
+    
+                        // CODE HERE //
+    
+    
+    
+//   ********************** MINH DUONG**********************
+    
+    
+    
+    
+    
+//   ********************** TRONG HIEN**********************
+   
+    
+    
+//   ********************** HOAI NAM**********************
+                //START_CARD_NHANVIEN
+    
+    
+                //END_CARD_NHANVIEN
+    
+                //START_CARD_NHANVIEN
+           
+    
+                //END_CARD_NHANVIEN
+    
 }
