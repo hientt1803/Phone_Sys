@@ -2936,14 +2936,14 @@
                                   <Component id="jPanel33" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                                  <Component id="btn_First_KhuyenMai" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_Previous_KhuyenMai" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                                  <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_Next_KhuyenMai" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                                  <Component id="jButton13" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_Last_KhuyenMai" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -2953,22 +2953,23 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jPanel33" alignment="1" max="32767" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="42" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Component id="jPanel31" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jPanel32" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jPanel33" min="-2" pref="490" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_First_KhuyenMai" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_Last_KhuyenMai" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_Previous_KhuyenMai" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_Next_KhuyenMai" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2983,6 +2984,7 @@
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                         <TitledBorder title="Danh s&#xe1;ch s&#x1ea3;n ph&#x1ea9;m">
                           <Font PropertyName="font" name="Tahoma" size="13" style="1"/>
+                          <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                         </TitledBorder>
                       </Border>
                     </Property>
@@ -3030,6 +3032,9 @@
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
                         </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="98" green="58" red="61" type="rgb"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="&#xc1;p d&#x1ee5;ng cho:"/>
                       </Properties>
                     </Component>
@@ -3037,6 +3042,9 @@
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="98" green="58" red="61" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="H&#xe3;ng s&#x1ea3;n xu&#x1ea5;t"/>
                       </Properties>
@@ -3122,6 +3130,7 @@
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                         <TitledBorder title="Danh s&#xe1;ch khuy&#x1ebf;n m&#xe3;i">
                           <Font PropertyName="font" name="Tahoma" size="13" style="1"/>
+                          <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                         </TitledBorder>
                       </Border>
                     </Property>
@@ -3155,7 +3164,7 @@
                                   <Component id="jLabel63" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jScrollPane4" pref="209" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" pref="162" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -3231,7 +3240,10 @@
                     <Component class="javax.swing.JLabel" name="jLabel63">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="12" style="0"/>
+                          <Font name="Tahoma" size="12" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="98" green="58" red="61" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="L&#x1ecd;c danh s&#xe1;ch Khuy&#x1ebf;n m&#xe3;i:"/>
                       </Properties>
@@ -3249,6 +3261,7 @@
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                         <TitledBorder title="Qu&#x1ea3;n l&#xfd; khuy&#x1ebf;n m&#xe3;i">
                           <Font PropertyName="font" name="Tahoma" size="13" style="1"/>
+                          <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                         </TitledBorder>
                       </Border>
                     </Property>
@@ -3272,8 +3285,7 @@
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jButton10" alignment="1" min="-2" pref="106" max="-2" attributes="0"/>
-                                          <Component id="jButton12" alignment="1" min="-2" pref="106" max="-2" attributes="0"/>
+                                          <Component id="btn_CapNhat_KhuyenMai" alignment="1" min="-2" pref="106" max="-2" attributes="0"/>
                                           <Component id="jScrollPane5" alignment="1" min="-2" pref="195" max="-2" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -3287,17 +3299,21 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jButton11" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
-                                          <Component id="jButton9" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="rdo_DangHoatDong_KhuyenMai" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="rdo_NgungHoatDong" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="btn_Xoa_KhuyenMai" min="-2" pref="106" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="btn_Moi_KhuyenMai" min="-2" pref="106" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="btn_Them_KhuyenMai" min="-2" pref="106" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
@@ -3349,13 +3365,13 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jButton9" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                                  <Component id="jButton10" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="btn_Them_KhuyenMai" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="btn_CapNhat_KhuyenMai" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jButton11" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                                  <Component id="jButton12" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="btn_Xoa_KhuyenMai" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="btn_Moi_KhuyenMai" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -3431,7 +3447,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea1">
+                        <Component class="javax.swing.JTextArea" name="txa_GhiChu_KhuyenMai">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
@@ -3439,34 +3455,46 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JButton" name="jButton9">
+                    <Component class="javax.swing.JButton" name="btn_Them_KhuyenMai">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="98" green="58" red="61" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton10">
+                    <Component class="javax.swing.JButton" name="btn_CapNhat_KhuyenMai">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="98" green="58" red="61" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton11">
+                    <Component class="javax.swing.JButton" name="btn_Xoa_KhuyenMai">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="98" green="58" red="61" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton12">
+                    <Component class="javax.swing.JButton" name="btn_Moi_KhuyenMai">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="98" green="58" red="61" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
                       </Properties>
@@ -3478,34 +3506,46 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="btn_First_KhuyenMai">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton5">
+                <Component class="javax.swing.JButton" name="btn_Previous_KhuyenMai">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="|&lt;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton6">
+                <Component class="javax.swing.JButton" name="btn_Next_KhuyenMai">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="&gt;|"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton13">
+                <Component class="javax.swing.JButton" name="btn_Last_KhuyenMai">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
                   </Properties>
@@ -3719,7 +3759,7 @@
                                   <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="6" max="32767" attributes="0"/>
                               <Component id="jPanel39" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -3984,7 +4024,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane12" pref="211" max="32767" attributes="0"/>
+                              <Component id="jScrollPane12" pref="207" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -4103,10 +4143,22 @@
                                       <Component id="jLabel87" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel89" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel88" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton7" min="-2" pref="296" max="-2" attributes="0"/>
+                                      <Component id="btn_DiemDanh_DiemDanh" min="-2" pref="296" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jScrollPane6" min="-2" pref="606" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jScrollPane6" alignment="1" min="-2" pref="606" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btn_First_DiemDanh" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                          <Component id="btn_Previous_DiemDanh" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                          <Component id="btn_Next_DiemDanh" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                          <Component id="btn_Last_DiemDanh" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -4118,12 +4170,12 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel83" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                                      <Component id="jLabel86" min="-2" pref="163" max="-2" attributes="0"/>
-                                      <Component id="jLabel85" min="-2" pref="163" max="-2" attributes="0"/>
-                                      <Component id="jLabel84" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="lbl_MaNhanVien_DiemDanh" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="lbl_NgayLamViec_DiemDanh" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="lbl_CaLam_DiemDanh" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="lbl_TenNhanVien_DiemDanh" min="-2" pref="163" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Component id="jScrollPane8" pref="173" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane8" pref="167" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -4132,11 +4184,11 @@
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                          <Component id="jDateChooser3" min="-2" pref="177" max="-2" attributes="0"/>
-                                          <EmptySpace pref="61" max="32767" attributes="0"/>
+                                          <Component id="dcs_LocTheoNgay_DiemDanh" min="-2" pref="177" max="-2" attributes="0"/>
+                                          <EmptySpace pref="56" max="32767" attributes="0"/>
                                           <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="jComboBox1" min="-2" pref="183" max="-2" attributes="0"/>
+                                          <Component id="cbo_LocTheoCa_DiemDanh" min="-2" pref="183" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel92" min="-2" max="-2" attributes="0"/>
@@ -4157,32 +4209,31 @@
                               <Component id="jLabel90" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel83" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_MaNhanVien_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jDateChooser3" max="32767" attributes="0"/>
+                              <Component id="dcs_LocTheoNgay_DiemDanh" max="32767" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                                   <Component id="jLabel91" alignment="3" max="32767" attributes="0"/>
-                                  <Component id="jComboBox1" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="cbo_LocTheoCa_DiemDanh" alignment="3" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_TenNhanVien_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel92" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel80" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbl_CaLam_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel86" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbl_NgayLamViec_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -4190,20 +4241,28 @@
                                       <Component id="jScrollPane8" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="jButton7" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="btn_DiemDanh_DiemDanh" min="-2" pref="46" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="jLabel87" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="142" max="32767" attributes="0"/>
                                   <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <EmptySpace pref="12" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane6" min="-2" pref="463" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jScrollPane6" min="-2" pref="435" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="btn_First_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_Last_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_Previous_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_Next_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -4249,7 +4308,7 @@
                     <Property name="text" type="java.lang.String" value="Ghi Ch&#xfa;:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel83">
+                <Component class="javax.swing.JLabel" name="lbl_MaNhanVien_DiemDanh">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="0"/>
@@ -4257,7 +4316,7 @@
                     <Property name="text" type="java.lang.String" value=" "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel84">
+                <Component class="javax.swing.JLabel" name="lbl_TenNhanVien_DiemDanh">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="0"/>
@@ -4265,7 +4324,7 @@
                     <Property name="text" type="java.lang.String" value=" "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel85">
+                <Component class="javax.swing.JLabel" name="lbl_CaLam_DiemDanh">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="0"/>
@@ -4273,7 +4332,7 @@
                     <Property name="text" type="java.lang.String" value=" "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel86">
+                <Component class="javax.swing.JLabel" name="lbl_NgayLamViec_DiemDanh">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="0"/>
@@ -4281,10 +4340,13 @@
                     <Property name="text" type="java.lang.String" value=" "/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton7">
+                <Component class="javax.swing.JButton" name="btn_DiemDanh_DiemDanh">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="12" style="1"/>
+                      <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec3;m Danh"/>
                   </Properties>
@@ -4292,7 +4354,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel87">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="12" style="0"/>
+                      <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Quy &#x111;&#x1ecb;nh: &#x110;i&#x1ec3;m danh trong 30 ph&#xfa;t &#x111;&#x1ea7;u c&#x1ee7;a ca l&#xe0;m"/>
                   </Properties>
@@ -4300,7 +4362,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel88">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="12" style="0"/>
+                      <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Ca S&#xe1;ng: T&#x1eeb; 7:00 - 11:00"/>
                   </Properties>
@@ -4308,7 +4370,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel89">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="12" style="0"/>
+                      <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Ca Chi&#x1ec1;u: T&#x1eeb; 13:00 - 17:00"/>
                   </Properties>
@@ -4316,22 +4378,28 @@
                 <Component class="javax.swing.JLabel" name="jLabel90">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="12" style="0"/>
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="L&#x1ecd;c Ng&#xe0;y L&#xe0;m Vi&#x1ec7;c"/>
                   </Properties>
                 </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser3">
+                <Component class="com.toedter.calendar.JDateChooser" name="dcs_LocTheoNgay_DiemDanh">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel91">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="12" style="0"/>
+                      <Font name="Tahoma" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Ca"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="cbo_LocTheoCa_DiemDanh">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="2">
@@ -4351,7 +4419,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea3">
+                    <Component class="javax.swing.JTextArea" name="txa_GhiChu_DiemDanh">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -4364,6 +4432,9 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="13" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Danh s&#xe1;ch &#x110;i&#x1ec3;m Danh"/>
                   </Properties>
                 </Component>
@@ -4374,7 +4445,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTable5">
+                    <Component class="javax.swing.JTable" name="tbl_DanhSachDiemDanh_DiemDanh">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="6" rowCount="4">
@@ -4427,6 +4498,50 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JButton" name="btn_First_DiemDanh">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btn_Previous_DiemDanh">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="|&lt;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btn_Next_DiemDanh">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="&gt;|"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btn_Last_DiemDanh">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="card_Luong">
@@ -4518,6 +4633,9 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="e4" green="e4" red="e4" type="rgb"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="98" green="58" red="61" type="rgb"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -4536,13 +4654,13 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
-                                  <Component id="btn_First" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_First_SanPham" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="btn_Previous" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_Previous_SanPham" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                                  <Component id="btn_Next" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_Next_SanPham" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                                  <Component id="btn_Last" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_Last_SanPham" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -4555,10 +4673,10 @@
                           <Component id="tab" min="-2" pref="545" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btn_First" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn_Last" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn_Previous" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn_Next" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_First_SanPham" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_Last_SanPham" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_Previous_SanPham" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_Next_SanPham" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -4570,6 +4688,9 @@
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="12" style="1"/>
@@ -4636,6 +4757,7 @@
                               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                 <TitledBorder title="Qu&#x1ea3;n l&#xfd; S&#x1ea3;n ph&#x1ea9;m">
                                   <Font PropertyName="font" name="Tahoma" size="13" style="1"/>
+                                  <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                                 </TitledBorder>
                               </Border>
                             </Property>
@@ -4872,21 +4994,45 @@
                               <SubComponents>
                                 <Component class="javax.swing.JButton" name="btn_Them_SanPham">
                                   <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Tahoma" size="11" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="98" green="58" red="61" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JButton" name="btn_CapNhat_SanPham">
                                   <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Tahoma" size="11" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="98" green="58" red="61" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JButton" name="btn_Xoa_SanPham">
                                   <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Tahoma" size="11" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="98" green="58" red="61" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JButton" name="btn_Moi_SanPham">
                                   <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Tahoma" size="11" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="98" green="58" red="61" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
                                   </Properties>
                                 </Component>
@@ -4956,8 +5102,12 @@
                               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                 <TitledBorder title="L&#x1ecd;c s&#x1ea3;n ph&#x1ea9;m">
                                   <Font PropertyName="font" name="Tahoma" size="13" style="1"/>
+                                  <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                                 </TitledBorder>
                               </Border>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="98" green="58" red="61" type="rgb"/>
                             </Property>
                           </Properties>
 
@@ -4998,8 +5148,12 @@
                                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                     <TitledBorder justification="2" title="H&#xe3;ng s&#x1ea3;n xu&#x1ea5;t">
                                       <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
+                                      <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                                     </TitledBorder>
                                   </Border>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="98" green="58" red="61" type="rgb"/>
                                 </Property>
                               </Properties>
 
@@ -5042,10 +5196,14 @@
                                 </Property>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                                    <TitledBorder justification="2" title="M&#xe0;u s&#x1eaf;c">
+                                    <TitledBorder justification="2" title="H&#xe3;ng s&#x1ea3;n xu&#x1ea5;t">
                                       <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
+                                      <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                                     </TitledBorder>
                                   </Border>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="98" green="58" red="61" type="rgb"/>
                                 </Property>
                               </Properties>
 
@@ -5090,8 +5248,12 @@
                                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                     <TitledBorder justification="2" title="Xu&#x1ea5;t s&#x1ee9;">
                                       <Font PropertyName="font" name="Tahoma" size="12" style="1"/>
+                                      <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                                     </TitledBorder>
                                   </Border>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="98" green="58" red="61" type="rgb"/>
                                 </Property>
                               </Properties>
 
@@ -5138,8 +5300,12 @@
                               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                 <TitledBorder title="Danh s&#xe1;ch S&#x1ea3;n ph&#x1ea9;m">
                                   <Font PropertyName="font" name="Tahoma" size="13" style="1"/>
+                                  <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                                 </TitledBorder>
                               </Border>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="98" green="58" red="61" type="rgb"/>
                             </Property>
                           </Properties>
 
@@ -5270,34 +5436,46 @@
                     </Container>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="btn_First">
+                <Component class="javax.swing.JButton" name="btn_First_SanPham">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_Next">
+                <Component class="javax.swing.JButton" name="btn_Next_SanPham">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&gt;|"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_Previous">
+                <Component class="javax.swing.JButton" name="btn_Previous_SanPham">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="|&lt;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_Last">
+                <Component class="javax.swing.JButton" name="btn_Last_SanPham">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
                   </Properties>
@@ -5535,10 +5713,8 @@
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel93" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel99" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jLabel93" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel99" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jLabel97" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel101" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -5570,7 +5746,7 @@
                                           <Component id="jButton3" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
                                           <Component id="jButton4" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -5865,7 +6041,7 @@
                                           <Component id="jButton17" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
