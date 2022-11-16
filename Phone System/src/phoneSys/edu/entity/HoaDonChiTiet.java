@@ -9,6 +9,9 @@ package phoneSys.edu.entity;
  *
  * @author NP
  */
+
+//TEST COMFLICT
+
 public class HoaDonChiTiet {
     String MaHoaDon, MaSanPham;
     int SoLuong;
@@ -54,6 +57,11 @@ public class HoaDonChiTiet {
 
     public void setGhiChu(String GhiChu) {
         this.GhiChu = GhiChu;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
     
     
