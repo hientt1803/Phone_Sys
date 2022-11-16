@@ -17,6 +17,7 @@ import phoneSys.edu.ultil.jdbcHelper;
  *
  * @author NP
  */
+// hhhhhhhh
 public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
 
     String INSERT_SQL = "INSERT INTO SanPham(MaSanPham,TenSanPham,HangSanXuat,XuatXu,MauSac,SoLuong,DonGia,HinhAnh, GhiChu) values(?,?,?,?,?,?,?,?,?)";
