@@ -11,6 +11,7 @@ import java.util.Date;
  *
  * @author NP
  */
+// Test comit 
 public class KhuyenMai {
     String MaKhuyenMai, TenKhuyenMai;
     Date NgayBatDau, NgayKetThuc;
