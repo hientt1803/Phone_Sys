@@ -9,6 +9,8 @@ package phoneSys.edu.entity;
  *
  * @author NP
  */
+
+//TEsst Comflig
 public class TaiKhoan {
     String MaNhanVien, TenDangNhap, MatKhau;
     Boolean Quyen;
@@ -63,6 +65,11 @@ public class TaiKhoan {
 
     public void setGhiChu(String GhiChu) {
         this.GhiChu = GhiChu;
+    }
+
+    @Override
+    public String toString() {
+        return "TaiKhoan{" + "MaNhanVien=" + MaNhanVien + ", TenDangNhap=" + TenDangNhap + ", MatKhau=" + MatKhau + ", Quyen=" + Quyen + ", GhiChu=" + GhiChu + '}';
     }
     
     
