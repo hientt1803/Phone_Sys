@@ -125,5 +125,10 @@ public class NhanVien {
         this.GhiChu = GhiChu;
     }
 
+    @Override
+    public String toString() {
+        return MaNhanVien;
+    }
+
     
 }

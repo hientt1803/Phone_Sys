@@ -18,8 +18,7 @@ import java.sql.SQLException;
 public class jdbcHelper {
 
     static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    static String dburl = "jdbc:sqlserver://localhost:1433; databaseName = PhoneSys"
-            + ";encrypt=true;trustServerCertificate=true;";
+    private static String dburl = "jdbc:sqlserver://localhost:1433;database=PhoneSys;encrypt=true;trustServerCertificate=true";
     static String user = "sa";
     static String pass = "123";
 
