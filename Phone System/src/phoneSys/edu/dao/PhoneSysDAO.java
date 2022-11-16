@@ -5,10 +5,24 @@
  */
 package phoneSys.edu.dao;
 
+import java.util.List;
+
 /**
  *
  * @author NP
  */
-public class PhoneSysDAO {
-    
+
+public abstract class PhoneSysDAO<E, K> {
+
+    abstract public void insert(E entity);
+
+    abstract public void update(E entity);
+
+    abstract public void delete(K key);
+
+    abstract public List<E> selectAll();
+
+    abstract E selectByid(K key);
+
+    abstract public List<E> selectBySql(String sql, Object... args);
 }
