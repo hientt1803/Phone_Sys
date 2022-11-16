@@ -14,16 +14,17 @@ package phoneSys.edu.entity;
 
 public class HoaDonChiTiet {
     String MaHoaDon, MaSanPham;
-    int SoLuong;
+    int SoLuong,MaHoaDonChiTiet;
     String GhiChu;
 
     public HoaDonChiTiet() {
     }
 
-    public HoaDonChiTiet(String MaHoaDon, String MaSanPham, int SoLuong, String GhiChu) {
+    public HoaDonChiTiet(String MaHoaDon, String MaSanPham, int SoLuong, int MaHoaDonChiTiet, String GhiChu) {
         this.MaHoaDon = MaHoaDon;
         this.MaSanPham = MaSanPham;
         this.SoLuong = SoLuong;
+        this.MaHoaDonChiTiet = MaHoaDonChiTiet;
         this.GhiChu = GhiChu;
     }
 
@@ -51,6 +52,14 @@ public class HoaDonChiTiet {
         this.SoLuong = SoLuong;
     }
 
+    public int getMaHoaDonChiTiet() {
+        return MaHoaDonChiTiet;
+    }
+
+    public void setMaHoaDonChiTiet(int MaHoaDonChiTiet) {
+        this.MaHoaDonChiTiet = MaHoaDonChiTiet;
+    }
+
     public String getGhiChu() {
         return GhiChu;
     }
@@ -59,10 +68,6 @@ public class HoaDonChiTiet {
         this.GhiChu = GhiChu;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
     
     
 }
