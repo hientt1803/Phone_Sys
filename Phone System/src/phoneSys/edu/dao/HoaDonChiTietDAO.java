@@ -20,17 +20,17 @@ import phoneSys.edu.ultil.jdbcHelper;
  */
 public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
 
-    String INSERT_SQL = "";
-    String UPDATE_SQL = "";
-    String DELETE_SQL = "";
-    String SELECT_ALL_SQL = "";
-    String SELECT_BY_ID_SQL = "";
+    String INSERT_SQL = "INSERT INTO HoaDonChiTiet(MaHoaDonChiTiet,MaHoaDon,MaSanPham,SoLuong,GhiChu) values(?,?,?,?)";
+    String UPDATE_SQL = "UPDATE HoaDonChiTiet set MaHoaDon = ? , MaSanPham = ? , SoLuong = ? , GhiChu = ?";
+    String DELETE_SQL = "DELETE FROM HoaDonChiTiet where MaHoaDonChiTiet = ?";
+    String SELECT_ALL_SQL = "SELECT * FROM HoaDonChiTiet";
+    String SELECT_BY_ID_SQL = "SELECT * FROM HoaDonChiTiet where MaHoaDonChiTiet = ? ";
 
     @Override
     public void insert(HoaDonChiTiet entity) {
         try {
             jdbcHelper.update(INSERT_SQL,
-                    entity.getMaHoaDonChiTiet(), entity.getMaHoaDon(), entity.getMaSanPham(), entity.getSoLuong(), entity.getGhiChu()
+                    entity.getMaHoaDon(), entity.getMaSanPham(), entity.getSoLuong(), entity.getGhiChu()
             );
         } catch (SQLException ex) {
             Logger.getLogger(HoaDonChiTietDAO.class.getName()).log(Level.SEVERE, null, ex);

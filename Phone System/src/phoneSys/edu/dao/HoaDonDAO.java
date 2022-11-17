@@ -20,11 +20,11 @@ import phoneSys.edu.ultil.jdbcHelper;
  */
 public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
 
-    String INSERT_SQL = "";
-    String UPDATE_SQL = "";
-    String DELETE_SQL = "";
-    String SELECT_ALL_SQL = "";
-    String SELECT_BY_ID_SQL = "";
+    String INSERT_SQL = "INSERT INTO HoaDon(MaHoaDon,MaKhachHang,MaNhanVien,NgayTao,GhiChu) values(?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE HoaDon set MaKhachHang = ? , MaNhanVien = ? , NgayTao = ? , GhiChu = ? where MaHoaDon = ?";
+    String DELETE_SQL = "DELETE FROM HoaDon where MaHoaDon = ?";
+    String SELECT_ALL_SQL = "SELECT * FROM HoaDon";
+    String SELECT_BY_ID_SQL = "SELECT * FROM HoaDon where MaHoaDon = ?";
 
     @Override
     public void insert(HoaDon entity) {

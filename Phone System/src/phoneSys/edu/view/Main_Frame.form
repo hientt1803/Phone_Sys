@@ -3697,17 +3697,17 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rdo_QuanLi_TaiKhoan" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rdo_NhanVien_TaiKhoan" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jTextField9" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextField10" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jPasswordField1" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jPasswordField2" max="32767" attributes="0"/>
+                                                  <Component id="txt_MaNV_TaiKhoan" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txt_TenDangNhap_TaiKhoan" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txt_MatKhau_TaiKhoan" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txt_Confirm_TaiKhoan" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                                           </Group>
@@ -3736,30 +3736,30 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField9" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txt_MaNV_TaiKhoan" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jLabel112" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jTextField10" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_TenDangNhap_TaiKhoan" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel115" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jPasswordField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_MatKhau_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel116" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jPasswordField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_Confirm_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel117" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rdo_QuanLi_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rdo_NhanVien_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="6" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jPanel39" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -3896,26 +3896,20 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JTextField" name="jTextField9">
+                    <Component class="javax.swing.JTextField" name="txt_MaNV_TaiKhoan">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField10">
+                    <Component class="javax.swing.JTextField" name="txt_TenDangNhap_TaiKhoan">
                     </Component>
-                    <Component class="javax.swing.JPasswordField" name="jPasswordField1">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-                      </Properties>
+                    <Component class="javax.swing.JPasswordField" name="txt_MatKhau_TaiKhoan">
                     </Component>
-                    <Component class="javax.swing.JPasswordField" name="jPasswordField2">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-                      </Properties>
+                    <Component class="javax.swing.JPasswordField" name="txt_Confirm_TaiKhoan">
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+                    <Component class="javax.swing.JRadioButton" name="rdo_QuanLi_TaiKhoan">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xed;"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+                    <Component class="javax.swing.JRadioButton" name="rdo_NhanVien_TaiKhoan">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
                       </Properties>
@@ -3959,7 +3953,7 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="jTable8">
+                            <Component class="javax.swing.JTable" name="tbl_DSTaiKhoan_TaiKhoan">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="3" rowCount="0">
@@ -4038,7 +4032,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="jTable7">
+                        <Component class="javax.swing.JTable" name="tbl_DSChuaTaiKhoan_TaiKhoan">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="11" rowCount="0">
@@ -4244,7 +4238,7 @@
                                   <Component id="btn_DiemDanh_DiemDanh" min="-2" pref="46" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="jLabel87" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="142" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -6018,16 +6012,16 @@
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jScrollPane10" max="32767" attributes="0"/>
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                   <Component id="jLabel111" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jTextField8" min="-2" pref="255" max="-2" attributes="0"/>
-                                                  <EmptySpace pref="523" max="32767" attributes="0"/>
+                                                  <Component id="jDateChooser1" min="-2" pref="201" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
                                                   <Component id="jButton8" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="jPanel36" max="32767" attributes="0"/>
+                                              <Component id="jScrollPane10" alignment="0" min="-2" pref="1022" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -6041,20 +6035,28 @@
                                           <Component id="jButton17" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="32" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel111" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel111" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace pref="12" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jScrollPane10" min="-2" pref="155" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -6081,8 +6083,6 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="L&#x1ecd;c ng&#xe0;y t&#x1ea1;o"/>
                           </Properties>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField8">
                         </Component>
                         <Container class="javax.swing.JScrollPane" name="jScrollPane10">
                           <AuxValues>
@@ -6289,6 +6289,11 @@
                               <Color blue="98" green="58" red="61" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="&gt;|"/>
+                          </Properties>
+                        </Component>
+                        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+                          <Properties>
+                            <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
                           </Properties>
                         </Component>
                       </SubComponents>
