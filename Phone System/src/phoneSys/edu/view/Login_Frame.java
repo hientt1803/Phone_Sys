@@ -9,6 +9,13 @@ import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.awt.Color;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import phoneSys.edu.dao.NhanVienDAO;
+import phoneSys.edu.dao.TaiKhoanDAO;
+import phoneSys.edu.entity.NhanVien;
+import phoneSys.edu.entity.TaiKhoan;
+import phoneSys.edu.ultil.Auth;
+import phoneSys.edu.ultil.MsgBox;
+import phoneSys.edu.ultil.XImage;
 
 /**
  *
@@ -21,36 +28,44 @@ public class Login_Frame extends javax.swing.JFrame {
      */
 //    Get userName Login
     static String userName;
-    
+
 //    Get userName login recent
     String LoginAcountRecent1;
     String LoginAcountRecent2;
 
     public Login_Frame() {
         initComponents();
+        this.requestFocus();
         this.init();
+
     }
 
     private void init() {
-        txtUserName.setBackground(new Color(0, 0, 0, 1));
-        txtPassword.setBackground(new Color(0, 0, 0, 1));
-        txtPassword.setBackground(new Color(0, 0, 0, 1));
+        txt_TenDangNhap.setBackground(new Color(0, 0, 0, 1));
+        txt_MatKhau.setBackground(new Color(0, 0, 0, 1));
+        txt_MatKhau.setBackground(new Color(0, 0, 0, 1));
 
 //        Password
         lblSlash.setVisible(false);
 
-        
         //        UserName recent
-        if(Main_Frame.checkBox1 == true){
+        if (Main_Frame.checkBox1 == true) {
             LoginAcountRecent1 = Main_Frame.LoginAccount1;
-            txtUserName.setText(LoginAcountRecent1);
+            txt_TenDangNhap.setText(LoginAcountRecent1);
             return;
         }
-        
-        if(Main_Frame.checkBox2 == true){
+
+        if (Main_Frame.checkBox2 == true) {
             LoginAcountRecent2 = Main_Frame.LoginAccount2;
-            txtUserName.setText(LoginAcountRecent2);
+            txt_TenDangNhap.setText(LoginAcountRecent2);
         }
+
+//        Icon image , Title FRAME
+        setIconImage(XImage.getAppIcon());
+        this.setTitle("Đăng nhập");
+
+
+
     }
 
     /**
@@ -71,8 +86,8 @@ public class Login_Frame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtUserName = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JPasswordField();
+        txt_TenDangNhap = new javax.swing.JTextField();
+        txt_MatKhau = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         lblLogin = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -135,21 +150,21 @@ public class Login_Frame extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_forgot_password_23px_1.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 114, 22, -1));
 
-        txtUserName.setForeground(new java.awt.Color(113, 113, 113));
-        txtUserName.setText("UserName");
-        txtUserName.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(131, 131, 131)));
-        txtUserName.addFocusListener(new java.awt.event.FocusAdapter() {
+        txt_TenDangNhap.setForeground(new java.awt.Color(113, 113, 113));
+        txt_TenDangNhap.setText("Tên đăng nhập");
+        txt_TenDangNhap.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(131, 131, 131)));
+        txt_TenDangNhap.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtUserNameFocusGained(evt);
+                txt_TenDangNhapFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtUserNameFocusLost(evt);
+                txt_TenDangNhapFocusLost(evt);
             }
         });
-        jPanel3.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 67, 232, 25));
+        jPanel3.add(txt_TenDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 67, 232, 25));
 
-        txtPassword.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(131, 131, 131)));
-        jPanel3.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 111, 232, 25));
+        txt_MatKhau.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(131, 131, 131)));
+        jPanel3.add(txt_MatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 111, 232, 25));
 
         jPanel1.add(jPanel3);
 
@@ -200,30 +215,34 @@ public class Login_Frame extends javax.swing.JFrame {
     private void lblEyeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEyeMouseClicked
         lblSlash.setVisible(true);
         lblEye.setVisible(false);
-        txtPassword.setEchoChar((char) 0);
+        txt_MatKhau.setEchoChar((char) 0);
     }//GEN-LAST:event_lblEyeMouseClicked
 
     private void lblSlashMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSlashMouseClicked
         lblSlash.setVisible(false);
         lblEye.setVisible(true);
-        txtPassword.setEchoChar('.');
+        txt_MatKhau.setEchoChar('.');
     }//GEN-LAST:event_lblSlashMouseClicked
 
-    private void txtUserNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserNameFocusGained
-        if (txtUserName.getText().equals("UserName")) {
-            txtUserName.setText("");
+    private void txt_TenDangNhapFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_TenDangNhapFocusGained
+        if (txt_TenDangNhap.getText().equals("Tên đăng nhập")) {
+            txt_TenDangNhap.setText("");
+            return;
         }
-    }//GEN-LAST:event_txtUserNameFocusGained
+    }//GEN-LAST:event_txt_TenDangNhapFocusGained
 
-    private void txtUserNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserNameFocusLost
-        if (txtUserName.getText().length() == 0) {
-            txtUserName.setText("UserName");
+    private void txt_TenDangNhapFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_TenDangNhapFocusLost
+        if (txt_TenDangNhap.getText().length() == 0) {
+            txt_TenDangNhap.setText("Tên đăng nhập");
+            return;
         }
-    }//GEN-LAST:event_txtUserNameFocusLost
+    }//GEN-LAST:event_txt_TenDangNhapFocusLost
 
     private void lblLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLoginMouseClicked
-        userName = txtUserName.getText();
-
+     //        Login
+        this.Login();
+        this.requestFocusInWindow();
+        
         new Main_Frame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblLoginMouseClicked
@@ -267,7 +286,37 @@ public class Login_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel lblEye;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblSlash;
-    private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtUserName;
+    private javax.swing.JPasswordField txt_MatKhau;
+    private javax.swing.JTextField txt_TenDangNhap;
     // End of variables declaration//GEN-END:variables
+
+    TaiKhoanDAO dao = new TaiKhoanDAO();
+    TaiKhoan tk = new TaiKhoan();
+
+    private void Login() {
+        String manv = txt_TenDangNhap.getText();
+        String Pass = String.valueOf(txt_MatKhau.getPassword());
+        TaiKhoan tk = dao.selectByid(manv);
+
+        if (txt_TenDangNhap.getText().equals("Tên đăng nhập")) {
+            MsgBox.alert(this, "Chưa nhập tên đăng nhập");
+            return;
+        }
+
+        if (String.valueOf(txt_MatKhau.getPassword()).equals("")) {
+            MsgBox.alert(this, "Chưa nhập mật khẩu");
+            return;
+        }
+
+        if (tk == null) {
+            MsgBox.alert(this, "Sai tên đăng nhập");
+        } else if (!Pass.equals(tk.getMatKhau())) {
+            MsgBox.alert(this, "Mật khẩu không chính xác");
+        } else {
+            Auth.user = tk;
+            new Main_Frame().setVisible(true);
+            this.dispose();
+        }
+    }
+
 }

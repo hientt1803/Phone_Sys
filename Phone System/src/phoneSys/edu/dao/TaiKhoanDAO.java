@@ -21,11 +21,11 @@ import phoneSys.edu.ultil.jdbcHelper;
  */
 public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
 
-    String INSERT_SQL = "INSERT INTO TaiKhoan(ID,MaNhanVien,TenDangNhap,MatKhau,Quyen,GhiChu) values(?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE TaiKhoan set MaNhanVien = ? , TenDangNhap = ? , MatKhau = ? , Quyen = ? ,GhiChu = ?";
-    String DELETE_SQL = "DELETE FROM TaiKhoan where ID = ?";
+    String INSERT_SQL = "INSERT INTO TaiKhoan(MaNhanVien,TenDangNhap,MatKhau,Quyen,GhiChu) values(?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE TaiKhoan set TenDangNhap = ? , MatKhau = ? , Quyen = ? ,GhiChu = ? where  MaNhanVien = ?";
+    String DELETE_SQL = "DELETE FROM TaiKhoan where MaNhanVien = ?";
     String SELECT_ALL_SQL = "SELECT * FROM TaiKhoan";
-    String SELECT_BY_ID_SQL = "SELECT * FROM TaiKhoan where ID = ? ";
+    String SELECT_BY_ID_SQL = "SELECT * FROM TaiKhoan where MaNhanVien = ? ";
 
     @Override
     public void insert(TaiKhoan entity) {
@@ -66,7 +66,7 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
     }
 
     @Override
-    TaiKhoan selectByid(String key) {
+    public TaiKhoan selectByid(String key) {
         List<TaiKhoan> list = this.selectBySql(SELECT_BY_ID_SQL, key);
         if (list.isEmpty()) {
             return null;
@@ -92,8 +92,9 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
             rs.getStatement().getConnection().close();
             return list;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        return null;
     }
 
 }

@@ -73,18 +73,4 @@ public class jdbcHelper {
             throw new RuntimeException(e);
         }
     }
-    
-    public static void main(String[] args) throws SQLException {
-        try {
-             ResultSet rs = jdbcHelper.query("SELECT * FROM NhanVien");
-             while(rs.next()){
-                 System.out.println(rs.getString(1));
-             }
-        } catch (Exception e) {
-        }
-       
-        
-        
-        
-    }
 }

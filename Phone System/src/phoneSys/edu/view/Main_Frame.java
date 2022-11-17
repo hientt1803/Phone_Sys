@@ -27,6 +27,7 @@ import phoneSys.edu.dao.SanPhamDAO;
 import phoneSys.edu.dao.TaiKhoanDAO;
 import phoneSys.edu.entity.NhanVien;
 import phoneSys.edu.entity.TaiKhoan;
+import phoneSys.edu.ultil.Auth;
 import phoneSys.edu.ultil.MsgBox;
 
 /**
@@ -38,9 +39,6 @@ public class Main_Frame extends javax.swing.JFrame {
     /**
      * Creates new form Main_Frame
      */
-//    Get userName Login now
-    String userLoginName;
-
 //    Account recent check
     static Boolean checkBox1 = false;
     static Boolean checkBox2 = false;
@@ -59,11 +57,10 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     public void init() {
-//        Display name user
-        userLoginName = Login_Frame.userName;
-        lblUserNameLogin.setText(userLoginName);
-        txtUserName.setText(userLoginName);
-
+//      Display UserName
+//        lbl_TenNhanVien.setText(Auth.getNameNhanVien());
+//        lbl_VaiTro.setText(Auth.isLogin()==true?"Quản lí":"Nhân viên");
+        
 //      Get user Login recent
         LoginAccount1 = lblLoginAccount1.getText();
         LoginAccount2 = lblLoginAcout2.getText();
@@ -101,9 +98,8 @@ public class Main_Frame extends javax.swing.JFrame {
         lblTimer = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        lblUserNameLogin = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lbl_VaiTro = new javax.swing.JLabel();
+        lbl_TenNhanVien = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         pnl_Menu = new javax.swing.JPanel();
@@ -283,10 +279,10 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel116 = new javax.swing.JLabel();
         jLabel117 = new javax.swing.JLabel();
         jPanel39 = new javax.swing.JPanel();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
+        btn_Them_TaiKhoan = new javax.swing.JButton();
+        btn_CapNhat_TaiKhoan = new javax.swing.JButton();
+        btn_Xoa_TaiKhoan = new javax.swing.JButton();
+        btn_Moi_TaiKhoan = new javax.swing.JButton();
         txt_MaNV_TaiKhoan = new javax.swing.JTextField();
         txt_TenDangNhap_TaiKhoan = new javax.swing.JTextField();
         txt_MatKhau_TaiKhoan = new javax.swing.JPasswordField();
@@ -457,18 +453,15 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/Rectangle 5.png"))); // NOI18N
         pnl_Top.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, -3, 110, 36));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(97, 88, 152));
-        jLabel3.setText("Admin:");
-        pnl_Top.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        lbl_VaiTro.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        lbl_VaiTro.setForeground(new java.awt.Color(97, 88, 152));
+        lbl_VaiTro.setText("Quản lí");
+        pnl_Top.add(lbl_VaiTro, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
-        lblUserNameLogin.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        pnl_Top.add(lblUserNameLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 50, 10));
-
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(97, 88, 152));
-        jLabel6.setText("DASHBOARD");
-        pnl_Top.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+        lbl_TenNhanVien.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lbl_TenNhanVien.setForeground(new java.awt.Color(97, 88, 152));
+        lbl_TenNhanVien.setText("Hiến");
+        pnl_Top.add(lbl_TenNhanVien, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(97, 88, 152));
@@ -2248,21 +2241,21 @@ public class Main_Frame extends javax.swing.JFrame {
 
         jPanel39.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 153)));
 
-        jButton18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_add_new_30px.png"))); // NOI18N
-        jButton18.setText("Thêm");
+        btn_Them_TaiKhoan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_Them_TaiKhoan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_add_new_30px.png"))); // NOI18N
+        btn_Them_TaiKhoan.setText("Thêm");
 
-        jButton19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_update_30px.png"))); // NOI18N
-        jButton19.setText("Cập Nhật");
+        btn_CapNhat_TaiKhoan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_CapNhat_TaiKhoan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_update_30px.png"))); // NOI18N
+        btn_CapNhat_TaiKhoan.setText("Cập Nhật");
 
-        jButton20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_delete_30px.png"))); // NOI18N
-        jButton20.setText("Xóa");
+        btn_Xoa_TaiKhoan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_Xoa_TaiKhoan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_delete_30px.png"))); // NOI18N
+        btn_Xoa_TaiKhoan.setText("Xóa");
 
-        jButton21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_Reset_30px.png"))); // NOI18N
-        jButton21.setText("Mới");
+        btn_Moi_TaiKhoan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_Moi_TaiKhoan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_Reset_30px.png"))); // NOI18N
+        btn_Moi_TaiKhoan.setText("Mới");
 
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
@@ -2270,13 +2263,13 @@ public class Main_Frame extends javax.swing.JFrame {
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel39Layout.createSequentialGroup()
                 .addGap(9, 9, 9)
-                .addComponent(jButton18)
+                .addComponent(btn_Them_TaiKhoan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton19)
+                .addComponent(btn_CapNhat_TaiKhoan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton20)
+                .addComponent(btn_Xoa_TaiKhoan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton21)
+                .addComponent(btn_Moi_TaiKhoan)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel39Layout.setVerticalGroup(
@@ -2284,15 +2277,17 @@ public class Main_Frame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel39Layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton18)
-                    .addComponent(jButton19)
-                    .addComponent(jButton20)
-                    .addComponent(jButton21))
+                    .addComponent(btn_Them_TaiKhoan)
+                    .addComponent(btn_CapNhat_TaiKhoan)
+                    .addComponent(btn_Xoa_TaiKhoan)
+                    .addComponent(btn_Moi_TaiKhoan))
                 .addGap(19, 19, 19))
         );
 
+        btn_group_VaiTro.add(rdo_QuanLi_TaiKhoan);
         rdo_QuanLi_TaiKhoan.setText("Quản lí");
 
+        btn_group_VaiTro.add(rdo_NhanVien_TaiKhoan);
         rdo_NhanVien_TaiKhoan.setText("Nhân Viên");
 
         jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Tài Khoản", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(97, 88, 152))); // NOI18N
@@ -3980,6 +3975,7 @@ public class Main_Frame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_CapNhat_KhuyenMai;
     private javax.swing.JButton btn_CapNhat_SanPham;
+    private javax.swing.JButton btn_CapNhat_TaiKhoan;
     private javax.swing.JButton btn_DiemDanh_DiemDanh;
     private javax.swing.JButton btn_First_DiemDanh;
     private javax.swing.JButton btn_First_KhuyenMai;
@@ -3989,6 +3985,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JButton btn_Last_SanPham;
     private javax.swing.JButton btn_Moi_KhuyenMai;
     private javax.swing.JButton btn_Moi_SanPham;
+    private javax.swing.JButton btn_Moi_TaiKhoan;
     private javax.swing.JButton btn_Next_DiemDanh;
     private javax.swing.JButton btn_Next_KhuyenMai;
     private javax.swing.JButton btn_Next_SanPham;
@@ -3997,8 +3994,10 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JButton btn_Previous_SanPham;
     private javax.swing.JButton btn_Them_KhuyenMai;
     private javax.swing.JButton btn_Them_SanPham;
+    private javax.swing.JButton btn_Them_TaiKhoan;
     private javax.swing.JButton btn_Xoa_KhuyenMai;
     private javax.swing.JButton btn_Xoa_SanPham;
+    private javax.swing.JButton btn_Xoa_TaiKhoan;
     private javax.swing.ButtonGroup btn_group_VaiTro;
     private javax.swing.JPanel card_BanHang;
     private javax.swing.JPanel card_DiemDanh;
@@ -4039,10 +4038,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton8;
@@ -4087,7 +4082,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -4120,7 +4114,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
@@ -4243,7 +4236,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel lblOpenTaiKhoan;
     private javax.swing.JLabel lblOpenThongKe;
     private javax.swing.JLabel lblTimer;
-    private javax.swing.JLabel lblUserNameLogin;
     private javax.swing.JLabel lbl_BanHang;
     private javax.swing.JLabel lbl_CaLam_DiemDanh;
     private javax.swing.JLabel lbl_Close_Windows;
@@ -4259,8 +4251,10 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_NhanVien;
     private javax.swing.JLabel lbl_SanPham;
     private javax.swing.JLabel lbl_TaiKhoan;
+    private javax.swing.JLabel lbl_TenNhanVien;
     private javax.swing.JLabel lbl_TenNhanVien_DiemDanh;
     private javax.swing.JLabel lbl_ThongKe;
+    private javax.swing.JLabel lbl_VaiTro;
     private javax.swing.JPanel pnlThongTinSanPham;
     private javax.swing.JPanel pnl_BanHang;
     private javax.swing.JPanel pnl_DiemDanh;

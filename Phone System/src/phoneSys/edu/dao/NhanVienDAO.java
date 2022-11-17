@@ -46,14 +46,13 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
     }
 
     @Override
-    NhanVien selectByid(String id) {
+    public NhanVien selectByid(String id) {
 
         List<NhanVien> list = this.selectBySql(SELECT_BY_ID_SQL, id);
         if (list.isEmpty()) {
             return null;
         }
         return list.get(0);
-
     }
 
     @Override

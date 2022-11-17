@@ -21,16 +21,10 @@ import javax.swing.ImageIcon;
  */
 public class XImage {
 
-//    public static final Image APP_ICON;
-//
-//    static {
-//        String file = "/icon/fpt.png";
-//        APP_ICON = new ImageIcon(XImage.class.getResource(file)).getImage();
-//    }
 
     public static Image getAppIcon() {
         URL url;
-        url = XImage.class.getResource("/img/fpt.png");
+        url = XImage.class.getResource("/phoneSys/edu/view/img/fpt.png");
         return new ImageIcon(url).getImage();
     }
 
