@@ -21,10 +21,11 @@ import phoneSys.edu.ultil.jdbcHelper;
 public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
 
     String INSERT_SQL = "INSERT INTO SanPham(MaSanPham,TenSanPham,HangSanXuat,XuatXu,MauSac,SoLuong,DonGia,HinhAnh, GhiChu) values(?,?,?,?,?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE SanPham set TenSanPham = ?, HangSanXuat = ?, XuatXu = ?, MauSac = ?, SoLuong = ?, DonGia = ?, HinhAnh = ?, TrangThai = True, GhiChu = ? WHERE MaSanPham = ?";
-    String DELETE_SQL = "UPDATE SanPham set TenSanPham = ?, HangSanXuat = ?, XuatXu = ?, MauSac = ?, SoLuong = ?, DonGia = ?, HinhAnh = ?, TrangThai = False, GhiChu = ? WHERE MaSanPham = ?";
+    String UPDATE_SQL = "UPDATE SanPham set TenSanPham = ?, HangSanXuat = ?, XuatXu = ?, MauSac = ?, SoLuong = ?, DonGia = ?, HinhAnh = ?, TrangThai = 'True', GhiChu = ? WHERE MaSanPham = ?";
+    String DELETE_SQL = "UPDATE SanPham set TenSanPham = ?, HangSanXuat = ?, XuatXu = ?, MauSac = ?, SoLuong = ?, DonGia = ?, HinhAnh = ?, TrangThai = 'False', GhiChu = ? WHERE MaSanPham = ?";
     String SELECT_ALL_SQL = "SELECT * FROM SanPham";
     String SELECT_BY_ID_SQL = "SELECT * FROM SanPham WHERE MaSanPham = ?";
+    String SELECT_BY_HANG_SQL = "SELECT DISTINCT HangSanXuat FROM SanPham";
 
     @Override
     public void insert(SanPham entity) {
@@ -43,7 +44,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         try {
             jdbcHelper.update(UPDATE_SQL,
                     entity.getTenSanPham(), entity.getHangSanXuat(), entity.getXuatXu(), entity.getMauSac(),
-                    entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), entity.isTrangThai(), entity.getGhiChu(), entity.getMaSanPham()
+                    entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), entity.getGhiChu(), entity.getMaSanPham()
             );
         } catch (SQLException ex) {
             Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -59,8 +60,18 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         }
     }
 
+    public void delete_SanPham(SanPham entity) {
+        try {
+            jdbcHelper.update(DELETE_SQL,
+                    entity.getTenSanPham(), entity.getHangSanXuat(), entity.getXuatXu(), entity.getMauSac(),
+                    entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), entity.getGhiChu(), entity.getMaSanPham()
+            );
+        } catch (Exception e) {
+        }
+    }
+
     @Override
-    SanPham selectByid(String key) {
+    public SanPham selectByid(String key) {
         List<SanPham> list = (List<SanPham>) selectBySql(SELECT_BY_ID_SQL, key);
         if (list.isEmpty()) {
             return null;
@@ -97,6 +108,28 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
             return list;
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public List<SanPham> selectByHang() {
+        List<SanPham> list = new ArrayList<SanPham>();
+        
+        try {
+            ResultSet rs = jdbcHelper.query_Single(SELECT_BY_HANG_SQL);
+            while (rs.next()) {
+                list.add((SanPham) rs.getObject(1));
+              System.out.println(rs.getObject(1));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+    
+    public static void main(String[] args) {
+        SanPhamDAO sp = new SanPhamDAO();
+        List<SanPham> li = sp.selectByHang();
+        for (SanPham sanPham : li) {
+            System.out.println(sanPham);
         }
     }
 }
