@@ -10,15 +10,18 @@ package phoneSys.edu.entity;
  * @author NP
  */
 public class SanPham {
+
     String MaSanPham, TenSanPham, HangSanXuat, XuatXu, MauSac;
     int SoLuong;
     float DonGia;
-    String HinhAnh, GhiChu;
+    String HinhAnh;
+    boolean TrangThai;
+    String GhiChu;
 
     public SanPham() {
     }
 
-    public SanPham(String MaSanPham, String TenSanPham, String HangSanXuat, String XuatXu, String MauSac, int SoLuong, float DonGia, String HinhAnh, String GhiChu) {
+    public SanPham(String MaSanPham, String TenSanPham, String HangSanXuat, String XuatXu, String MauSac, int SoLuong, float DonGia, String HinhAnh, boolean TrangThai, String GhiChu) {
         this.MaSanPham = MaSanPham;
         this.TenSanPham = TenSanPham;
         this.HangSanXuat = HangSanXuat;
@@ -27,6 +30,7 @@ public class SanPham {
         this.SoLuong = SoLuong;
         this.DonGia = DonGia;
         this.HinhAnh = HinhAnh;
+        this.TrangThai = TrangThai;
         this.GhiChu = GhiChu;
     }
 
@@ -101,7 +105,18 @@ public class SanPham {
     public void setGhiChu(String GhiChu) {
         this.GhiChu = GhiChu;
     }
-    
-    
-    
+
+    public boolean isTrangThai() {
+        return TrangThai;
+    }
+
+    public void setTrangThai(boolean TrangThai) {
+        this.TrangThai = TrangThai;
+    }
+
+    @Override
+    public String toString() {
+        return "SanPham{" + "MaSanPham=" + MaSanPham + ", TenSanPham=" + TenSanPham + ", HangSanXuat=" + HangSanXuat + ", XuatXu=" + XuatXu + ", MauSac=" + MauSac + ", SoLuong=" + SoLuong + ", DonGia=" + DonGia + ", HinhAnh=" + HinhAnh + ", TrangThai=" + TrangThai + ", GhiChu=" + GhiChu + '}';
+    }
+
 }

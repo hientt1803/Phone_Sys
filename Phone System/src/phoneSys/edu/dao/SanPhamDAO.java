@@ -20,9 +20,9 @@ import phoneSys.edu.ultil.jdbcHelper;
 // hhhhhhhh
 public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
 
-    String INSERT_SQL = "INSERT INTO SanPham(MaSanPham,TenSanPham,HangSanXuat,XuatXu,MauSac,SoLuong,DonGia,HinhAnh, GhiChu) values(?,?,?,?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE SanPham set TenSanPham = ?, HangSanXuat = ?, XuatXu = ?, MauSac = ?, SoLuong = ?, DonGia = ?, HinhAnh = ?, GhiChu = ? WHERE MaSanPham = ?";
-    String DELETE_SQL = "";
+    String INSERT_SQL = "INSERT INTO SanPham(MaSanPham,TenSanPham,HangSanXuat,XuatXu,MauSac,SoLuong,DonGia,HinhAnh, GhiChu) values(?,?,?,?,?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE SanPham set TenSanPham = ?, HangSanXuat = ?, XuatXu = ?, MauSac = ?, SoLuong = ?, DonGia = ?, HinhAnh = ?, TrangThai = True, GhiChu = ? WHERE MaSanPham = ?";
+    String DELETE_SQL = "UPDATE SanPham set TenSanPham = ?, HangSanXuat = ?, XuatXu = ?, MauSac = ?, SoLuong = ?, DonGia = ?, HinhAnh = ?, TrangThai = False, GhiChu = ? WHERE MaSanPham = ?";
     String SELECT_ALL_SQL = "SELECT * FROM SanPham";
     String SELECT_BY_ID_SQL = "SELECT * FROM SanPham WHERE MaSanPham = ?";
 
@@ -31,7 +31,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         try {
             jdbcHelper.update(INSERT_SQL,
                     entity.getMaSanPham(), entity.getTenSanPham(), entity.getHangSanXuat(), entity.getXuatXu(), entity.getMauSac(),
-                    entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), entity.getGhiChu()
+                    entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), entity.isTrangThai(), entity.getGhiChu()
             );
         } catch (SQLException ex) {
             Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -43,7 +43,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         try {
             jdbcHelper.update(UPDATE_SQL,
                     entity.getTenSanPham(), entity.getHangSanXuat(), entity.getXuatXu(), entity.getMauSac(),
-                    entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), entity.getGhiChu(), entity.getMaSanPham()
+                    entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), entity.isTrangThai(), entity.getGhiChu(), entity.getMaSanPham()
             );
         } catch (SQLException ex) {
             Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -88,6 +88,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
                 entity.setSoLuong(rs.getInt("SoLuong"));
                 entity.setDonGia(rs.getFloat("DonGia"));
                 entity.setHinhAnh(rs.getString("HinhAnh"));
+                entity.setTrangThai(rs.getBoolean("TrangThai"));
                 entity.setGhiChu(rs.getString("GhiChu"));
 
                 list.add(entity);
