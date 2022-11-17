@@ -5147,6 +5147,7 @@ public class Main_Frame extends javax.swing.JFrame {
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
         }
     }
@@ -5261,6 +5262,7 @@ public class Main_Frame extends javax.swing.JFrame {
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
         }
     }
@@ -5275,11 +5277,10 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void fillComBoBox_HangSanXuat() {
         SanPhamDAO spDAO = new SanPhamDAO();
-        List<SanPham> listHang = spDAO.selectByHang();
+        List<Object> listHang = spDAO.selectByHang();
         DefaultComboBoxModel model = (DefaultComboBoxModel) this.cbo_HangSanXuat_SanPham.getModel();
         model.removeAllElements();
-        System.out.println(listHang.get(0));
-        for (SanPham sp : listHang) {
+        for (Object sp : listHang) {
             model.addElement(sp);
             System.out.println(sp);
         }
@@ -5309,7 +5310,7 @@ public class Main_Frame extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
-            MsgBox.alert(this, e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -5327,7 +5328,7 @@ public class Main_Frame extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
-            MsgBox.alert(this, e.getMessage());
+            e.printStackTrace();
         }
     }
 

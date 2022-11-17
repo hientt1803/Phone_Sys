@@ -20,19 +20,21 @@ import phoneSys.edu.ultil.jdbcHelper;
 // hhhhhhhh
 public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
 
-    String INSERT_SQL = "INSERT INTO SanPham(MaSanPham,TenSanPham,HangSanXuat,XuatXu,MauSac,SoLuong,DonGia,HinhAnh, GhiChu) values(?,?,?,?,?,?,?,?,?,?)";
+    String INSERT_SQL = "INSERT INTO SanPham(MaSanPham, TenSanPham, HangSanXuat, XuatXu, MauSac, SoLuong, DonGia, HinhAnh, TrangThai, GhiChu) values(?,?,?,?,?,?,?,?,?,?)";
     String UPDATE_SQL = "UPDATE SanPham set TenSanPham = ?, HangSanXuat = ?, XuatXu = ?, MauSac = ?, SoLuong = ?, DonGia = ?, HinhAnh = ?, TrangThai = 'True', GhiChu = ? WHERE MaSanPham = ?";
     String DELETE_SQL = "UPDATE SanPham set TenSanPham = ?, HangSanXuat = ?, XuatXu = ?, MauSac = ?, SoLuong = ?, DonGia = ?, HinhAnh = ?, TrangThai = 'False', GhiChu = ? WHERE MaSanPham = ?";
     String SELECT_ALL_SQL = "SELECT * FROM SanPham";
     String SELECT_BY_ID_SQL = "SELECT * FROM SanPham WHERE MaSanPham = ?";
     String SELECT_BY_HANG_SQL = "SELECT DISTINCT HangSanXuat FROM SanPham";
 
+    List<Object> list = new ArrayList<Object>();
+
     @Override
     public void insert(SanPham entity) {
         try {
             jdbcHelper.update(INSERT_SQL,
                     entity.getMaSanPham(), entity.getTenSanPham(), entity.getHangSanXuat(), entity.getXuatXu(), entity.getMauSac(),
-                    entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), entity.isTrangThai(), entity.getGhiChu()
+                    entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), true, entity.getGhiChu()
             );
         } catch (SQLException ex) {
             Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -111,24 +113,22 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         }
     }
 
-    public List<SanPham> selectByHang() {
-        List<SanPham> list = new ArrayList<SanPham>();
-        
+    public List<Object> selectByHang() {
         try {
             ResultSet rs = jdbcHelper.query_Single(SELECT_BY_HANG_SQL);
             while (rs.next()) {
-                list.add((SanPham) rs.getObject(1));
-              System.out.println(rs.getObject(1));
+                list.add(rs.getObject(1));
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return list;
     }
-    
+
     public static void main(String[] args) {
         SanPhamDAO sp = new SanPhamDAO();
-        List<SanPham> li = sp.selectByHang();
-        for (SanPham sanPham : li) {
+        List<Object> li = sp.selectByHang();
+        for (Object sanPham : li) {
             System.out.println(sanPham);
         }
     }

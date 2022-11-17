@@ -5503,7 +5503,7 @@
                                           <Component id="cbo_XuatXu_SanPham" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txt_GhiChu_SanPham" alignment="0" min="-2" pref="211" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="lblHinhAnh_SanPham" min="-2" pref="137" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                                       <Component id="jPanel25" min="-2" max="-2" attributes="0"/>
@@ -5863,7 +5863,7 @@
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jPanel29" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jPanel28" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jPanel27" alignment="0" pref="52" max="32767" attributes="0"/>
+                                          <Component id="jPanel27" alignment="0" pref="54" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -6003,7 +6003,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cbo_LocTheoXuatXu_SanPham" pref="204" max="32767" attributes="0"/>
+                                          <Component id="cbo_LocTheoXuatXu_SanPham" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
