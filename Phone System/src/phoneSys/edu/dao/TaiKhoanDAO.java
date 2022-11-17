@@ -73,6 +73,16 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
         }
         return list.get(0);
     }
+    
+    String SELECT_BY_TenDangNhap_SQL = "SELECT * FROM TaiKhoan where TenDangNhap = ?";
+    
+    public TaiKhoan selectByTenDangNhap(String key){
+        List<TaiKhoan> list = this.selectBySql(SELECT_BY_TenDangNhap_SQL, key);
+        if(list.isEmpty()){
+            return null;
+        }
+        return list.get(0);
+    }
 
     @Override
     public List<TaiKhoan> selectBySql(String sql, Object... args) {

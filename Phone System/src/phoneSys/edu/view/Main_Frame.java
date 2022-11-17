@@ -58,8 +58,8 @@ public class Main_Frame extends javax.swing.JFrame {
 
     public void init() {
 //      Display UserName
-//        lbl_TenNhanVien.setText(Auth.getNameNhanVien());
-//        lbl_VaiTro.setText(Auth.isLogin()==true?"Quản lí":"Nhân viên");
+        lbl_TenNhanVien.setText(Auth.getNameNhanVien());
+        lbl_VaiTro.setText(Auth.isLogin()==true?"Quản lí":"Nhân viên");
         
 //      Get user Login recent
         LoginAccount1 = lblLoginAccount1.getText();
@@ -2297,7 +2297,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Mã NV", "Tên Đăng Nhập", "Vai Trò"
+                "Mã NV", "Tên Đăng Nhập", "Vai Trò", "Password"
             }
         ));
         jScrollPane13.setViewportView(tbl_DSTaiKhoan_TaiKhoan);
@@ -4325,7 +4325,7 @@ public class Main_Frame extends javax.swing.JFrame {
             List<TaiKhoan> list = tkDAO.selectAll();
             for (TaiKhoan tk : list) {
                 Object[] row = {
-                    tk.getMaNhanVien(), tk.getTenDangNhap(), tk.getQuyen() ? "Quản lí" : "Nhân Viên"
+                    tk.getMaNhanVien(), tk.getTenDangNhap(), tk.getQuyen() ? "Quản lí" : "Nhân Viên" ,tk.getMatKhau()
                 };
                 model.addRow(row);
             }

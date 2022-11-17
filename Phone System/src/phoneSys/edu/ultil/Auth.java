@@ -15,7 +15,7 @@ import phoneSys.edu.entity.TaiKhoan;
 public class Auth {
 
     public static TaiKhoan user = null;
-    public static NhanVien nv = null;
+    public static NhanVien nv = new NhanVien();
     
     public static void clear() {
         Auth.user = null;

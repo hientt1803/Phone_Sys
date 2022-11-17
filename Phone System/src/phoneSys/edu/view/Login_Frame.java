@@ -64,8 +64,6 @@ public class Login_Frame extends javax.swing.JFrame {
         setIconImage(XImage.getAppIcon());
         this.setTitle("Đăng nhập");
 
-
-
     }
 
     /**
@@ -141,7 +139,7 @@ public class Login_Frame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Login");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 6, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(113, 113, 113));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/icons8_user_23px.png"))); // NOI18N
@@ -161,9 +159,19 @@ public class Login_Frame extends javax.swing.JFrame {
                 txt_TenDangNhapFocusLost(evt);
             }
         });
+        txt_TenDangNhap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_TenDangNhapActionPerformed(evt);
+            }
+        });
         jPanel3.add(txt_TenDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 67, 232, 25));
 
         txt_MatKhau.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(131, 131, 131)));
+        txt_MatKhau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_MatKhauActionPerformed(evt);
+            }
+        });
         jPanel3.add(txt_MatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 111, 232, 25));
 
         jPanel1.add(jPanel3);
@@ -227,25 +235,26 @@ public class Login_Frame extends javax.swing.JFrame {
     private void txt_TenDangNhapFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_TenDangNhapFocusGained
         if (txt_TenDangNhap.getText().equals("Tên đăng nhập")) {
             txt_TenDangNhap.setText("");
-            return;
         }
     }//GEN-LAST:event_txt_TenDangNhapFocusGained
 
     private void txt_TenDangNhapFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_TenDangNhapFocusLost
         if (txt_TenDangNhap.getText().length() == 0) {
             txt_TenDangNhap.setText("Tên đăng nhập");
-            return;
         }
     }//GEN-LAST:event_txt_TenDangNhapFocusLost
 
     private void lblLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLoginMouseClicked
-     //        Login
         this.Login();
-        this.requestFocusInWindow();
-        
-        new Main_Frame().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_lblLoginMouseClicked
+
+    private void txt_TenDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_TenDangNhapActionPerformed
+        this.Login();
+    }//GEN-LAST:event_txt_TenDangNhapActionPerformed
+
+    private void txt_MatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_MatKhauActionPerformed
+        this.Login();
+    }//GEN-LAST:event_txt_MatKhauActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,30 +302,40 @@ public class Login_Frame extends javax.swing.JFrame {
     TaiKhoanDAO dao = new TaiKhoanDAO();
     TaiKhoan tk = new TaiKhoan();
 
+    private boolean check() {
+        if (txt_TenDangNhap.getText().equals("")) {
+            txt_TenDangNhap.requestFocus();
+            MsgBox.alert(this, "Chưa nhập vào tên đăng nhập");
+            return false;
+        } else if (txt_MatKhau.getPassword().length == 0) {
+            MsgBox.alert(this, "Chưa nhập vào mật khẩu");
+            txt_MatKhau.requestFocus();
+            return false;
+        }
+
+        return true;
+    }
+
     private void Login() {
-        String manv = txt_TenDangNhap.getText();
+        
+        String tenDN = txt_TenDangNhap.getText();
         String Pass = String.valueOf(txt_MatKhau.getPassword());
-        TaiKhoan tk = dao.selectByid(manv);
-
-        if (txt_TenDangNhap.getText().equals("Tên đăng nhập")) {
-            MsgBox.alert(this, "Chưa nhập tên đăng nhập");
-            return;
+        TaiKhoan tk = dao.selectByTenDangNhap(tenDN);
+        
+        if (check()) {
+            if (tk == null) {
+                MsgBox.alert(this, "Sai tên đăng nhập");
+                txt_TenDangNhap.requestFocus();
+            } else if (!Pass.equals(tk.getMatKhau())) {
+                MsgBox.alert(this, "Mật khẩu không chính xác");
+                txt_MatKhau.requestFocus();
+            } else {
+                Auth.user = tk;
+                new Main_Frame().setVisible(true);
+                this.dispose();
+            }
         }
 
-        if (String.valueOf(txt_MatKhau.getPassword()).equals("")) {
-            MsgBox.alert(this, "Chưa nhập mật khẩu");
-            return;
-        }
-
-        if (tk == null) {
-            MsgBox.alert(this, "Sai tên đăng nhập");
-        } else if (!Pass.equals(tk.getMatKhau())) {
-            MsgBox.alert(this, "Mật khẩu không chính xác");
-        } else {
-            Auth.user = tk;
-            new Main_Frame().setVisible(true);
-            this.dispose();
-        }
     }
 
 }
