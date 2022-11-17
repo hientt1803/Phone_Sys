@@ -29,10 +29,10 @@ public class XImage {
     }
 
     public static void save(File src) {
-        File dst = new File("logos", src.getName());
+        File dst = new File("./logos", src.getName());
         if (!dst.getParentFile().exists()) {
             dst.getParentFile().mkdirs();
-            //Tạo thư mục logos neeys chưa tồn tại
+            //Tạo thư mục logos neu chưa tồn tại
         }
         try {
             Path from = Paths.get(src.getAbsolutePath());
@@ -45,7 +45,7 @@ public class XImage {
     }
 
     public static ImageIcon read(String fileName) {
-        File path = new File("logos", fileName);
+        File path = new File("./logos", fileName);
         return new ImageIcon(path.getAbsolutePath());
     }
 }

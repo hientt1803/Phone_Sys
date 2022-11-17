@@ -115,7 +115,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
 
     public List<Object> selectByHang() {
         try {
-            ResultSet rs = jdbcHelper.query_Single(SELECT_BY_HANG_SQL);
+            ResultSet rs = jdbcHelper.query(SELECT_BY_HANG_SQL);
             while (rs.next()) {
                 list.add(rs.getObject(1));
             }
