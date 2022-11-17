@@ -1,8 +1,12 @@
 package phoneSys.edu.dao;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import phoneSys.edu.entity.NhanVien;
 import phoneSys.edu.ultil.jdbcHelper;
 
@@ -13,8 +17,8 @@ import phoneSys.edu.ultil.jdbcHelper;
 public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
 
     private String INSERT_SQL = "INSERT INTO NHANVIEN VALUES(?,?,?,?,?,?,?,?,?,?,?) ";
-    private String UPDATE_SQL = "";
-    private String DELETE_SQL = "";
+    private String UPDATE_SQL = "UPDATE NHANVIEN SET TENNHANVIEN = ?, NGAYSINH = ?, GIOITINH = ?, CCCD = ?, SDT = ?, DIACHI = ?, EMAIL = ?, TRANGTHAI = ?, HINHANH = ?, GHICHU = ? WHERE MANHANVIEN = ?";
+    private String DELETE_SQL = "DELETE NhanVien WHERE MaNhanVien = ?";
     private String SELECT_ALL_SQL = "SELECT * FROM NHANVIEN";
     private String SELECT_BY_ID_SQL = "SELECT * FROM NHANVIEN WHERE MANHANVIEN = ?";
 
@@ -22,16 +26,22 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
     public void insert(NhanVien entity) {
 
         try {
-            jdbcHelper.update(INSERT_SQL, entity.getTenNhanVien(), entity.getNgaySinh(), entity.getGioiTinh(), entity.getCCCD(),
-                                          entity.getSDT(), entity.getDiaChi(), entity.getEmail(), entity.getTrangThai(), entity.getHinhAnh(), entity.getGhiChu());
+            jdbcHelper.update(INSERT_SQL, entity.getMaNhanVien(), entity.getTenNhanVien(), entity.getNgaySinh(), entity.getGioiTinh(), entity.getCCCD(),
+                    entity.getSDT(), entity.getDiaChi(), entity.getEmail(), entity.getTrangThai(), entity.getHinhAnh(), entity.getGhiChu());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    public void update(NhanVien entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(NhanVien nhanVien) {
+
+        try {
+            jdbcHelper.update(UPDATE_SQL,nhanVien.getTenNhanVien(), nhanVien.getNgaySinh(), nhanVien.getGioiTinh(), nhanVien.getCCCD(),
+                    nhanVien.getSDT(), nhanVien.getDiaChi(), nhanVien.getEmail(), nhanVien.getTrangThai(), nhanVien.getHinhAnh(), nhanVien.getGhiChu(), nhanVien.getMaNhanVien());
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     @Override
@@ -88,9 +98,8 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
 
     public static void main(String[] args) {
         NhanVienDAO dao = new NhanVienDAO();
+        Date date = new Date(2000, 01, 12);
+        dao.insert(new NhanVien("NV05", "Nguyen Van Teo", date, true, "334522123332", "Vĩnh Long", "0324233444", "teonv@gmail.com", true, "D:/anh", "null"));
 
-//        dao.insert(new NhanVien("NV04", "Nguyen Van Teo", "2000-10-12", Boolean.TRUE, CCCD, DiaChi, SDT, Email, Boolean.TRUE, HinhAnh, GhiChu));
-        
-       
     }
 }
