@@ -9,13 +9,14 @@ package phoneSys.edu.view;
  *
  * @author NP
  */
-public class Add_Hang extends javax.swing.JDialog {
+public class Them_Hang extends javax.swing.JDialog {
 
     public static String Hang;
+
     /**
      * Creates new form Add_Hang
      */
-    public Add_Hang(java.awt.Frame parent, boolean modal) {
+    public Them_Hang(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -32,16 +33,30 @@ public class Add_Hang extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         txt_ThemHang = new javax.swing.JTextField();
         btn_ThemHang = new javax.swing.JButton();
+        btn_Huy = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Thông báo");
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("Nhập Hãng sản xuất");
 
+        btn_ThemHang.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_ThemHang.setForeground(new java.awt.Color(0, 0, 204));
         btn_ThemHang.setText("Thêm");
         btn_ThemHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ThemHangActionPerformed(evt);
+            }
+        });
+
+        btn_Huy.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_Huy.setForeground(new java.awt.Color(0, 0, 204));
+        btn_Huy.setText("Hủy");
+        btn_Huy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_HuyActionPerformed(evt);
             }
         });
 
@@ -50,23 +65,29 @@ public class Add_Hang extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_ThemHang)
-                    .addComponent(jLabel1)
-                    .addComponent(txt_ThemHang, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_ThemHang, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(92, 92, 92)
+                        .addComponent(btn_Huy, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
+                        .addComponent(txt_ThemHang, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(txt_ThemHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btn_ThemHang)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_ThemHang, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Huy, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -74,13 +95,16 @@ public class Add_Hang extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_ThemHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThemHangActionPerformed
-       Hang = txt_ThemHang.getText();
-       Main_Frame.HangSanXuat = Hang;
-       int i = Main_Frame.cbo_HangSanXuat_SanPham.getItemCount();
-       Main_Frame.cbo_HangSanXuat_SanPham.insertItemAt(Hang, i-1);
-        Main_Frame.cbo_HangSanXuat_SanPham.setSelectedIndex(i-1);
+        Hang = txt_ThemHang.getText();
+        int i = Main_Frame.cbo_HangSanXuat_SanPham.getItemCount();
+        Main_Frame.cbo_HangSanXuat_SanPham.insertItemAt(Hang, i - 1);
+        Main_Frame.cbo_HangSanXuat_SanPham.setSelectedIndex(i - 1);
         this.dispose();
     }//GEN-LAST:event_btn_ThemHangActionPerformed
+
+    private void btn_HuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HuyActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_HuyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -99,20 +123,23 @@ public class Add_Hang extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Add_Hang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Them_Hang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Add_Hang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Them_Hang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Add_Hang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Them_Hang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Add_Hang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Them_Hang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Add_Hang dialog = new Add_Hang(new javax.swing.JFrame(), true);
+                Them_Hang dialog = new Them_Hang(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -125,6 +152,7 @@ public class Add_Hang extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Huy;
     private javax.swing.JButton btn_ThemHang;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txt_ThemHang;

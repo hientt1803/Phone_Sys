@@ -48,13 +48,7 @@ public class jdbcHelper {
 
         return stmt;
     }
-
-    public static PreparedStatement getStmt_Single(String sql) throws SQLException {
-        Connection conn = DriverManager.getConnection(dburl, user, pass);
-        PreparedStatement stmt;
-        stmt = conn.prepareStatement(sql);
-        return stmt;
-    }
+    
     public static int update(String sql, Object... args) throws SQLException {
         try {
             PreparedStatement stmt = jdbcHelper.getStmt(sql, args);
@@ -70,11 +64,6 @@ public class jdbcHelper {
         PreparedStatement stmt = jdbcHelper.getStmt(sql, args);
         return stmt.executeQuery();
     }
-
-     public static ResultSet query_Single(String sql) throws SQLException {
-        PreparedStatement stmt = jdbcHelper.getStmt_Single(sql);
-        return stmt.executeQuery();
-    }
      
     public static Object value(String sql, Object... args) {
         try {
@@ -86,17 +75,6 @@ public class jdbcHelper {
             return null;
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-    }
-    public static void main(String[] args) {
-        jdbcHelper jdbc = new jdbcHelper();
-        try {
-            ResultSet rs =  jdbc.query_Single("SELECT DISTINCT HangSanXuat FROM SanPham");
-            while(rs.next()){
-            System.out.println(rs.getObject(1));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(jdbcHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

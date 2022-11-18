@@ -26,8 +26,12 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     String SELECT_ALL_SQL = "SELECT * FROM SanPham";
     String SELECT_BY_ID_SQL = "SELECT * FROM SanPham WHERE MaSanPham = ?";
     String SELECT_BY_HANG_SQL = "SELECT DISTINCT HangSanXuat FROM SanPham";
-
-    List<Object> list = new ArrayList<Object>();
+    String SELECT_BY_MAUSAC_SQL = "SELECT DISTINCT MauSac FROM SanPham";
+    String SELECT_BY_XUATXU_SQL = "SELECT DISTINCT XuatXu FROM SanPham";
+    String SELECT_LOC_HANG_SQL = "SELECT * FROM SanPham WHERE HangSanXuat = ?";
+    String SELECT_LOC_MAUSAC_SQL = "SELECT * FROM SanPham WHERE MauSac = ?";
+    String SELECT_LOC_XUATXU_SQL = "SELECT * FROM SanPham WHERE XuatXu = ?";
+ 
 
     @Override
     public void insert(SanPham entity) {
@@ -114,22 +118,53 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     }
 
     public List<Object> selectByHang() {
+       List<Object> list_Hang = new ArrayList<Object>();
         try {
             ResultSet rs = jdbcHelper.query(SELECT_BY_HANG_SQL);
             while (rs.next()) {
-                list.add(rs.getObject(1));
+                list_Hang.add(rs.getObject(1));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return list;
+        return list_Hang;
     }
-
-    public static void main(String[] args) {
-        SanPhamDAO sp = new SanPhamDAO();
-        List<Object> li = sp.selectByHang();
-        for (Object sanPham : li) {
-            System.out.println(sanPham);
+    
+    public List<Object> selectByMauSac() {
+      List<Object> list_Mau = new ArrayList<Object>();
+        try {
+            ResultSet rs = jdbcHelper.query(SELECT_BY_MAUSAC_SQL);
+            while (rs.next()) {
+                list_Mau.add(rs.getObject(1));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return list_Mau;
+    }
+    
+    public List<Object> selectByXuatXu() {
+       List<Object> list_XuatXu = new ArrayList<Object>();
+        try {
+            ResultSet rs = jdbcHelper.query(SELECT_BY_XUATXU_SQL);
+            while (rs.next()) {
+                list_XuatXu.add(rs.getObject(1));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list_XuatXu;
+    }
+    
+    public List<SanPham> selectAll_TheoHangSanXuat(String hang) {
+        return (List<SanPham>) this.selectBySql(SELECT_LOC_HANG_SQL, hang);
+    }
+    
+    public List<SanPham> selectAll_TheoMauSac(String mau) {
+        return (List<SanPham>) this.selectBySql(SELECT_LOC_MAUSAC_SQL, mau);
+    }
+    
+    public List<SanPham> selectAll_TheoXuatXu(String xuatxu) {
+        return (List<SanPham>) this.selectBySql(SELECT_LOC_XUATXU_SQL, xuatxu);
     }
 }
