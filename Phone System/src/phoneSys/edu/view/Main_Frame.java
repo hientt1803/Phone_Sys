@@ -66,9 +66,14 @@ public class Main_Frame extends javax.swing.JFrame {
         lblOpen.setVisible(true);
 
         this.init();
+//        Trong Hien
+        this.init_HeThong();
         this.init_TaiKhoan();
+        
+//        Minh Duong
         this.init_SanPham();
         this.init_DiemDanh();
+        
 //        Hoai Nam
         initCardNhanVien();
     }
@@ -241,11 +246,11 @@ public class Main_Frame extends javax.swing.JFrame {
         txt_TenDangNhap_HeThong = new javax.swing.JTextField();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txt_MatKhau_HeThong = new javax.swing.JTextField();
         jLabel73 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txt_MatKhauMoi_HeThong = new javax.swing.JTextField();
         jLabel74 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txt_Confirm_HeThong = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         lblLoginAccount1 = new javax.swing.JLabel();
@@ -1837,16 +1842,16 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField2)
+                        .addComponent(txt_MatKhau_HeThong)
                         .addComponent(jLabel72)
                         .addComponent(jLabel71)
                         .addComponent(txt_TenDangNhap_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(btn_submit_HeThong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField4)
+                        .addComponent(txt_Confirm_HeThong)
                         .addComponent(jLabel74)
                         .addComponent(jLabel73)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_MatKhauMoi_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
@@ -1861,17 +1866,17 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel72)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_MatKhau_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel73)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_MatKhauMoi_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel21Layout.createSequentialGroup()
                         .addComponent(jLabel74)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_Confirm_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38))
                     .addComponent(btn_submit_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
@@ -5005,7 +5010,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Previous_DiemDanhActionPerformed
 
     private void btn_Next_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Next_DiemDanhActionPerformed
-          if (tbl_DanhSachDiemDanh_DiemDanh.getRowCount() != 0) {
+        if (tbl_DanhSachDiemDanh_DiemDanh.getRowCount() != 0) {
             if (row_tbl_DiemDanh == tbl_DanhSachDiemDanh_DiemDanh.getRowCount() - 1) {
                 btn_First_DiemDanhActionPerformed(evt);
             } else {
@@ -5016,7 +5021,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Next_DiemDanhActionPerformed
 
     private void btn_Last_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Last_DiemDanhActionPerformed
-         if (tbl_DanhSachDiemDanh_DiemDanh.getRowCount() != 0) {
+        if (tbl_DanhSachDiemDanh_DiemDanh.getRowCount() != 0) {
             row_tbl_DiemDanh = tbl_DanhSachDiemDanh_DiemDanh.getRowCount() - 1;
             tbl_DanhSachDiemDanh_DiemDanh.setRowSelectionInterval(row_tbl_DiemDanh, row_tbl_DiemDanh);
         }
@@ -5372,9 +5377,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTable jTable7;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
@@ -5440,6 +5442,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTextArea txa_GhiChu_DiemDanh;
     private javax.swing.JTextArea txa_GhiChu_KhuyenMai;
     private javax.swing.JTextField txt_CCCD_NhanVien;
+    private javax.swing.JTextField txt_Confirm_HeThong;
     private javax.swing.JPasswordField txt_Confirm_TaiKhoan;
     private javax.swing.JTextField txt_DiaChi_NhanVien;
     private javax.swing.JTextField txt_DonGia_SanPham;
@@ -5456,6 +5459,8 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTextField txt_MaNhanVien_NhanVien4;
     private javax.swing.JTextField txt_MaNhanVien_NhanVien5;
     private javax.swing.JTextField txt_MaSanPham_SanPham;
+    private javax.swing.JTextField txt_MatKhauMoi_HeThong;
+    private javax.swing.JTextField txt_MatKhau_HeThong;
     private javax.swing.JPasswordField txt_MatKhau_TaiKhoan;
     private javax.swing.JTextField txt_SoDienThoai_NhanVien;
     private javax.swing.JTextField txt_SoLuong_SanPham;
@@ -5754,7 +5759,7 @@ public class Main_Frame extends javax.swing.JFrame {
 //                          END_CARD_SANPHAM  
     DiemDanhDAO ddDao = new DiemDanhDAO();
     int row_tbl_DiemDanh = -1;
-    
+
     private void init_DiemDanh() {
         fillTable_DiemDanh();
         fillLable_DiemDanh();
@@ -5874,7 +5879,6 @@ public class Main_Frame extends javax.swing.JFrame {
 //        FILL DATA TABLE
         this.FillTable_tbl_DSCoTaiKhoan_TaiKhoan();
         this.FillTable_tbl_DSChuaTaiKhoan_TaiKhoan();
-
     }
 
     private boolean CheckForm_TaiKhoan() {
@@ -6043,16 +6047,54 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
 //                          END_CARD_TAIKHOAN  
-    
 //                          START_CARD_HETHONG 
+    private void init_HeThong() {
+        this.CapNhatMatKhau_HeThong();
+        txt_TenDangNhap_HeThong.setText(Auth.user.getTenDangNhap());
+    }
+
+    private boolean checkForm_HeThong(){
+        
+        TaiKhoan tk = new TaiKhoan();
+        
+        if(txt_MatKhau_HeThong.equals("")){
+            MsgBox.alert(this, "Không để trống mật khẩu");
+            txt_MatKhau_HeThong.requestFocus();
+            return false;
+        }else if(txt_MatKhauMoi_HeThong.equals("")){
+            MsgBox.alert(this, "không để trống mật khẩu mới");
+            txt_MatKhauMoi_HeThong.requestFocus();
+            return false;
+        }else if(txt_Confirm_HeThong.equals("")){
+            MsgBox.alert(this, "không để trống nhập lại mật khẩu mới");
+            txt_Confirm_HeThong.requestFocus();
+            return false;
+        }
+        
+        if(!txt_Confirm_HeThong.getText().equals(txt_MatKhauMoi_HeThong.getText())){
+            MsgBox.alert(this, "Xác nhận mật khẩu không trùng khớp");
+            txt_Confirm_HeThong.requestFocus();
+            return false;
+        }
+        
+        
+        
+        
+        return true;
+    }
     
-       private void CapNhatMatKhau_HeThong(){
-           
-       }
-    
+    private void CapNhatMatKhau_HeThong() {
+        try {
+            if(checkForm_HeThong()){
+                
+            }  
+        } catch (Exception e) {
+            MsgBox.alert(this, "Nhân viên chưa có tài khoản");
+            e.printStackTrace();
+        }
+    }
+
 //                          END_CARD_HETHONG  
-    
-    
 //   ********************** HOAI NAM**********************
     //START_CARD_NHANVIEN
     JFileChooser filenChooser = new JFileChooser();

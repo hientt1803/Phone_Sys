@@ -2476,17 +2476,17 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel17" alignment="1" min="-2" pref="340" max="-2" attributes="0"/>
                                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField2" max="32767" attributes="0"/>
+                                      <Component id="txt_MatKhau_HeThong" max="32767" attributes="0"/>
                                       <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
                                       <Component id="txt_TenDangNhap_HeThong" alignment="0" min="-2" pref="334" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="btn_submit_HeThong" alignment="1" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txt_Confirm_HeThong" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel74" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel73" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField3" alignment="0" min="-2" pref="334" max="-2" attributes="0"/>
+                                      <Component id="txt_MatKhauMoi_HeThong" alignment="0" min="-2" pref="334" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="64" max="32767" attributes="0"/>
@@ -2505,17 +2505,17 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_MatKhau_HeThong" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_MatKhauMoi_HeThong" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txt_Confirm_HeThong" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="btn_submit_HeThong" min="-2" pref="25" max="-2" attributes="0"/>
@@ -2575,7 +2575,7 @@
                         <Property name="text" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField2">
+                    <Component class="javax.swing.JTextField" name="txt_MatKhau_HeThong">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel73">
                       <Properties>
@@ -2588,7 +2588,7 @@
                         <Property name="text" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u m&#x1edb;i:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField3">
+                    <Component class="javax.swing.JTextField" name="txt_MatKhauMoi_HeThong">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel74">
                       <Properties>
@@ -2601,7 +2601,7 @@
                         <Property name="text" type="java.lang.String" value="Nh&#x1ead;p l&#x1ea1;i m&#x1ead;t kh&#x1ea9;u:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField4">
+                    <Component class="javax.swing.JTextField" name="txt_Confirm_HeThong">
                     </Component>
                   </SubComponents>
                 </Container>

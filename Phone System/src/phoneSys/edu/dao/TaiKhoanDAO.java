@@ -113,6 +113,10 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
         return list.get(0);
     }
     
-   
+    String UPDATE_PASSWORD = "UPDATE TaiKhoan set MatKhau = ? WHERE TenDangNhap = ?";
+    
+    public TaiKhoan CapNhatMatKhau(String TenDangNhap,String MatKhau){
+        return (TaiKhoan) this.selectBySql(UPDATE_PASSWORD);
+    }
 
 }
