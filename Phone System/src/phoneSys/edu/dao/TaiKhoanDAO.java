@@ -21,7 +21,7 @@ import phoneSys.edu.ultil.jdbcHelper;
  */
 public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
 
-    String INSERT_SQL = "INSERT INTO TaiKhoan(MaNhanVien,TenDangNhap,MatKhau,Quyen,GhiChu) values(?,?,?,?,?,?)";
+    String INSERT_SQL = "INSERT INTO TaiKhoan(MaNhanVien,TenDangNhap,MatKhau,Quyen,GhiChu) values(?,?,?,?,?)";
     String UPDATE_SQL = "UPDATE TaiKhoan set TenDangNhap = ? , MatKhau = ? , Quyen = ? ,GhiChu = ? where  MaNhanVien = ?";
     String DELETE_SQL = "DELETE FROM TaiKhoan where MaNhanVien = ?";
     String SELECT_ALL_SQL = "SELECT * FROM TaiKhoan";
@@ -31,8 +31,11 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
     public void insert(TaiKhoan entity) {
         try {
             jdbcHelper.update(INSERT_SQL,
-                    entity.getMaNhanVien(), entity.getTenDangNhap(), entity.getMatKhau(),
-                    entity.getQuyen(), entity.getGhiChu()
+                    entity.getMaNhanVien(),
+                    entity.getTenDangNhap(),
+                    entity.getMatKhau(),
+                    entity.getQuyen(),
+                    null
             );
         } catch (SQLException ex) {
             Logger.getLogger(TaiKhoanDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -43,8 +46,11 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
     public void update(TaiKhoan entity) {
         try {
             jdbcHelper.update(UPDATE_SQL,
-                    entity.getMaNhanVien(), entity.getTenDangNhap(), entity.getMatKhau(),
-                    entity.getQuyen(), entity.getGhiChu()
+                    entity.getTenDangNhap(),
+                    entity.getMatKhau(),
+                    entity.getQuyen(),
+                    null,
+                    entity.getMaNhanVien()
             );
         } catch (SQLException ex) {
             Logger.getLogger(TaiKhoanDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -73,16 +79,6 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
         }
         return list.get(0);
     }
-    
-    String SELECT_BY_TenDangNhap_SQL = "SELECT * FROM TaiKhoan where TenDangNhap = ?";
-    
-    public TaiKhoan selectByTenDangNhap(String key){
-        List<TaiKhoan> list = this.selectBySql(SELECT_BY_TenDangNhap_SQL, key);
-        if(list.isEmpty()){
-            return null;
-        }
-        return list.get(0);
-    }
 
     @Override
     public List<TaiKhoan> selectBySql(String sql, Object... args) {
@@ -106,5 +102,17 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
         }
         return null;
     }
+
+    String SELECT_BY_TenDangNhap_SQL = "SELECT * FROM TaiKhoan where TenDangNhap = ?";
+
+    public TaiKhoan selectByTenDangNhap(String key) {
+        List<TaiKhoan> list = this.selectBySql(SELECT_BY_TenDangNhap_SQL, key);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list.get(0);
+    }
+    
+   
 
 }

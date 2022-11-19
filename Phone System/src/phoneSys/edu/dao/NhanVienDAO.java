@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import phoneSys.edu.entity.NhanVien;
+import phoneSys.edu.entity.TaiKhoan;
 import phoneSys.edu.ultil.jdbcHelper;
 
 /**
@@ -37,7 +38,7 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
     public void update(NhanVien nhanVien) {
 
         try {
-            jdbcHelper.update(UPDATE_SQL,nhanVien.getTenNhanVien(), nhanVien.getNgaySinh(), nhanVien.getGioiTinh(), nhanVien.getCCCD(),
+            jdbcHelper.update(UPDATE_SQL, nhanVien.getTenNhanVien(), nhanVien.getNgaySinh(), nhanVien.getGioiTinh(), nhanVien.getCCCD(),
                     nhanVien.getSDT(), nhanVien.getDiaChi(), nhanVien.getEmail(), nhanVien.getTrangThai(), nhanVien.getHinhAnh(), nhanVien.getGhiChu(), nhanVien.getMaNhanVien());
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -96,10 +97,16 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
         return list;
     }
 
-    public static void main(String[] args) {
-        NhanVienDAO dao = new NhanVienDAO();
-        Date date = new Date(2000, 01, 12);
-        dao.insert(new NhanVien("NV05", "Nguyen Van Teo", date, true, "334522123332", "Vĩnh Long", "0324233444", "teonv@gmail.com", true, "D:/anh", "null"));
+    String SELECT_NOTIN_TAIKHOAN = "SELECT * FROM NhanVien where MaNhanVien NOT IN (SELECT MaNhanVien FROM TaiKhoan)";
 
+    public List<NhanVien> SelectNotInTaiKhoan() {
+        return this.selectBySql(SELECT_NOTIN_TAIKHOAN);
     }
+
+//    public static void main(String[] args) {
+//        NhanVienDAO dao = new NhanVienDAO();
+//        Date date = new Date(2000, 01, 12);
+//        dao.insert(new NhanVien("NV05", "Nguyen Van Teo", date, true, "334522123332", "Vĩnh Long", "0324233444", "teonv@gmail.com", true, "D:/anh", "null"));
+//
+//    }
 }

@@ -2339,15 +2339,14 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel39Layout.setHorizontalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel39Layout.createSequentialGroup()
-                .addGap(9, 9, 9)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addComponent(btn_Them_TaiKhoan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_CapNhat_TaiKhoan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_Xoa_TaiKhoan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Moi_TaiKhoan)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btn_Moi_TaiKhoan))
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2405,9 +2404,9 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel37Layout.setHorizontalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel37Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel37Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel117)
                             .addComponent(jLabel116)
@@ -2419,18 +2418,18 @@ public class Main_Frame extends javax.swing.JFrame {
                             .addGroup(jPanel37Layout.createSequentialGroup()
                                 .addComponent(rdo_QuanLi_TaiKhoan)
                                 .addGap(18, 18, 18)
-                                .addComponent(rdo_NhanVien_TaiKhoan)
-                                .addGap(178, 178, 178))
+                                .addComponent(rdo_NhanVien_TaiKhoan))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel37Layout.createSequentialGroup()
                                 .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txt_MaNV_TaiKhoan, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txt_MaNV_TaiKhoan, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
                                     .addComponent(txt_TenDangNhap_TaiKhoan, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txt_MatKhau_TaiKhoan, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txt_Confirm_TaiKhoan))
                                 .addGap(84, 84, 84))))
                     .addGroup(jPanel37Layout.createSequentialGroup()
-                        .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(92, 92, 92)))
+                        .addGap(25, 25, 25)
+                        .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
@@ -5665,8 +5664,8 @@ public class Main_Frame extends javax.swing.JFrame {
     private void FillTable_tbl_DSChuaTaiKhoan_TaiKhoan() {
         DefaultTableModel model = (DefaultTableModel) tbl_DSChuaTaiKhoan_TaiKhoan.getModel();
         model.setRowCount(0);
-        try {
-            List<NhanVien> list = nvDAO.selectAll();
+        try {      
+        List<NhanVien> list = nvDAO.SelectNotInTaiKhoan();        
             for (NhanVien nv : list) {
                 Object[] row = {
                     nv.getMaNhanVien(), nv.getTenNhanVien(), nv.getNgaySinh(), nv.getGioiTinh() ? "Nam" : "Nữ", nv.getSDT(), nv.getEmail(), nv.getDiaChi(),
@@ -5707,20 +5706,14 @@ public class Main_Frame extends javax.swing.JFrame {
 
         String MaNV = txt_MaNV_TaiKhoan.getText();
         String TenDangNhap = txt_TenDangNhap_TaiKhoan.getText();
-        String MatKhau = txt_MatKhau_TaiKhoan.getPassword().toString();
+        String MatKhau = String.valueOf(txt_MatKhau_TaiKhoan.getPassword());
 
-        boolean VaiTro = false;
-
-        if (rdo_QuanLi_TaiKhoan.isSelected()) {
-            VaiTro = true;
-        } else {
-            VaiTro = false;
-        }
+        boolean isQuanLi = rdo_QuanLi_TaiKhoan.isSelected();
 
         tk.setMaNhanVien(MaNV);
         tk.setTenDangNhap(TenDangNhap);
         tk.setMatKhau(MatKhau);
-        tk.setQuyen(VaiTro);
+        tk.setQuyen(isQuanLi);
 
         return tk;
     }
@@ -5943,6 +5936,7 @@ public class Main_Frame extends javax.swing.JFrame {
         NhanVien nv = this.getFormNhanVien();
         nhanVienDAO.insert(nv);
         this.fillToTable_NhanVien_NhanVien();
+        this.FillTable_tbl_DSChuaTaiKhoan_TaiKhoan();
         String[] opts = {"Có, tiếp tục tạo Tài Khoản", "Không, để sau"};
         int option = MsgBox.options(this, "Thêm thông tim Nhân Viên thành công !", opts);
         if (option == 0) {

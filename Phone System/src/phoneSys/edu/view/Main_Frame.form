@@ -3505,9 +3505,9 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jLabel117" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel116" min="-2" max="-2" attributes="0"/>
@@ -3521,11 +3521,10 @@
                                               <Component id="rdo_QuanLi_TaiKhoan" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="rdo_NhanVien_TaiKhoan" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="txt_MaNV_TaiKhoan" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txt_MaNV_TaiKhoan" alignment="0" pref="272" max="32767" attributes="0"/>
                                                   <Component id="txt_TenDangNhap_TaiKhoan" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="txt_MatKhau_TaiKhoan" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="txt_Confirm_TaiKhoan" max="32767" attributes="0"/>
@@ -3534,11 +3533,12 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jPanel39" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Component id="jPanel39" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace pref="8" max="32767" attributes="0"/>
                               <Component id="jPanel40" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="30" max="32767" attributes="0"/>
                           </Group>
@@ -3643,7 +3643,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                  <EmptySpace pref="9" max="32767" attributes="0"/>
                                   <Component id="btn_Them_TaiKhoan" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btn_CapNhat_TaiKhoan" min="-2" max="-2" attributes="0"/>
@@ -3651,7 +3651,6 @@
                                   <Component id="btn_Xoa_TaiKhoan" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btn_Moi_TaiKhoan" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

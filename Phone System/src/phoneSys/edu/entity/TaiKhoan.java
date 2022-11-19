@@ -71,10 +71,5 @@ public class TaiKhoan {
     public String toString() {
         return "TaiKhoan{" + "MaNhanVien=" + MaNhanVien + ", TenDangNhap=" + TenDangNhap + ", MatKhau=" + MatKhau + ", Quyen=" + Quyen + ", GhiChu=" + GhiChu + '}';
     }
-
-    public TaiKhoan selectByid(String manv) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     
 }
