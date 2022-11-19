@@ -87,7 +87,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
 
     @Override
     public List<SanPham> selectAll() {
-        return (List<SanPham>) this.selectBySql(SELECT_ALL_SQL);
+        return this.selectBySql(SELECT_ALL_SQL);
     }
 
     @Override

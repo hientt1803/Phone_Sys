@@ -12,18 +12,31 @@ import java.util.Date;
  * @author NP
  */
 public class DiemDanh {
-    String MaNhanVien, CaLamViec;
+    int MaDiemDanh;
+    String MaNhanVien,TenNhanVien, CaLamViec;
     Date NgayLamViec;
     String GhiChu;
 
     public DiemDanh() {
     }
 
-    public DiemDanh(String MaNhanVien, String CaLamViec, Date NgayLamViec, String GhiChu) {
+    public DiemDanh(int MaDiemDanh, String MaNhanVien, String TenNhanVien, String CaLamViec, Date NgayLamViec, String GhiChu) {
+        this.MaDiemDanh = MaDiemDanh;
         this.MaNhanVien = MaNhanVien;
+        this.TenNhanVien = TenNhanVien;
         this.CaLamViec = CaLamViec;
         this.NgayLamViec = NgayLamViec;
         this.GhiChu = GhiChu;
+    }
+
+   
+
+    public int getMaDiemDanh() {
+        return MaDiemDanh;
+    }
+
+    public void setMaDiemDanh(int MaDiemDanh) {
+        this.MaDiemDanh = MaDiemDanh;
     }
 
     public String getMaNhanVien() {
@@ -32,6 +45,14 @@ public class DiemDanh {
 
     public void setMaNhanVien(String MaNhanVien) {
         this.MaNhanVien = MaNhanVien;
+    }
+
+    public String getTenNhanVien() {
+        return TenNhanVien;
+    }
+
+    public void setTenNhanVien(String TenNhanVien) {
+        this.TenNhanVien = TenNhanVien;
     }
 
     public String getCaLamViec() {
