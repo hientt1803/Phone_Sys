@@ -21,6 +21,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -2573,6 +2574,11 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_DiemDanh_DiemDanh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_DiemDanh_DiemDanh.setForeground(new java.awt.Color(97, 88, 152));
         btn_DiemDanh_DiemDanh.setText("Điểm Danh");
+        btn_DiemDanh_DiemDanh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DiemDanh_DiemDanhActionPerformed(evt);
+            }
+        });
 
         jLabel87.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel87.setText("Quy định: Điểm danh trong 30 phút đầu của ca làm");
@@ -2624,18 +2630,38 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_First_DiemDanh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_First_DiemDanh.setForeground(new java.awt.Color(97, 88, 152));
         btn_First_DiemDanh.setText("<<");
+        btn_First_DiemDanh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_First_DiemDanhActionPerformed(evt);
+            }
+        });
 
         btn_Previous_DiemDanh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_Previous_DiemDanh.setForeground(new java.awt.Color(97, 88, 152));
         btn_Previous_DiemDanh.setText("|<");
+        btn_Previous_DiemDanh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Previous_DiemDanhActionPerformed(evt);
+            }
+        });
 
         btn_Next_DiemDanh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_Next_DiemDanh.setForeground(new java.awt.Color(97, 88, 152));
         btn_Next_DiemDanh.setText(">|");
+        btn_Next_DiemDanh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Next_DiemDanhActionPerformed(evt);
+            }
+        });
 
         btn_Last_DiemDanh.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_Last_DiemDanh.setForeground(new java.awt.Color(97, 88, 152));
         btn_Last_DiemDanh.setText(">>");
+        btn_Last_DiemDanh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Last_DiemDanhActionPerformed(evt);
+            }
+        });
 
         btn_Refesh_DiemDanh.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btn_Refesh_DiemDanh.setText("Refesh");
@@ -2663,23 +2689,22 @@ public class Main_Frame extends javax.swing.JFrame {
                     .addComponent(jLabel87)
                     .addComponent(jLabel89)
                     .addComponent(jLabel88)
-                    .addComponent(btn_DiemDanh_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(card_DiemDanhLayout.createSequentialGroup()
-                        .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel51)
-                            .addComponent(jLabel57)
-                            .addComponent(jLabel80)
-                            .addComponent(jLabel81)
-                            .addComponent(jLabel82))
-                        .addGap(37, 37, 37)
-                        .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_MaNhanVien_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_NgayLamViec_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_CaLam_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbl_TenNhanVien_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(card_DiemDanhLayout.createSequentialGroup()
-                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addGap(82, 82, 82)))))
+                    .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btn_DiemDanh_DiemDanh, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, card_DiemDanhLayout.createSequentialGroup()
+                            .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel51)
+                                .addComponent(jLabel57)
+                                .addComponent(jLabel80)
+                                .addComponent(jLabel81)
+                                .addComponent(jLabel82))
+                            .addGap(37, 37, 37)
+                            .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lbl_MaNhanVien_DiemDanh, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                .addComponent(lbl_NgayLamViec_DiemDanh, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                .addComponent(lbl_CaLam_DiemDanh, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                .addComponent(lbl_TenNhanVien_DiemDanh, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))))
                 .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(card_DiemDanhLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
@@ -4944,6 +4969,62 @@ public class Main_Frame extends javax.swing.JFrame {
         this.Loc_TheoNgayLamViec();
     }//GEN-LAST:event_btn_TimKiemTheoNgay_DiemDanhActionPerformed
 
+    private void btn_DiemDanh_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DiemDanh_DiemDanhActionPerformed
+        Date now = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa");
+        String dateSt = sdf.format(now);
+
+        String hSt = dateSt.substring(0, 2);
+        String mSt = dateSt.substring(3, 5);
+
+        int hInt = Integer.parseInt(hSt);
+        int mInt = Integer.parseInt(mSt);
+
+        boolean isAM = dateSt.endsWith("AM");
+
+        if ((hInt <= 7 && mInt <= 30 && isAM == true) || (hInt <= 13 && mInt <= 30 && isAM == false)) {
+            this.insert_DiemDanh();
+        }
+    }//GEN-LAST:event_btn_DiemDanh_DiemDanhActionPerformed
+
+    private void btn_First_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_First_DiemDanhActionPerformed
+        if (tbl_DanhSachDiemDanh_DiemDanh.getRowCount() != 0) {
+            this.row_tbl_DiemDanh = 0;
+            tbl_DanhSachDiemDanh_DiemDanh.setRowSelectionInterval(row_tbl_DiemDanh, row_tbl_DiemDanh);
+        }
+    }//GEN-LAST:event_btn_First_DiemDanhActionPerformed
+
+    private void btn_Previous_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Previous_DiemDanhActionPerformed
+        if (tbl_DanhSachDiemDanh_DiemDanh.getRowCount() != 0) {
+            if (row_tbl_DiemDanh < 0) {
+                btn_Last_DiemDanhActionPerformed(evt);
+            } else if (row_tbl_DiemDanh == 0) {
+                btn_Last_DiemDanhActionPerformed(evt);
+            } else {
+                row_tbl_DiemDanh--;
+            }
+            tbl_DanhSachDiemDanh_DiemDanh.setRowSelectionInterval(row_tbl_DiemDanh, row_tbl_DiemDanh);
+        }
+    }//GEN-LAST:event_btn_Previous_DiemDanhActionPerformed
+
+    private void btn_Next_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Next_DiemDanhActionPerformed
+          if (tbl_DanhSachDiemDanh_DiemDanh.getRowCount() != 0) {
+            if (row_tbl_DiemDanh == tbl_DanhSachDiemDanh_DiemDanh.getRowCount() - 1) {
+                btn_First_DiemDanhActionPerformed(evt);
+            } else {
+                row_tbl_DiemDanh++;
+            }
+            tbl_DanhSachDiemDanh_DiemDanh.setRowSelectionInterval(row_tbl_DiemDanh, row_tbl_DiemDanh);
+        }
+    }//GEN-LAST:event_btn_Next_DiemDanhActionPerformed
+
+    private void btn_Last_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Last_DiemDanhActionPerformed
+         if (tbl_DanhSachDiemDanh_DiemDanh.getRowCount() != 0) {
+            row_tbl_DiemDanh = tbl_DanhSachDiemDanh_DiemDanh.getRowCount() - 1;
+            tbl_DanhSachDiemDanh_DiemDanh.setRowSelectionInterval(row_tbl_DiemDanh, row_tbl_DiemDanh);
+        }
+    }//GEN-LAST:event_btn_Last_DiemDanhActionPerformed
+
 //    Mouse event
     public void onClick(JPanel jpanel) {
         jpanel.setBackground(new Color(205, 136, 205));
@@ -5674,12 +5755,12 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
 //                          END_CARD_SANPHAM  
-DiemDanhDAO ddDao = new DiemDanhDAO();
-
+    DiemDanhDAO ddDao = new DiemDanhDAO();
+    int row_tbl_DiemDanh = -1;
+    
     private void init_DiemDanh() {
         fillTable_DiemDanh();
-        lbl_MaNhanVien_DiemDanh.setText(Auth.user.getMaNhanVien());
-        lbl_TenNhanVien_DiemDanh.setText(ddDao.selectByTenNhanVien(Auth.user.getMaNhanVien()));
+        fillLable_DiemDanh();
     }
 
     private void fillTable_DiemDanh() {
@@ -5697,6 +5778,28 @@ DiemDanhDAO ddDao = new DiemDanhDAO();
         } catch (Exception e) {
             e.printStackTrace();
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
+        }
+    }
+
+    private DiemDanh getForm_DiemDanh() {
+        DiemDanh dd = new DiemDanh();
+        dd.setMaNhanVien(lbl_MaNhanVien_DiemDanh.getText());
+        //dd.setTenNhanVien(lbl_TenNhanVien_DiemDanh.getText());
+        dd.setCaLamViec(lbl_CaLam_DiemDanh.getText());
+        dd.setNgayLamViec(XDate.toDate(lbl_NgayLamViec_DiemDanh.getText(), "dd/MM/yyyy"));
+        dd.setGhiChu(txa_GhiChu_DiemDanh.getText());
+        return dd;
+    }
+
+    private void insert_DiemDanh() {
+        DiemDanh dd = getForm_DiemDanh();
+        try {
+            ddDao.insert(dd);
+            this.fillTable_DiemDanh();
+            MsgBox.alert(this, "Điểm danh thành công!");
+        } catch (Exception e) {
+            MsgBox.alert(this, "Điểm danh thất bại!");
+            e.printStackTrace();
         }
     }
 
@@ -5728,6 +5831,38 @@ DiemDanhDAO ddDao = new DiemDanhDAO();
                 dd.getCaLamViec(), ngayLamViec, dd.getGhiChu()
             };
             model.addRow(row);
+        }
+    }
+
+    private void fillLable_DiemDanh() {
+        lbl_MaNhanVien_DiemDanh.setText(Auth.user.getMaNhanVien());
+        lbl_TenNhanVien_DiemDanh.setText(ddDao.selectByTenNhanVien(Auth.user.getMaNhanVien()));
+
+        Date now = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa");
+        String dateSt = sdf.format(now);
+
+        String hSt = dateSt.substring(0, 2);
+        String mSt = dateSt.substring(3, 5);
+
+        int hInt = Integer.parseInt(hSt);
+        int mInt = Integer.parseInt(mSt);
+
+        boolean isAM = dateSt.endsWith("AM");
+
+        if (isAM == true && hInt >= 7 && hInt <= 11) {
+            lbl_CaLam_DiemDanh.setText("Ca Sáng");
+        }
+        if (isAM == false && hInt >= 13 && hInt <= 17) {
+            lbl_CaLam_DiemDanh.setText("Ca Chiều");
+        }
+
+        lbl_NgayLamViec_DiemDanh.setText(XDate.toString(new Date(), "dd/MM/yyyy"));
+
+        if ((hInt <= 7 && mInt <= 30 && isAM == true) || (hInt <= 13 && mInt <= 30 && isAM == false)) {
+            btn_DiemDanh_DiemDanh.setEnabled(true);
+        } else {
+            btn_DiemDanh_DiemDanh.setEnabled(false);
         }
     }
 
@@ -5771,8 +5906,8 @@ DiemDanhDAO ddDao = new DiemDanhDAO();
     private void FillTable_tbl_DSChuaTaiKhoan_TaiKhoan() {
         DefaultTableModel model = (DefaultTableModel) tbl_DSChuaTaiKhoan_TaiKhoan.getModel();
         model.setRowCount(0);
-        try {      
-        List<NhanVien> list = nvDAO.SelectNotInTaiKhoan();        
+        try {
+            List<NhanVien> list = nvDAO.SelectNotInTaiKhoan();
             for (NhanVien nv : list) {
                 Object[] row = {
                     nv.getMaNhanVien(), nv.getTenNhanVien(), nv.getNgaySinh(), nv.getGioiTinh() ? "Nam" : "Nữ", nv.getSDT(), nv.getEmail(), nv.getDiaChi(),
@@ -5845,7 +5980,7 @@ DiemDanhDAO ddDao = new DiemDanhDAO();
     private void update_tbl_DaCoTaiKhoan_TaiKhoan() {
         TaiKhoan tk = getForm_ChuaCoTaiKhoan_TaiKhoan();
         try {
-            
+
             tkDAO.update(tk);
 
             this.FillTable_tbl_DSCoTaiKhoan_TaiKhoan();
@@ -5911,8 +6046,6 @@ DiemDanhDAO ddDao = new DiemDanhDAO();
     }
 
 //                          END_CARD_TAIKHOAN  
-    
-    
 //   ********************** HOAI NAM**********************
     //START_CARD_NHANVIEN
     JFileChooser filenChooser = new JFileChooser();

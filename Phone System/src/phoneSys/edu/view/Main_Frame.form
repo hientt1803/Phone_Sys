@@ -3985,24 +3985,23 @@
                               <Component id="jLabel87" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel89" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel88" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn_DiemDanh_DiemDanh" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel80" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel81" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lbl_MaNhanVien_DiemDanh" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                                      <Component id="lbl_NgayLamViec_DiemDanh" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                                      <Component id="lbl_CaLam_DiemDanh" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                                      <Component id="lbl_TenNhanVien_DiemDanh" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jScrollPane8" pref="0" max="32767" attributes="0"/>
-                                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="btn_DiemDanh_DiemDanh" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel80" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel81" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lbl_MaNhanVien_DiemDanh" alignment="0" pref="163" max="32767" attributes="0"/>
+                                          <Component id="lbl_NgayLamViec_DiemDanh" alignment="0" pref="163" max="32767" attributes="0"/>
+                                          <Component id="lbl_CaLam_DiemDanh" alignment="0" pref="163" max="32767" attributes="0"/>
+                                          <Component id="lbl_TenNhanVien_DiemDanh" alignment="0" pref="163" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane8" alignment="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -4200,6 +4199,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec3;m Danh"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_DiemDanh_DiemDanhActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel87">
                   <Properties>
@@ -4331,6 +4333,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_First_DiemDanhActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_Previous_DiemDanh">
                   <Properties>
@@ -4342,6 +4347,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="|&lt;"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Previous_DiemDanhActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_Next_DiemDanh">
                   <Properties>
@@ -4353,6 +4361,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="&gt;|"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Next_DiemDanhActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_Last_DiemDanh">
                   <Properties>
@@ -4364,6 +4375,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Last_DiemDanhActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btn_Refesh_DiemDanh">
                   <Properties>
