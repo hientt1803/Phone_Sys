@@ -8,7 +8,6 @@ package phoneSys.edu.view;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,10 +17,8 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -239,9 +236,9 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
-        jLabel76 = new javax.swing.JLabel();
+        btn_submit_HeThong = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        txtUserName = new javax.swing.JTextField();
+        txt_TenDangNhap_HeThong = new javax.swing.JTextField();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
@@ -1805,31 +1802,31 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel21.setBackground(new java.awt.Color(255, 255, 255));
         jPanel21.setPreferredSize(new java.awt.Dimension(360, 293));
 
-        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/submit.png"))); // NOI18N
-        jLabel76.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_submit_HeThong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phoneSys/edu/view/img/submit.png"))); // NOI18N
+        btn_submit_HeThong.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(97, 88, 152));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Change your password here");
 
-        txtUserName.setEditable(false);
+        txt_TenDangNhap_HeThong.setEditable(false);
 
         jLabel71.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel71.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel71.setText("UserName:");
+        jLabel71.setText("Tên đăng nhập:");
 
         jLabel72.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel72.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel72.setText("Password:");
+        jLabel72.setText("Mật khẩu:");
 
         jLabel73.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel73.setText("New password:");
+        jLabel73.setText("Mật khẩu mới:");
 
         jLabel74.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel74.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel74.setText("Confirm:");
+        jLabel74.setText("Nhập lại mật khẩu:");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -1843,9 +1840,9 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addComponent(jTextField2)
                         .addComponent(jLabel72)
                         .addComponent(jLabel71)
-                        .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_TenDangNhap_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel76, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_submit_HeThong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField4)
                         .addComponent(jLabel74)
                         .addComponent(jLabel73)
@@ -1860,7 +1857,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel71)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_TenDangNhap_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel72)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1876,7 +1873,7 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38))
-                    .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_submit_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -2467,7 +2464,7 @@ public class Main_Frame extends javax.swing.JFrame {
                     .addComponent(jLabel117)
                     .addComponent(rdo_QuanLi_TaiKhoan)
                     .addComponent(rdo_NhanVien_TaiKhoan))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -2742,7 +2739,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel90, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dcs_LocTheoNgay_DiemDanh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addComponent(dcs_LocTheoNgay_DiemDanh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbo_LocTheoCa_DiemDanh)
                     .addComponent(jLabel91, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_DiemDanhLayout.createSequentialGroup()
@@ -5130,6 +5127,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.ButtonGroup btn_group_GioiTinh_NhanVien;
     private javax.swing.ButtonGroup btn_group_TrangThai_NhanVien;
     private javax.swing.ButtonGroup btn_group_VaiTro;
+    private javax.swing.JLabel btn_submit_HeThong;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel card_BanHang;
     private javax.swing.JPanel card_DiemDanh;
@@ -5273,7 +5271,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
@@ -5442,7 +5439,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTable tbl_DanhSachSanPham_SanPham;
     private javax.swing.JTextArea txa_GhiChu_DiemDanh;
     private javax.swing.JTextArea txa_GhiChu_KhuyenMai;
-    private javax.swing.JTextField txtUserName;
     private javax.swing.JTextField txt_CCCD_NhanVien;
     private javax.swing.JPasswordField txt_Confirm_TaiKhoan;
     private javax.swing.JTextField txt_DiaChi_NhanVien;
@@ -5463,6 +5459,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JPasswordField txt_MatKhau_TaiKhoan;
     private javax.swing.JTextField txt_SoDienThoai_NhanVien;
     private javax.swing.JTextField txt_SoLuong_SanPham;
+    private javax.swing.JTextField txt_TenDangNhap_HeThong;
     private javax.swing.JTextField txt_TenDangNhap_TaiKhoan;
     private javax.swing.JTextField txt_TenKhuyenMai_KhuyenMai;
     private javax.swing.JTextField txt_TenNhanVien_NhanVien;
@@ -6046,6 +6043,16 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
 //                          END_CARD_TAIKHOAN  
+    
+//                          START_CARD_HETHONG 
+    
+       private void CapNhatMatKhau_HeThong(){
+           
+       }
+    
+//                          END_CARD_HETHONG  
+    
+    
 //   ********************** HOAI NAM**********************
     //START_CARD_NHANVIEN
     JFileChooser filenChooser = new JFileChooser();

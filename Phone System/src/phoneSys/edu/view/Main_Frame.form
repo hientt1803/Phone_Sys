@@ -2479,10 +2479,10 @@
                                       <Component id="jTextField2" max="32767" attributes="0"/>
                                       <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtUserName" alignment="0" min="-2" pref="334" max="-2" attributes="0"/>
+                                      <Component id="txt_TenDangNhap_HeThong" alignment="0" min="-2" pref="334" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel76" alignment="1" min="-2" pref="90" max="-2" attributes="0"/>
+                                      <Component id="btn_submit_HeThong" alignment="1" min="-2" pref="90" max="-2" attributes="0"/>
                                       <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel74" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel73" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -2501,7 +2501,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtUserName" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_TenDangNhap_HeThong" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2518,7 +2518,7 @@
                                       <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel76" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="btn_submit_HeThong" min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="15" max="32767" attributes="0"/>
                           </Group>
@@ -2526,7 +2526,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel76">
+                    <Component class="javax.swing.JLabel" name="btn_submit_HeThong">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/phoneSys/edu/view/img/submit.png"/>
@@ -2548,7 +2548,7 @@
                         <Property name="text" type="java.lang.String" value="Change your password here"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtUserName">
+                    <Component class="javax.swing.JTextField" name="txt_TenDangNhap_HeThong">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
                       </Properties>
@@ -2561,7 +2561,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="UserName:"/>
+                        <Property name="text" type="java.lang.String" value="T&#xea;n &#x111;&#x103;ng nh&#x1ead;p:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel72">
@@ -2572,7 +2572,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Password:"/>
+                        <Property name="text" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField2">
@@ -2585,7 +2585,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="New password:"/>
+                        <Property name="text" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u m&#x1edb;i:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField3">
@@ -2598,7 +2598,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="33" green="33" red="33" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Confirm:"/>
+                        <Property name="text" type="java.lang.String" value="Nh&#x1ead;p l&#x1ea1;i m&#x1ead;t kh&#x1ea9;u:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField4">
@@ -3580,7 +3580,7 @@
                                   <Component id="rdo_QuanLi_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="rdo_NhanVien_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="6" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jPanel39" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -4051,7 +4051,7 @@
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel90" alignment="1" max="32767" attributes="0"/>
-                              <Component id="dcs_LocTheoNgay_DiemDanh" alignment="1" pref="26" max="32767" attributes="0"/>
+                              <Component id="dcs_LocTheoNgay_DiemDanh" alignment="1" max="32767" attributes="0"/>
                               <Component id="cbo_LocTheoCa_DiemDanh" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel91" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
