@@ -1907,7 +1907,7 @@
                                           </Group>
                                           <Component id="txt_MaNhanVien_NhanVien2" max="32767" attributes="0"/>
                                           <Component id="txt_MaNhanVien_NhanVien1" max="32767" attributes="0"/>
-                                          <Component id="txt_MaNhanVien_NhanVien3" pref="192" max="32767" attributes="0"/>
+                                          <Component id="txt_MaNhanVien_NhanVien3" max="32767" attributes="0"/>
                                           <Component id="jScrollPane17" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="38" max="32767" attributes="0"/>
@@ -2319,7 +2319,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txt_MaNhanVien_NhanVien5" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="jButton10" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
@@ -3580,7 +3580,7 @@
                                   <Component id="rdo_QuanLi_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="rdo_NhanVien_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="6" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jPanel39" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -3681,6 +3681,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Them_TaiKhoanActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="btn_CapNhat_TaiKhoan">
                           <Properties>
@@ -3692,6 +3695,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="C&#x1ead;p Nh&#x1ead;t"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_CapNhat_TaiKhoanActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="btn_Xoa_TaiKhoan">
                           <Properties>
@@ -3703,6 +3709,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Xoa_TaiKhoanActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="btn_Moi_TaiKhoan">
                           <Properties>
@@ -3714,6 +3723,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Moi_TaiKhoanActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3780,7 +3792,7 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="tbl_DSTaiKhoan_TaiKhoan">
+                            <Component class="javax.swing.JTable" name="tbl_DSDaCoTaiKhoan_TaiKhoan">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="4" rowCount="0">
@@ -3818,6 +3830,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbl_DSDaCoTaiKhoan_TaiKhoanMouseClicked"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -3945,6 +3960,9 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbl_DSChuaTaiKhoan_TaiKhoanMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -4517,7 +4535,7 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jPanel46" alignment="0" min="-2" pref="225" max="-2" attributes="0"/>
+                                          <Component id="jPanel46" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jPanel43" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="24" max="32767" attributes="0"/>
@@ -4864,7 +4882,7 @@
                                   <Component id="jLabel125" min="-2" pref="31" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel126" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="8" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5811,7 +5829,7 @@
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jPanel29" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jPanel28" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jPanel27" alignment="0" pref="54" max="32767" attributes="0"/>
+                                          <Component id="jPanel27" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
