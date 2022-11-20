@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -1625,9 +1626,19 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel50.add(btn_Last_NhanVien1);
 
         txt_TimSoDienThoaiKhachHang_KhachHang.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txt_TimSoDienThoaiKhachHang_KhachHang.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_TimSoDienThoaiKhachHang_KhachHangFocusGained(evt);
+            }
+        });
         txt_TimSoDienThoaiKhachHang_KhachHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_TimSoDienThoaiKhachHang_KhachHangActionPerformed(evt);
+            }
+        });
+        txt_TimSoDienThoaiKhachHang_KhachHang.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_TimSoDienThoaiKhachHang_KhachHangKeyReleased(evt);
             }
         });
 
@@ -4939,7 +4950,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Prev_NhanVien1ActionPerformed
 
     private void txt_TimSoDienThoaiKhachHang_KhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_TimSoDienThoaiKhachHang_KhachHangActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txt_TimSoDienThoaiKhachHang_KhachHangActionPerformed
 
     private void btn_ThemKhachHangVaoHoaDon_KhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThemKhachHangVaoHoaDon_KhachHangActionPerformed
@@ -5072,8 +5083,23 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_XoaKhachHang_KhachHangActionPerformed
 
     private void btn_LamMoiKhachHang_KhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LamMoiKhachHang_KhachHangActionPerformed
-lamMoiFormKhachHang();
+        lamMoiFormKhachHang();
     }//GEN-LAST:event_btn_LamMoiKhachHang_KhachHangActionPerformed
+
+    private void txt_TimSoDienThoaiKhachHang_KhachHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_TimSoDienThoaiKhachHang_KhachHangKeyReleased
+       String txt = txt_TimSoDienThoaiKhachHang_KhachHang.getText();
+       
+        if (txt.length() >= 10) {
+            txt_TimSoDienThoaiKhachHang_KhachHang.setText(txt.substring(0,10));
+            return;
+        }
+        filterOnTextfield(tableModelKhachHang_KhachHang_DaXoa, tbl_DSKhachHang_KhachHang, txt_TimSoDienThoaiKhachHang_KhachHang.getText(), 3);
+        timSoDienThoaiKhachHang(evt);
+    }//GEN-LAST:event_txt_TimSoDienThoaiKhachHang_KhachHangKeyReleased
+ 
+    private void txt_TimSoDienThoaiKhachHang_KhachHangFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_TimSoDienThoaiKhachHang_KhachHangFocusGained
+        txt_SoDienThoaiKhachHang_KhachHang.setText("");
+    }//GEN-LAST:event_txt_TimSoDienThoaiKhachHang_KhachHangFocusGained
 
 //    Mouse event
     public void onClick(JPanel jpanel) {
@@ -6473,17 +6499,26 @@ lamMoiFormKhachHang();
         this.fillToTableKhachHang_KhachHang();
     }
 
-    private void lamMoiFormKhachHang(){
+    private void lamMoiFormKhachHang() {
         txt_MaKhachHang_KhachHang.setText("");
-        txt_MaKhachHang_KhachHang.setText("");
-        txt_MaKhachHang_KhachHang.setText("");
-        txt_MaKhachHang_KhachHang.setText("");
-        txt_MaKhachHang_KhachHang.setText("");
-                
-        
+        txt_TenKhachHang_KhachHang.setText("");
+        rdo_Nam_KhachHang.setSelected(true);
+        txt_SoDienThoaiKhachHang_KhachHang.setText("");
+        txt_GhiChuKhachHang_KhachHang.setText("");
+
     }
-    
-    
-    
+
+    private void timSoDienThoaiKhachHang(KeyEvent evt) {
+
+        if (txt_TimSoDienThoaiKhachHang_KhachHang.getText().length() == 10) {
+
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                if (tbl_DSKhachHang_KhachHang.getRowCount() == 0) {
+                    txt_SoDienThoaiKhachHang_KhachHang.setText(txt_TimSoDienThoaiKhachHang_KhachHang.getText());
+                }
+            }
+        }
+
+    }
     //END_CARD_KHACHHANG
 }
