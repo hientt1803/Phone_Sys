@@ -10,19 +10,23 @@ package phoneSys.edu.entity;
  * @author NP
  */
 public class KhachHang {
-    String MaKhachHang, TenKhachHang;
-    Boolean GioiTinh;
-    String SDT, GhiChu;
+
+    private String MaKhachHang, TenKhachHang;
+    private boolean GioiTinh;
+    private String SDT;
+    private boolean trangThai;
+    private String ghiChu;
 
     public KhachHang() {
     }
 
-    public KhachHang(String MaKhachHang, String TenKhachHang, Boolean GioiTinh, String SDT, String GhiChu) {
+    public KhachHang(String MaKhachHang, String TenKhachHang, Boolean GioiTinh, String SDT, boolean trangThai, String ghiChu) {
         this.MaKhachHang = MaKhachHang;
         this.TenKhachHang = TenKhachHang;
         this.GioiTinh = GioiTinh;
         this.SDT = SDT;
-        this.GhiChu = GhiChu;
+        this.trangThai = trangThai;
+        this.ghiChu = ghiChu;
     }
 
     public String getMaKhachHang() {
@@ -41,7 +45,7 @@ public class KhachHang {
         this.TenKhachHang = TenKhachHang;
     }
 
-    public Boolean getGioiTinh() {
+    public boolean isGioiTinh() {
         return GioiTinh;
     }
 
@@ -57,13 +61,27 @@ public class KhachHang {
         this.SDT = SDT;
     }
 
-    public String getGhiChu() {
-        return GhiChu;
+    public boolean isTrangThai() {
+        return trangThai;
     }
 
-    public void setGhiChu(String GhiChu) {
-        this.GhiChu = GhiChu;
+    public void setTrangThai(boolean trangThai) {
+        this.trangThai = trangThai;
     }
+
+    public String getGhiChu() {
+        return ghiChu;
+    }
+
+    public void setGhiChu(String ghiChu) {
+        this.ghiChu = ghiChu;
+    }
+
     
-    
+
+    @Override
+    public String toString() {
+        return this.MaKhachHang;
+
+    }
 }
