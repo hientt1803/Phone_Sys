@@ -18,7 +18,7 @@ public class KhachHangDAO extends PhoneSysDAO<KhachHang, String> {
 
     private String INSERT_SQL = "INSERT INTO KHACHHANG VALUES(?,?,?,?,?,?)";
     private String UPDATE_SQL = "UPDATE KHACHHANG SET TENKHACHHANG = ?, GIOITINH = ?, SDT = ?,  TRANGTHAI = ?,GHICHU = ? WHERE MAKHACHHANG = ?";
-    private String DELETE_SQL = "UPDATE KHACHHANG SET TENKHACHHANG = ?, GIOITINH = ?, SDT = ?,  TRANGTHAI = ?,GHICHU = ? WHERE MAKHACHHANG = ?";
+    private String RESTORE_SQL = "UPDATE KHACHHANG SET TRANGTHAI = ? WHERE MAKHACHHANG = ?";
 
     private String SELECT_ALL_SQL = "SELECT * FROM KHACHHANG";
     private String SELECT_BY_ID_SQL = "SELECT * FROM KHACHHANG WHERE MAKHACHHANG = ?";
@@ -42,6 +42,14 @@ public class KhachHangDAO extends PhoneSysDAO<KhachHang, String> {
 
     }
 
+    public void restore(String id) {
+        try {
+            jdbcHelper.update(RESTORE_SQL, "true", id);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     @Override
     public void delete(String key) {
     }
@@ -58,7 +66,7 @@ public class KhachHangDAO extends PhoneSysDAO<KhachHang, String> {
 
     @Override
     public List<KhachHang> selectBySql(String sql, Object... args) {
-         List<KhachHang> list = new ArrayList<KhachHang>();
+        List<KhachHang> list = new ArrayList<KhachHang>();
 
         try {
             ResultSet rs = jdbcHelper.query(sql, args);
@@ -67,6 +75,7 @@ public class KhachHangDAO extends PhoneSysDAO<KhachHang, String> {
                 KhachHang kh = new KhachHang();
                 kh.setMaKhachHang(rs.getString("MaKhachHang"));
                 kh.setTenKhachHang(rs.getString("TenKhachHang"));
+                kh.setGioiTinh(rs.getBoolean("GioiTinh"));
                 kh.setSDT(rs.getString("SDT"));
                 kh.setTrangThai(rs.getBoolean("TrangThai"));
                 kh.setGhiChu(rs.getString("GhiChu"));

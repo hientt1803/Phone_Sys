@@ -81,7 +81,7 @@ public class KhachHang {
 
     @Override
     public String toString() {
-        return this.MaKhachHang;
+        return this.MaKhachHang + this.GioiTinh;
 
     }
 }
