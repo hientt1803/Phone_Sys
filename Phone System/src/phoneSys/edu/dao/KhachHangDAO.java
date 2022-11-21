@@ -22,6 +22,7 @@ public class KhachHangDAO extends PhoneSysDAO<KhachHang, String> {
 
     private String SELECT_ALL_SQL = "SELECT * FROM KHACHHANG";
     private String SELECT_BY_ID_SQL = "SELECT * FROM KHACHHANG WHERE MAKHACHHANG = ?";
+    private String SELECT_LAST_ID = "select top 1 MaKhachHang from KhachHang order by MaKhachHang  desc";
 
     @Override
     public void insert(KhachHang entity) {
@@ -89,4 +90,22 @@ public class KhachHangDAO extends PhoneSysDAO<KhachHang, String> {
         return list;
     }
 
+    public String getID_KhachHang() {
+        String id = "";
+
+        try {
+            ResultSet rs = jdbcHelper.query(SELECT_LAST_ID);
+            while (rs.next()) {
+                id = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return id;
+    }
+ public static void main(String[] args) {
+        KhachHangDAO dao = new KhachHangDAO();
+        System.out.println(dao.getID_KhachHang());
+    }
 }

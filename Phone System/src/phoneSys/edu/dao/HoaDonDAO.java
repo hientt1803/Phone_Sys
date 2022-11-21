@@ -25,6 +25,7 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
     String DELETE_SQL = "DELETE FROM HoaDon where MaHoaDon = ?";
     String SELECT_ALL_SQL = "SELECT * FROM HoaDon";
     String SELECT_BY_ID_SQL = "SELECT * FROM HoaDon where MaHoaDon = ?";
+    String SELECT_LAST_ID = "select top 1 MaHoaDon from HoaDon order by MaHoaDon  desc";
 
     @Override
     public void insert(HoaDon entity) {
@@ -93,4 +94,23 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
         }
     }
 
+    public String getID_HoaDon() {
+        String id = "";
+
+        try {
+            ResultSet rs = jdbcHelper.query(SELECT_LAST_ID);
+            while (rs.next()) {
+                id = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return id;
+    }
+
+    public static void main(String[] args) {
+        HoaDonDAO dao = new HoaDonDAO();
+        System.out.println(dao.getID_HoaDon());
+    }
 }
