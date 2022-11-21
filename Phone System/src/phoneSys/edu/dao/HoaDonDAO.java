@@ -23,7 +23,7 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
     String INSERT_SQL = "INSERT INTO HoaDon(MaHoaDon,MaKhachHang,MaNhanVien,NgayTao,GhiChu) values(?,?,?,?,?)";
     String UPDATE_SQL = "UPDATE HoaDon set MaKhachHang = ? , MaNhanVien = ? , NgayTao = ? , GhiChu = ? where MaHoaDon = ?";
     String DELETE_SQL = "DELETE FROM HoaDon where MaHoaDon = ?";
-    String SELECT_ALL_SQL = "SELECT * FROM HoaDon";
+    String SELECT_ALL_SQL = "{CALL getHD}";
     String SELECT_BY_ID_SQL = "SELECT * FROM HoaDon where MaHoaDon = ?";
     String SELECT_LAST_ID = "select top 1 MaHoaDon from HoaDon order by MaHoaDon  desc";
 
@@ -109,8 +109,36 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
         return id;
     }
 
+    public List<Object[]> getHoaDon() {
+        String[] cols = {"MaHoaDon", "TenNhanVien", "TenKhachHang", "NgayTao", "ThanhTien"};
+
+        return this.getListOfArray(SELECT_ALL_SQL, cols);
+    }
+
+    public List<Object[]> getListOfArray(String sql, String[] cols, Object... agrs) {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = jdbcHelper.query(sql, agrs);
+            while (rs.next()) {
+                Object[] vals = new Object[cols.length];
+                for (int i = 0; i < cols.length; i++) {
+                    vals[i] = rs.getObject(cols[i]);
+                }
+                list.add(vals);
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+
+        } catch (Exception e) {
+            throw new RuntimeException();
+        }
+    }
+
     public static void main(String[] args) {
         HoaDonDAO dao = new HoaDonDAO();
-        System.out.println(dao.getID_HoaDon());
+        List<Object[]> ls = dao.getHoaDon();
+        for (Object[] l : ls) {
+            System.out.println(l[0] + " " + " " + l[1] + " " + l[2] + " " + " " + l[3]+ " " + " " + l[4]);
+        }
     }
 }
