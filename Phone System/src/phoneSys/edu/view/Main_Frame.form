@@ -2882,7 +2882,7 @@
                                   <Component id="rdo_QuanLi_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="rdo_NhanVien_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="6" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="jPanel39" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -6273,7 +6273,7 @@
                                                       <Component id="lbl_NgayTao_BanHang" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="jLabel97" min="-2" max="-2" attributes="0"/>
@@ -6286,14 +6286,18 @@
                                                       <Component id="lbl_NguoiTao_BanHang" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jScrollPane21" min="-2" pref="243" max="-2" attributes="0"/>
+                                                  <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="btn_HuyGioHang_BanHang" min="-2" pref="152" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="btn_LamMoi_BanHang" min="-2" pref="120" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="btn_ThanhToan_BanHang" min="-2" pref="120" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -6322,9 +6326,14 @@
                                                       <Component id="jLabel109" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="jLabel105" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="txt_TienTraLai_Banhang" min="-2" pref="162" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Component id="btn_ThanhToan_BanHang" min="-2" pref="120" max="-2" attributes="0"/>
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="jLabel105" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                              <Component id="txt_TienTraLai_Banhang" min="-2" pref="162" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="jLabel110" min="-2" max="-2" attributes="0"/>
                                                   </Group>
@@ -6338,29 +6347,41 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel61" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbl_MaHoaDon_BanHang" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                                  <Component id="jLabel61" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lbl_MaHoaDon_BanHang" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                                  <Component id="jLabel96" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lbl_NguoiTao_BanHang" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel96" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbl_NguoiTao_BanHang" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jScrollPane21" min="-2" pref="54" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                                      <Component id="jLabel93" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lbl_NgayTao_BanHang" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="103" groupAlignment="3" attributes="0">
+                                                      <Component id="jLabel97" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lbl_TenKhachHang_BanHang" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel93" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbl_NgayTao_BanHang" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel97" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbl_TenKhachHang_BanHang" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jScrollPane9" min="-2" pref="221" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -6385,10 +6406,10 @@
                                           <Component id="btn_LamMoi_BanHang" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="btn_HuyGioHang_BanHang" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
-                                              <Component id="btn_ThanhToan_BanHang" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
+                                              <Component id="btn_ThanhToan_BanHang" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="22" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -6574,7 +6595,7 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="lbl_TienThanhToan_BanHang">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="320000000"/>
+                                <Property name="text" type="java.lang.String" value="0"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel107">
@@ -6586,6 +6607,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="0"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_TienKhachDua_BanHangKeyReleased"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel108">
                               <Properties>
@@ -6656,12 +6680,37 @@
                                   <Image iconType="3" name="/phoneSys/edu/view/img/icons8_bill_30px.png"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Thanh to&#xe1;n"/>
+                                <Property name="toolTipText" type="java.lang.String" value=""/>
+                                <Property name="enabled" type="boolean" value="false"/>
                                 <Property name="horizontalTextPosition" type="int" value="0"/>
                                 <Property name="verticalTextPosition" type="int" value="3"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ThanhToan_BanHangActionPerformed"/>
                               </Events>
+                            </Component>
+                            <Container class="javax.swing.JScrollPane" name="jScrollPane21">
+                              <AuxValues>
+                                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                              </AuxValues>
+
+                              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                              <SubComponents>
+                                <Component class="javax.swing.JTextArea" name="txt_GhiChu_BanHang">
+                                  <Properties>
+                                    <Property name="columns" type="int" value="20"/>
+                                    <Property name="rows" type="int" value="5"/>
+                                  </Properties>
+                                </Component>
+                              </SubComponents>
+                            </Container>
+                            <Component class="javax.swing.JLabel" name="jLabel47">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI" size="16" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Ghi ch&#xfa;:"/>
+                              </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
