@@ -6,7 +6,7 @@ package phoneSys.edu.ultil;
  */
 public class GenerateID {
 
-    public static String genareteHD(String id) {
+    public static String genareteID(String id) {
         String maCu = id;
         String maMoi_insert = "";
         String type = id.substring(0, 2);
