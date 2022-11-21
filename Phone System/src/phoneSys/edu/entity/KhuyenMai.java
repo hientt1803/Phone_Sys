@@ -13,33 +13,33 @@ import java.util.Date;
  */
 // Test comit 
 public class KhuyenMai {
-    String MaKhuyenMai, TenKhuyenMai;
+    String MaSanPham, TenKhuyenMai;
     Date NgayBatDau, NgayKetThuc;
-    float GiaGiam;
-    String MaSanPham;
+    Float GiaGiam;
     Boolean TrangThai;
     String GhiChu;
 
     public KhuyenMai() {
     }
 
-    public KhuyenMai(String MaKhuyenMai, String TenKhuyenMai, Date NgayBatDau, Date NgayKetThuc, float GiaGiam, String MaSanPham, Boolean TrangThai, String GhiChu) {
-        this.MaKhuyenMai = MaKhuyenMai;
+    public KhuyenMai(String MaSanPham, String TenKhuyenMai, Date NgayBatDau, Date NgayKetThuc, float GiaGiam, Boolean TrangThai, String GhiChu) {
+        this.MaSanPham = MaSanPham;
         this.TenKhuyenMai = TenKhuyenMai;
         this.NgayBatDau = NgayBatDau;
         this.NgayKetThuc = NgayKetThuc;
         this.GiaGiam = GiaGiam;
-        this.MaSanPham = MaSanPham;
         this.TrangThai = TrangThai;
         this.GhiChu = GhiChu;
     }
 
-    public String getMaKhuyenMai() {
-        return MaKhuyenMai;
+   
+
+    public String getMaSanPham() {
+        return MaSanPham;
     }
 
-    public void setMaKhuyenMai(String MaKhuyenMai) {
-        this.MaKhuyenMai = MaKhuyenMai;
+    public void setMaSanPham(String MaSanPham) {
+        this.MaSanPham = MaSanPham;
     }
 
     public String getTenKhuyenMai() {
@@ -74,14 +74,6 @@ public class KhuyenMai {
         this.GiaGiam = GiaGiam;
     }
 
-    public String getMaSanPham() {
-        return MaSanPham;
-    }
-
-    public void setMaSanPham(String MaSanPham) {
-        this.MaSanPham = MaSanPham;
-    }
-
     public Boolean getTrangThai() {
         return TrangThai;
     }
@@ -97,6 +89,7 @@ public class KhuyenMai {
     public void setGhiChu(String GhiChu) {
         this.GhiChu = GhiChu;
     }
+
     
     
 }
