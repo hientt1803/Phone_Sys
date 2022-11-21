@@ -103,6 +103,28 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
         return this.selectBySql(SELECT_NOTIN_TAIKHOAN);
     }
 
+    
+      private String SELECT_LAST_ID = "select top 1 MaNhanVien from NhanVien order by MaNhanVien  desc";
+      
+       public String getID_NhanVien() {
+        String id = "";
+
+        try {
+            ResultSet rs = jdbcHelper.query(SELECT_LAST_ID);
+            while (rs.next()) {
+                id = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return id;
+    }
+       
+       public static void main(String[] args) {
+        NhanVienDAO dao = new NhanVienDAO();
+        System.out.println(dao.getID_NhanVien());
+    }
 //    public static void main(String[] args) {
 //        NhanVienDAO dao = new NhanVienDAO();
 //        Date date = new Date(2000, 01, 12);

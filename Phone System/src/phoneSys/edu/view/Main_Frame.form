@@ -1996,6 +1996,7 @@
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Arial" size="14" style="1"/>
                                 </Property>
+                                <Property name="selected" type="boolean" value="true"/>
                                 <Property name="text" type="java.lang.String" value="Nam"/>
                               </Properties>
                             </Component>
@@ -2232,6 +2233,7 @@
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Arial" size="14" style="1"/>
                                 </Property>
+                                <Property name="text" type="java.lang.String" value="Nh&#x1ead;p s&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i kh&#xe1;ch h&#xe0;ng"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_TimSoDienThoaiKhachHang_KhachHangFocusGained"/>
@@ -2754,90 +2756,6 @@
                       <AbsoluteConstraints x="690" y="90" width="100" height="90"/>
                     </Constraint>
                   </Constraints>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="card_HoaDon">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card_HoaDon"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="475" max="-2" attributes="0"/>
-                          <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="507" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                          <Component id="jLabel54" min="-2" pref="30" max="-2" attributes="0"/>
-                          <EmptySpace pref="469" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel54">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="18" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="98" green="58" red="61" type="rgb"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Card h&#xf3;a &#x111;&#x1a1;n"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="card_HoaDonChiTiet">
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                  <CardConstraints cardName="card_HoaDonChiTiet"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="475" max="-2" attributes="0"/>
-                          <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="445" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                          <Component id="jLabel55" min="-2" pref="30" max="-2" attributes="0"/>
-                          <EmptySpace pref="469" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel55">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="18" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="98" green="58" red="61" type="rgb"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Card h&#xf3;a &#x111;on chi ti&#x1ebf;t"/>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -4838,6 +4756,7 @@
                                 </Property>
                               </Properties>
                               <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_MaNhanVien_NhanVienMouseClicked"/>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_MaNhanVien_NhanVienActionPerformed"/>
                               </Events>
                             </Component>
@@ -4848,6 +4767,8 @@
                                 </Property>
                               </Properties>
                               <Events>
+                                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_TenNhanVien_NhanVienFocusGained"/>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_TenNhanVien_NhanVienMouseClicked"/>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_TenNhanVien_NhanVienActionPerformed"/>
                               </Events>
                             </Component>
@@ -4858,6 +4779,8 @@
                                 </Property>
                               </Properties>
                               <Events>
+                                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_SoDienThoai_NhanVienFocusGained"/>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_SoDienThoai_NhanVienMouseClicked"/>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_SoDienThoai_NhanVienActionPerformed"/>
                               </Events>
                             </Component>
@@ -4868,6 +4791,8 @@
                                 </Property>
                               </Properties>
                               <Events>
+                                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_Email_NhanVienFocusGained"/>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_Email_NhanVienMouseClicked"/>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_Email_NhanVienActionPerformed"/>
                               </Events>
                             </Component>
@@ -4890,6 +4815,7 @@
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Arial" size="14" style="1"/>
                                 </Property>
+                                <Property name="selected" type="boolean" value="true"/>
                                 <Property name="text" type="java.lang.String" value="Nam"/>
                               </Properties>
                             </Component>
@@ -5095,6 +5021,8 @@
                                 </Property>
                               </Properties>
                               <Events>
+                                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_DiaChi_NhanVienFocusGained"/>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_DiaChi_NhanVienMouseClicked"/>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_DiaChi_NhanVienActionPerformed"/>
                               </Events>
                             </Component>
@@ -5105,6 +5033,8 @@
                                 </Property>
                               </Properties>
                               <Events>
+                                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txt_CCCD_NhanVienFocusGained"/>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txt_CCCD_NhanVienMouseClicked"/>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_CCCD_NhanVienActionPerformed"/>
                               </Events>
                             </Component>
@@ -5116,6 +5046,7 @@
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Arial" size="14" style="1"/>
                                 </Property>
+                                <Property name="selected" type="boolean" value="true"/>
                                 <Property name="text" type="java.lang.String" value="&#x110;ang l&#xe0;m"/>
                               </Properties>
                             </Component>
@@ -5335,7 +5266,7 @@
                                           <Component id="cbo_XuatXu_SanPham" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txt_GhiChu_SanPham" alignment="0" min="-2" pref="211" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="32767" attributes="0"/>
                                       <Component id="lblHinhAnh_SanPham" min="-2" pref="137" max="-2" attributes="0"/>
                                       <EmptySpace pref="40" max="32767" attributes="0"/>
                                       <Component id="jPanel25" min="-2" max="-2" attributes="0"/>
@@ -5349,7 +5280,7 @@
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="jPanel25" alignment="0" max="32767" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="1" attributes="0">
                                                   <Component id="lblHinhAnh_SanPham" max="32767" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
@@ -5403,7 +5334,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -5467,7 +5398,7 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="lblHinhAnh_SanPham">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="HINH ANH"/>
+                                <Property name="text" type="java.lang.String" value="Click v&#xe0;o &#x111;&#x1ec3; ch&#x1ecd;n &#x1ea3;nh"/>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
                                     <EtchetBorder/>
@@ -5927,7 +5858,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" pref="158" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane2" pref="137" max="32767" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="btn_First_SanPham" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -6770,7 +6701,7 @@
                                           <Component id="jButton17" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                                  <EmptySpace pref="17" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
