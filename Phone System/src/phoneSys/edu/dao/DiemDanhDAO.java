@@ -26,6 +26,7 @@ public class DiemDanhDAO extends PhoneSysDAO<DiemDanh, String> {
     String SELECT_LOC_NGAY_SQL = "SELECT dd.STT,dd.MaNhanVien,nv.TenNhanVien,dd.CaLamViec,dd.NgayLamViec,dd.GhiChu FROM DiemDanh dd JOIN NhanVien nv ON dd.MaNhanVien = nv.MaNhanVien WHERE NgayLamViec = ?";
     String SELECT_LOC_CA_SQL = "SELECT dd.STT,dd.MaNhanVien,nv.TenNhanVien,dd.CaLamViec,dd.NgayLamViec,dd.GhiChu FROM DiemDanh dd JOIN NhanVien nv ON dd.MaNhanVien = nv.MaNhanVien WHERE CaLamViec = ?";
     String SELECT_TENNV_SQL = "SELECT nv.TenNhanVien FROM NhanVien nv JOIN TaiKhoan tk ON nv.MaNhanVien = tk.MaNhanVien WHERE tk.MaNhanVien = ?";
+    String SELECT_MANHAVIENB_SQL = "select distinct MaNhanVien from DiemDanh";
 
     @Override
     public void insert(DiemDanh entity) {
@@ -102,4 +103,27 @@ public class DiemDanhDAO extends PhoneSysDAO<DiemDanh, String> {
         return ma;
     }
 
+    public List<String> getMaNhanVien() {
+
+        List<String> ls = new ArrayList<>();
+
+        try {
+            ResultSet rs = jdbcHelper.query(SELECT_MANHAVIENB_SQL);
+            while (rs.next()) {
+                ls.add(rs.getString(1));
+            }
+            rs.getStatement().close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ls;
+    }
+
+    public static void main(String[] args) {
+        DiemDanhDAO dao = new DiemDanhDAO();
+        List<String> ls = dao.getMaNhanVien();
+        for (String l : ls) {
+            System.out.println(l);
+        }
+    }
 }
