@@ -4983,7 +4983,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_TimSoDienThoaiKhachHang_KhachHangActionPerformed
 
     private void btn_ThemKhachHangVaoHoaDon_KhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThemKhachHangVaoHoaDon_KhachHangActionPerformed
-        // TODO add your handling code here:
+        fillFormHoaDon();
     }//GEN-LAST:event_btn_ThemKhachHangVaoHoaDon_KhachHangActionPerformed
 
     private void txt_TimSoDienThoaiKhachHangDaXoa_KhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_TimSoDienThoaiKhachHangDaXoa_KhachHangActionPerformed
@@ -5116,13 +5116,6 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_LamMoiKhachHang_KhachHangActionPerformed
 
     private void txt_TimSoDienThoaiKhachHang_KhachHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_TimSoDienThoaiKhachHang_KhachHangKeyReleased
-        String txt = txt_TimSoDienThoaiKhachHang_KhachHang.getText();
-
-        if (txt.length() >= 10) {
-            txt_TimSoDienThoaiKhachHang_KhachHang.setText(txt.substring(0, 10));
-            return;
-        }
-        filterOnTextfield(tableModelKhachHang_KhachHang_DaXoa, tbl_DSKhachHang_KhachHang, txt_TimSoDienThoaiKhachHang_KhachHang.getText(), 3);
         timSoDienThoaiKhachHang(evt);
     }//GEN-LAST:event_txt_TimSoDienThoaiKhachHang_KhachHangKeyReleased
 
@@ -5151,12 +5144,12 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Moi_KhuyenMaiActionPerformed
 
     private void tbl_DanhSachKhuyenMai_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DanhSachKhuyenMai_KhuyenMaiMouseClicked
-      this.setForm_KhuyenMai();
-      this.updateStatus_DS_KhuyenMai_KhuyenMai();
+        this.setForm_KhuyenMai();
+        this.updateStatus_DS_KhuyenMai_KhuyenMai();
     }//GEN-LAST:event_tbl_DanhSachKhuyenMai_KhuyenMaiMouseClicked
 
     private void cbo_LocTheoHang_KhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbo_LocTheoHang_KhuyenMaiActionPerformed
-       this.Loc_TheoHangSanXuat_KhuyenMai();
+        this.Loc_TheoHangSanXuat_KhuyenMai();
     }//GEN-LAST:event_cbo_LocTheoHang_KhuyenMaiActionPerformed
 
 //    Mouse event
@@ -6611,7 +6604,6 @@ public class Main_Frame extends javax.swing.JFrame {
         List<KhachHang> listKH = khachHangDAO.selectAll();
 
         listKH.forEach((o) -> {
-            System.out.println("gt  " + o.isGioiTinh());
             boolean gioiTinh = false;
             if (o.isGioiTinh()) {
                 gioiTinh = true;
@@ -6637,7 +6629,6 @@ public class Main_Frame extends javax.swing.JFrame {
         String tenKH = tbl_DSKhachHang_KhachHang.getValueAt(selectedRow_tbl_DSKhachHang, 1).toString();
         String gioiTinh = tbl_DSKhachHang_KhachHang.getValueAt(selectedRow_tbl_DSKhachHang, 2).toString();
         String soDienThoai = tbl_DSKhachHang_KhachHang.getValueAt(selectedRow_tbl_DSKhachHang, 3).toString();
-        System.out.println(tbl_DSKhachHang_KhachHang.getValueAt(selectedRow_tbl_DSKhachHang, 4).toString());
         String ghiChu = tbl_DSKhachHang_KhachHang.getValueAt(selectedRow_tbl_DSKhachHang, 4).toString();
 
         txt_MaKhachHang_KhachHang.setText(maKH);
@@ -6671,7 +6662,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private void themKhachHang_KhachHang() {
         KhachHang kh = this.getFormKhachHang();
         khachHangDAO.insert(kh);
-        System.out.println(kh.toString());
         MsgBox.alert(this, "Thêm thông tin Khách Hàng thành công !");
         this.fillToTableKhachHang_KhachHang();
     }
@@ -6711,16 +6701,33 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     private void timSoDienThoaiKhachHang(KeyEvent evt) {
+        String txt = txt_TimSoDienThoaiKhachHang_KhachHang.getText();
 
-        if (txt_TimSoDienThoaiKhachHang_KhachHang.getText().length() == 10) {
+        if (txt.length() > 10) {
+            txt_TimSoDienThoaiKhachHang_KhachHang.setText(txt.substring(0, 10));
+            return;
+        } else {
+        }
 
+        if (txt.length() == 10) {
             if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
                 if (tbl_DSKhachHang_KhachHang.getRowCount() == 0) {
                     txt_SoDienThoaiKhachHang_KhachHang.setText(txt_TimSoDienThoaiKhachHang_KhachHang.getText());
+                    txt_TenKhachHang_KhachHang.requestFocus();
+//                    tao ma khach hang o day 
                 }
+                return;
             }
         }
+        filterOnTextfield(tableModelKhachHang_KhachHang, tbl_DSKhachHang_KhachHang, txt_TimSoDienThoaiKhachHang_KhachHang.getText(), 3);
 
+    }
+
+    String tenKH = "";
+
+    private void fillFormHoaDon() {
+        tenKH = tbl_DSKhachHang_KhachHang.getValueAt(tbl_DSKhachHang_KhachHang.getSelectedRow(), 1).toString();
+        System.out.println(tenKH);
     }
     //END_CARD_KHACHHANG
 }
