@@ -5507,6 +5507,9 @@
                               </SubComponents>
                             </Container>
                             <Component class="javax.swing.JTextField" name="txt_MaSanPham_SanPham">
+                              <Properties>
+                                <Property name="editable" type="boolean" value="false"/>
+                              </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="txt_TenSanPham_SanPham">
                             </Component>

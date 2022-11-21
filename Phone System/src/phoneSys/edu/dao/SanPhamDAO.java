@@ -31,6 +31,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     String SELECT_LOC_HANG_SQL = "SELECT * FROM SanPham WHERE HangSanXuat = ?";
     String SELECT_LOC_MAUSAC_SQL = "SELECT * FROM SanPham WHERE MauSac = ?";
     String SELECT_LOC_XUATXU_SQL = "SELECT * FROM SanPham WHERE XuatXu = ?";
+    String SELECT_LAST_ID = "select top 1 MaSanPham from SanPham order by MaSanPham desc";
  
 
     @Override
@@ -174,6 +175,19 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         return this.selectBySql(SELECT_BY_NAME_PRODUCT, tenSP);
     }
 
-   
+   public String getID_SanPham() {
+        String id = "";
+
+        try {
+            ResultSet rs = jdbcHelper.query(SELECT_LAST_ID);
+            while (rs.next()) {
+                id = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return id;
+    }
     
 }
