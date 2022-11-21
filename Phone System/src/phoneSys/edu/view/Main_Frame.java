@@ -7232,7 +7232,7 @@ public class Main_Frame extends javax.swing.JFrame {
         });
         
     }
-    
+    // hihi
     private void setFormKhachHang() {
         int selectedRow_tbl_DSKhachHang = tbl_DSKhachHang_KhachHang.getSelectedRow();
         if (selectedRow_tbl_DSKhachHang == -1) {
