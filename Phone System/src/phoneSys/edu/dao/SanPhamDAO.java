@@ -167,4 +167,13 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     public List<SanPham> selectAll_TheoXuatXu(String xuatxu) {
         return (List<SanPham>) this.selectBySql(SELECT_LOC_XUATXU_SQL, xuatxu);
     }
+
+    
+    String SELECT_BY_NAME_PRODUCT = "Select * from SanPham where TenSanPham = ?"; 
+    public List<SanPham> select_All_TheoTenSP(String tenSP) {
+        return this.selectBySql(SELECT_BY_NAME_PRODUCT, tenSP);
+    }
+
+   
+    
 }

@@ -6,23 +6,26 @@ package phoneSys.edu.ultil;
  */
 public class GenerateID {
 
-    public String generate(String id) {
-        String oldID = "";
-        String oldIdSt = oldID.substring(2, oldID.length() - 1);
+    public static String genareteHD(String id) {
+        String maCu = id;
+        String maMoi_insert = "";
+        String type = id.substring(0, 2);
 
-        String type = oldID.substring(0, 2);
-        String insertID = "";
-        int oldIDInt = Integer.parseInt(oldIdSt);
-        if (oldID.equals("")) {
-            oldID = type = "01";
+        if (maCu.equals("")) {
+            maCu = type + "01";
         }
-        int  newIDInt = oldIDInt + 1;
+        String maMoi_St = maCu.substring(2, maCu.length());
 
-//        if (newIDInt<=) {
-//
-//        }
+        int maMoi_int = Integer.parseInt(maMoi_St);
+        maMoi_int++;
 
-        return insertID;
+        if (maMoi_int < 10) {
+            maMoi_insert = type+"0" + String.valueOf(maMoi_int);
+        } else {
+            maMoi_insert = type + String.valueOf(maMoi_int);
+        }
+
+        return maMoi_insert;
     }
 
 }

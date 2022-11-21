@@ -32,4 +32,8 @@ public class Auth {
     public static String getNameNhanVien(){
         return nv.getTenNhanVien();
     }
+    
+    public static String getIDNhanVien(){
+        return nv.getMaNhanVien();
+    }
 }
