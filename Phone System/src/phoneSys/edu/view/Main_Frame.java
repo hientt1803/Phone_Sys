@@ -7447,5 +7447,7 @@ public class Main_Frame extends javax.swing.JFrame {
         }
         return true;
     }
+    
+//    
     //END_CARD_KHACHHANG
 }
