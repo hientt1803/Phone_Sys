@@ -24,6 +24,7 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
     String UPDATE_SQL = "UPDATE HoaDon set MaKhachHang = ? , MaNhanVien = ? , NgayTao = ? , GhiChu = ? where MaHoaDon = ?";
     String DELETE_SQL = "DELETE FROM HoaDon where MaHoaDon = ?";
     String SELECT_ALL_SQL = "{CALL getHD}";
+    String SELECT_PROC_GIAGIAM_SQL = "{CALL getGiaGiam(?)}";
     String SELECT_BY_ID_SQL = "SELECT * FROM HoaDon where MaHoaDon = ?";
     String SELECT_LAST_ID = "select top 1 MaHoaDon from HoaDon order by MaHoaDon  desc";
 
@@ -111,8 +112,12 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
 
     public List<Object[]> getHoaDon() {
         String[] cols = {"MaHoaDon", "TenNhanVien", "TenKhachHang", "NgayTao", "ThanhTien"};
-
         return this.getListOfArray(SELECT_ALL_SQL, cols);
+    }
+
+    public List<Object[]> getGiaGiam(String tenSP) {
+        String[] cols = {"GiaGiam"};
+        return this.getListOfArray(SELECT_PROC_GIAGIAM_SQL, cols, tenSP);
     }
 
     public List<Object[]> getListOfArray(String sql, String[] cols, Object... agrs) {
@@ -138,7 +143,13 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
         HoaDonDAO dao = new HoaDonDAO();
         List<Object[]> ls = dao.getHoaDon();
         for (Object[] l : ls) {
-            System.out.println(l[0] + " " + " " + l[1] + " " + l[2] + " " + " " + l[3]+ " " + " " + l[4]);
+            System.out.println(l[0] + " " + " " + l[1] + " " + l[2] + " " + " " + l[3] + " " + " " + l[4]);
+        }
+        
+        String tenSP = "Iphone X";
+        List<Object[]> ls1 = dao.getGiaGiam(tenSP);
+        for (Object[] o : ls1) {
+            System.out.println(o[0]);
         }
     }
 }
