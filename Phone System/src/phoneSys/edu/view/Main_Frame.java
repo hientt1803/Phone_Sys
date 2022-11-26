@@ -20,7 +20,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -33,9 +32,7 @@ import javax.swing.RowFilter;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.plaf.BorderUIResource;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -6954,14 +6951,28 @@ public class Main_Frame extends javax.swing.JFrame {
     DecimalFormat format = new DecimalFormat("###,###,###");
 
     private void init_BanHang() {
+//        Format Table
+        TableEdit.centerRendererTable(tbl_HoaDon_BanHang);
+        TableEdit.centerRendererTable(tbl_DSHoaDon_BanHang);
+        TableEdit.centerRendererTable(tbl_DSHoaDonChiTiet_BanHang);
+
+//        Default value form BanHang
+        this.defaultFormData();
+
 //        Fill Ban Hang9
         this.FillTable_DS_SanPham_BanHang();
-        TableEdit.centerRendererTable(tbl_HoaDon_BanHang);
         txt_TienTraLai_Banhang.setEditable(false);
 
 //        Fill DS hoaDon , hoa don chi tiet
         this.fillToTableDSHoaDon_BangHang();
         this.fillToTableDSHoaDonChiTiet_BanHang();
+    }
+
+    private void defaultFormData() {
+        lbl_MaHoaDon_BanHang.setText("");
+        lbl_NgayTao_BanHang.setText("");
+        lbl_NguoiTao_BanHang.setText("");
+        lbl_TenKhachHang_BanHang.setText("");
     }
 
     private void ThanhTien_HoaDon_BanHang() {
@@ -6971,7 +6982,7 @@ public class Main_Frame extends javax.swing.JFrame {
             try {
                 donGia_HoaDon_BanHang = Double.parseDouble(tbl_HoaDon_BanHang.getValueAt(x, 3).toString());
                 soLuong_HoaDon_Banhang = Integer.parseInt(tbl_HoaDon_BanHang.getValueAt(x, 4).toString());
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
 
@@ -6982,6 +6993,7 @@ public class Main_Frame extends javax.swing.JFrame {
             listThanhTien = new ArrayList();
             for (int i = 0; i < tbl_HoaDon_BanHang.getRowCount(); i++) {
                 listThanhTien.add(tbl_HoaDon_BanHang.getValueAt(i, 5)); //get the all row values at column index 3
+                thanhTien += Double.parseDouble(listThanhTien.get(i).toString());
             }
 
             for (Object o : listThanhTien) {
@@ -6990,17 +7002,31 @@ public class Main_Frame extends javax.swing.JFrame {
                 }
             }
 
+            for (int i = 0; i < tbl_HoaDon_BanHang.getRowCount(); i++) {
+                thanhTien += Double.parseDouble(String.valueOf(tbl_HoaDon_BanHang.getValueAt(i, 5)));
+
+            }
+
+            System.out.println("Tổng thành tiền: " + thanhTien);
+
             if (thanhTien != 0 && tbl_HoaDon_BanHang.getModel().getRowCount() >= 0) {
-                lbl_TienThanhToan_BanHang.setText(format.format((thanhTien)) + " VNĐ");
+                lbl_TienThanhToan_BanHang.setText(String.valueOf(thanhTien) + " VNĐ");
                 //          Calculator TienThanhToan,KhachDua, ConLai
                 tienKhachDua = Double.parseDouble(txt_TienKhachDua_BanHang.getText());
-                tienConLai = tienKhachDua - tienThanhToan;
+                tienConLai = tienKhachDua - thanhTien;
             }
 
             if (thanhTien == 0 || tbl_HoaDon_BanHang.getModel().getRowCount() < 0) {
                 lbl_TienThanhToan_BanHang.setText("0");
             }
 
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void getSum_ThanhTien_tbl_HoaDon() {
+        try {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
@@ -7038,10 +7064,6 @@ public class Main_Frame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-
-    String Cong_tbl_HoaDon_BanHang = "+";
-    String Tru_tbl_HoaDon_BanHang = "-";
-    String Xoa_tbl_HoaDon_BanHang = "x";
 
     private boolean check_table_HoaDon_BanHang() {
         return true;
@@ -7084,37 +7106,17 @@ public class Main_Frame extends javax.swing.JFrame {
                     };
                     model_tbl_HoaDon.addRow(row);
                     listTenSP.add(tenSP);
-                    for (Object object : listTenSP) {
+                    for (Object o : listTenSP) {
+
                     }
+                    System.out.println("Đon giá: " + list.get(index).getDonGia());
                 }
             }
             isRemove = false;
 
-//          Set thanhTien
-            if (thanhTien != 0 && tbl_HoaDon_BanHang.getModel().getRowCount() >= 0) {
-                lbl_TienThanhToan_BanHang.setText(format.format((thanhTien)) + " VNĐ");
-//          Calculator TienThanhToan,KhachDua, ConLai
-                tienKhachDua = Double.parseDouble(txt_TienKhachDua_BanHang.getText());
-                tienConLai = tienKhachDua - tienThanhToan;
-            }
-
-            if (thanhTien == 0 || tbl_HoaDon_BanHang.getModel().getRowCount() < 0) {
-                lbl_TienThanhToan_BanHang.setText("0");
-            }
-            System.out.println(thanhTien);
-//          
         } catch (Exception e) {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
             e.printStackTrace();
-        }
-    }
-
-    private void getSum_ThanhTien_tbl_HoaDon() {
-        thanhTien = 0.0;
-        for (int i = 0; i < tbl_HoaDon_BanHang.getRowCount(); i++) {
-            if (tbl_HoaDon_BanHang.getRowCount() > 0) {
-                thanhTien = thanhTien + Double.parseDouble(String.valueOf(tbl_HoaDon_BanHang.getValueAt(i, 5)));
-            }
         }
     }
 
@@ -7129,7 +7131,6 @@ public class Main_Frame extends javax.swing.JFrame {
         tbl_HoaDon_BanHang.setValueAt(SoLuong_tbl_HoaDon_BanHang, x, y);
 
         this.ThanhTien_HoaDon_BanHang();
-//        this.FillTable_HoaDon_BanHang();
     }
 
     private void GiamSoLuong_tblHoaDon_BanHang() {
@@ -7151,9 +7152,6 @@ public class Main_Frame extends javax.swing.JFrame {
         }
 
         tbl_HoaDon_BanHang.setValueAt(SoLuong_tbl_HoaDon_BanHang, x, y);
-
-//        this.ThanhTien_HoaDon_BanHang();
-//        this.FillTable_HoaDon_BanHang();
     }
 
     private void XoaSP_tblHoaDon_BanHang() {
@@ -7168,7 +7166,6 @@ public class Main_Frame extends javax.swing.JFrame {
             System.out.println(tienThanhToan);
         }
         lbl_TienThanhToan_BanHang.setText(String.valueOf(tienThanhToan));
-//        this.ThanhTien_HoaDon_BanHang();
     }
 
     private void HuyGioHang_BanHang() {
@@ -7257,8 +7254,7 @@ public class Main_Frame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    
-    
+
 //                        END_CARD_BANHANG
 //   ********************** HOAI NAM**********************
     //START_CARD_NHANVIEN
