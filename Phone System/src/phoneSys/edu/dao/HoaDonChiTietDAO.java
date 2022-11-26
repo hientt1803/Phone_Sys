@@ -23,8 +23,14 @@ public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
     String INSERT_SQL = "INSERT INTO HoaDonChiTiet(MaHoaDonChiTiet,MaHoaDon,MaSanPham,SoLuong,GhiChu) values(?,?,?,?)";
     String UPDATE_SQL = "UPDATE HoaDonChiTiet set MaHoaDon = ? , MaSanPham = ? , SoLuong = ? , GhiChu = ?";
     String DELETE_SQL = "DELETE FROM HoaDonChiTiet where MaHoaDonChiTiet = ?";
-    String SELECT_ALL_SQL = "SELECT * FROM HoaDonChiTiet";
+    String SELECT_ALL_SQL = "select hd.MaHoaDon,sp.TenSanPham,sp.DonGia,sp.SoLuong,\n"
+            + "sum(sp.DonGia * hdct.SoLuong) as 'thanhtien'\n"
+            + "from HoaDon hd \n"
+            + "join HoaDonChiTiet hdct on hd.MaHoaDon = hdct.MaHoaDon\n"
+            + "join SanPham sp on hdct.MaSanPham = sp.MaSanPham \n"
+            + "group by hd.MaHoaDon,sp.TenSanPham,sp.DonGia,sp.SoLuong";
     String SELECT_BY_ID_SQL = "SELECT * FROM HoaDonChiTiet where MaHoaDonChiTiet = ? ";
+    String SELECT_BY_PROC = "{CALL getHDCT}";
 
     @Override
     public void insert(HoaDonChiTiet entity) {
@@ -61,7 +67,31 @@ public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
     public List<HoaDonChiTiet> selectAll() {
         return this.selectBySql(SELECT_ALL_SQL);
     }
+    
+    public List<Object[]> getHoaDonChiTiet() {
+        String[] cols = {"MaHoaDon", "TenSanPham", "DonGia", "SoLuong", "ThanhTien"};
+        return this.getListOfArray(SELECT_BY_PROC, cols);
+    }
 
+    public List<Object[]> getListOfArray(String sql, String[] cols, Object... agrs) {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = jdbcHelper.query(sql, agrs);
+            while (rs.next()) {
+                Object[] vals = new Object[cols.length];
+                for (int i = 0; i < cols.length; i++) {
+                    vals[i] = rs.getObject(cols[i]);
+                }
+                list.add(vals);
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+
+        } catch (SQLException e) {
+            throw new RuntimeException();
+        }
+    }
+    
     @Override
     HoaDonChiTiet selectByid(String key) {
         List<HoaDonChiTiet> list = this.selectBySql(SELECT_BY_ID_SQL, key);

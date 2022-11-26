@@ -49,6 +49,7 @@ import phoneSys.edu.dao.SanPhamDAO;
 import phoneSys.edu.dao.TaiKhoanDAO;
 import phoneSys.edu.entity.DiemDanh;
 import phoneSys.edu.entity.HoaDon;
+import phoneSys.edu.entity.HoaDonChiTiet;
 import phoneSys.edu.entity.KhachHang;
 import phoneSys.edu.entity.KhuyenMai;
 import phoneSys.edu.entity.NhanVien;
@@ -3932,7 +3933,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Tên SP", "Hãng", "Màu sắc", "Đơn giá", "Số lượng", "Thành tiền", "+", "-", "X"
+                "Tên SP", "Hãng", "Màu sắc", "Đơn giá", "Số lượng", "Thành tiền", "Tăng", "Giảm", "Xóa"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -4079,10 +4080,9 @@ public class Main_Frame extends javax.swing.JFrame {
                                 .addComponent(jLabel102)
                                 .addGap(18, 18, 18)
                                 .addComponent(lbl_TienThanhToan_BanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(8, 8, 8)
+                        .addGap(8, 219, Short.MAX_VALUE)
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel35Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btn_ThanhToan_BanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel35Layout.createSequentialGroup()
@@ -4092,7 +4092,6 @@ public class Main_Frame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel110))
                             .addGroup(jPanel35Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel104)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5591,7 +5590,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_LamMoi_BanHangActionPerformed
 
     private void btn_ThanhToan_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThanhToan_BanHangActionPerformed
-        this.ThanhToan_BanHang();
+        this.ThanhToan_BanHang_button_click();
     }//GEN-LAST:event_btn_ThanhToan_BanHangActionPerformed
 
     private void tbl_DSLuong_LuongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DSLuong_LuongMouseClicked
@@ -6947,17 +6946,22 @@ public class Main_Frame extends javax.swing.JFrame {
     double ThanhTien_tbl_HoaDon_BanHang = 0.0;
     double donGia_HoaDon_BanHang = 0;
     int soLuong_HoaDon_Banhang = 0;
+    double thanhTien = 0.0;
     double tienThanhToan;
     double tienKhachDua;
     double tienConLai;
     double tongGiaGiam;
-    DecimalFormat format = new DecimalFormat("###,###");
+    DecimalFormat format = new DecimalFormat("###,###,###");
 
     private void init_BanHang() {
-//        Fill Table Data
+//        Fill Ban Hang9
         this.FillTable_DS_SanPham_BanHang();
         TableEdit.centerRendererTable(tbl_HoaDon_BanHang);
         txt_TienTraLai_Banhang.setEditable(false);
+
+//        Fill DS hoaDon , hoa don chi tiet
+        this.fillToTableDSHoaDon_BangHang();
+        this.fillToTableDSHoaDonChiTiet_BanHang();
     }
 
     private void ThanhTien_HoaDon_BanHang() {
@@ -6971,18 +6975,19 @@ public class Main_Frame extends javax.swing.JFrame {
                 e.printStackTrace();
             }
 
+//          Cal ThanTien tbl HoaDon
+            ThanhTien_tbl_HoaDon_BanHang = (double) donGia_HoaDon_BanHang * soLuong_HoaDon_Banhang;
+            tbl_HoaDon_BanHang.setValueAt(String.valueOf(ThanhTien_tbl_HoaDon_BanHang), x, y);
+
             listThanhTien = new ArrayList();
             for (int i = 0; i < tbl_HoaDon_BanHang.getRowCount(); i++) {
                 listThanhTien.add(tbl_HoaDon_BanHang.getValueAt(i, 5)); //get the all row values at column index 3
             }
 
-//          Cal ThanTien tbl HoaDon
-            ThanhTien_tbl_HoaDon_BanHang = (double) donGia_HoaDon_BanHang * soLuong_HoaDon_Banhang;
-            tbl_HoaDon_BanHang.setValueAt(String.valueOf(ThanhTien_tbl_HoaDon_BanHang), x, y);
-
-            double thanhTien = 0.0;
             for (Object o : listThanhTien) {
-                thanhTien = thanhTien + Double.parseDouble(o.toString());
+                if (tbl_HoaDon_BanHang.getRowCount() > 0) {
+                    thanhTien += Double.parseDouble(String.valueOf(o));
+                }
             }
 
             if (thanhTien != 0 && tbl_HoaDon_BanHang.getModel().getRowCount() >= 0) {
@@ -7046,22 +7051,21 @@ public class Main_Frame extends javax.swing.JFrame {
     List<SanPham> list = null;
 
     private void FillTable_HoaDon_BanHang() {
-//        Fill data to Table
+
         model_tbl_HoaDon = (DefaultTableModel) tbl_HoaDon_BanHang.getModel();
         try {
             String tenSP = (String) tbl_DS_SanPham_BanHang.getValueAt(tbl_DS_SanPham_BanHang.getSelectedRow(), 0);
             list = spDAO.select_All_TheoTenSP(tenSP);
-            System.out.println(tenSP);
+//            System.out.println(tenSP);
 //            Proc
             double giaGiam = 0.0;
-
             List<Object[]> listGiaGiam = hdDAO.getGiaGiam(tenSP);
             for (Object[] o : listGiaGiam) {
                 giaGiam = Double.parseDouble(o[0].toString());
             }
             getDSGiaGiam(tenSP, giaGiam);
-            double thanhTien = 0;
 
+//          Fill data to Table
             int index = 0;
             for (int i = 0; i < list.size(); i++) {
                 if (list.get(i).getTenSanPham().equals(tenSP)) {
@@ -7074,7 +7078,9 @@ public class Main_Frame extends javax.swing.JFrame {
             if (!isRemove) {
                 if (listTenSP.add(tenSP)) {
                     Object[] row = {
-                        list.get(index).getTenSanPham(), list.get(index).getHangSanXuat(), list.get(index).getMauSac(), list.get(index).getDonGia(), "1", format.format(thanhTien), "+", "-", "X"
+                        list.get(index).getTenSanPham(), list.get(index).getHangSanXuat(),
+                        list.get(index).getMauSac(), list.get(index).getDonGia(), "1",
+                        format.format(thanhTien), "+", "-", "X"
                     };
                     model_tbl_HoaDon.addRow(row);
                     listTenSP.add(tenSP);
@@ -7084,9 +7090,10 @@ public class Main_Frame extends javax.swing.JFrame {
             }
             isRemove = false;
 
+//          Set thanhTien
             if (thanhTien != 0 && tbl_HoaDon_BanHang.getModel().getRowCount() >= 0) {
                 lbl_TienThanhToan_BanHang.setText(format.format((thanhTien)) + " VNĐ");
-                //          Calculator TienThanhToan,KhachDua, ConLai
+//          Calculator TienThanhToan,KhachDua, ConLai
                 tienKhachDua = Double.parseDouble(txt_TienKhachDua_BanHang.getText());
                 tienConLai = tienKhachDua - tienThanhToan;
             }
@@ -7094,13 +7101,21 @@ public class Main_Frame extends javax.swing.JFrame {
             if (thanhTien == 0 || tbl_HoaDon_BanHang.getModel().getRowCount() < 0) {
                 lbl_TienThanhToan_BanHang.setText("0");
             }
-System.out.println(thanhTien);
+            System.out.println(thanhTien);
 //          
         } catch (Exception e) {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
             e.printStackTrace();
         }
+    }
 
+    private void getSum_ThanhTien_tbl_HoaDon() {
+        thanhTien = 0.0;
+        for (int i = 0; i < tbl_HoaDon_BanHang.getRowCount(); i++) {
+            if (tbl_HoaDon_BanHang.getRowCount() > 0) {
+                thanhTien = thanhTien + Double.parseDouble(String.valueOf(tbl_HoaDon_BanHang.getValueAt(i, 5)));
+            }
+        }
     }
 
     private void TangSoLuong_tblHoaDon_BanHang() {
@@ -7122,7 +7137,8 @@ System.out.println(thanhTien);
         int x = tbl_HoaDon_BanHang.getSelectedRow();
         int y = 4;
 
-        int SoLuong_tbl_HoaDon_BanHang = Integer.parseInt(tbl_HoaDon_BanHang.getValueAt(tbl_HoaDon_BanHang.getSelectedRow(), y).toString());
+        int SoLuong_tbl_HoaDon_BanHang
+                = Integer.parseInt(tbl_HoaDon_BanHang.getValueAt(tbl_HoaDon_BanHang.getSelectedRow(), y).toString());
         SoLuong_tbl_HoaDon_BanHang--;
 
         if (SoLuong_tbl_HoaDon_BanHang == 0) {
@@ -7130,7 +7146,6 @@ System.out.println(thanhTien);
                 listTenSP.remove(tbl_HoaDon_BanHang.getValueAt(x, y));
                 model_tbl_HoaDon.removeRow(x);
                 isRemove = true;
-
                 return;
             }
         }
@@ -7187,33 +7202,63 @@ System.out.println(thanhTien);
         hd.setMaHoaDon(MaHD);
         hd.setMaKhachHang(maKH);
         hd.setMaNhanVien(MaNV);
-        hd.setNgayTao(XDate.toDate(NgayTao, "yy-MM-dddd"));
+        hd.setNgayTao(XDate.toDate(NgayTao, "dd/MM/yyyy"));
         hd.setGhiChu(ghiChu);
 
         return hd;
     }
 
-    private void ThanhToan_BanHang() {
-
+    private void ThanhToan_BanHang_button_click() {
+        HoaDon hd = getForm_BanHang();
         try {
-
-            HoaDon hd = getForm_BanHang();
+            hdDAO.insert(hd);
+            this.fillToTableDSHoaDon_BangHang();
 
         } catch (Exception e) {
+            System.out.println("Thêm thất bại");
+            e.printStackTrace();
         }
     }
 
     DefaultTableModel tableModel_HoaDon_BangHang;
 
     private void fillToTableDSHoaDon_BangHang() {
-        tableModel_HoaDon_BangHang = (DefaultTableModel) tbl_DSHoaDon_BanHang.getModel();
+        try {
+            model_tbl_HoaDon = (DefaultTableModel) tbl_DSHoaDon_BanHang.getModel();
+            model_tbl_HoaDon.setRowCount(0);
 
-        List<HoaDon> listHoaDon = hdDAO.selectAll();
-
-        for (HoaDon o : listHoaDon) {
-//            Object[] row = {o.getMaHoaDon(), o.get};
+            HoaDon kh = new HoaDon();
+            List<Object[]> list = hdDAO.getHoaDon();
+            for (Object[] row : list) {
+                model_tbl_HoaDon.addRow(new Object[]{
+                    row[0], row[1], row[2], row[3], String.format("%.1f", row[4])
+                });
+            }
+        } catch (Exception e) {
+            MsgBox.alert(this, "Lỗi fill DS hóa đơn");
+            e.printStackTrace();
         }
     }
+
+    private void fillToTableDSHoaDonChiTiet_BanHang() {
+        model_tbl_HoaDon = (DefaultTableModel) tbl_DSHoaDonChiTiet_BanHang.getModel();
+        model_tbl_HoaDon.setRowCount(0);
+
+        try {
+            HoaDonChiTiet hdct = new HoaDonChiTiet();
+            List<Object[]> list = hdctDAO.getHoaDonChiTiet();
+            for (Object[] row : list) {
+                model_tbl_HoaDon.addRow(new Object[]{
+                    row[0], row[1], row[2], row[3], String.format("%.1f", row[4])
+                });
+            }
+        } catch (Exception e) {
+            MsgBox.alert(this, "Lỗi fill DS hóa đơn chi tiết");
+            e.printStackTrace();
+        }
+    }
+    
+    
 //                        END_CARD_BANHANG
 //   ********************** HOAI NAM**********************
     //START_CARD_NHANVIEN
