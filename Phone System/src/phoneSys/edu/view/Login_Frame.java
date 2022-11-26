@@ -323,8 +323,7 @@ public class Login_Frame extends javax.swing.JFrame {
         String Pass = String.valueOf(txt_MatKhau.getPassword());
 
         TaiKhoan tk = dao.selectByTenDangNhap(tenDN);
-        NhanVien nv = nvDAO.selectByid(tk.getMaNhanVien());
-
+        
         if (check()) {
             if (tk == null) {
                 MsgBox.alert(this, "Sai tên đăng nhập");
@@ -335,6 +334,7 @@ public class Login_Frame extends javax.swing.JFrame {
             } else {
                 Auth.user = tk;
                 new Main_Frame().setVisible(true);
+                NhanVien nv = nvDAO.selectByid(tk.getMaNhanVien());
                 Main_Frame.lbl_TenNhanVien.setText(nv.getTenNhanVien());
                 Auth.nv = nv;
                 this.dispose();

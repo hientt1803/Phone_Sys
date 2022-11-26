@@ -104,7 +104,6 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
     }
 
     String SELECT_BY_TenDangNhap_SQL = "SELECT * FROM TaiKhoan where TenDangNhap = ?";
-
     public TaiKhoan selectByTenDangNhap(String key) {
         List<TaiKhoan> list = this.selectBySql(SELECT_BY_TenDangNhap_SQL, key);
         if (list.isEmpty()) {
@@ -114,7 +113,6 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
     }
     
     String UPDATE_PASSWORD = "UPDATE TaiKhoan set MatKhau = ? WHERE TenDangNhap = ?";
-    
     public TaiKhoan CapNhatMatKhau(String TenDangNhap,String MatKhau){
         return (TaiKhoan) this.selectBySql(UPDATE_PASSWORD);
     }

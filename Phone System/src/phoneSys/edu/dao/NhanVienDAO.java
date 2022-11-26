@@ -103,10 +103,8 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
         return this.selectBySql(SELECT_NOTIN_TAIKHOAN);
     }
 
-    
-      private String SELECT_LAST_ID = "select top 1 MaNhanVien from NhanVien order by MaNhanVien  desc";
-      
-       public String getID_NhanVien() {
+    private String SELECT_LAST_ID = "select top 1 MaNhanVien from NhanVien order by MaNhanVien  desc";
+    public String getID_NhanVien() {
         String id = "";
 
         try {
@@ -120,8 +118,8 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
 
         return id;
     }
-       
-       public static void main(String[] args) {
+
+    public static void main(String[] args) {
         NhanVienDAO dao = new NhanVienDAO();
         System.out.println(dao.getID_NhanVien());
     }
