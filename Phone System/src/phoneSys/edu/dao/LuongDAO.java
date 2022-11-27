@@ -15,7 +15,9 @@ import phoneSys.edu.ultil.jdbcHelper;
  */
 public class LuongDAO extends PhoneSysDAO<Luong, String> {
 
-    String SELECT_ALL_SQL = "SELECT * FROM Luong";
+    String SELECT_ALL_SQL = "{CALL getAllLuong}";
+
+    String SELECT_LUONG_BY_ID_NHANVIEN = "{CALL getLuong(?)}";
 
     @Override
     public void insert(Luong entity) {
@@ -68,9 +70,49 @@ public class LuongDAO extends PhoneSysDAO<Luong, String> {
 
     public static void main(String[] args) {
         LuongDAO dao = new LuongDAO();
-        List<Luong> ls = dao.selectAll();
-        for (Luong l : ls) {
-            System.out.println(l);
+//        List<Luong> ls = dao.selectAll();
+//        for (Luong l : ls) {
+//            System.out.println(l);
+//        }
+
+//test lay thong tin luong theo ma nhan vien
+        List<Object[]> l = dao.getAllLuong();
+        for (Object[] o : l) {
+            System.out.println(o[0]);
+            System.out.println(o[1]);
+            System.out.println(o[2]);
+        }
+
+    }
+
+    public List<Object[]> getLuong(String idNhanVien) {
+        String[] cols = {"TenNhanVien", "Quyen", "Tổng ca"};
+        return this.getListOfArray(SELECT_LUONG_BY_ID_NHANVIEN, cols, idNhanVien);
+    }
+
+    public List<Object[]> getAllLuong() {
+        String[] cols = {"MaLuong","MaNhanVien","TenNhanVien", "TongCaLam", "LuongTrenCa","TienThuong","Tong luong","NgayNhan","TrangThai","GhiChu"};
+        return this.getListOfArray(SELECT_ALL_SQL, cols);
+    }
+
+    
+    
+    public List<Object[]> getListOfArray(String sql, String[] cols, Object... agrs) {
+        List<Object[]> list = new ArrayList<>();
+        try {
+            ResultSet rs = jdbcHelper.query(sql, agrs);
+            while (rs.next()) {
+                Object[] vals = new Object[cols.length];
+                for (int i = 0; i < cols.length; i++) {
+                    vals[i] = rs.getObject(cols[i]);
+                }
+                list.add(vals);
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+
+        } catch (SQLException e) {
+            throw new RuntimeException();
         }
     }
 

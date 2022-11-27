@@ -2296,17 +2296,6 @@
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_XoaKhachHang_KhachHangActionPerformed"/>
                               </Events>
                             </Component>
-                            <Component class="javax.swing.JButton" name="btn_LamMoiKhachHang_KhachHang">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Arial" size="14" style="1"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="M&#x1edb;i"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_LamMoiKhachHang_KhachHangActionPerformed"/>
-                              </Events>
-                            </Component>
                           </SubComponents>
                         </Container>
                       </SubComponents>
@@ -2412,6 +2401,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_TimSoDienThoaiKhachHangDaXoa_KhachHangActionPerformed"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_TimSoDienThoaiKhachHangDaXoa_KhachHangKeyReleased"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="btn_KhoiPhucKhachHang_KhachHang">
@@ -3115,7 +3105,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane12" min="-2" pref="1037" max="-2" attributes="0"/>
-                              <EmptySpace pref="29" max="32767" attributes="0"/>
+                              <EmptySpace pref="31" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -3924,6 +3914,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="T&#xed;nh L&#x1b0;&#x1a1;ng"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_TinhLuong_LuongActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="btn_CapNhatLuong_Luong">
                           <Properties>
@@ -4009,8 +4002,14 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txt_Luong_Luong">
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_Luong_LuongKeyReleased"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txt_TienThuong_Luong">
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_TienThuong_LuongKeyReleased"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lbl_TongLuong_Luong">
                       <Properties>
@@ -5616,7 +5615,7 @@
                                           <Component id="jLabel133" alignment="3" max="32767" attributes="0"/>
                                           <Component id="cbo_SanPham_SanPham" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jScrollPane2" min="-2" pref="223" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -6563,7 +6562,7 @@
                                           <Component id="jButton17" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                                  <EmptySpace pref="58" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

@@ -41,6 +41,7 @@ import phoneSys.edu.dao.HoaDonChiTietDAO;
 import phoneSys.edu.dao.HoaDonDAO;
 import phoneSys.edu.dao.KhachHangDAO;
 import phoneSys.edu.dao.KhuyenMaiDAO;
+import phoneSys.edu.dao.LuongDAO;
 import phoneSys.edu.dao.NhanVienDAO;
 import phoneSys.edu.dao.SanPhamDAO;
 import phoneSys.edu.dao.TaiKhoanDAO;
@@ -71,6 +72,15 @@ public class Main_Frame extends javax.swing.JFrame {
     String maSanPham_KhuyenMai = "";
 
     boolean isRemove = false;
+
+    // Bien tinh luong
+    double tongLuong = 0;
+    double tienThuong = 0;
+    double luongTrenCa = 0;
+    int tongCa = 0;
+
+//    DAO variable 
+    LuongDAO luongDAO = new LuongDAO();
 
 //    Hien
     ArrayList listThanhTien;
@@ -260,7 +270,6 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_ThemKhachHang_KhachHang = new javax.swing.JButton();
         btn_CapNhatKhachHang_KhachHang = new javax.swing.JButton();
         btn_XoaKhachHang_KhachHang = new javax.swing.JButton();
-        btn_LamMoiKhachHang_KhachHang = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jScrollPane19 = new javax.swing.JScrollPane();
         tbl_DSKhachHangDaXoa_KhachHang = new javax.swing.JTable();
@@ -1774,15 +1783,6 @@ public class Main_Frame extends javax.swing.JFrame {
         });
         jPanel18.add(btn_XoaKhachHang_KhachHang);
 
-        btn_LamMoiKhachHang_KhachHang.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_LamMoiKhachHang_KhachHang.setText("Mới");
-        btn_LamMoiKhachHang_KhachHang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_LamMoiKhachHang_KhachHangActionPerformed(evt);
-            }
-        });
-        jPanel18.add(btn_LamMoiKhachHang_KhachHang);
-
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
@@ -1833,6 +1833,11 @@ public class Main_Frame extends javax.swing.JFrame {
         txt_TimSoDienThoaiKhachHangDaXoa_KhachHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_TimSoDienThoaiKhachHangDaXoa_KhachHangActionPerformed(evt);
+            }
+        });
+        txt_TimSoDienThoaiKhachHangDaXoa_KhachHang.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_TimSoDienThoaiKhachHangDaXoa_KhachHangKeyReleased(evt);
             }
         });
 
@@ -2225,7 +2230,7 @@ public class Main_Frame extends javax.swing.JFrame {
             .addGroup(jPanel38Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 1037, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2525,6 +2530,11 @@ public class Main_Frame extends javax.swing.JFrame {
 
         btn_TinhLuong_Luong.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_TinhLuong_Luong.setText("Tính Lương");
+        btn_TinhLuong_Luong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_TinhLuong_LuongActionPerformed(evt);
+            }
+        });
 
         btn_CapNhatLuong_Luong.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_CapNhatLuong_Luong.setText("Cập Nhật Lương");
@@ -2580,6 +2590,18 @@ public class Main_Frame extends javax.swing.JFrame {
 
         jLabel85.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel85.setText("Ngày Nhận:");
+
+        txt_Luong_Luong.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_Luong_LuongKeyReleased(evt);
+            }
+        });
+
+        txt_TienThuong_Luong.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_TienThuong_LuongKeyReleased(evt);
+            }
+        });
 
         lbl_TongLuong_Luong.setText("aa");
 
@@ -3628,7 +3650,7 @@ public class Main_Frame extends javax.swing.JFrame {
                     .addComponent(txt_TimSanPham_SanPham, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                     .addComponent(jLabel133, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbo_SanPham_SanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -4188,7 +4210,7 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addComponent(jButton16)
                         .addGap(37, 37, 37)
                         .addComponent(jButton17)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5399,17 +5421,15 @@ public class Main_Frame extends javax.swing.JFrame {
         xoaKhachHang_KhachHang();
     }//GEN-LAST:event_btn_XoaKhachHang_KhachHangActionPerformed
 
-    private void btn_LamMoiKhachHang_KhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LamMoiKhachHang_KhachHangActionPerformed
-        lamMoiFormKhachHang();
-    }//GEN-LAST:event_btn_LamMoiKhachHang_KhachHangActionPerformed
-
     private void txt_TimSoDienThoaiKhachHang_KhachHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_TimSoDienThoaiKhachHang_KhachHangKeyReleased
         timSoDienThoaiKhachHang(evt);
     }//GEN-LAST:event_txt_TimSoDienThoaiKhachHang_KhachHangKeyReleased
 
     private void txt_TimSoDienThoaiKhachHang_KhachHangFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_TimSoDienThoaiKhachHang_KhachHangFocusGained
         txt_SoDienThoaiKhachHang_KhachHang.setText("");
-        txt_TimSoDienThoaiKhachHang_KhachHang.setText("");
+        if (txt_TimSoDienThoaiKhachHang_KhachHang.getText().length() > 10) {
+            txt_TimSoDienThoaiKhachHang_KhachHang.setText("");
+        }
     }//GEN-LAST:event_txt_TimSoDienThoaiKhachHang_KhachHangFocusGained
 
     private void tbl_DanhSachSanPham_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DanhSachSanPham_KhuyenMaiMouseClicked
@@ -5481,12 +5501,14 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ThanhToan_BanHangActionPerformed
 
     private void tbl_DSLuong_LuongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DSLuong_LuongMouseClicked
-        // TODO add your handling code here:
+        setFormLuong();
     }//GEN-LAST:event_tbl_DSLuong_LuongMouseClicked
 
     private void txt_TimSoDienThoaiKhachHang_KhachHangFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_TimSoDienThoaiKhachHang_KhachHangFocusLost
-        txt_TimSoDienThoaiKhachHang_KhachHang.setText("");
-        filterOnTextfield(tableModelKhachHang_KhachHang, tbl_DSKhachHang_KhachHang, txt_TimSoDienThoaiKhachHang_KhachHang.getText(), 3);
+        if (txt_TimSoDienThoaiKhachHang_KhachHang.getText().equals("")) {
+            txt_TimSoDienThoaiKhachHang_KhachHang.setText("");
+            filterOnTextfield(tableModelKhachHang_KhachHang, tbl_DSKhachHang_KhachHang, txt_TimSoDienThoaiKhachHang_KhachHang.getText(), 3);
+        }
 
     }//GEN-LAST:event_txt_TimSoDienThoaiKhachHang_KhachHangFocusLost
 
@@ -5539,9 +5561,14 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_CCCD_NhanVienMouseClicked
 
     private void cbo_MaNhanVien_LuongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbo_MaNhanVien_LuongActionPerformed
-//        String id = cbo_MaNhanVien_Luong.getSelectedItem().toString();
 
-//        fillToFormLuongByID(id);
+        if (cbo_MaNhanVien_Luong.getSelectedIndex() >= 1) {
+            String id = cbo_MaNhanVien_Luong.getSelectedItem().toString();
+            System.out.println(id);
+
+            fillToFormLuongByID(id);
+        }
+
     }//GEN-LAST:event_cbo_MaNhanVien_LuongActionPerformed
 
     private void txt_TienKhachDua_BanHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_TienKhachDua_BanHangKeyReleased
@@ -5571,6 +5598,22 @@ public class Main_Frame extends javax.swing.JFrame {
         String keyWord = txt_TimSanPham_SanPham.getText();
         filterOnTextfield(tableModelSanPham, tbl_DanhSachSanPham_SanPham, keyWord, selectedIndex);
     }//GEN-LAST:event_txt_TimSanPham_SanPhamKeyReleased
+
+    private void txt_TimSoDienThoaiKhachHangDaXoa_KhachHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_TimSoDienThoaiKhachHangDaXoa_KhachHangKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_TimSoDienThoaiKhachHangDaXoa_KhachHangKeyReleased
+
+    private void txt_Luong_LuongKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_Luong_LuongKeyReleased
+        tinhLuong(txt_Luong_Luong, tongCa, txt_TienThuong_Luong);
+    }//GEN-LAST:event_txt_Luong_LuongKeyReleased
+
+    private void txt_TienThuong_LuongKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_TienThuong_LuongKeyReleased
+        tinhLuong(txt_Luong_Luong, tongCa, txt_TienThuong_Luong);
+    }//GEN-LAST:event_txt_TienThuong_LuongKeyReleased
+
+    private void btn_TinhLuong_LuongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TinhLuong_LuongActionPerformed
+        tinhLuong_Luong();
+    }//GEN-LAST:event_btn_TinhLuong_LuongActionPerformed
 
 //    Mouse event
     public void onClick(JPanel jpanel) {
@@ -5648,7 +5691,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JButton btn_HuyGioHang_BanHang;
     private javax.swing.JButton btn_KhoiPhucKhachHang_KhachHang;
     private javax.swing.JButton btn_KhoiPhuc_SanPham;
-    private javax.swing.JButton btn_LamMoiKhachHang_KhachHang;
     private javax.swing.JButton btn_LamMoi_BanHang;
     private javax.swing.JButton btn_Last_DiemDanh;
     private javax.swing.JButton btn_Last_KhuyenMai;
@@ -6768,8 +6810,8 @@ public class Main_Frame extends javax.swing.JFrame {
         txt_TienTraLai_Banhang.setEditable(false);
 
 //        Fill DS hoaDon , hoa don chi tiet
-        this.fillToTableDSHoaDon_BangHang();
-        this.fillToTableDSHoaDonChiTiet_BanHang();
+//        this.fillToTableDSHoaDon_BangHang();
+//        this.fillToTableDSHoaDonChiTiet_BanHang();
     }
 
     private void defaultFormData() {
@@ -7078,6 +7120,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         listNhanVien.forEach((nhanVien) -> {
             String ngaySinh = XDate.toString(nhanVien.getNgaySinh(), "dd/MM/yyyy");
+            
             String gioiTinh = "Nam";
             if (!nhanVien.getGioiTinh()) {
                 gioiTinh = "Nữ";
@@ -7387,7 +7430,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     private void lamMoiFormKhachHang() {
-        txt_MaKhachHang_KhachHang.setText("");
+        txt_MaKhachHang_KhachHang.setText(GenerateID.genareteID(khachHangDAO.getID_KhachHang()));
         txt_TenKhachHang_KhachHang.setText("");
         rdo_Nam_KhachHang.setSelected(true);
         txt_SoDienThoaiKhachHang_KhachHang.setText("");
@@ -7411,12 +7454,12 @@ public class Main_Frame extends javax.swing.JFrame {
                     txt_TenKhachHang_KhachHang.requestFocus();
                     txt_MaKhachHang_KhachHang.setText(GenerateID.genareteID(khachHangDAO.getID_KhachHang()));
                     rdo_Nam_KhachHang.setSelected(true);
+                    txt_TimSoDienThoaiKhachHang_KhachHang.setText("");
                 }
                 return;
             }
         }
         filterOnTextfield(tableModelKhachHang_KhachHang, tbl_DSKhachHang_KhachHang, txt, 3);
-
     }
 
     private void fillFormHoaDon() {
@@ -7479,26 +7522,115 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     //END_CARD_KHACHHANG
-//START_CARD_LUONG     
+    //START_CARD_LUONG     
     private void initCardLuong() {
         this.fillCombobox_MaNhanVien_Luong();
-
+        this.fillTableLuong_Luong();
     }
 
     private void fillCombobox_MaNhanVien_Luong() {
         DefaultComboBoxModel cbxModel_MaNhanVien_Lương = (DefaultComboBoxModel) cbo_MaNhanVien_Luong.getModel();
         cbxModel_MaNhanVien_Lương.removeAllElements();
-
+        cbxModel_MaNhanVien_Lương.addElement("Chọn mã nhân viên");
         List<String> listMaNhanVien = ddDao.getMaNhanVien();
         for (String maNhanVien : listMaNhanVien) {
             cbxModel_MaNhanVien_Lương.addElement(maNhanVien);
         }
+        cbxModel_MaNhanVien_Lương.setSelectedItem("Chọn mã nhân viên");
+    }
+
+    private void fillTableLuong_Luong() {
+        DefaultTableModel model = (DefaultTableModel) tbl_DSLuong_Luong.getModel();
+
+        model.setRowCount(0);
+        List<Object[]> list = luongDAO.getAllLuong();
+
+        for (Object[] o : list) {
+            Date ngayNhan =(Date)o[7];
+            
+            System.out.println(ngayNhan);
+            model.addRow(new Object[]{o[0], o[1], o[2], o[3], o[4], o[5], o[6],  XDate.toString(ngayNhan, "dd/MM/yyyy"), o[8], o[9]});
+        }
     }
 
     private void fillToFormLuongByID(String id) {
-        NhanVien nv = nhanVienDAO.selectByid(id);
-        lbl_TenNhanVien_Luong.setText(nv.getTenNhanVien());
-        lbl_ChucVu_Luong.setText(id);
+        String tenNhanVien = "";
+        boolean chucVu = false;
+        List<Object[]> listLuongTheoNhanVien = null;
+        try {
+            listLuongTheoNhanVien = luongDAO.getLuong(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        for (Object[] o : listLuongTheoNhanVien) {
+            tenNhanVien = (String) o[0];
+            chucVu = (boolean) o[1];
+            tongCa = (int) o[2];
+        }
+
+        lbl_TenNhanVien_Luong.setText(tenNhanVien);
+        lbl_ChucVu_Luong.setText((chucVu == true) ? "Quản lý" : "Nhân viên");
+        lbl_TongCaLam_Luong.setText(String.valueOf(tongCa));
+        txt_Luong_Luong.setText((chucVu == true) ? "200000" : "100000");
+        txt_TienThuong_Luong.setText("0");
+        luongTrenCa = Double.parseDouble(txt_Luong_Luong.getText());
+        tienThuong = Double.parseDouble(txt_TienThuong_Luong.getText());
+        lbl_NgayNhan_Luong.setText("Chưa nhận");
+
+        tinhLuong(txt_Luong_Luong, tongCa, txt_TienThuong_Luong);
     }
-//END_CARD_LUONG     
+
+    private void tinhLuong(JTextField txt_Luong_Luong, int tongCa, JTextField txt_TienThuong_Luong) {
+        System.out.println(txt_Luong_Luong.getText());
+        System.out.println(!txt_Luong_Luong.getText().matches("\\D"));
+        System.out.println(txt_TienThuong_Luong.getText().length());
+        try {
+            if (txt_Luong_Luong.getText().length() == 0 || txt_TienThuong_Luong.getText().length() == 0) {
+                System.out.println("Chu");
+                return;
+            }
+//            if (!txt_Luong_Luong.getText().matches("[0-9]{0,10}") || !txt_TienThuong_Luong.getText().matches("[0-9]{0,10}")) {
+            if (txt_Luong_Luong.getText().matches("\\D{0,10}") || txt_TienThuong_Luong.getText().matches("\\D{0,10}")) {
+                System.out.println("so");
+                return;
+            }
+
+            if (txt_Luong_Luong.getText().contains("-") || txt_TienThuong_Luong.getText().contains("-")) {
+                System.out.println("-");
+                return;
+
+            }
+            luongTrenCa = Double.parseDouble(txt_Luong_Luong.getText());
+            tienThuong = Double.parseDouble(txt_TienThuong_Luong.getText());
+        } catch (Exception e) {
+            MsgBox.alert(this, "Vui lòng nhập đúng định dạng");
+            e.printStackTrace();
+            return;
+        }
+        tongLuong = (luongTrenCa * tongCa) + tienThuong;
+        if (tongLuong >= 0) {
+            lbl_TongLuong_Luong.setText(String.valueOf(tongLuong));
+        }
+    }
+
+    private void tinhLuong_Luong() {
+
+    }
+
+    private void setFormLuong() {
+        int index = tbl_DSLuong_Luong.getSelectedRow();
+
+        String maNhanVien = tbl_DSLuong_Luong.getValueAt(index, 1).toString();
+        String tenNhanVien = tbl_DSLuong_Luong.getValueAt(index, 2).toString();
+        String tongCaLam = tbl_DSLuong_Luong.getValueAt(index, 3).toString();
+        String luongTrenCa = tbl_DSLuong_Luong.getValueAt(index, 4).toString();
+        String tienThuong = tbl_DSLuong_Luong.getValueAt(index, 5).toString();
+        String tongLuong = tbl_DSLuong_Luong.getValueAt(index, 6).toString();
+        String ngayNhan = tbl_DSLuong_Luong.getValueAt(index, 7).toString();
+        String trangThai = tbl_DSLuong_Luong.getValueAt(index, 8).toString();
+        String ghiChu = tbl_DSLuong_Luong.getValueAt(index, 9).toString();
+
+    }
+    //END_CARD_LUONG     
+
 }
