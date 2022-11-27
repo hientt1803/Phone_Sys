@@ -29,10 +29,8 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     String SELECT_BY_MAUSAC_SQL = "SELECT DISTINCT MauSac FROM SanPham";
     String SELECT_BY_XUATXU_SQL = "SELECT DISTINCT XuatXu FROM SanPham";
     String SELECT_LOC_HANG_SQL = "SELECT * FROM SanPham WHERE HangSanXuat = ?";
-    String SELECT_LOC_MAUSAC_SQL = "SELECT * FROM SanPham WHERE MauSac = ?";
-    String SELECT_LOC_XUATXU_SQL = "SELECT * FROM SanPham WHERE XuatXu = ?";
     String SELECT_LAST_ID = "select top 1 MaSanPham from SanPham order by MaSanPham desc";
- 
+    String RESTORE_SQL = "UPDATE SanPham SET TrangThai = ? WHERE MaSanPham = ?";
 
     @Override
     public void insert(SanPham entity) {
@@ -74,6 +72,14 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
                     entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), entity.getGhiChu(), entity.getMaSanPham()
             );
         } catch (Exception e) {
+        }
+    }
+    
+    public void restore(String id) {
+        try {
+            jdbcHelper.update(RESTORE_SQL, "True", id);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
     }
 
@@ -159,14 +165,6 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     
     public List<SanPham> selectAll_TheoHangSanXuat(String hang) {
         return (List<SanPham>) this.selectBySql(SELECT_LOC_HANG_SQL, hang);
-    }
-    
-    public List<SanPham> selectAll_TheoMauSac(String mau) {
-        return (List<SanPham>) this.selectBySql(SELECT_LOC_MAUSAC_SQL, mau);
-    }
-    
-    public List<SanPham> selectAll_TheoXuatXu(String xuatxu) {
-        return (List<SanPham>) this.selectBySql(SELECT_LOC_XUATXU_SQL, xuatxu);
     }
 
     
