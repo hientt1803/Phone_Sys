@@ -5411,10 +5411,8 @@ public class Main_Frame extends javax.swing.JFrame {
         int mInt = Integer.parseInt(mSt);
 
         boolean isAM = dateSt.endsWith("AM");
-
-        if ((hInt <= 7 && mInt <= 30 && isAM == true) || (hInt <= 13 && mInt <= 30 && isAM == false)) {
-            this.insert_DiemDanh();
-        }
+        this.insert_DiemDanh();
+        btn_DiemDanh_DiemDanh.setEnabled(false);
     }//GEN-LAST:event_btn_DiemDanh_DiemDanhActionPerformed
 
     private void btn_First_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_First_DiemDanhActionPerformed
@@ -6412,7 +6410,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private DiemDanh getForm_DiemDanh() {
         DiemDanh dd = new DiemDanh();
         dd.setMaNhanVien(lbl_MaNhanVien_DiemDanh.getText());
-        //dd.setTenNhanVien(lbl_TenNhanVien_DiemDanh.getText());
+        dd.setTenNhanVien(lbl_TenNhanVien_DiemDanh.getText());
         dd.setCaLamViec(lbl_CaLam_DiemDanh.getText());
         dd.setNgayLamViec(XDate.toDate(lbl_NgayLamViec_DiemDanh.getText(), "dd/MM/yyyy"));
         dd.setGhiChu(txa_GhiChu_DiemDanh.getText());
@@ -6487,7 +6485,8 @@ public class Main_Frame extends javax.swing.JFrame {
 
         lbl_NgayLamViec_DiemDanh.setText(XDate.toString(new Date(), "dd/MM/yyyy"));
 
-        if ((hInt <= 7 && mInt <= 30 && isAM == true) || (hInt <= 13 && mInt <= 30 && isAM == false)) {
+        // if ((hInt <= 7 && mInt <= 30 && isAM == true) || (hInt <= 13 && mInt <= 30 && isAM == false)) {
+        if ((hInt <= 7 && mInt <= 30 && isAM == true) || (hInt <= 17 && mInt <= 30 && isAM == false)) {
             btn_DiemDanh_DiemDanh.setEnabled(true);
         } else {
             btn_DiemDanh_DiemDanh.setEnabled(false);
@@ -6957,7 +6956,6 @@ public class Main_Frame extends javax.swing.JFrame {
                 thanhTien += Double.parseDouble(tbl_HoaDon_BanHang.getValueAt(i, 5).toString());
             }
             lbl_TienThanhToan_BanHang.setText(x.format(thanhTien) + " " + "VND");
-                       
 
             if (thanhTien != 0 && tbl_HoaDon_BanHang.getModel().getRowCount() >= 0 && txt_TienKhachDua_BanHang.getText().length() > 0) {
 //                lbl_TienThanhToan_BanHang.setText(String.valueOf(thanhTien) + " VNĐ");
@@ -7046,7 +7044,7 @@ public class Main_Frame extends javax.swing.JFrame {
                         list.get(index).getMauSac(), list.get(index).getDonGia(), "1",
                         thanhTien, "+", "-", "X"
                     };
-                    
+
                     model_tbl_HoaDon.addRow(row);
                     listTenSP.add(tenSP);
                     for (Object o : listTenSP) {

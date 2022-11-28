@@ -2867,7 +2867,7 @@
                                           <Component id="rdo_QuanLi_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="rdo_NhanVien_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="6" max="32767" attributes="0"/>
                                       <Component id="jPanel39" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3308,12 +3308,14 @@
                                   <Component id="jLabel91" alignment="3" max="32767" attributes="0"/>
                                   <Component id="btn_Refesh_DiemDanh" alignment="3" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="btn_TimKiemTheoNgay_DiemDanh" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lbl_MaNhanVien_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btn_TimKiemTheoNgay_DiemDanh" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lbl_MaNhanVien_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
@@ -3348,7 +3350,7 @@
                                   <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="8" max="32767" attributes="0"/>
                                   <Component id="jScrollPane6" min="-2" pref="435" max="-2" attributes="0"/>
                               </Group>
                           </Group>

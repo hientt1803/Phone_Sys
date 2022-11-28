@@ -137,7 +137,7 @@ public class ProgressBar_JFrame extends javax.swing.JFrame {
             } else {
                 check += "Stop";
                 check();
-                ProgressBar_JFrame.this.dispose();
+                this.dispose();
             }
         }).start();
         check();

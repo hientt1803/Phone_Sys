@@ -50,4 +50,26 @@ public class XDate {
     public static Date now(){
         return new Date();
     }
+    
+    public static void main(String[] args) {
+         Date now = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa");
+        String dateSt = sdf.format(now);
+
+        String hSt = dateSt.substring(0, 2);
+        String mSt = dateSt.substring(3, 5);
+
+        int hInt = Integer.parseInt(hSt);
+        int mInt = Integer.parseInt(mSt);
+
+        boolean isAM = dateSt.endsWith("AM");
+        
+        System.out.println(now);
+        System.out.println(dateSt);
+        System.out.println(hSt);
+        System.out.println(mSt);
+        System.out.println(hInt);
+        System.out.println(mInt);
+        
+    }
 }
