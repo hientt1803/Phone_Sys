@@ -138,6 +138,11 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
             throw new RuntimeException();
         }
     }
+    
+    public List<HoaDon> selectByDateCreate(String key) {
+        String sql = "SELECT * FROM HoaDon WHERE NgayTao like ?";
+        return this.selectBySql(sql, "%"+key+"%");
+    }
 
     public static void main(String[] args) {
         HoaDonDAO dao = new HoaDonDAO();

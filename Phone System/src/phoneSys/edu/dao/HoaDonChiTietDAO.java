@@ -30,7 +30,7 @@ public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
             + "join SanPham sp on hdct.MaSanPham = sp.MaSanPham \n"
             + "group by hd.MaHoaDon,sp.TenSanPham,sp.DonGia,sp.SoLuong";
     String SELECT_BY_ID_SQL = "SELECT * FROM HoaDonChiTiet where MaHoaDonChiTiet = ? ";
-    String SELECT_BY_PROC = "{CALL getHDCT}";
+    String SELECT_BY_PROC = "{CALL getHDCT(?)}";
 
     @Override
     public void insert(HoaDonChiTiet entity) {
@@ -68,9 +68,9 @@ public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
         return this.selectBySql(SELECT_ALL_SQL);
     }
     
-    public List<Object[]> getHoaDonChiTiet() {
+    public List<Object[]> getHoaDonChiTiet(String maHD) {
         String[] cols = {"MaHoaDon", "TenSanPham", "DonGia", "SoLuong", "ThanhTien"};
-        return this.getListOfArray(SELECT_BY_PROC, cols);
+        return this.getListOfArray(SELECT_BY_PROC, cols,maHD);
     }
 
     public List<Object[]> getListOfArray(String sql, String[] cols, Object... agrs) {
@@ -86,8 +86,7 @@ public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
             }
             rs.getStatement().getConnection().close();
             return list;
-
-        } catch (SQLException e) {
+        } catch (Exception e) {
             throw new RuntimeException();
         }
     }
@@ -122,5 +121,4 @@ public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
             throw new RuntimeException(e);
         }
     }
-
 }
