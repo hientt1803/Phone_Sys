@@ -6919,7 +6919,7 @@ public class Main_Frame extends javax.swing.JFrame {
             }
 
 //          Cal ThanTien tbl HoaDon
-            ThanhTien_tbl_HoaDon_BanHang = donGia_HoaDon_BanHang * soLuong_HoaDon_Banhang;
+            ThanhTien_tbl_HoaDon_BanHang = (donGia_HoaDon_BanHang * soLuong_HoaDon_Banhang);
             tbl_HoaDon_BanHang.setValueAt(String.valueOf(ThanhTien_tbl_HoaDon_BanHang), x, y);
 
             listThanhTien = new ArrayList();
@@ -6942,19 +6942,11 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void getSum_ThanhTien_tbl_HoaDon(double thanhTien) {
         try {
-//            for (int i = 0; i < tbl_HoaDon_BanHang.getRowCount(); i++) {
-//                if (tbl_HoaDon_BanHang.getRowCount() > 0) {
-//                    double tongTienThanhToan_Tbl_HoaDon = Double.parseDouble(String.valueOf(tbl_HoaDon_BanHang.getValueAt(i, 5)));
-//                    thanhTien += tongTienThanhToan_Tbl_HoaDon;
-//                }
-//            }
-//            System.out.println(thanhTien);
-//            lbl_TienThanhToan_BanHang.setText(String.valueOf(thanhTien));
-
             DecimalFormat x = new DecimalFormat("###,###,###");
             for (int i = 0; i < tbl_HoaDon_BanHang.getRowCount(); i++) {
-                thanhTien += Double.parseDouble(tbl_HoaDon_BanHang.getValueAt(i, 5).toString());
+                thanhTien += (Double.parseDouble(tbl_HoaDon_BanHang.getValueAt(i, 5).toString()));     
             }
+
             lbl_TienThanhToan_BanHang.setText(x.format(thanhTien) + " " + "VND");
 
             if (thanhTien != 0 && tbl_HoaDon_BanHang.getModel().getRowCount() >= 0 && txt_TienKhachDua_BanHang.getText().length() > 0) {
@@ -6966,6 +6958,10 @@ public class Main_Frame extends javax.swing.JFrame {
 
             if (thanhTien == 0 || tbl_HoaDon_BanHang.getModel().getRowCount() < 0) {
                 lbl_TienThanhToan_BanHang.setText("0");
+            }
+
+            if (tienConLai >= 0) {
+                btn_ThanhToan_BanHang.setEnabled(true);
             }
         } catch (NumberFormatException e) {
             e.printStackTrace();
@@ -7085,14 +7081,6 @@ public class Main_Frame extends javax.swing.JFrame {
         if (soLuong_HoaDon_Banhang == 1) {
             return;
         }
-//        if (SoLuong_tbl_HoaDon_BanHang == 0) {
-//            if (tbl_HoaDon_BanHang.isCellSelected(x, y)) {
-//                listTenSP.remove(tbl_HoaDon_BanHang.getValueAt(x, y));
-//                model_tbl_HoaDon.removeRow(x);
-//                isRemove = true;
-//                return;
-//            }
-//        }
 
         tbl_HoaDon_BanHang.setValueAt(SoLuong_tbl_HoaDon_BanHang, x, y);
     }
@@ -7104,12 +7092,9 @@ public class Main_Frame extends javax.swing.JFrame {
         listTenSP.remove(tbl_HoaDon_BanHang.getValueAt(x, 0));
         model_tbl_HoaDon.removeRow(x);
 
-        for (Object o : listThanhTien) {
-            tienThanhToan += Double.parseDouble(o.toString());
-            System.out.println(tienThanhToan);
-        }
-
-//        lbl_TienThanhToan_BanHang.setText(String.valueOf(tienThanhToan));
+//        for (Object o : listThanhTien) {
+//            tienThanhToan += Double.parseDouble(o.toString());
+//        }
     }
 
     private void HuyGioHang_BanHang() {
@@ -7232,10 +7217,6 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_prev_DSHoaDon_BanHang.setEnabled(edit && !first);
         btn_next_DSHoaDon_BanHang.setEnabled(edit && !last);
         btn_last_DSHoaDon_BanHang.setEnabled(edit && !last);
-    }
-
-    public void selectTab(int index) {
-        tabs_HoaDon.setSelectedIndex(index);
     }
 
 //    DS hóa đơn 
@@ -7620,8 +7601,6 @@ public class Main_Frame extends javax.swing.JFrame {
         lbl_NguoiTao_BanHang.setText(lbl_TenNhanVien.getText());
         lbl_MaHoaDon_BanHang.setText(GenerateID.genareteID(hdDAO.getID_HoaDon()));
         lbl_NgayTao_BanHang.setText(XDate.toString(XDate.now(), "dd/MM/yyyy"));
-        Main_Frame mf = new Main_Frame();
-        mf.selectTab(1);
 
         onClick(pnl_BanHang);
         onLeaveClick(pnl_KhachHang);

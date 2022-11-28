@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import phoneSys.edu.ultil.XImage;
 
 /**
  *
@@ -116,6 +117,8 @@ public class ProgressBar_JFrame extends javax.swing.JFrame {
     String check = "";
 
     private void init() {
+        this.setIconImage(XImage.getAppIcon());
+        this.setTitle("Loading - Phone System");
         new Timer(50, (ActionEvent e) -> {
             setLocationRelativeTo(null);
             int value = jProgressBar1.getValue();
