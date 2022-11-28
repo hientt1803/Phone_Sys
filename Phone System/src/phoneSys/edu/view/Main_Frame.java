@@ -479,7 +479,7 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_Last_SanPham_DaXoa = new javax.swing.JButton();
         btn_KhoiPhuc_SanPham = new javax.swing.JButton();
         card_BanHang = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tabs_HoaDon = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -4108,7 +4108,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Bán Hàng", jPanel1);
+        tabs_HoaDon.addTab("Bán Hàng", jPanel1);
 
         jLabel111.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel111.setForeground(new java.awt.Color(97, 88, 152));
@@ -4179,7 +4179,7 @@ public class Main_Frame extends javax.swing.JFrame {
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel36Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -4220,20 +4220,9 @@ public class Main_Frame extends javax.swing.JFrame {
         });
 
         dcs_locNgayTao_BanHang.setDateFormatString("yyyy-MM-dd");
-        dcs_locNgayTao_BanHang.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                dcs_locNgayTao_BanHangFocusLost(evt);
-            }
-        });
-        dcs_locNgayTao_BanHang.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dcs_locNgayTao_BanHangMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                dcs_locNgayTao_BanHangMouseExited(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                dcs_locNgayTao_BanHangMouseReleased(evt);
+        dcs_locNgayTao_BanHang.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                dcs_locNgayTao_BanHangPropertyChange(evt);
             }
         });
         dcs_locNgayTao_BanHang.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -4269,7 +4258,7 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addComponent(btn_next_DSHoaDon_BanHang)
                         .addGap(37, 37, 37)
                         .addComponent(btn_last_DSHoaDon_BanHang)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4280,7 +4269,7 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton8)
                             .addComponent(jLabel111))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(dcs_locNgayTao_BanHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4297,7 +4286,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Danh Sách Hóa Đơn", jPanel34);
+        tabs_HoaDon.addTab("Danh Sách Hóa Đơn", jPanel34);
 
         javax.swing.GroupLayout card_BanHangLayout = new javax.swing.GroupLayout(card_BanHang);
         card_BanHang.setLayout(card_BanHangLayout);
@@ -4305,14 +4294,14 @@ public class Main_Frame extends javax.swing.JFrame {
             card_BanHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(card_BanHangLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(tabs_HoaDon)
                 .addContainerGap())
         );
         card_BanHangLayout.setVerticalGroup(
             card_BanHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(card_BanHangLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1))
+                .addComponent(tabs_HoaDon))
         );
 
         pnl_MainDisplayCard.add(card_BanHang, "card_BanHang");
@@ -5090,7 +5079,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_pnl_HeThongMouseClicked
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+        this.delete_DSHoaDon_BanHang();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jLabel75MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel75MouseClicked
@@ -5671,37 +5660,6 @@ public class Main_Frame extends javax.swing.JFrame {
         tinhLuong_Luong();
     }//GEN-LAST:event_btn_TinhLuong_LuongActionPerformed
 
-    private void dcs_locNgayTao_BanHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dcs_locNgayTao_BanHangKeyReleased
-        this.filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, String.valueOf(dcs_locNgayTao_BanHang), 3);
-        System.out.println(String.valueOf(dcs_locNgayTao_BanHang));
-    }//GEN-LAST:event_dcs_locNgayTao_BanHangKeyReleased
-
-    private void dcs_locNgayTao_BanHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dcs_locNgayTao_BanHangMouseClicked
-        this.filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, String.valueOf(dcs_locNgayTao_BanHang), 3);
-        System.out.println(String.valueOf(dcs_locNgayTao_BanHang));
-    }//GEN-LAST:event_dcs_locNgayTao_BanHangMouseClicked
-
-    private void dcs_locNgayTao_BanHangMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dcs_locNgayTao_BanHangMouseReleased
-        int index = 3;
-        String keyWord = String.valueOf(dcs_locNgayTao_BanHang.getDate());
-        filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, keyWord, index);
-        System.out.println(keyWord);
-    }//GEN-LAST:event_dcs_locNgayTao_BanHangMouseReleased
-
-    private void dcs_locNgayTao_BanHangFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dcs_locNgayTao_BanHangFocusLost
-        int index = 3;
-        String keyWord = String.valueOf(dcs_locNgayTao_BanHang.getDate());
-        filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, keyWord, index);
-        System.out.println(keyWord);
-    }//GEN-LAST:event_dcs_locNgayTao_BanHangFocusLost
-
-    private void dcs_locNgayTao_BanHangMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dcs_locNgayTao_BanHangMouseExited
-        int index = 3;
-        String keyWord = String.valueOf(dcs_locNgayTao_BanHang.getDate());
-        filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, keyWord, index);
-        System.out.println(keyWord);
-    }//GEN-LAST:event_dcs_locNgayTao_BanHangMouseExited
-
     private void tbl_DSHoaDon_BanHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DSHoaDon_BanHangMouseClicked
         this.fillToTableDSHoaDonChiTiet_BanHang();
     }//GEN-LAST:event_tbl_DSHoaDon_BanHangMouseClicked
@@ -5711,7 +5669,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_First_DSHoaDon_BanHangActionPerformed
 
     private void btn_prev_DSHoaDon_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prev_DSHoaDon_BanHangActionPerformed
-       this.prev_DS_HoaDon_BanHang();
+        this.prev_DS_HoaDon_BanHang();
     }//GEN-LAST:event_btn_prev_DSHoaDon_BanHangActionPerformed
 
     private void btn_next_DSHoaDon_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_next_DSHoaDon_BanHangActionPerformed
@@ -5721,6 +5679,22 @@ public class Main_Frame extends javax.swing.JFrame {
     private void btn_last_DSHoaDon_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_last_DSHoaDon_BanHangActionPerformed
         this.last_DS_HoaDon_BanHang();
     }//GEN-LAST:event_btn_last_DSHoaDon_BanHangActionPerformed
+
+    private void dcs_locNgayTao_BanHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dcs_locNgayTao_BanHangKeyReleased
+        int index = 3;
+        String date = XDate.toString(dcs_locNgayTao_BanHang.getDate(), "dd/MM/yyyy");
+        this.filterOnTextfield(model_tbl_HoaDon, tbl_DSHoaDon_BanHang, date, index);
+        System.out.println(date);
+    }//GEN-LAST:event_dcs_locNgayTao_BanHangKeyReleased
+
+    private void dcs_locNgayTao_BanHangPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dcs_locNgayTao_BanHangPropertyChange
+        if ("calendar".equals(evt.getPropertyName())
+                || "date".equals(evt.getPropertyName())) {
+            int index = 3;
+            String date = XDate.toString(dcs_locNgayTao_BanHang.getDate(), "dd/MM/yyyy");
+            this.filterOnTextfield(model_tbl_HoaDon, tbl_DSHoaDon_BanHang, date, index);
+        }
+    }//GEN-LAST:event_dcs_locNgayTao_BanHangPropertyChange
 
 //    Mouse event
     public void onClick(JPanel jpanel) {
@@ -6075,7 +6049,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField6;
@@ -6140,6 +6113,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JRadioButton rdo_Nu_NhanVien;
     private javax.swing.JRadioButton rdo_QuanLi_TaiKhoan;
     private javax.swing.JTabbedPane tab_SanPham;
+    private javax.swing.JTabbedPane tabs_HoaDon;
     private javax.swing.JTable tbl_DSChuaTaiKhoan_TaiKhoan;
     private javax.swing.JTable tbl_DSDaCoTaiKhoan_TaiKhoan;
     private javax.swing.JTable tbl_DSHoaDonChiTiet_BanHang;
@@ -6894,11 +6868,11 @@ public class Main_Frame extends javax.swing.JFrame {
     int row = -1;
     DefaultTableModel model_tbl_HoaDon;
     DefaultTableModel model_tbl_DSHoaDon;
-    int SoLuong_tbl_HoaDon_BanHang = 0;
-    double ThanhTien_tbl_HoaDon_BanHang = 0.0;
-    double donGia_HoaDon_BanHang = 0;
-    int soLuong_HoaDon_Banhang = 0;
-    double thanhTien = 0.0;
+    int SoLuong_tbl_HoaDon_BanHang;
+    double ThanhTien_tbl_HoaDon_BanHang;
+    double donGia_HoaDon_BanHang;
+    int soLuong_HoaDon_Banhang;
+    double thanhTien;
     double tienThanhToan;
     double tienKhachDua;
     double tienConLai;
@@ -6908,7 +6882,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private void init_BanHang() {
 //        Position row
         this.row = -1;
-        
+
 //        Format Table
         TableEdit.centerRendererTable(tbl_HoaDon_BanHang);
         TableEdit.centerRendererTable(tbl_DSHoaDon_BanHang);
@@ -6917,12 +6891,14 @@ public class Main_Frame extends javax.swing.JFrame {
 //        Default value form BanHang
         this.defaultFormData();
 
-//        Fill Ban Hang9
+//        Fill Ban Hang
         this.FillTable_DS_SanPham_BanHang();
-        txt_TienTraLai_Banhang.setEditable(false);
 
-//        Fill DS hoaDon , hoa don chi tiet
+//        Fill DS hoaDon
         this.fillToTableDSHoaDon_BangHang();
+
+//        Format Form Ban Hang
+        txt_TienTraLai_Banhang.setEditable(false);
     }
 
     private void defaultFormData() {
@@ -6944,30 +6920,47 @@ public class Main_Frame extends javax.swing.JFrame {
             }
 
 //          Cal ThanTien tbl HoaDon
-            ThanhTien_tbl_HoaDon_BanHang = (double) donGia_HoaDon_BanHang * soLuong_HoaDon_Banhang;
+            ThanhTien_tbl_HoaDon_BanHang = donGia_HoaDon_BanHang * soLuong_HoaDon_Banhang;
             tbl_HoaDon_BanHang.setValueAt(String.valueOf(ThanhTien_tbl_HoaDon_BanHang), x, y);
 
             listThanhTien = new ArrayList();
             for (int i = 0; i < tbl_HoaDon_BanHang.getRowCount(); i++) {
-                listThanhTien.add(tbl_HoaDon_BanHang.getValueAt(i, 5)); //get the all row values at column index 3
-                thanhTien += Double.parseDouble(listThanhTien.get(i).toString());
+                listThanhTien.add(tbl_HoaDon_BanHang.getValueAt(i, 5)); //get the all row values at column index 3   
             }
 
-            for (Object o : listThanhTien) {
-                if (tbl_HoaDon_BanHang.getRowCount() > 0) {
-                    thanhTien += Double.parseDouble(String.valueOf(o));
-                }
-            }
+//            for (Object o : listThanhTien) {
+//                if (tbl_HoaDon_BanHang.getRowCount() > 0) {
+//                    thanhTien += Double.parseDouble(String.valueOf(o));
+//                }
+//            }
+            this.getSum_ThanhTien_tbl_HoaDon(thanhTien);
 
+        } catch (NumberFormatException e) {
+            System.out.println("lỗi tính thành tiền");
+            e.printStackTrace();
+        }
+    }
+
+    private void getSum_ThanhTien_tbl_HoaDon(double thanhTien) {
+        try {
+//            for (int i = 0; i < tbl_HoaDon_BanHang.getRowCount(); i++) {
+//                if (tbl_HoaDon_BanHang.getRowCount() > 0) {
+//                    double tongTienThanhToan_Tbl_HoaDon = Double.parseDouble(String.valueOf(tbl_HoaDon_BanHang.getValueAt(i, 5)));
+//                    thanhTien += tongTienThanhToan_Tbl_HoaDon;
+//                }
+//            }
+//            System.out.println(thanhTien);
+//            lbl_TienThanhToan_BanHang.setText(String.valueOf(thanhTien));
+
+            DecimalFormat x = new DecimalFormat("###,###,###");
             for (int i = 0; i < tbl_HoaDon_BanHang.getRowCount(); i++) {
-                thanhTien += Double.parseDouble(String.valueOf(tbl_HoaDon_BanHang.getValueAt(i, 5)));
-
+                thanhTien += Double.parseDouble(tbl_HoaDon_BanHang.getValueAt(i, 5).toString());
             }
+            lbl_TienThanhToan_BanHang.setText(x.format(thanhTien) + " " + "VND");
+                       
 
-            System.out.println("Tổng thành tiền: " + thanhTien);
-
-            if (thanhTien != 0 && tbl_HoaDon_BanHang.getModel().getRowCount() >= 0) {
-                lbl_TienThanhToan_BanHang.setText(String.valueOf(thanhTien) + " VNĐ");
+            if (thanhTien != 0 && tbl_HoaDon_BanHang.getModel().getRowCount() >= 0 && txt_TienKhachDua_BanHang.getText().length() > 0) {
+//                lbl_TienThanhToan_BanHang.setText(String.valueOf(thanhTien) + " VNĐ");
                 //          Calculator TienThanhToan,KhachDua, ConLai
                 tienKhachDua = Double.parseDouble(txt_TienKhachDua_BanHang.getText());
                 tienConLai = tienKhachDua - thanhTien;
@@ -6976,14 +6969,6 @@ public class Main_Frame extends javax.swing.JFrame {
             if (thanhTien == 0 || tbl_HoaDon_BanHang.getModel().getRowCount() < 0) {
                 lbl_TienThanhToan_BanHang.setText("0");
             }
-
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void getSum_ThanhTien_tbl_HoaDon() {
-        try {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
@@ -7059,8 +7044,9 @@ public class Main_Frame extends javax.swing.JFrame {
                     Object[] row = {
                         list.get(index).getTenSanPham(), list.get(index).getHangSanXuat(),
                         list.get(index).getMauSac(), list.get(index).getDonGia(), "1",
-                        format.format(thanhTien), "+", "-", "X"
+                        thanhTien, "+", "-", "X"
                     };
+                    
                     model_tbl_HoaDon.addRow(row);
                     listTenSP.add(tenSP);
                     for (Object o : listTenSP) {
@@ -7071,7 +7057,7 @@ public class Main_Frame extends javax.swing.JFrame {
             }
             isRemove = false;
 
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
             e.printStackTrace();
         }
@@ -7082,31 +7068,33 @@ public class Main_Frame extends javax.swing.JFrame {
         int y = 4;
 
         int SoLuong_tbl_HoaDon_BanHang
-                = Integer.parseInt(tbl_HoaDon_BanHang.getValueAt(tbl_HoaDon_BanHang.getSelectedRow(), y).toString());
+                = Integer.parseInt(tbl_HoaDon_BanHang.getValueAt(x, y).toString());
         SoLuong_tbl_HoaDon_BanHang++;
 
         tbl_HoaDon_BanHang.setValueAt(SoLuong_tbl_HoaDon_BanHang, x, y);
-
-        this.ThanhTien_HoaDon_BanHang();
     }
 
     private void GiamSoLuong_tblHoaDon_BanHang() {
         model_tbl_HoaDon = (DefaultTableModel) tbl_HoaDon_BanHang.getModel();
+
         int x = tbl_HoaDon_BanHang.getSelectedRow();
         int y = 4;
 
         int SoLuong_tbl_HoaDon_BanHang
-                = Integer.parseInt(tbl_HoaDon_BanHang.getValueAt(tbl_HoaDon_BanHang.getSelectedRow(), y).toString());
+                = Integer.parseInt(tbl_HoaDon_BanHang.getValueAt(x, y).toString());
         SoLuong_tbl_HoaDon_BanHang--;
 
-        if (SoLuong_tbl_HoaDon_BanHang == 0) {
-            if (tbl_HoaDon_BanHang.isCellSelected(x, y)) {
-                listTenSP.remove(tbl_HoaDon_BanHang.getValueAt(x, y));
-                model_tbl_HoaDon.removeRow(x);
-                isRemove = true;
-                return;
-            }
+        if (soLuong_HoaDon_Banhang == 1) {
+            return;
         }
+//        if (SoLuong_tbl_HoaDon_BanHang == 0) {
+//            if (tbl_HoaDon_BanHang.isCellSelected(x, y)) {
+//                listTenSP.remove(tbl_HoaDon_BanHang.getValueAt(x, y));
+//                model_tbl_HoaDon.removeRow(x);
+//                isRemove = true;
+//                return;
+//            }
+//        }
 
         tbl_HoaDon_BanHang.setValueAt(SoLuong_tbl_HoaDon_BanHang, x, y);
     }
@@ -7117,12 +7105,13 @@ public class Main_Frame extends javax.swing.JFrame {
 
         listTenSP.remove(tbl_HoaDon_BanHang.getValueAt(x, 0));
         model_tbl_HoaDon.removeRow(x);
-        System.out.println("Ma,,");
+
         for (Object o : listThanhTien) {
             tienThanhToan += Double.parseDouble(o.toString());
             System.out.println(tienThanhToan);
         }
-        lbl_TienThanhToan_BanHang.setText(String.valueOf(tienThanhToan));
+
+//        lbl_TienThanhToan_BanHang.setText(String.valueOf(tienThanhToan));
     }
 
     private void HuyGioHang_BanHang() {
@@ -7181,8 +7170,9 @@ public class Main_Frame extends javax.swing.JFrame {
 
             List<Object[]> list = hdDAO.getHoaDon();
             for (Object[] row : list) {
+                Date date = (Date) row[3];
                 model_tbl_HoaDon.addRow(new Object[]{
-                    row[0], row[1], row[2], row[3], String.format("%.1f", row[4])
+                    row[0], row[1], row[2], XDate.toString(date, "dd/MM/yyyy"), String.format("%.1f", row[4])
                 });
             }
         } catch (Exception e) {
@@ -7244,6 +7234,25 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_prev_DSHoaDon_BanHang.setEnabled(edit && !first);
         btn_next_DSHoaDon_BanHang.setEnabled(edit && !last);
         btn_last_DSHoaDon_BanHang.setEnabled(edit && !last);
+    }
+
+    public void selectTab(int index) {
+        tabs_HoaDon.setSelectedIndex(index);
+    }
+
+//    DS hóa đơn 
+    private void delete_DSHoaDon_BanHang() {
+        try {
+
+            String maHD = (String) tbl_DSHoaDon_BanHang.getValueAt(tbl_DSHoaDon_BanHang.getSelectedRow(), 0);
+            hdDAO.delete(maHD);
+
+            this.fillToTableDSHoaDon_BangHang();
+
+        } catch (Exception e) {
+            System.out.println("Xóa thất bại");
+            e.printStackTrace();
+        }
     }
 
 //                        END_CARD_BANHANG
@@ -7613,6 +7622,8 @@ public class Main_Frame extends javax.swing.JFrame {
         lbl_NguoiTao_BanHang.setText(lbl_TenNhanVien.getText());
         lbl_MaHoaDon_BanHang.setText(GenerateID.genareteID(hdDAO.getID_HoaDon()));
         lbl_NgayTao_BanHang.setText(XDate.toString(XDate.now(), "dd/MM/yyyy"));
+        Main_Frame mf = new Main_Frame();
+        mf.selectTab(1);
 
         onClick(pnl_BanHang);
         onLeaveClick(pnl_KhachHang);
@@ -7688,14 +7699,14 @@ public class Main_Frame extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) tbl_DSLuong_Luong.getModel();
 
         model.setRowCount(0);
-//        List<Object[]> list = luongDAO.getAllLuong();
-//
-//        for (Object[] o : list) {
-//            Date ngayNhan = (Date) o[7];
-//
-//            System.out.println(ngayNhan);
-//            model.addRow(new Object[]{o[0], o[1], o[2], o[3], o[4], o[5], o[6], XDate.toString(ngayNhan, "dd-MM-yyyy"), o[8], o[9]});
-//        }
+        List<Object[]> list = luongDAO.getAllLuong();
+
+        for (Object[] o : list) {
+            Date ngayNhan = (Date) o[7];
+
+            System.out.println(ngayNhan);
+            model.addRow(new Object[]{o[0], o[1], o[2], o[3], o[4], o[5], o[6], XDate.toString(ngayNhan, "dd-MM-yyyy"), o[8], o[9]});
+        }
     }
 
     private void fillToFormLuongByID(String id) {
