@@ -1,4 +1,4 @@
-create proc getGiaGiam (@tenSP NVARCHAR(MAX))
+create proc getGiaGiam @tenSP NVARCHAR(MAX)
 as
 begin
 select sum(km.giagiam) as'GiaGiam' from KhuyenMai km 
@@ -7,4 +7,6 @@ where tenSanPham = @tenSP;
 END
 
 
-execute getGiaGiam
+execute getGiaGiam 'Iphone x'
+
+execute getHD

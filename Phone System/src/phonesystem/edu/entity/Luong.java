@@ -18,13 +18,13 @@ public class Luong {
     float LuongTrenCa, TongCaLam;
     Float TienThuong;
     Date NgayNhan;
-    boolean trangThai;
+    String trangThai;
     String GhiChu;
 
     public Luong() {
     }
 
-    public Luong(String maLuong, String MaNhanVien, float LuongTrenCa, float TongCaLam, Float TienThuong, Date NgayNhan, boolean trangThai, String GhiChu) {
+    public Luong(String maLuong, String MaNhanVien, float LuongTrenCa, float TongCaLam, Float TienThuong, Date NgayNhan, String trangThai, String GhiChu) {
         this.maLuong = maLuong;
         this.MaNhanVien = MaNhanVien;
         this.LuongTrenCa = LuongTrenCa;
@@ -83,11 +83,11 @@ public class Luong {
         this.NgayNhan = NgayNhan;
     }
 
-    public boolean isTrangThai() {
+    public String getTrangThai() {
         return trangThai;
     }
 
-    public void setTrangThai(boolean trangThai) {
+    public void setTrangThai(String trangThai) {
         this.trangThai = trangThai;
     }
 
@@ -98,6 +98,8 @@ public class Luong {
     public void setGhiChu(String GhiChu) {
         this.GhiChu = GhiChu;
     }
+
+    
 
     
 

@@ -32,7 +32,7 @@ public class XDate {
                 formater.applyPattern(pattern[0]);
             }
             if (date == null) {
-                date = XDate.addDays(date, 10);
+                return "";
             }
 
         } catch (Exception e) {

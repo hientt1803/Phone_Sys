@@ -55,7 +55,7 @@ public class LuongDAO extends PhoneSysDAO<Luong, String> {
                 entity.setTongCaLam(rs.getInt("TongCaLam"));
                 entity.setTienThuong(rs.getFloat("TienThuong"));
                 entity.setNgayNhan(rs.getDate("NgayNhan"));
-                entity.setTrangThai(rs.getBoolean("TrangThai"));
+                entity.setTrangThai(rs.getString("TrangThai"));
                 entity.setGhiChu(rs.getString("GhiChu"));
                 list.add(entity);
             }
