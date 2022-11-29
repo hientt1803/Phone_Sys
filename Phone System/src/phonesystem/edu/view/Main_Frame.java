@@ -5447,12 +5447,8 @@ public class Main_Frame extends javax.swing.JFrame {
             int index = 3;
             String date = XDate.toString(dcs_locNgayTao_BanHang.getDate(), "dd/MM/yyyy");
             this.filterOnTextfield(model_tbl_HoaDon, tbl_DSHoaDon_BanHang, date, index);
-        } else {
+        } else{
             
-            int index = 3;
-            String date = XDate.toString(dcs_locNgayTao_BanHang.getDate(), "dd/MM/yyyy");
-            this.filterOnTextfield(model_tbl_HoaDon, tbl_DSHoaDon_BanHang, date, index);
-            this.fillToTableDSHoaDon_BangHang(); 
         }
     }//GEN-LAST:event_dcs_locNgayTao_BanHangPropertyChange
 
