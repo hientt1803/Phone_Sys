@@ -2309,9 +2309,19 @@ public class Main_Frame extends javax.swing.JFrame {
 
         btn_CapNhatLuong_Luong.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_CapNhatLuong_Luong.setText("Cập Nhật Lương");
+        btn_CapNhatLuong_Luong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CapNhatLuong_LuongActionPerformed(evt);
+            }
+        });
 
         btn_NhanLuong_Luong.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_NhanLuong_Luong.setText("Nhận Lương");
+        btn_NhanLuong_Luong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NhanLuong_LuongActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel51Layout = new javax.swing.GroupLayout(jPanel51);
         jPanel51.setLayout(jPanel51Layout);
@@ -5380,6 +5390,14 @@ public class Main_Frame extends javax.swing.JFrame {
     private void btn_submit_HeThongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_submit_HeThongMouseClicked
         this.CapNhatMatKhau_HeThong();
     }//GEN-LAST:event_btn_submit_HeThongMouseClicked
+
+    private void btn_NhanLuong_LuongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NhanLuong_LuongActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_NhanLuong_LuongActionPerformed
+
+    private void btn_CapNhatLuong_LuongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CapNhatLuong_LuongActionPerformed
+        this.capNhatLuong_Luong();
+    }//GEN-LAST:event_btn_CapNhatLuong_LuongActionPerformed
 
 //    Mouse event
     public void onClick(JPanel jpanel) {

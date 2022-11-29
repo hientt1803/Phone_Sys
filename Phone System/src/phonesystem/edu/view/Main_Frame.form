@@ -3507,6 +3507,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="C&#x1ead;p Nh&#x1ead;t L&#x1b0;&#x1a1;ng"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_CapNhatLuong_LuongActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JButton" name="btn_NhanLuong_Luong">
                           <Properties>
@@ -3515,6 +3518,9 @@
                             </Property>
                             <Property name="text" type="java.lang.String" value="Nh&#x1ead;n L&#x1b0;&#x1a1;ng"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_NhanLuong_LuongActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
