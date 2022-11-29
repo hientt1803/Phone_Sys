@@ -28,7 +28,6 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     String SELECT_BY_HANG_SQL = "SELECT DISTINCT HangSanXuat FROM SanPham";
     String SELECT_BY_MAUSAC_SQL = "SELECT DISTINCT MauSac FROM SanPham";
     String SELECT_BY_XUATXU_SQL = "SELECT DISTINCT XuatXu FROM SanPham";
-    String SELECT_LOC_HANG_SQL = "SELECT * FROM SanPham WHERE HangSanXuat = ?";
     String SELECT_LAST_ID = "select top 1 MaSanPham from SanPham order by MaSanPham desc";
     String RESTORE_SQL = "UPDATE SanPham SET TrangThai = ? WHERE MaSanPham = ?";
 
@@ -161,10 +160,6 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
             e.printStackTrace();
         }
         return list_XuatXu;
-    }
-    
-    public List<SanPham> selectAll_TheoHangSanXuat(String hang) {
-        return (List<SanPham>) this.selectBySql(SELECT_LOC_HANG_SQL, hang);
     }
 
     
