@@ -514,8 +514,8 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbl_DanhSachSanPham_KhuyenMai = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
+        cbo_LocSanPham_KhuyenMai = new javax.swing.JComboBox<>();
+        txt_TimSanPham_KhuyenMai = new javax.swing.JTextField();
         jPanel32 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tbl_DanhSachKhuyenMai_KhuyenMai = new javax.swing.JTable();
@@ -4019,12 +4019,16 @@ public class Main_Frame extends javax.swing.JFrame {
                 "Mã Sản Phẩm", "Tên Sản Phẩm", "Đơn Giá", "Số Lượng", "Hãng Sản xuất"
             }
         ));
-        tbl_DanhSachSanPham_KhuyenMai.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbl_DanhSachSanPham_KhuyenMaiMouseClicked(evt);
+        jScrollPane3.setViewportView(tbl_DanhSachSanPham_KhuyenMai);
+
+        cbo_LocSanPham_KhuyenMai.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cbo_LocSanPham_KhuyenMai.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã Sản Phẩm", "Tên Sản Phẩm", "Đơn Giá", "Số Lượng", "Hãng Sản Xuất" }));
+
+        txt_TimSanPham_KhuyenMai.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_TimSanPham_KhuyenMaiKeyReleased(evt);
             }
         });
-        jScrollPane3.setViewportView(tbl_DanhSachSanPham_KhuyenMai);
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -4037,9 +4041,9 @@ public class Main_Frame extends javax.swing.JFrame {
                     .addGroup(jPanel31Layout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbo_LocSanPham_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_TimSanPham_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 413, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -4049,8 +4053,8 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbo_LocSanPham_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_TimSanPham_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                 .addContainerGap())
@@ -4112,7 +4116,7 @@ public class Main_Frame extends javax.swing.JFrame {
                     .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -5358,17 +5362,6 @@ public class Main_Frame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_dcs_locNgayTao_BanHangPropertyChange
 
-    private void tbl_DanhSachSanPham_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DanhSachSanPham_KhuyenMaiMouseClicked
-        int i = tbl_DanhSachSanPham_KhuyenMai.getSelectedRow();
-        int cauhoi = JOptionPane.showConfirmDialog(this, "Bạn có muốn khuyến mãi cho sản phẩm này ?", "Thông báo", JOptionPane.YES_NO_OPTION);
-        if (cauhoi == JOptionPane.YES_OPTION) {
-            String tenSP = (String) tbl_DanhSachSanPham_KhuyenMai.getValueAt(i, 1);
-            String maSP = (String) tbl_DanhSachSanPham_KhuyenMai.getValueAt(i, 0);
-            txt_TenSanPham_KhuyenMai.setText(tenSP);
-            maSanPham_KhuyenMai = maSP;
-        }
-    }//GEN-LAST:event_tbl_DanhSachSanPham_KhuyenMaiMouseClicked
-
     private void tbl_DanhSachKhuyenMai_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DanhSachKhuyenMai_KhuyenMaiMouseClicked
         this.setForm_KhuyenMai();
         this.updateStatus_DS_KhuyenMai_KhuyenMai();
@@ -5385,6 +5378,12 @@ public class Main_Frame extends javax.swing.JFrame {
     private void dcs_LocTheoNgayNhan_LuongPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dcs_LocTheoNgayNhan_LuongPropertyChange
         this.locNgayNhanLuong(evt);
     }//GEN-LAST:event_dcs_LocTheoNgayNhan_LuongPropertyChange
+
+    private void txt_TimSanPham_KhuyenMaiKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_TimSanPham_KhuyenMaiKeyReleased
+        int selectedIndex = cbo_LocSanPham_KhuyenMai.getSelectedIndex();
+        String keyWord = txt_TimSanPham_KhuyenMai.getText();
+        filterOnTextfield(tableModelSanPham_KhuyenMai, tbl_DanhSachSanPham_KhuyenMai, keyWord, selectedIndex);
+    }//GEN-LAST:event_txt_TimSanPham_KhuyenMaiKeyReleased
 
 //    Mouse event
     public void onClick(JPanel jpanel) {
@@ -5519,6 +5518,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JPanel card_TaiKhoan;
     private javax.swing.JPanel card_ThongKe;
     public static javax.swing.JComboBox<String> cbo_HangSanXuat_SanPham;
+    private javax.swing.JComboBox<String> cbo_LocSanPham_KhuyenMai;
     private javax.swing.JComboBox<String> cbo_LocTheoCa_DiemDanh;
     private javax.swing.JComboBox<String> cbo_MaNhanVien_Luong;
     public static javax.swing.JComboBox<String> cbo_MauSac_SanPham;
@@ -5544,7 +5544,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JPanel indicator9;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel101;
@@ -5717,7 +5716,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JLabel lblHinhAnh_SanPham;
     private javax.swing.JLabel lblLoginAccount1;
@@ -5835,6 +5833,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTextField txt_TienThuong_Luong;
     private javax.swing.JTextField txt_TienTraLai_Banhang;
     private javax.swing.JTextField txt_TimDiaChi_NhanVien;
+    private javax.swing.JTextField txt_TimSanPham_KhuyenMai;
     private javax.swing.JTextField txt_TimSanPham_SanPham;
     private javax.swing.JTextField txt_TimSoDienThoaiKhachHangDaXoa_KhachHang;
     private javax.swing.JTextField txt_TimSoDienThoaiKhachHang_KhachHang;
@@ -5959,7 +5958,7 @@ public class Main_Frame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    
+
     private void update_SanPham() {
         SanPham sp = getForm_SanPham();
         try {
@@ -6179,6 +6178,7 @@ public class Main_Frame extends javax.swing.JFrame {
 //                         START_CARD_KHUYENMAI
     KhuyenMaiDAO kmDAO = new KhuyenMaiDAO();
     int row_tbl_KhuyenMai = -1;
+    DefaultTableModel tableModelSanPham_KhuyenMai;
 
     private void init_KhuyenMai() {
         fillTable_SanPham_KhuyenMai();
@@ -6276,14 +6276,14 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     private void fillTable_SanPham_KhuyenMai() {
-        DefaultTableModel model = (DefaultTableModel) tbl_DanhSachSanPham_KhuyenMai.getModel();
-        model.setRowCount(0);
+        tableModelSanPham_KhuyenMai = (DefaultTableModel) tbl_DanhSachSanPham_KhuyenMai.getModel();
+        tableModelSanPham_KhuyenMai.setRowCount(0);
         try {
             List<SanPham> list = spDAO.selectAll();
             for (SanPham sp : list) {
-                Object[] row = {sp.getMaSanPham(), sp.getTenSanPham(), sp.getSoLuong(), sp.getDonGia(), sp.getHangSanXuat()};
+                Object[] row = {sp.getMaSanPham(), sp.getTenSanPham(),  sp.getDonGia(),sp.getSoLuong(), sp.getHangSanXuat()};
                 if (sp.isTrangThai() == true) {
-                    model.addRow(row);
+                    tableModelSanPham_KhuyenMai.addRow(row);
                 }
             }
 
