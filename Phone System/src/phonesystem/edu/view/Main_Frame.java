@@ -4960,7 +4960,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Last_SanPham_DaXoaActionPerformed
 
     private void btn_KhoiPhuc_SanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_KhoiPhuc_SanPhamActionPerformed
-        this.update_SanPham();
+        this.khoiPhuc_SanPham_DaXoa();
     }//GEN-LAST:event_btn_KhoiPhuc_SanPhamActionPerformed
 
     private void rdo_NghiViec_NhanVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdo_NghiViec_NhanVienActionPerformed
@@ -5959,8 +5959,20 @@ public class Main_Frame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-
+    
     private void update_SanPham() {
+        SanPham sp = getForm_SanPham();
+        try {
+            spDAO.update(sp);
+            this.fillTable_SanPham();
+            MsgBox.alert(this, "Cập nhật Sản phẩm thành công!");
+        } catch (Exception e) {
+            MsgBox.alert(this, "Cập nhật Sản phẩm thất bại!");
+            e.printStackTrace();
+        }
+    }
+
+    private void khoiPhuc_SanPham_DaXoa() {
         int indexSelectedRow = tbl_DanhSachSanPham_DaXoa_SanPham.getSelectedRow();
         String maSanPham = tbl_DanhSachSanPham_DaXoa_SanPham.getValueAt(indexSelectedRow, 0).toString();
         spDAO.restore(maSanPham);
