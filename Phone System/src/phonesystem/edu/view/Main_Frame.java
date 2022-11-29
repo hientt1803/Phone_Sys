@@ -1673,6 +1673,11 @@ public class Main_Frame extends javax.swing.JFrame {
 
         btn_submit_HeThong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phonesystem/edu/img/submit.png"))); // NOI18N
         btn_submit_HeThong.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_submit_HeThong.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_submit_HeThongMouseClicked(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(97, 88, 152));
@@ -5372,6 +5377,10 @@ public class Main_Frame extends javax.swing.JFrame {
         filterOnTextfield(tableModelSanPham_KhuyenMai, tbl_DanhSachSanPham_KhuyenMai, keyWord, selectedIndex);
     }//GEN-LAST:event_txt_TimSanPham_KhuyenMaiKeyReleased
 
+    private void btn_submit_HeThongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_submit_HeThongMouseClicked
+        this.CapNhatMatKhau_HeThong();
+    }//GEN-LAST:event_btn_submit_HeThongMouseClicked
+
 //    Mouse event
     public void onClick(JPanel jpanel) {
         jpanel.setBackground(new Color(205, 136, 205));
@@ -6269,7 +6278,7 @@ public class Main_Frame extends javax.swing.JFrame {
         try {
             List<SanPham> list = spDAO.selectAll();
             for (SanPham sp : list) {
-                Object[] row = {sp.getMaSanPham(), sp.getTenSanPham(),  sp.getDonGia(),sp.getSoLuong(), sp.getHangSanXuat()};
+                Object[] row = {sp.getMaSanPham(), sp.getTenSanPham(), sp.getDonGia(), sp.getSoLuong(), sp.getHangSanXuat()};
                 if (sp.isTrangThai() == true) {
                     tableModelSanPham_KhuyenMai.addRow(row);
                 }
@@ -6462,30 +6471,36 @@ public class Main_Frame extends javax.swing.JFrame {
 //                          END_CARD_TAIKHOAN  
 //                          START_CARD_HETHONG 
     private void init_HeThong() {
-        this.CapNhatMatKhau_HeThong();
-//        txt_TenDangNhap_HeThong.setText(Auth.user.getTenDangNhap());
+        txt_TenDangNhap_HeThong.setText(Auth.user.getTenDangNhap());
     }
 
     private boolean checkForm_HeThong() {
-
-        TaiKhoan tk = new TaiKhoan();
-
-        if (txt_MatKhau_HeThong.equals("")) {
-            MsgBox.alert(this, "Không để trống mật khẩu");
+        if (txt_MatKhau_HeThong.getText().equals("")) {
             txt_MatKhau_HeThong.requestFocus();
-            return false;
-        } else if (txt_MatKhauMoi_HeThong.equals("")) {
-            MsgBox.alert(this, "không để trống mật khẩu mới");
-            txt_MatKhauMoi_HeThong.requestFocus();
-            return false;
-        } else if (txt_Confirm_HeThong.equals("")) {
-            MsgBox.alert(this, "không để trống nhập lại mật khẩu mới");
-            txt_Confirm_HeThong.requestFocus();
+            MsgBox.alert(this, "không để trống mật khẩu");
             return false;
         }
 
+        if (!Auth.getMatKhau_TaiKhoan().equalsIgnoreCase(txt_MatKhau_HeThong.getText())) {
+            MsgBox.alert(this, "Sai mật khẩu!");
+            txt_MatKhau_HeThong.requestFocus();
+            return false;
+        }
+
+        if (txt_MatKhauMoi_HeThong.getText().equals("")) {
+            MsgBox.alert(this, "Chưa nhập vào mật khẩu mới");
+            txt_MatKhauMoi_HeThong.requestFocus();
+            return false;
+        }
+
+        if (txt_Confirm_HeThong.getText().equals("")) {
+            MsgBox.alert(this, "Chưa nhập vào xác nhận mật khẩu mới");
+            txt_Confirm_HeThong.requestFocus();
+            return false;
+        }
+        
         if (!txt_Confirm_HeThong.getText().equals(txt_MatKhauMoi_HeThong.getText())) {
-            MsgBox.alert(this, "Xác nhận mật khẩu không trùng khớp");
+            MsgBox.alert(this, "Mật khẩu xác nhận không đúng");
             txt_Confirm_HeThong.requestFocus();
             return false;
         }
@@ -6493,13 +6508,31 @@ public class Main_Frame extends javax.swing.JFrame {
         return true;
     }
 
+    private TaiKhoan getForm_CapNhatMatKhau_HeThong() {
+        TaiKhoan tk = new TaiKhoan();
+
+        String tenDN = txt_TenDangNhap_HeThong.getText();
+        String matKhau = txt_Confirm_HeThong.getText();
+
+        tk.setTenDangNhap(tenDN);
+        tk.setMatKhau(matKhau);
+
+        return tk;
+    }
+
     private void CapNhatMatKhau_HeThong() {
+        TaiKhoan tk = getForm_CapNhatMatKhau_HeThong();
         try {
             if (checkForm_HeThong()) {
-
+                
+                tkDAO.update_Password_Only(tk);
+                
+                MsgBox.alert(this, "Cập nhật mật khẩu thành công");
+                new Login_Frame().setVisible(true);
+                this.dispose();
             }
         } catch (Exception e) {
-            MsgBox.alert(this, "Nhân viên chưa có tài khoản");
+            MsgBox.alert(this, "Cập nhật thất bại");
             e.printStackTrace();
         }
     }
@@ -6593,7 +6626,7 @@ public class Main_Frame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    
+
     private void tinhTienTraLai_HoaDon_BanHang() {
         try {
             String TienKhachDua_Str = txt_TienKhachDua_BanHang.getText();
@@ -6601,7 +6634,11 @@ public class Main_Frame extends javax.swing.JFrame {
             String TongThanhTien_Str = lbl_TienThanhToan_BanHang.getText();
             double TongThanhTien_dou = Double.parseDouble(TongThanhTien_Str);
             double TienTraLai = (TienKhachDua_dou - TongThanhTien_dou);
-            
+
+            if (txt_TienKhachDua_BanHang.getText().equals("")) {
+                return;
+            }
+
             if (TienTraLai >= 0) {
                 txt_TienTraLai_Banhang.setText(String.valueOf(TienTraLai));
                 btn_ThanhToan_BanHang.setEnabled(true);
@@ -6609,7 +6646,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 txt_TienTraLai_Banhang.setText("");
                 this.btn_ThanhToan_BanHang.setEnabled(false);
             }
-            
+
             txt_TienTraLai_Banhang.setText(String.valueOf(TienTraLai));
         } catch (NumberFormatException e) {
             e.printStackTrace();
@@ -6617,6 +6654,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     HashMap<String, Double> listGiamGia = new HashMap();
+
     private void getDSGiaGiam(String key, Double value) {
         listGiamGia.put(key, value);
 
@@ -6699,7 +6737,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 }
             }
             isRemove = false;
- 
+
         } catch (NumberFormatException e) {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
             e.printStackTrace();
@@ -6780,13 +6818,26 @@ public class Main_Frame extends javax.swing.JFrame {
         return hd;
     }
 
+    public void selectTab(int index) {
+        tabs_HoaDon.setSelectedIndex(index);
+    }
+
     private void ThanhToan_BanHang_button_click() {
+
+        if (lbl_TenKhachHang_BanHang.getText().equals("")) {
+            MsgBox.alert(this, "Chưa chọn khách hàng để thêm hóa đơn");
+            return;
+        }
+
         HoaDon hd = getForm_BanHang();
         try {
             hdDAO.insert(hd);
-            
+
             this.fillToTableDSHoaDon_BangHang();
             MsgBox.alert(this, "Thêm hóa đơn thành công");
+
+            int select_tab = 1;
+            this.selectTab(select_tab);
         } catch (Exception e) {
             System.out.println("Thêm thất bại");
             e.printStackTrace();
@@ -6873,7 +6924,6 @@ public class Main_Frame extends javax.swing.JFrame {
             String maHD = (String) tbl_DSHoaDon_BanHang.getValueAt(tbl_DSHoaDon_BanHang.getSelectedRow(), 0);
             hdDAO.delete(maHD);
 
-            
             this.fillToTableDSHoaDon_BangHang();
             MsgBox.alert(this, "Xóa thành công");
         } catch (Exception e) {
@@ -6883,6 +6933,8 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
 //                        END_CARD_BANHANG
+//                        START_CARD_HETHONG
+//                        END_CARD_HETHONG
 //   ********************** HOAI NAM**********************
     //START_CARD_NHANVIEN
     JFileChooser filenChooser = new JFileChooser();

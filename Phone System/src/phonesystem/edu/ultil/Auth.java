@@ -36,4 +36,9 @@ public class Auth {
     public static String getIDNhanVien(){
         return nv.getMaNhanVien();
     }
+    
+    public static String getMatKhau_TaiKhoan(){
+        return user.getMatKhau();
+    }
+
 }
