@@ -151,10 +151,10 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
             System.out.println(l[0] + " " + " " + l[1] + " " + l[2] + " " + " " + l[3] + " " + " " + l[4]);
         }
         
-        String tenSP = "Iphone X";
-        List<Object[]> ls1 = dao.getGiaGiam(tenSP);
-        for (Object[] o : ls1) {
-            System.out.println(o[0]);
-        }
+//        String tenSP = "Iphone X";
+//        List<Object[]> ls1 = dao.getGiaGiam(tenSP);
+//        for (Object[] o : ls1) {
+//            System.out.println(o[0]);
+//        }
     }
 }
