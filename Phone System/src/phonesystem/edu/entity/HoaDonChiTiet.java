@@ -27,6 +27,13 @@ public class HoaDonChiTiet {
         this.MaHoaDonChiTiet = MaHoaDonChiTiet;
         this.GhiChu = GhiChu;
     }
+    
+    public HoaDonChiTiet(String MaHoaDon, String MaSanPham, int SoLuong,String GhiChu) {
+        this.MaHoaDon = MaHoaDon;
+        this.MaSanPham = MaSanPham;
+        this.SoLuong = SoLuong;
+        this.GhiChu = GhiChu;
+    }
 
     public String getMaHoaDon() {
         return MaHoaDon;
