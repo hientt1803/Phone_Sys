@@ -37,7 +37,7 @@ public class ChonSanPhamKhuyenMai extends javax.swing.JDialog {
         tableModelSanPham_KhuyenMai = (DefaultTableModel) tbl_DanhSachSanPham_KhuyenMai.getModel();
         tableModelSanPham_KhuyenMai.setRowCount(0);
         try {
-            List<SanPham> list = spDAO.selectAll();
+            List<SanPham> list = spDAO.selectSanPhamChuaCoKhuyenMai(Main_Frame.km.getTenKhuyenMai());
             for (SanPham sp : list) {
                 Object[] row = {sp.getMaSanPham(), sp.getTenSanPham(), sp.getDonGia(), sp.getSoLuong(), sp.getHangSanXuat()};
                 if (sp.isTrangThai() == true) {
@@ -127,7 +127,6 @@ public class ChonSanPhamKhuyenMai extends javax.swing.JDialog {
         if (evt.getClickCount() == 2) {
             maSP = tbl_DanhSachSanPham_KhuyenMai.getValueAt(i, 0).toString();
             Main_Frame.km.setMaSanPham(maSP);
-            System.out.println(maSP);
             this.dispose();
         }
     }//GEN-LAST:event_tbl_DanhSachSanPham_KhuyenMaiMouseClicked

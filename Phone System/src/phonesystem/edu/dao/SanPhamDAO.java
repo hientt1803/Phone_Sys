@@ -30,7 +30,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     String SELECT_BY_XUATXU_SQL = "SELECT DISTINCT XuatXu FROM SanPham";
     String SELECT_LAST_ID = "select top 1 MaSanPham from SanPham order by MaSanPham desc";
     String RESTORE_SQL = "UPDATE SanPham SET TrangThai = ? WHERE MaSanPham = ?";
-    String SELECT_SP_CHUACO_KHUYENMAI = "select * from SanPham where MaSanPham not in (select MaSanPham from KhuyenMai where TenKhuyenMai = ?')";
+    String SELECT_SP_CHUACO_KHUYENMAI = "select * from SanPham where MaSanPham not in (select MaSanPham from KhuyenMai where TenKhuyenMai = ?)";
 
     @Override
     public void insert(SanPham entity) {

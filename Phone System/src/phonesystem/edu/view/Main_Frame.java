@@ -6479,7 +6479,7 @@ public class Main_Frame extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getModel();
         model.setRowCount(0);
         try {
-            List<KhuyenMai> list = kmDAO.selectAll();
+            List<KhuyenMai> list = kmDAO.selectKhuyenMai();
             for (KhuyenMai km : list) {
                 String ngayBatDau = XDate.toString(km.getNgayBatDau(), "dd/MM/yyyy");
                 String ngayKetThuc = XDate.toString(km.getNgayKetThuc(), "dd/MM/yyyy");
