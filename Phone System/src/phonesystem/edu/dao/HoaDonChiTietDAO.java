@@ -86,6 +86,7 @@ public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
             }
             rs.getStatement().getConnection().close();
             return list;
+
         } catch (Exception e) {
             throw new RuntimeException();
         }
@@ -120,5 +121,10 @@ public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    
+    public static void main(String[] args) {
+        HoaDonChiTietDAO dao = new HoaDonChiTietDAO();
+        dao.getHoaDonChiTiet("HD01");
     }
 }

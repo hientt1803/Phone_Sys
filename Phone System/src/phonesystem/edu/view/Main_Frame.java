@@ -5326,6 +5326,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void btn_LamMoi_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LamMoi_BanHangActionPerformed
         this.clearForm_BanHang();
+        
     }//GEN-LAST:event_btn_LamMoi_BanHangActionPerformed
 
     private void btn_ThanhToan_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThanhToan_BanHangActionPerformed
@@ -6955,18 +6956,17 @@ public class Main_Frame extends javax.swing.JFrame {
                 txt_TienTraLai_Banhang.setText(String.valueOf(TienTraLai));
                 btn_ThanhToan_BanHang.setEnabled(true);
             } else if (TienTraLai < 0) {
-                txt_TienTraLai_Banhang.setText("");
+                txt_TienTraLai_Banhang.setText("0");
                 this.btn_ThanhToan_BanHang.setEnabled(false);
             }
 
             txt_TienTraLai_Banhang.setText(String.valueOf(TienTraLai));
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+            return;
         }
     }
 
     HashMap<String, Double> listGiamGia = new HashMap();
-
     private void getDSGiaGiam(String key, Double value) {
         listGiamGia.put(key, value);
 
@@ -7105,6 +7105,8 @@ public class Main_Frame extends javax.swing.JFrame {
     private void clearForm_BanHang() {
         txt_TienKhachDua_BanHang.setText("");
         txt_TienTraLai_Banhang.setText("");
+        
+        btn_ThanhToan_BanHang.setEnabled(false);
     }
 
     private HoaDon getForm_HD_BanHang() {
@@ -7162,7 +7164,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
             tbl_DSHoaDon_BanHang.setRowSelectionInterval(0, 0);
             this.fillToTableDSHoaDonChiTiet_BanHang();
-
+            
             MsgBox.alert(this, "Thêm hóa đơn thành công");
 
             int select_tab = 1;
