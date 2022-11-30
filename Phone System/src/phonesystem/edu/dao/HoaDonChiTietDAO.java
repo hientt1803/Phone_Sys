@@ -20,7 +20,7 @@ import phonesystem.edu.ultil.jdbcHelper;
  */
 public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
 
-    String INSERT_SQL = "INSERT INTO HoaDonChiTiet(MaHoaDonChiTiet,MaHoaDon,MaSanPham,SoLuong,GhiChu) values(?,?,?,?)";
+    String INSERT_SQL = "INSERT INTO HoaDonChiTiet(MaHoaDon,MaSanPham,SoLuong,GhiChu) values(?,?,?,?)";
     String UPDATE_SQL = "UPDATE HoaDonChiTiet set MaHoaDon = ? , MaSanPham = ? , SoLuong = ? , GhiChu = ?";
     String DELETE_SQL = "DELETE FROM HoaDonChiTiet where MaHoaDonChiTiet = ?";
     String SELECT_ALL_SQL = "select hd.MaHoaDon,sp.TenSanPham,sp.DonGia,sp.SoLuong,\n"

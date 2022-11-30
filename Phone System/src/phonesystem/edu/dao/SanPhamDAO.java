@@ -135,7 +135,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         }
         return list_Hang;
     }
-    
+
     public List<Object> selectByMauSac() {
       List<Object> list_Mau = new ArrayList<Object>();
         try {
@@ -182,5 +182,10 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
 
         return id;
     }
-    
+
+    public static void main(String[] args) {
+        SanPhamDAO sp = new SanPhamDAO();
+        List<SanPham> l = null;
+        l = sp.select_All_TheoTenSP("SamSung J4");
+    }
 }
