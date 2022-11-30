@@ -30,6 +30,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     String SELECT_BY_XUATXU_SQL = "SELECT DISTINCT XuatXu FROM SanPham";
     String SELECT_LAST_ID = "select top 1 MaSanPham from SanPham order by MaSanPham desc";
     String RESTORE_SQL = "UPDATE SanPham SET TrangThai = ? WHERE MaSanPham = ?";
+    String SELECT_SP_CHUACO_KHUYENMAI = "select * from SanPham where MaSanPham not in (select MaSanPham from KhuyenMai where TenKhuyenMai = ?')";
 
     @Override
     public void insert(SanPham entity) {
@@ -73,7 +74,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         } catch (Exception e) {
         }
     }
-    
+
     public void restore(String id) {
         try {
             jdbcHelper.update(RESTORE_SQL, "True", id);
@@ -124,7 +125,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     }
 
     public List<Object> selectByHang() {
-       List<Object> list_Hang = new ArrayList<Object>();
+        List<Object> list_Hang = new ArrayList<Object>();
         try {
             ResultSet rs = jdbcHelper.query(SELECT_BY_HANG_SQL);
             while (rs.next()) {
@@ -137,7 +138,7 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     }
 
     public List<Object> selectByMauSac() {
-      List<Object> list_Mau = new ArrayList<Object>();
+        List<Object> list_Mau = new ArrayList<Object>();
         try {
             ResultSet rs = jdbcHelper.query(SELECT_BY_MAUSAC_SQL);
             while (rs.next()) {
@@ -148,9 +149,9 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         }
         return list_Mau;
     }
-    
+
     public List<Object> selectByXuatXu() {
-       List<Object> list_XuatXu = new ArrayList<Object>();
+        List<Object> list_XuatXu = new ArrayList<Object>();
         try {
             ResultSet rs = jdbcHelper.query(SELECT_BY_XUATXU_SQL);
             while (rs.next()) {
@@ -162,13 +163,13 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         return list_XuatXu;
     }
 
-    
-    String SELECT_BY_NAME_PRODUCT = "Select * from SanPham where TenSanPham = ?"; 
+    String SELECT_BY_NAME_PRODUCT = "Select * from SanPham where TenSanPham = ?";
+
     public List<SanPham> select_All_TheoTenSP(String tenSP) {
         return this.selectBySql(SELECT_BY_NAME_PRODUCT, tenSP);
     }
 
-   public String getID_SanPham() {
+    public String getID_SanPham() {
         String id = "";
 
         try {
@@ -183,9 +184,15 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
         return id;
     }
 
+    public List<SanPham> selectSanPhamChuaCoKhuyenMai(String tenKM) {
+       return this.selectBySql(SELECT_SP_CHUACO_KHUYENMAI,tenKM);
+    }
+    
     public static void main(String[] args) {
         SanPhamDAO sp = new SanPhamDAO();
         List<SanPham> l = null;
-        l = sp.select_All_TheoTenSP("SamSung J4");
+      //  l = sp.select_All_TheoTenSP("SamSung J4");
+        l = sp.selectSanPhamChuaCoKhuyenMai("Noel an lành");
+        System.out.println(l);
     }
 }

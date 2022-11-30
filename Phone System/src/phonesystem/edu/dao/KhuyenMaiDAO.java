@@ -5,6 +5,7 @@
  */
 package phonesystem.edu.dao;
 
+import java.awt.image.SampleModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import phonesystem.edu.entity.DiemDanh;
 import phonesystem.edu.entity.KhuyenMai;
+import phonesystem.edu.entity.SanPham;
 import phonesystem.edu.ultil.jdbcHelper;
 
 /**
@@ -25,7 +27,9 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
     String SELECT_ALL_SQL = "SELECT * FROM KhuyenMai";
     String SELECT_TENSP_SQL = "SELECT sp.TenSanPham FROM SanPham sp JOIN KhuyenMai km ON sp.MaSanPham = km.MaSanPham WHERE km.MaSanPham = ?";
     String SELECT_BY_TENKM_SQL = "SELECT * FROM KhuyenMai WHERE TenKhuyenMai = ?";
-    
+    String SELECT_SP_NOTIN_KHUYENMAI = "select * from KhuyenMai where TenKhuyenMai not in (select TenKhuyenMai from KhuyenMai where MaSanPham = ?)";
+    String SELECT_KHUYENMAI_BY_MASP = "SELECT * FROM KhuyenMai WHERE MaSanPham = ?";
+
     @Override
     public void insert(KhuyenMai entity) {
         try {
@@ -54,7 +58,7 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
     }
 
     @Override
-   public KhuyenMai selectByid(String key) {
+    public KhuyenMai selectByid(String key) {
         List<KhuyenMai> list = (List<KhuyenMai>) selectBySql(SELECT_BY_TENKM_SQL, key);
         if (list.isEmpty()) {
             return null;
@@ -69,11 +73,11 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
             ResultSet rs = jdbcHelper.query(sql, args);
             while (rs.next()) {
                 KhuyenMai entity = new KhuyenMai();
-                entity.setMaSanPham(rs.getString("MaSanPham"));
                 entity.setTenKhuyenMai(rs.getString("TenKhuyenMai"));
+                entity.setMaSanPham(rs.getString("MaSanPham"));
+                entity.setGiaGiam(rs.getFloat("GiaGiam"));
                 entity.setNgayBatDau(rs.getDate("NgayBatDau"));
                 entity.setNgayKetThuc(rs.getDate("NgayKetThuc"));
-                entity.setGiaGiam(rs.getFloat("GiaGiam"));
                 entity.setTrangThai(rs.getBoolean("TrangThai"));
                 entity.setGhiChu(rs.getString("GhiChu"));
 
@@ -97,6 +101,18 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
             e.printStackTrace();
         }
         return ma;
+    }
+
+    public List<KhuyenMai> selectSanPhamNotInKhuyenMai(String masp) {
+        return this.selectBySql(SELECT_SP_NOTIN_KHUYENMAI, masp);
+    }
+
+    public List<KhuyenMai> selectKhuyenMaiByMaSP(String masp) {
+        return this.selectBySql(SELECT_KHUYENMAI_BY_MASP, masp);
+    }
+
+    public List<KhuyenMai> selectLenTextFielKhuyenMaiByTenKM(String tenKM) {
+        return this.selectBySql(SELECT_BY_TENKM_SQL, tenKM);
     }
 
 }
