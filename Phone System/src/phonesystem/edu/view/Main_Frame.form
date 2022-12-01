@@ -2907,8 +2907,8 @@
                       <Properties>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                            <TitledBorder title="Danh S&#xe1;ch T&#xe0;i Kho&#x1ea3;n">
-                              <Font PropertyName="font" name="Segoe UI" size="14" style="1"/>
+                            <TitledBorder justification="1" position="2" title="Danh S&#xe1;ch Nh&#xe2;n Vi&#xea;n Ch&#x1b0;a C&#xf3; T&#xe0;i Kho&#x1ea3;n">
+                              <Font PropertyName="font" name="Arial" size="14" style="1"/>
                               <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                             </TitledBorder>
                           </Border>
@@ -2978,7 +2978,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                         <TitledBorder justification="1" position="2" title="Danh S&#xe1;ch Nh&#xe2;n Vi&#xea;n Ch&#x1b0;a C&#xf3; T&#xe0;i Kho&#x1ea3;n">
-                          <Font PropertyName="font" name="Segoe UI" size="14" style="1"/>
+                          <Font PropertyName="font" name="Arial" size="14" style="1"/>
                           <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                         </TitledBorder>
                       </Border>
@@ -5880,6 +5880,11 @@
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JTabbedPane" name="tabs_HoaDon">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Arial" size="14" style="1"/>
+                    </Property>
+                  </Properties>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                   <SubComponents>
@@ -5978,7 +5983,7 @@
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                 <TitledBorder justification="1" position="2" title="Th&#xf4;ng tin h&#xf3;a &#x111;&#x1a1;n">
-                                  <Font PropertyName="font" name="Segoe UI" size="14" style="1"/>
+                                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                                   <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                                 </TitledBorder>
                               </Border>
@@ -6480,6 +6485,8 @@
                                                   <Component id="jLabel111" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="dcs_locNgayTao_BanHang" min="-2" pref="201" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="btn_clear_DSHoaDon" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
                                                   <Component id="jButton8" min="-2" max="-2" attributes="0"/>
                                               </Group>
@@ -6511,8 +6518,9 @@
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel111" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btn_clear_DSHoaDon" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="13" max="32767" attributes="0"/>
+                                          <EmptySpace pref="15" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
@@ -6539,7 +6547,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel111">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI" size="16" style="1"/>
+                              <Font name="Arial" size="16" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="98" green="58" red="61" type="rgb"/>
@@ -6623,7 +6631,7 @@
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                 <TitledBorder justification="1" position="2" title="Th&#xf4;ng Tin Chi Ti&#x1ebf;t H&#xf3;a &#x110;&#x1a1;n">
-                                  <Font PropertyName="font" name="Segoe UI" size="14" style="1"/>
+                                  <Font PropertyName="font" name="Arial" size="14" style="1"/>
                                   <Color PropertyName="color" blue="98" green="58" red="61" type="rgb"/>
                                 </TitledBorder>
                               </Border>
@@ -6769,6 +6777,14 @@
                           </Properties>
                           <Events>
                             <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="dcs_locNgayTao_BanHangPropertyChange"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="btn_clear_DSHoaDon">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="X"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_clear_DSHoaDonActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>

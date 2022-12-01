@@ -533,6 +533,7 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_next_DSHoaDon_BanHang = new javax.swing.JButton();
         btn_last_DSHoaDon_BanHang = new javax.swing.JButton();
         dcs_locNgayTao_BanHang = new com.toedter.calendar.JDateChooser();
+        btn_clear_DSHoaDon = new javax.swing.JButton();
         card_KhuyenMai = new javax.swing.JPanel();
         tab_KhuyenMai = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
@@ -2078,7 +2079,7 @@ public class Main_Frame extends javax.swing.JFrame {
         rdo_NhanVien_TaiKhoan.setSelected(true);
         rdo_NhanVien_TaiKhoan.setText("Nhân Viên");
 
-        jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Tài Khoản", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(97, 88, 152))); // NOI18N
+        jPanel40.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Nhân Viên Chưa Có Tài Khoản", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(97, 88, 152))); // NOI18N
         jPanel40.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tbl_DSDaCoTaiKhoan_TaiKhoan.setModel(new javax.swing.table.DefaultTableModel(
@@ -2163,7 +2164,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
-        jPanel38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Nhân Viên Chưa Có Tài Khoản", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(97, 88, 152))); // NOI18N
+        jPanel38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Danh Sách Nhân Viên Chưa Có Tài Khoản", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(97, 88, 152))); // NOI18N
 
         tbl_DSChuaTaiKhoan_TaiKhoan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3774,6 +3775,8 @@ public class Main_Frame extends javax.swing.JFrame {
 
         pnl_MainDisplayCard.add(card_SanPham, "card_SanPham");
 
+        tabs_HoaDon.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
         txt_fillter_by_TenSP_BanHang.setText("Tìm kiếm theo tên");
         txt_fillter_by_TenSP_BanHang.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -3809,7 +3812,7 @@ public class Main_Frame extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(tbl_DS_SanPham_BanHang);
 
-        jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin hóa đơn", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(97, 88, 152))); // NOI18N
+        jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông tin hóa đơn", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(97, 88, 152))); // NOI18N
         jPanel35.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -4001,7 +4004,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         tabs_HoaDon.addTab("Bán Hàng", jPanel1);
 
-        jLabel111.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel111.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel111.setForeground(new java.awt.Color(97, 88, 152));
         jLabel111.setText("Lọc ngày tạo");
 
@@ -4037,7 +4040,7 @@ public class Main_Frame extends javax.swing.JFrame {
             }
         });
 
-        jPanel36.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông Tin Chi Tiết Hóa Đơn", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Segoe UI", 1, 14), new java.awt.Color(97, 88, 152))); // NOI18N
+        jPanel36.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Thông Tin Chi Tiết Hóa Đơn", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14), new java.awt.Color(97, 88, 152))); // NOI18N
 
         tbl_DSHoaDonChiTiet_BanHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -4117,6 +4120,13 @@ public class Main_Frame extends javax.swing.JFrame {
             }
         });
 
+        btn_clear_DSHoaDon.setText("X");
+        btn_clear_DSHoaDon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clear_DSHoaDonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
         jPanel34Layout.setHorizontalGroup(
@@ -4131,6 +4141,8 @@ public class Main_Frame extends javax.swing.JFrame {
                                 .addComponent(jLabel111)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(dcs_locNgayTao_BanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_clear_DSHoaDon)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton8))
                             .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -4154,8 +4166,9 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton8)
-                            .addComponent(jLabel111))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE))
+                            .addComponent(jLabel111)
+                            .addComponent(btn_clear_DSHoaDon))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(dcs_locNgayTao_BanHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5200,6 +5213,8 @@ public class Main_Frame extends javax.swing.JFrame {
             this.row_tbl_TaiKhoan = tbl_DSChuaTaiKhoan_TaiKhoan.getSelectedRow();
             this.edit_DS_ChuaCoTaiKhoan_TaiKhoan();
         }
+        
+        txt_TenDangNhap_TaiKhoan.requestFocus();
 
     }//GEN-LAST:event_tbl_DSChuaTaiKhoan_TaiKhoanMouseClicked
 
@@ -5651,6 +5666,10 @@ public class Main_Frame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txt_TenKhuyenMai_KhuyenMaiKeyReleased
 
+    private void btn_clear_DSHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clear_DSHoaDonActionPerformed
+        this.filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, "", 3);
+    }//GEN-LAST:event_btn_clear_DSHoaDonActionPerformed
+
 //    Mouse event
     public void onClick(JPanel jpanel) {
         jpanel.setBackground(new Color(34, 51, 102));
@@ -5772,6 +5791,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JButton btn_Xoa_KhuyenMai;
     private javax.swing.JButton btn_Xoa_SanPham;
     private javax.swing.JButton btn_Xoa_TaiKhoan;
+    private javax.swing.JButton btn_clear_DSHoaDon;
     private javax.swing.ButtonGroup btn_group_GioiTinh_NhanVien;
     private javax.swing.ButtonGroup btn_group_TrangThai_NhanVien;
     private javax.swing.ButtonGroup btn_group_VaiTro;

@@ -20,8 +20,8 @@ import phonesystem.edu.ultil.jdbcHelper;
  */
 public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
 
-    String INSERT_SQL = "INSERT INTO HoaDon(MaHoaDon,MaKhachHang,MaNhanVien,NgayTao,GhiChu) values(?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE HoaDon set MaKhachHang = ? , MaNhanVien = ? , NgayTao = ? , GhiChu = ? where MaHoaDon = ?";
+    String INSERT_SQL = "INSERT INTO HoaDon(MaHoaDon, MaKhachHang, MaNhanVien, NgayTao, TongTien, GhiChu) values(?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE HoaDon set MaKhachHang = ? , MaNhanVien = ? , NgayTao = ?, TongTien = ? , GhiChu = ? where MaHoaDon = ?";
     String DELETE_SQL = "DELETE FROM HoaDon where MaHoaDon = ?";
     String SELECT_ALL_SQL = "{CALL getHD}";
     String SELECT_PROC_GIAGIAM_SQL = "{CALL getGiaGiam(?)}";
@@ -32,7 +32,12 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
     public void insert(HoaDon entity) {
         try {
             jdbcHelper.update(INSERT_SQL,
-                    entity.getMaHoaDon(), entity.getMaKhachHang(), entity.getMaNhanVien(), entity.getNgayTao(), entity.getGhiChu()
+                    entity.getMaHoaDon(), 
+                    entity.getMaKhachHang(), 
+                    entity.getMaNhanVien(), 
+                    entity.getNgayTao(), 
+                    entity.getTongTien(),
+                    entity.getGhiChu()
             );
         } catch (SQLException ex) {
             Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -43,7 +48,7 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
     public void update(HoaDon entity) {
         try {
             jdbcHelper.update(INSERT_SQL,
-                    entity.getMaKhachHang(), entity.getMaNhanVien(), entity.getNgayTao(), entity.getGhiChu(), entity.getMaHoaDon()
+                    entity.getMaKhachHang(), entity.getMaNhanVien(), entity.getNgayTao(), entity.getTongTien(), entity.getGhiChu(), entity.getMaHoaDon()
             );
         } catch (SQLException ex) {
             Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -84,6 +89,7 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
                 entity.setMaKhachHang(rs.getString("MaKhachHang"));
                 entity.setMaNhanVien(rs.getString("MaNhanVien"));
                 entity.setNgayTao(rs.getDate("NgayTao"));
+                entity.setTongTien(rs.getDouble("TongTien"));
                 entity.setGhiChu(rs.getString("GhiChu"));
 
                 list.add(entity);
@@ -111,7 +117,7 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
     }
 
     public List<Object[]> getHoaDon() {
-        String[] cols = {"MaHoaDon", "TenNhanVien", "TenKhachHang", "NgayTao", "ThanhTien"};
+        String[] cols = {"MaHoaDon", "TenNhanVien", "TenKhachHang", "NgayTao", "TongTien"};
         return this.getListOfArray(SELECT_ALL_SQL, cols);
     }
 
@@ -138,10 +144,10 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
             throw new RuntimeException();
         }
     }
-    
+
     public List<HoaDon> selectByDateCreate(String key) {
         String sql = "SELECT * FROM HoaDon WHERE NgayTao like ?";
-        return this.selectBySql(sql, "%"+key+"%");
+        return this.selectBySql(sql, "%" + key + "%");
     }
 
     public static void main(String[] args) {
@@ -150,11 +156,5 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
         for (Object[] l : ls) {
             System.out.println(l[0] + " " + " " + l[1] + " " + l[2] + " " + " " + l[3] + " " + " " + l[4]);
         }
-        
-//        String tenSP = "Iphone X";
-//        List<Object[]> ls1 = dao.getGiaGiam(tenSP);
-//        for (Object[] o : ls1) {
-//            System.out.println(o[0]);
-//        }
     }
 }

@@ -26,7 +26,8 @@ public class DiemDanhDAO extends PhoneSysDAO<DiemDanh, String> {
     String SELECT_LOC_NGAY_SQL = "SELECT dd.STT,dd.MaNhanVien,nv.TenNhanVien,dd.CaLamViec,dd.NgayLamViec,dd.GhiChu FROM DiemDanh dd JOIN NhanVien nv ON dd.MaNhanVien = nv.MaNhanVien WHERE NgayLamViec = ?";
     String SELECT_LOC_CA_SQL = "SELECT dd.STT,dd.MaNhanVien,nv.TenNhanVien,dd.CaLamViec,dd.NgayLamViec,dd.GhiChu FROM DiemDanh dd JOIN NhanVien nv ON dd.MaNhanVien = nv.MaNhanVien WHERE CaLamViec = ?";
     String SELECT_TENNV_SQL = "SELECT nv.TenNhanVien FROM NhanVien nv JOIN TaiKhoan tk ON nv.MaNhanVien = tk.MaNhanVien WHERE tk.MaNhanVien = ?";
-    String SELECT_MANHAVIENB_SQL = "select distinct MaNhanVien from DiemDanh";
+    String SELECT_MANHAVIENB_SQL = "select distinct MaNhanVien from DiemDanh where MaNhanVien in \n"
+            + "(select MaNhanVien from TaiKhoan)";
 
     @Override
     public void insert(DiemDanh entity) {

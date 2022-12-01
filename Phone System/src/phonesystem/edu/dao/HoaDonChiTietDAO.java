@@ -30,7 +30,7 @@ public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
             + "join SanPham sp on hdct.MaSanPham = sp.MaSanPham \n"
             + "group by hd.MaHoaDon,sp.TenSanPham,sp.DonGia,sp.SoLuong";
     String SELECT_BY_ID_SQL = "SELECT * FROM HoaDonChiTiet where MaHoaDonChiTiet = ? ";
-    String SELECT_BY_PROC = "{CALL getHDCT(?)}";
+    String SELECT_BY_PROC = "{call getHDCT(?)}";
 
     @Override
     public void insert(HoaDonChiTiet entity) {
@@ -69,8 +69,8 @@ public class HoaDonChiTietDAO extends PhoneSysDAO<HoaDonChiTiet, String> {
     }
     
     public List<Object[]> getHoaDonChiTiet(String maHD) {
-        String[] cols = {"MaHoaDon", "TenSanPham", "DonGia", "SoLuong", "ThanhTien"};
-        return this.getListOfArray(SELECT_BY_PROC, cols,maHD);
+        String[] cols = {"MaHoaDon", "TenSanPham", "DonGia", "SoLuong", "Tong Tien"};
+        return this.getListOfArray(SELECT_BY_PROC, cols, maHD);
     }
 
     public List<Object[]> getListOfArray(String sql, String[] cols, Object... agrs) {

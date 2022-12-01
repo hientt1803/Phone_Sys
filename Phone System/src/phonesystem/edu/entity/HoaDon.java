@@ -15,16 +15,18 @@ public class HoaDon {
     String MaHoaDon, MaKhachHang, MaNhanVien;
     Date NgayTao;
     String GhiChu;
+    double TongTien;
 
     public HoaDon() {
     }
 
-    public HoaDon(String MaHoaDon, String MaKhachHang, String MaNhanVien, Date NgayTao, String GhiChu) {
+    public HoaDon(String MaHoaDon, String MaKhachHang, String MaNhanVien, Date NgayTao, String GhiChu, double TongTien) {
         this.MaHoaDon = MaHoaDon;
         this.MaKhachHang = MaKhachHang;
         this.MaNhanVien = MaNhanVien;
         this.NgayTao = NgayTao;
         this.GhiChu = GhiChu;
+        this.TongTien = TongTien;
     }
 
     public String getMaHoaDon() {
@@ -66,6 +68,13 @@ public class HoaDon {
     public void setGhiChu(String GhiChu) {
         this.GhiChu = GhiChu;
     }
-    
-    
+
+    public double getTongTien() {
+        return TongTien;
+    }
+
+    public void setTongTien(double TongTien) {
+        this.TongTien = TongTien;
+    }
+
 }

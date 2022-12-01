@@ -14,6 +14,7 @@ public class GenerateID {
         if (maCu.equals("")) {
             maCu = type + "01";
         }
+        
         String maMoi_St = maCu.substring(2, maCu.length());
 
         int maMoi_int = Integer.parseInt(maMoi_St);

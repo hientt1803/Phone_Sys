@@ -15,7 +15,7 @@ public class LuongDAO extends PhoneSysDAO<Luong, String> {
 
     String SELECT_ALL_SQL = "{CALL getAllLuong}";
 
-    String SELECT_LUONG_BY_ID_NHANVIEN = "{CALL getLuong(?)}";
+    String SELECT_LUONG_BY_ID_NHANVIEN = "{CALL getLuongByMaNhanVien(?)}";
 
     @Override
     public void insert(Luong entity) {
