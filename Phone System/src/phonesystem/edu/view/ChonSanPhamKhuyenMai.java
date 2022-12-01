@@ -128,7 +128,7 @@ public class ChonSanPhamKhuyenMai extends javax.swing.JDialog {
             maSP = tbl_DanhSachSanPham_KhuyenMai.getValueAt(i, 0).toString();
             Main_Frame.km.setMaSanPham(maSP);
             this.dispose();
-        }
+        }   
     }//GEN-LAST:event_tbl_DanhSachSanPham_KhuyenMaiMouseClicked
 
     /**

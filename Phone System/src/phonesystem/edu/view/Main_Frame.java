@@ -12,6 +12,7 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 import java.beans.PropertyChangeEvent;
 import java.io.File;
 import java.text.DecimalFormat;
@@ -4290,10 +4291,13 @@ public class Main_Frame extends javax.swing.JFrame {
             new String [] {
                 "Tên Khuyến Mãi", "Giá Giảm", "Ngày Bắt Đầu", "Ngày Kết Thúc", "Trạng Thái", "Ghi Chú"
             }
-        ));
-        tbl_DanhSachKhuyenMai_KhuyenMai.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbl_DanhSachKhuyenMai_KhuyenMaiMouseClicked(evt);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane4.setViewportView(tbl_DanhSachKhuyenMai_KhuyenMai);
@@ -4455,7 +4459,20 @@ public class Main_Frame extends javax.swing.JFrame {
             new String [] {
                 "Tên Khuyến Mãi", "Giảm Giá", "Ngày Bắt Đầu", "Ngày Kết Thúc", "Trạng Thái", "Ghi Chú"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMaiMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -5213,7 +5230,7 @@ public class Main_Frame extends javax.swing.JFrame {
             this.row_tbl_TaiKhoan = tbl_DSChuaTaiKhoan_TaiKhoan.getSelectedRow();
             this.edit_DS_ChuaCoTaiKhoan_TaiKhoan();
         }
-        
+
         txt_TenDangNhap_TaiKhoan.requestFocus();
 
     }//GEN-LAST:event_tbl_DSChuaTaiKhoan_TaiKhoanMouseClicked
@@ -5341,7 +5358,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void btn_LamMoi_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LamMoi_BanHangActionPerformed
         this.clearForm_BanHang();
-        
+
     }//GEN-LAST:event_btn_LamMoi_BanHangActionPerformed
 
     private void btn_ThanhToan_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThanhToan_BanHangActionPerformed
@@ -5500,11 +5517,6 @@ public class Main_Frame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_dcs_locNgayTao_BanHangPropertyChange
 
-    private void tbl_DanhSachKhuyenMai_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DanhSachKhuyenMai_KhuyenMaiMouseClicked
-        this.setForm_KhuyenMai();
-        this.updateStatus_DS_KhuyenMai_KhuyenMai();
-    }//GEN-LAST:event_tbl_DanhSachKhuyenMai_KhuyenMaiMouseClicked
-
     private void btn_Them_KhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Them_KhuyenMaiActionPerformed
         this.insert_KhuyenMai();
     }//GEN-LAST:event_btn_Them_KhuyenMaiActionPerformed
@@ -5657,9 +5669,9 @@ public class Main_Frame extends javax.swing.JFrame {
             txt_GiamGia_KhuyenMai.setText(km.getGiaGiam() + "");
             dcs_NgayBatDau_KhuyenMai.setDate(XDate.toDate(ngayBatDau, "dd/MM/yyyy"));
             dcs_NgayKetThuc_KhuyenMai.setDate(XDate.toDate(ngayKetThuc, "dd/MM/yyyy"));
-            if(km.getTrangThai()==true){
+            if (km.getTrangThai() == true) {
                 rdo_DangHoatDong_KhuyenMai.setSelected(true);
-            }else{
+            } else {
                 rdo_NgungHoatDong.setSelected(true);
             }
             txa_GhiChu_KhuyenMai.setText(km.getGhiChu());
@@ -5669,6 +5681,10 @@ public class Main_Frame extends javax.swing.JFrame {
     private void btn_clear_DSHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clear_DSHoaDonActionPerformed
         this.filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, "", 3);
     }//GEN-LAST:event_btn_clear_DSHoaDonActionPerformed
+
+    private void tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMaiMouseClicked
+
+    }//GEN-LAST:event_tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMaiMouseClicked
 
 //    Mouse event
     public void onClick(JPanel jpanel) {
@@ -6987,6 +7003,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     HashMap<String, Double> listGiamGia = new HashMap();
+
     private void getDSGiaGiam(String key, Double value) {
         listGiamGia.put(key, value);
 
@@ -7125,7 +7142,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private void clearForm_BanHang() {
         txt_TienKhachDua_BanHang.setText("");
         txt_TienTraLai_Banhang.setText("");
-        
+
         btn_ThanhToan_BanHang.setEnabled(false);
     }
 
@@ -7184,7 +7201,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
             tbl_DSHoaDon_BanHang.setRowSelectionInterval(0, 0);
             this.fillToTableDSHoaDonChiTiet_BanHang();
-            
+
             MsgBox.alert(this, "Thêm hóa đơn thành công");
 
             int select_tab = 1;
