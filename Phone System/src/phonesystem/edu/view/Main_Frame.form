@@ -242,12 +242,12 @@
                   <Component id="pnl_SanPham" alignment="0" max="32767" attributes="0"/>
                   <Component id="pnl_BanHang" alignment="0" max="32767" attributes="0"/>
                   <Component id="lbl_Logo" alignment="0" max="32767" attributes="0"/>
-                  <Component id="pnl_KhuyenMai" alignment="0" max="32767" attributes="0"/>
+                  <Component id="pnl_HeThong" alignment="0" max="32767" attributes="0"/>
                   <Component id="pnl_NhanVien" alignment="1" max="32767" attributes="0"/>
                   <Component id="pnl_TaiKhoan" alignment="0" max="32767" attributes="0"/>
                   <Component id="pnl_DiemDanh" alignment="0" max="32767" attributes="0"/>
                   <Component id="pnl_Luong" alignment="0" max="32767" attributes="0"/>
-                  <Component id="pnl_HeThong" alignment="0" max="32767" attributes="0"/>
+                  <Component id="pnl_KhuyenMai" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="lbl_DangXuat" min="-2" pref="131" max="-2" attributes="0"/>
@@ -269,7 +269,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="pnl_SanPham" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="pnl_KhuyenMai" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="pnl_HeThong" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="pnl_NhanVien" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -279,7 +279,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="pnl_Luong" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="pnl_HeThong" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="pnl_KhuyenMai" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace pref="60" max="32767" attributes="0"/>
                       <Component id="lbl_DangXuat" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
@@ -611,7 +611,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="pnl_KhuyenMai">
+            <Container class="javax.swing.JPanel" name="pnl_HeThong">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -624,7 +624,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnl_KhuyenMaiMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnl_HeThongMouseClicked"/>
               </Events>
 
               <Layout>
@@ -633,7 +633,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="indicator6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="lbl_KhuyenMai" min="-2" pref="96" max="-2" attributes="0"/>
+                          <Component id="lbl_HeThong" min="-2" pref="96" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -641,7 +641,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="indicator6" alignment="1" max="32767" attributes="0"/>
-                      <Component id="lbl_KhuyenMai" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lbl_HeThong" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -667,7 +667,7 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Component class="javax.swing.JLabel" name="lbl_KhuyenMai">
+                <Component class="javax.swing.JLabel" name="lbl_HeThong">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="14" style="1"/>
@@ -675,7 +675,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Khuy&#x1ebf;n M&#xe3;i"/>
+                    <Property name="text" type="java.lang.String" value="H&#x1ec7; Th&#x1ed1;ng"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                 </Component>
@@ -703,7 +703,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="indicator7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="lbl_NhanVien" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_DiemDanh" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -711,7 +711,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="indicator7" alignment="1" max="32767" attributes="0"/>
-                      <Component id="lbl_NhanVien" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lbl_DiemDanh" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -737,7 +737,7 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Component class="javax.swing.JLabel" name="lbl_NhanVien">
+                <Component class="javax.swing.JLabel" name="lbl_DiemDanh">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="14" style="1"/>
@@ -745,7 +745,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
+                    <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec3;m Danh"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -841,7 +841,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="indicator9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="lbl_DiemDanh" min="-2" pref="96" max="-2" attributes="0"/>
+                          <Component id="lbl_NhanVien" min="-2" pref="96" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -849,7 +849,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="indicator9" alignment="1" max="32767" attributes="0"/>
-                      <Component id="lbl_DiemDanh" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lbl_NhanVien" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -875,7 +875,7 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Component class="javax.swing.JLabel" name="lbl_DiemDanh">
+                <Component class="javax.swing.JLabel" name="lbl_NhanVien">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="14" style="1"/>
@@ -883,7 +883,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec3;m Danh"/>
+                    <Property name="text" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -957,7 +957,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="pnl_HeThong">
+            <Container class="javax.swing.JPanel" name="pnl_KhuyenMai">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -970,7 +970,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnl_HeThongMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnl_KhuyenMaiMouseClicked"/>
               </Events>
 
               <Layout>
@@ -979,7 +979,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="indicator11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="lbl_HeThong" min="-2" pref="96" max="-2" attributes="0"/>
+                          <Component id="lbl_KhuyenMai" min="-2" pref="96" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -987,7 +987,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="indicator11" alignment="1" max="32767" attributes="0"/>
-                      <Component id="lbl_HeThong" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lbl_KhuyenMai" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -1013,7 +1013,7 @@
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Component class="javax.swing.JLabel" name="lbl_HeThong">
+                <Component class="javax.swing.JLabel" name="lbl_KhuyenMai">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="14" style="1"/>
@@ -1021,7 +1021,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="H&#x1ec7; Th&#x1ed1;ng"/>
+                    <Property name="text" type="java.lang.String" value="Khuy&#x1ebf;n M&#xe3;i"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1167,12 +1167,12 @@
                                                   <Component id="btn_Top5BanChay" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jPanel53" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="0" pref="15" max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane23" pref="376" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jScrollPane23" pref="375" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>

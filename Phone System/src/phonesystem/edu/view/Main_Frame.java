@@ -184,24 +184,24 @@ public class Main_Frame extends javax.swing.JFrame {
         pnl_SanPham = new javax.swing.JPanel();
         indicator3 = new javax.swing.JPanel();
         lbl_SanPham = new javax.swing.JLabel();
-        pnl_KhuyenMai = new javax.swing.JPanel();
+        pnl_HeThong = new javax.swing.JPanel();
         indicator6 = new javax.swing.JPanel();
-        lbl_KhuyenMai = new javax.swing.JLabel();
+        lbl_HeThong = new javax.swing.JLabel();
         pnl_NhanVien = new javax.swing.JPanel();
         indicator7 = new javax.swing.JPanel();
-        lbl_NhanVien = new javax.swing.JLabel();
+        lbl_DiemDanh = new javax.swing.JLabel();
         pnl_TaiKhoan = new javax.swing.JPanel();
         indicator8 = new javax.swing.JPanel();
         lbl_TaiKhoan = new javax.swing.JLabel();
         pnl_DiemDanh = new javax.swing.JPanel();
         indicator9 = new javax.swing.JPanel();
-        lbl_DiemDanh = new javax.swing.JLabel();
+        lbl_NhanVien = new javax.swing.JLabel();
         pnl_Luong = new javax.swing.JPanel();
         indicator10 = new javax.swing.JPanel();
         lbl_Luong = new javax.swing.JLabel();
-        pnl_HeThong = new javax.swing.JPanel();
+        pnl_KhuyenMai = new javax.swing.JPanel();
         indicator11 = new javax.swing.JPanel();
-        lbl_HeThong = new javax.swing.JLabel();
+        lbl_KhuyenMai = new javax.swing.JLabel();
         pnl_MainDisplayCard = new javax.swing.JPanel();
         card_ThongKe = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -838,12 +838,12 @@ public class Main_Frame extends javax.swing.JFrame {
                     .addGap(0, 8, Short.MAX_VALUE)))
         );
 
-        pnl_KhuyenMai.setBackground(new java.awt.Color(255, 255, 255));
-        pnl_KhuyenMai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_KhuyenMai.setMinimumSize(new java.awt.Dimension(180, 43));
-        pnl_KhuyenMai.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnl_HeThong.setBackground(new java.awt.Color(255, 255, 255));
+        pnl_HeThong.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnl_HeThong.setMinimumSize(new java.awt.Dimension(180, 43));
+        pnl_HeThong.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnl_KhuyenMaiMouseClicked(evt);
+                pnl_HeThongMouseClicked(evt);
             }
         });
 
@@ -861,25 +861,25 @@ public class Main_Frame extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        lbl_KhuyenMai.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lbl_KhuyenMai.setForeground(new java.awt.Color(97, 88, 152));
-        lbl_KhuyenMai.setText("Khuyến Mãi");
-        lbl_KhuyenMai.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lbl_HeThong.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lbl_HeThong.setForeground(new java.awt.Color(97, 88, 152));
+        lbl_HeThong.setText("Hệ Thống");
+        lbl_HeThong.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout pnl_KhuyenMaiLayout = new javax.swing.GroupLayout(pnl_KhuyenMai);
-        pnl_KhuyenMai.setLayout(pnl_KhuyenMaiLayout);
-        pnl_KhuyenMaiLayout.setHorizontalGroup(
-            pnl_KhuyenMaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_KhuyenMaiLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnl_HeThongLayout = new javax.swing.GroupLayout(pnl_HeThong);
+        pnl_HeThong.setLayout(pnl_HeThongLayout);
+        pnl_HeThongLayout.setHorizontalGroup(
+            pnl_HeThongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_HeThongLayout.createSequentialGroup()
                 .addComponent(indicator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
         );
-        pnl_KhuyenMaiLayout.setVerticalGroup(
-            pnl_KhuyenMaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnl_HeThongLayout.setVerticalGroup(
+            pnl_HeThongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(indicator6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lbl_KhuyenMai, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl_HeThong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pnl_NhanVien.setBackground(new java.awt.Color(255, 255, 255));
@@ -905,9 +905,9 @@ public class Main_Frame extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        lbl_NhanVien.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lbl_NhanVien.setForeground(new java.awt.Color(97, 88, 152));
-        lbl_NhanVien.setText("Nhân Viên");
+        lbl_DiemDanh.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lbl_DiemDanh.setForeground(new java.awt.Color(97, 88, 152));
+        lbl_DiemDanh.setText("Điểm Danh");
 
         javax.swing.GroupLayout pnl_NhanVienLayout = new javax.swing.GroupLayout(pnl_NhanVien);
         pnl_NhanVien.setLayout(pnl_NhanVienLayout);
@@ -916,13 +916,13 @@ public class Main_Frame extends javax.swing.JFrame {
             .addGroup(pnl_NhanVienLayout.createSequentialGroup()
                 .addComponent(indicator7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
-                .addComponent(lbl_NhanVien)
+                .addComponent(lbl_DiemDanh)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnl_NhanVienLayout.setVerticalGroup(
             pnl_NhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(indicator7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lbl_NhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl_DiemDanh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pnl_TaiKhoan.setBackground(new java.awt.Color(255, 255, 255));
@@ -991,9 +991,9 @@ public class Main_Frame extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        lbl_DiemDanh.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lbl_DiemDanh.setForeground(new java.awt.Color(97, 88, 152));
-        lbl_DiemDanh.setText("Điểm Danh");
+        lbl_NhanVien.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lbl_NhanVien.setForeground(new java.awt.Color(97, 88, 152));
+        lbl_NhanVien.setText("Nhân Viên");
 
         javax.swing.GroupLayout pnl_DiemDanhLayout = new javax.swing.GroupLayout(pnl_DiemDanh);
         pnl_DiemDanh.setLayout(pnl_DiemDanhLayout);
@@ -1002,13 +1002,13 @@ public class Main_Frame extends javax.swing.JFrame {
             .addGroup(pnl_DiemDanhLayout.createSequentialGroup()
                 .addComponent(indicator9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_NhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
         );
         pnl_DiemDanhLayout.setVerticalGroup(
             pnl_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(indicator9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lbl_DiemDanh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl_NhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pnl_Luong.setBackground(new java.awt.Color(255, 255, 255));
@@ -1054,12 +1054,12 @@ public class Main_Frame extends javax.swing.JFrame {
             .addComponent(lbl_Luong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pnl_HeThong.setBackground(new java.awt.Color(255, 255, 255));
-        pnl_HeThong.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_HeThong.setMinimumSize(new java.awt.Dimension(180, 43));
-        pnl_HeThong.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnl_KhuyenMai.setBackground(new java.awt.Color(255, 255, 255));
+        pnl_KhuyenMai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnl_KhuyenMai.setMinimumSize(new java.awt.Dimension(180, 43));
+        pnl_KhuyenMai.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnl_HeThongMouseClicked(evt);
+                pnl_KhuyenMaiMouseClicked(evt);
             }
         });
 
@@ -1077,24 +1077,24 @@ public class Main_Frame extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        lbl_HeThong.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lbl_HeThong.setForeground(new java.awt.Color(97, 88, 152));
-        lbl_HeThong.setText("Hệ Thống");
+        lbl_KhuyenMai.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lbl_KhuyenMai.setForeground(new java.awt.Color(97, 88, 152));
+        lbl_KhuyenMai.setText("Khuyến Mãi");
 
-        javax.swing.GroupLayout pnl_HeThongLayout = new javax.swing.GroupLayout(pnl_HeThong);
-        pnl_HeThong.setLayout(pnl_HeThongLayout);
-        pnl_HeThongLayout.setHorizontalGroup(
-            pnl_HeThongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_HeThongLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnl_KhuyenMaiLayout = new javax.swing.GroupLayout(pnl_KhuyenMai);
+        pnl_KhuyenMai.setLayout(pnl_KhuyenMaiLayout);
+        pnl_KhuyenMaiLayout.setHorizontalGroup(
+            pnl_KhuyenMaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_KhuyenMaiLayout.createSequentialGroup()
                 .addComponent(indicator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
         );
-        pnl_HeThongLayout.setVerticalGroup(
-            pnl_HeThongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnl_KhuyenMaiLayout.setVerticalGroup(
+            pnl_KhuyenMaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(indicator11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lbl_HeThong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbl_KhuyenMai, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout pnl_MenuLayout = new javax.swing.GroupLayout(pnl_Menu);
@@ -1106,12 +1106,12 @@ public class Main_Frame extends javax.swing.JFrame {
             .addComponent(pnl_SanPham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_BanHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lbl_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnl_KhuyenMai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnl_HeThong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_NhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_TaiKhoan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_DiemDanh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_Luong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnl_HeThong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnl_KhuyenMai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_MenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbl_DangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1131,7 +1131,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnl_SanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnl_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnl_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnl_NhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1141,7 +1141,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnl_Luong, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnl_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnl_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(lbl_DangXuat)
                 .addGap(17, 17, 17))
@@ -1281,10 +1281,10 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btn_Top5BanChay)
                             .addComponent(jPanel53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 15, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane23, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
-                .addContainerGap())
+                        .addGap(0, 12, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane23, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                .addGap(18, 18, 18))
         );
 
         jTabbedPane1.addTab("Thống kê", jPanel7);
@@ -4528,23 +4528,23 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_KhachHang);
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_SanPham);
-        onLeaveClick(pnl_KhuyenMai);
+        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_Luong);
-        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_KhuyenMai);
 
         onClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_KhachHang);
         onLeaveClickLabel(lbl_BanHang);
         onLeaveClickLabel(lbl_SanPham);
-        onLeaveClickLabel(lbl_KhuyenMai);
-        onLeaveClickLabel(lbl_NhanVien);
-        onLeaveClickLabel(lbl_TaiKhoan);
-        onLeaveClickLabel(lbl_DiemDanh);
-        onLeaveClickLabel(lbl_Luong);
         onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_DiemDanh);
+        onLeaveClickLabel(lbl_TaiKhoan);
+        onLeaveClickLabel(lbl_NhanVien);
+        onLeaveClickLabel(lbl_Luong);
+        onLeaveClickLabel(lbl_KhuyenMai);
 
 //        indicators
         indicator1.setOpaque(true);
@@ -4568,23 +4568,23 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_SanPham);
-        onLeaveClick(pnl_KhuyenMai);
+        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_Luong);
-        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_KhuyenMai);
 
         onClickLabel(lbl_KhachHang);
         onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_BanHang);
         onLeaveClickLabel(lbl_SanPham);
-        onLeaveClickLabel(lbl_KhuyenMai);
-        onLeaveClickLabel(lbl_NhanVien);
-        onLeaveClickLabel(lbl_TaiKhoan);
-        onLeaveClickLabel(lbl_DiemDanh);
-        onLeaveClickLabel(lbl_Luong);
         onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_DiemDanh);
+        onLeaveClickLabel(lbl_TaiKhoan);
+        onLeaveClickLabel(lbl_NhanVien);
+        onLeaveClickLabel(lbl_Luong);
+        onLeaveClickLabel(lbl_KhuyenMai);
 
         //        indicators
         indicator1.setOpaque(false);
@@ -4608,23 +4608,23 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_KhachHang);
-        onLeaveClick(pnl_KhuyenMai);
+        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_Luong);
-        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_KhuyenMai);
 
         onClickLabel(lbl_SanPham);
         onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_BanHang);
         onLeaveClickLabel(lbl_KhachHang);
-        onLeaveClickLabel(lbl_KhuyenMai);
-        onLeaveClickLabel(lbl_NhanVien);
-        onLeaveClickLabel(lbl_TaiKhoan);
-        onLeaveClickLabel(lbl_DiemDanh);
-        onLeaveClickLabel(lbl_Luong);
         onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_DiemDanh);
+        onLeaveClickLabel(lbl_TaiKhoan);
+        onLeaveClickLabel(lbl_NhanVien);
+        onLeaveClickLabel(lbl_Luong);
+        onLeaveClickLabel(lbl_KhuyenMai);
 
         //        indicators
         indicator1.setOpaque(false);
@@ -4648,23 +4648,23 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_KhachHang);
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
-        onLeaveClick(pnl_KhuyenMai);
+        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_Luong);
-        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_KhuyenMai);
 
         onClickLabel(lbl_BanHang);
         onLeaveClickLabel(lbl_KhachHang);
         onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_SanPham);
-        onLeaveClickLabel(lbl_KhuyenMai);
-        onLeaveClickLabel(lbl_NhanVien);
-        onLeaveClickLabel(lbl_TaiKhoan);
-        onLeaveClickLabel(lbl_DiemDanh);
-        onLeaveClickLabel(lbl_Luong);
         onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_DiemDanh);
+        onLeaveClickLabel(lbl_TaiKhoan);
+        onLeaveClickLabel(lbl_NhanVien);
+        onLeaveClickLabel(lbl_Luong);
+        onLeaveClickLabel(lbl_KhuyenMai);
 
         //        indicators
         indicator1.setOpaque(false);
@@ -4683,8 +4683,8 @@ public class Main_Frame extends javax.swing.JFrame {
         playout.show(pnl_MainDisplayCard, "card_BanHang");
     }//GEN-LAST:event_pnl_BanHangMouseClicked
 
-    private void pnl_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_KhuyenMaiMouseClicked
-        onClick(pnl_KhuyenMai);
+    private void pnl_HeThongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_HeThongMouseClicked
+        onClick(pnl_HeThong);
         onLeaveClick(pnl_KhachHang);
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
@@ -4693,18 +4693,18 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_Luong);
-        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_KhuyenMai);
 
-        onClickLabel(lbl_KhuyenMai);
+        onClickLabel(lbl_HeThong);
         onLeaveClickLabel(lbl_KhachHang);
         onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_SanPham);
         onLeaveClickLabel(lbl_BanHang);
-        onLeaveClickLabel(lbl_NhanVien);
-        onLeaveClickLabel(lbl_TaiKhoan);
         onLeaveClickLabel(lbl_DiemDanh);
+        onLeaveClickLabel(lbl_TaiKhoan);
+        onLeaveClickLabel(lbl_NhanVien);
         onLeaveClickLabel(lbl_Luong);
-        onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_KhuyenMai);
 
         //        indicators
         indicator1.setOpaque(false);
@@ -4720,9 +4720,9 @@ public class Main_Frame extends javax.swing.JFrame {
 
         //        Card playout
         CardLayout playout = (CardLayout) pnl_MainDisplayCard.getLayout();
-        playout.show(pnl_MainDisplayCard, "card_KhuyenMai");
+        playout.show(pnl_MainDisplayCard, "card_HeThong");
 
-    }//GEN-LAST:event_pnl_KhuyenMaiMouseClicked
+    }//GEN-LAST:event_pnl_HeThongMouseClicked
 
     private void pnl_NhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_NhanVienMouseClicked
         onClick(pnl_NhanVien);
@@ -4730,22 +4730,22 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
-        onLeaveClick(pnl_KhuyenMai);
+        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_Luong);
-        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_KhuyenMai);
 
-        onClickLabel(lbl_NhanVien);
+        onClickLabel(lbl_DiemDanh);
         onLeaveClickLabel(lbl_KhachHang);
         onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_SanPham);
         onLeaveClickLabel(lbl_BanHang);
-        onLeaveClickLabel(lbl_KhuyenMai);
-        onLeaveClickLabel(lbl_TaiKhoan);
-        onLeaveClickLabel(lbl_DiemDanh);
-        onLeaveClickLabel(lbl_Luong);
         onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_TaiKhoan);
+        onLeaveClickLabel(lbl_NhanVien);
+        onLeaveClickLabel(lbl_Luong);
+        onLeaveClickLabel(lbl_KhuyenMai);
 
         //        indicators
         indicator1.setOpaque(false);
@@ -4761,7 +4761,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         //        Card playout
         CardLayout playout = (CardLayout) pnl_MainDisplayCard.getLayout();
-        playout.show(pnl_MainDisplayCard, "card_NhanVien");
+        playout.show(pnl_MainDisplayCard, "card_DiemDanh");
 
     }//GEN-LAST:event_pnl_NhanVienMouseClicked
 
@@ -4772,21 +4772,21 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_KhuyenMai);
+        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_Luong);
-        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_KhuyenMai);
 
         onClickLabel(lbl_TaiKhoan);
         onLeaveClickLabel(lbl_KhachHang);
         onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_SanPham);
         onLeaveClickLabel(lbl_BanHang);
-        onLeaveClickLabel(lbl_NhanVien);
-        onLeaveClickLabel(lbl_KhuyenMai);
         onLeaveClickLabel(lbl_DiemDanh);
-        onLeaveClickLabel(lbl_Luong);
         onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_NhanVien);
+        onLeaveClickLabel(lbl_Luong);
+        onLeaveClickLabel(lbl_KhuyenMai);
 
         //        indicators
         indicator1.setOpaque(false);
@@ -4812,21 +4812,21 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_KhuyenMai);
+        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_Luong);
-        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_KhuyenMai);
 
-        onClickLabel(lbl_DiemDanh);
+        onClickLabel(lbl_NhanVien);
         onLeaveClickLabel(lbl_KhachHang);
         onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_SanPham);
         onLeaveClickLabel(lbl_BanHang);
-        onLeaveClickLabel(lbl_NhanVien);
-        onLeaveClickLabel(lbl_KhuyenMai);
+        onLeaveClickLabel(lbl_DiemDanh);
+        onLeaveClickLabel(lbl_HeThong);
         onLeaveClickLabel(lbl_TaiKhoan);
         onLeaveClickLabel(lbl_Luong);
-        onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_KhuyenMai);
 
         //        indicators
         indicator1.setOpaque(false);
@@ -4842,7 +4842,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         //        Card playout
         CardLayout playout = (CardLayout) pnl_MainDisplayCard.getLayout();
-        playout.show(pnl_MainDisplayCard, "card_DiemDanh");
+        playout.show(pnl_MainDisplayCard, "card_NhanVien");
     }//GEN-LAST:event_pnl_DiemDanhMouseClicked
 
     private void pnl_LuongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_LuongMouseClicked
@@ -4852,21 +4852,21 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_KhuyenMai);
+        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_TaiKhoan);
-        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_KhuyenMai);
 
         onClickLabel(lbl_Luong);
         onLeaveClickLabel(lbl_KhachHang);
         onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_SanPham);
         onLeaveClickLabel(lbl_BanHang);
-        onLeaveClickLabel(lbl_NhanVien);
-        onLeaveClickLabel(lbl_KhuyenMai);
         onLeaveClickLabel(lbl_DiemDanh);
-        onLeaveClickLabel(lbl_TaiKhoan);
         onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_NhanVien);
+        onLeaveClickLabel(lbl_TaiKhoan);
+        onLeaveClickLabel(lbl_KhuyenMai);
 
         //        indicators
         indicator1.setOpaque(false);
@@ -4886,26 +4886,26 @@ public class Main_Frame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_pnl_LuongMouseClicked
 
-    private void pnl_HeThongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_HeThongMouseClicked
-        onClick(pnl_HeThong);
+    private void pnl_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_KhuyenMaiMouseClicked
+        onClick(pnl_KhuyenMai);
         onLeaveClick(pnl_KhachHang);
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_KhuyenMai);
+        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_TaiKhoan);
 
-        onClickLabel(lbl_HeThong);
+        onClickLabel(lbl_KhuyenMai);
         onLeaveClickLabel(lbl_KhachHang);
         onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_SanPham);
         onLeaveClickLabel(lbl_BanHang);
-        onLeaveClickLabel(lbl_NhanVien);
-        onLeaveClickLabel(lbl_KhuyenMai);
         onLeaveClickLabel(lbl_DiemDanh);
+        onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_NhanVien);
         onLeaveClickLabel(lbl_Luong);
         onLeaveClickLabel(lbl_TaiKhoan);
 
@@ -4923,8 +4923,8 @@ public class Main_Frame extends javax.swing.JFrame {
 
         //        Card playout
         CardLayout playout = (CardLayout) pnl_MainDisplayCard.getLayout();
-        playout.show(pnl_MainDisplayCard, "card_HeThong");
-    }//GEN-LAST:event_pnl_HeThongMouseClicked
+        playout.show(pnl_MainDisplayCard, "card_KhuyenMai");
+    }//GEN-LAST:event_pnl_KhuyenMaiMouseClicked
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         this.delete_DSHoaDon_BanHang();
@@ -7269,6 +7269,7 @@ public class Main_Frame extends javax.swing.JFrame {
             hdDAO.delete(maHD);
 
             this.fillToTableDSHoaDon_BangHang();
+            model_tbl_DSHoaDonChiTiet.setRowCount(0);
             MsgBox.alert(this, "Xóa thành công");
         } catch (Exception e) {
             System.out.println("Xóa thất bại");
@@ -7422,21 +7423,21 @@ public class Main_Frame extends javax.swing.JFrame {
             onLeaveClick(pnl_SanPham);
             onLeaveClick(pnl_BanHang);
             onLeaveClick(pnl_NhanVien);
-            onLeaveClick(pnl_KhuyenMai);
+            onLeaveClick(pnl_HeThong);
             onLeaveClick(pnl_DiemDanh);
             onLeaveClick(pnl_Luong);
-            onLeaveClick(pnl_HeThong);
+            onLeaveClick(pnl_KhuyenMai);
 
             onClickLabel(lbl_TaiKhoan);
             onLeaveClickLabel(lbl_KhachHang);
             onLeaveClickLabel(lbl_ThongKe);
             onLeaveClickLabel(lbl_SanPham);
             onLeaveClickLabel(lbl_BanHang);
-            onLeaveClickLabel(lbl_NhanVien);
-            onLeaveClickLabel(lbl_KhuyenMai);
             onLeaveClickLabel(lbl_DiemDanh);
-            onLeaveClickLabel(lbl_Luong);
             onLeaveClickLabel(lbl_HeThong);
+            onLeaveClickLabel(lbl_NhanVien);
+            onLeaveClickLabel(lbl_Luong);
+            onLeaveClickLabel(lbl_KhuyenMai);
 
             //        indicators
             indicator1.setOpaque(false);
@@ -7650,23 +7651,23 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_KhachHang);
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
-        onLeaveClick(pnl_KhuyenMai);
+        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_Luong);
-        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_KhuyenMai);
 
         onClickLabel(lbl_BanHang);
         onLeaveClickLabel(lbl_KhachHang);
         onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_SanPham);
-        onLeaveClickLabel(lbl_KhuyenMai);
-        onLeaveClickLabel(lbl_NhanVien);
-        onLeaveClickLabel(lbl_TaiKhoan);
-        onLeaveClickLabel(lbl_DiemDanh);
-        onLeaveClickLabel(lbl_Luong);
         onLeaveClickLabel(lbl_HeThong);
+        onLeaveClickLabel(lbl_DiemDanh);
+        onLeaveClickLabel(lbl_TaiKhoan);
+        onLeaveClickLabel(lbl_NhanVien);
+        onLeaveClickLabel(lbl_Luong);
+        onLeaveClickLabel(lbl_KhuyenMai);
 
         //        indicators
         indicator1.setOpaque(false);
