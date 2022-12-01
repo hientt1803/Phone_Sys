@@ -4429,6 +4429,11 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_Xoa_KhuyenMai.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_Xoa_KhuyenMai.setForeground(new java.awt.Color(97, 88, 152));
         btn_Xoa_KhuyenMai.setText("Xóa");
+        btn_Xoa_KhuyenMai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Xoa_KhuyenMaiActionPerformed(evt);
+            }
+        });
         jPanel33.add(btn_Xoa_KhuyenMai, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 106, 37));
 
         btn_Moi_KhuyenMai.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -5682,12 +5687,16 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMaiMouseClicked
 
     private void btn_CapNhat_KhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CapNhat_KhuyenMaiActionPerformed
-        // TODO add your handling code here:
+        this.update_KhuyenMai();
     }//GEN-LAST:event_btn_CapNhat_KhuyenMaiActionPerformed
 
     private void dcs_LocTheoNgay_DiemDanhPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dcs_LocTheoNgay_DiemDanhPropertyChange
-       this.Loc_TheoNgayLamViec();
+        this.Loc_TheoNgayLamViec();
     }//GEN-LAST:event_dcs_LocTheoNgay_DiemDanhPropertyChange
+
+    private void btn_Xoa_KhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Xoa_KhuyenMaiActionPerformed
+       this.delete_KhuyenMai();
+    }//GEN-LAST:event_btn_Xoa_KhuyenMaiActionPerformed
 
 //    Mouse event
     public void onClick(JPanel jpanel) {
@@ -6607,9 +6616,36 @@ public class Main_Frame extends javax.swing.JFrame {
             kmDAO.insert(km);
             this.fillTable_KhuyenMai();
             MsgBox.alert(this, "Thêm mới Khuyến mãi thành công!");
+            this.clearForm_KhuyenMai();
         } catch (Exception e) {
             MsgBox.alert(this, "Bạn chưa chọn Sản Phẩm !!!");
             //e.printStackTrace();
+        }
+    }
+
+    private void update_KhuyenMai() {
+        KhuyenMai km = getForm_KhuyenMai();
+        try {
+            kmDAO.update(km);
+            this.fillTable_KhuyenMai();
+            this.clearForm_KhuyenMai();
+            MsgBox.alert(this, "Cập nhật Sản phẩm thành công!");
+        } catch (Exception e) {
+            MsgBox.alert(this, "Bạn chưa chọn Sản Phẩm!");
+        }
+    }
+
+    private void delete_KhuyenMai() {
+        String tenKM = txt_TenKhuyenMai_KhuyenMai.getText();
+        if (MsgBox.confirm(this, "Bạn thực sự muốn xóa Khuyến Mãi này?")) {
+            try {
+                kmDAO.delete(tenKM);
+                this.fillTable_KhuyenMai();
+                this.clearForm_KhuyenMai();
+                MsgBox.alert(this, "Xóa Khuyến Mãi thành công!");
+            } catch (Exception e) {
+                MsgBox.alert(this, "Xóa Khuyến Mãi thất bại!");
+            }
         }
     }
 

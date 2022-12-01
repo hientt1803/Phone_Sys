@@ -25,12 +25,13 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
 
     String INSERT_SQL = "INSERT INTO KhuyenMai(MaSanPham,TenKhuyenMai,NgayBatDau,NgayKetThuc,GiaGiam,TrangThai,GhiChu) values(?,?,?,?,?,?,?)";
     String UPDATE_SQL = "UPDATE KhuyenMai set NgayBatDau = ?, NgayKetThuc = ?, GiaGiam = ?, TrangThai = ?, GhiChu = ? WHERE TenKhuyenMai = ?";
+    String DELETE_SQL = "DELETE FROM KhuyenMai WHERE TenKhuyenMai = ?";
     String SELECT_ALL_SQL = "SELECT * FROM KhuyenMai";
     String SELECT_TENSP_SQL = "SELECT sp.TenSanPham FROM SanPham sp JOIN KhuyenMai km ON sp.MaSanPham = km.MaSanPham WHERE km.MaSanPham = ?";
     String SELECT_BY_TENKM_SQL = "SELECT * FROM KhuyenMai WHERE TenKhuyenMai = ?";
-    String SELECT_SP_NOTIN_KHUYENMAI = "select TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu from KhuyenMai\n" +
-"where TenKhuyenMai not in (select TenKhuyenMai from KhuyenMai where MaSanPham = ?)\n" +
-"group by TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu";
+    String SELECT_SP_NOTIN_KHUYENMAI = "select TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu from KhuyenMai\n"
+            + "where TenKhuyenMai not in (select TenKhuyenMai from KhuyenMai where MaSanPham = ?)\n"
+            + "group by TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu";
     String SELECT_KHUYENMAI_BY_MASP = "SELECT * FROM KhuyenMai WHERE MaSanPham = ?";
     String SELECT_KHUYENMAI = "SELECT TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu FROM KhuyenMai\n"
             + "group by TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu";
@@ -49,12 +50,23 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
 
     @Override
     public void update(KhuyenMai entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            jdbcHelper.update(UPDATE_SQL,
+                    entity.getNgayBatDau(), entity.getNgayKetThuc(), entity.getGiaGiam(), entity.getTrangThai(),
+                    entity.getGhiChu(), entity.getTenKhuyenMai()
+            );
+        } catch (SQLException ex) {
+            Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void delete(String key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            jdbcHelper.update(DELETE_SQL, key);
+        } catch (SQLException ex) {
+            Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -129,11 +141,11 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
             throw new RuntimeException(e);
         }
     }
-    
-     public List<KhuyenMai> selectSanPhamNotInKhuyenMai(String maSP) {
+
+    public List<KhuyenMai> selectSanPhamNotInKhuyenMai(String maSP) {
         List<KhuyenMai> list = new ArrayList<>();
         try {
-            ResultSet rs = jdbcHelper.query(SELECT_SP_NOTIN_KHUYENMAI,maSP);
+            ResultSet rs = jdbcHelper.query(SELECT_SP_NOTIN_KHUYENMAI, maSP);
             while (rs.next()) {
                 KhuyenMai entity = new KhuyenMai();
                 entity.setTenKhuyenMai(rs.getString("TenKhuyenMai"));
@@ -152,10 +164,6 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
         }
     }
 
-//    public List<KhuyenMai> selectSanPhamNotInKhuyenMai(String masp) {
-//        return this.selectBySql(SELECT_SP_NOTIN_KHUYENMAI, masp);
-//    }
-
     public List<KhuyenMai> selectKhuyenMaiByMaSP(String masp) {
         return this.selectBySql(SELECT_KHUYENMAI_BY_MASP, masp);
     }
@@ -163,5 +171,5 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
     public List<KhuyenMai> selectLenTextFielKhuyenMaiByTenKM(String tenKM) {
         return this.selectBySql(SELECT_BY_TENKM_SQL, tenKM);
     }
-    
+
 }
