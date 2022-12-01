@@ -16,15 +16,19 @@ import phonesystem.edu.ultil.XImage;
  *
  * @author HienTran
  */
-public class ProgressBar_JFrame extends javax.swing.JFrame {
+public final class ProgressBar_JFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form ProgressBar_JFrame
      */
+    Main_Frame mf = new Main_Frame();
+
     public ProgressBar_JFrame() {
         initComponents();
 //        this.slideShow();
         this.init();
+        this.openMainFrame();
+
     }
     String check = "";
 
@@ -48,7 +52,6 @@ public class ProgressBar_JFrame extends javax.swing.JFrame {
                 if (value > 70) {
                     lblDetail.setText("Chương trình đã sẵn sàng!");
                 }
-
             } else {
                 check += "Stop";
                 check();
@@ -56,6 +59,11 @@ public class ProgressBar_JFrame extends javax.swing.JFrame {
             }
         }).start();
         check();
+    }
+
+    private void openMainFrame() {
+        mf.setVisible(true);
+        mf.setVisible(false);
     }
 
     void check() {

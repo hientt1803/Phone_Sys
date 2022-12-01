@@ -156,5 +156,10 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
         for (Object[] l : ls) {
             System.out.println(l[0] + " " + " " + l[1] + " " + l[2] + " " + " " + l[3] + " " + " " + l[4]);
         }
+        
+        List<Object[]> gg = dao.getGiaGiam("SamSung J4");
+        for (Object[] o : gg) {
+            System.out.println(o[0]);
+        }
     }
 }

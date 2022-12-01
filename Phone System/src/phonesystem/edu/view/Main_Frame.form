@@ -378,7 +378,7 @@
                       <Font name="Arial" size="14" style="1"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="99" red="99" type="rgb"/>
+                      <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Th&#x1ed1;ng K&#xea;"/>
                   </Properties>
@@ -2298,11 +2298,6 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="card_HeThong">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e4" green="e4" red="e4" type="rgb"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card_HeThong"/>
@@ -2345,8 +2340,12 @@
                 </Component>
                 <Container class="javax.swing.JPanel" name="jPanel21">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="e4" green="e4" red="e4" type="rgb"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                        <MatteColorBorder>
+                          <Color PropertyName="color" blue="cc" green="cc" red="cc" type="rgb"/>
+                        </MatteColorBorder>
+                      </Border>
                     </Property>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[360, 293]"/>
@@ -2354,7 +2353,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="390" y="230" width="360" height="330"/>
+                      <AbsoluteConstraints x="390" y="230" width="360" height="350"/>
                     </Constraint>
                   </Constraints>
 
@@ -2386,7 +2385,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="14" max="32767" attributes="0"/>
+                              <EmptySpace pref="12" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2394,7 +2393,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="47" max="32767" attributes="0"/>
+                              <EmptySpace pref="65" max="32767" attributes="0"/>
                               <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txt_TenDangNhap_HeThong" min="-2" max="-2" attributes="0"/>
@@ -2527,7 +2526,7 @@
                       <Color blue="98" green="58" red="61" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="tranhien"/>
+                    <Property name="text" type="java.lang.String" value="hientrantrong"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2722,53 +2721,50 @@
                                   <Component id="jPanel39" pref="474" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="jPanel40" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="jPanel40" min="-2" pref="520" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jPanel40" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="txt_MaNV_TaiKhoan" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jLabel112" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="txt_TenDangNhap_TaiKhoan" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txt_MaNV_TaiKhoan" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel115" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txt_MatKhau_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel116" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txt_Confirm_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel117" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="rdo_QuanLi_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="rdo_NhanVien_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jPanel39" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel112" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="txt_TenDangNhap_TaiKhoan" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel115" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_MatKhau_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel116" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_Confirm_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel117" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rdo_QuanLi_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rdo_NhanVien_TaiKhoan" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jPanel39" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="9" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jPanel40" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2925,7 +2921,7 @@
                           </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="11" y="22" width="502" height="214"/>
+                              <AbsoluteConstraints x="11" y="22" width="500" height="220"/>
                             </Constraint>
                           </Constraints>
 
@@ -3242,14 +3238,14 @@
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel90" alignment="1" max="32767" attributes="0"/>
-                              <Component id="dcs_LocTheoNgay_DiemDanh" alignment="1" pref="27" max="32767" attributes="0"/>
+                              <Component id="dcs_LocTheoNgay_DiemDanh" alignment="1" max="32767" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="cbo_LocTheoCa_DiemDanh" alignment="3" max="32767" attributes="0"/>
                                   <Component id="jLabel91" alignment="3" max="32767" attributes="0"/>
                                   <Component id="btn_Refesh_DiemDanh" alignment="3" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="lbl_MaNhanVien_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -3287,7 +3283,7 @@
                                   <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="8" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jScrollPane6" min="-2" pref="435" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -5936,13 +5932,19 @@
                             <Component class="javax.swing.JTable" name="tbl_DS_SanPham_BanHang">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="2" rowCount="0">
+                                  <Table columnCount="3" rowCount="0">
                                     <Column editable="false" title="T&#xea;n SP" type="java.lang.Object"/>
                                     <Column editable="false" title="M&#xe0;u s&#x1eaf;c" type="java.lang.Object"/>
+                                    <Column editable="false" title="S&#x1ed1; L&#x1b0;&#x1ee3;ng" type="java.lang.Object"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                   <TableColumnModel selectionModel="0">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                      <Title/>
+                                      <Editor/>
+                                      <Renderer/>
+                                    </Column>
                                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>
@@ -6230,13 +6232,13 @@
                                 </Constraint>
                               </Constraints>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="lbl_TienThanhToan_BanHang">
+                            <Component class="javax.swing.JLabel" name="lbl_TongTienThanhToan_BanHang">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="0"/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="177" y="349" width="89" height="-1"/>
+                                  <AbsoluteConstraints x="177" y="349" width="70" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -6263,9 +6265,10 @@
                                 </Constraint>
                               </Constraints>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="jTextField6">
+                            <Component class="javax.swing.JTextField" name="txt_giaGiam_BanHang">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="0"/>
+                                <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -6442,7 +6445,7 @@
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="278" y="349" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="250" y="350" width="-1" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -6470,7 +6473,7 @@
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                   <Component id="jLabel111" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="dcs_locNgayTao_BanHang" min="-2" pref="201" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="btn_clear_DSHoaDon" min="-2" max="-2" attributes="0"/>
@@ -6499,22 +6502,21 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel111" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="btn_clear_DSHoaDon" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace pref="15" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel111" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="dcs_locNgayTao_BanHang" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="btn_clear_DSHoaDon" pref="0" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="dcs_locNgayTao_BanHang" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <EmptySpace pref="15" max="32767" attributes="0"/>
                                   <Component id="jScrollPane10" min="-2" pref="155" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
