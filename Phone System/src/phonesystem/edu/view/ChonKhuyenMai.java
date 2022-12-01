@@ -9,7 +9,9 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import phonesystem.edu.dao.KhuyenMaiDAO;
 import phonesystem.edu.entity.KhuyenMai;
+import phonesystem.edu.ultil.MsgBox;
 import phonesystem.edu.ultil.XDate;
+import static phonesystem.edu.view.Main_Frame.km;
 
 /**
  *
@@ -20,7 +22,7 @@ public class ChonKhuyenMai extends javax.swing.JDialog {
 
     public static String maSanPham = "";
     KhuyenMaiDAO kmDAO = new KhuyenMaiDAO();
-    
+
     /**
      * Creates new form ChonKhuyenMai
      */
@@ -29,19 +31,20 @@ public class ChonKhuyenMai extends javax.swing.JDialog {
         initComponents();
     }
 
-    private void fillTableKKhuyenMai(){
+    private void fillTableKKhuyenMai() {
         List<KhuyenMai> list = kmDAO.selectSanPhamNotInKhuyenMai(maSanPham);
         DefaultTableModel model = (DefaultTableModel) tbl_DanhSachKhuyenMai_KhuyenMai.getModel();
         model.setRowCount(0);
         for (KhuyenMai km : list) {
-                String ngayBatDau = XDate.toString(km.getNgayBatDau(), "dd/MM/yyyy");
-                String ngayKetThuc = XDate.toString(km.getNgayKetThuc(), "dd/MM/yyyy");
-                Object[] row = {km.getTenKhuyenMai(), km.getGiaGiam(), ngayBatDau,
-                    ngayKetThuc, km.getTrangThai() ? "Đang hoạt động" : "Ngừng hoạt động", km.getGhiChu()
-                };
-                model.addRow(row);
-            }
+            String ngayBatDau = XDate.toString(km.getNgayBatDau(), "dd/MM/yyyy");
+            String ngayKetThuc = XDate.toString(km.getNgayKetThuc(), "dd/MM/yyyy");
+            Object[] row = {km.getTenKhuyenMai(), km.getGiaGiam(), ngayBatDau,
+                ngayKetThuc, km.getTrangThai() ? "Đang hoạt động" : "Ngừng hoạt động", km.getGhiChu()
+            };
+            model.addRow(row);
+        }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -108,7 +111,31 @@ public class ChonKhuyenMai extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_ThemKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ThemKhuyenMaiActionPerformed
-        // TODO add your handling code here:
+        try {
+            int i = tbl_DanhSachKhuyenMai_KhuyenMai.getSelectedRow();
+            String ngayBatDau = tbl_DanhSachKhuyenMai_KhuyenMai.getValueAt(i, 2).toString();
+            String ngayKetThuc = tbl_DanhSachKhuyenMai_KhuyenMai.getValueAt(i, 3).toString();
+            String trangThai = (String) tbl_DanhSachKhuyenMai_KhuyenMai.getValueAt(i, 4);
+            String ghiChu = (String) tbl_DanhSachKhuyenMai_KhuyenMai.getValueAt(i, 5);
+            KhuyenMai km = new KhuyenMai();
+            km.setTenKhuyenMai(tbl_DanhSachKhuyenMai_KhuyenMai.getValueAt(i, 0).toString());
+            km.setMaSanPham(maSanPham);
+            km.setGiaGiam(Float.parseFloat(tbl_DanhSachKhuyenMai_KhuyenMai.getValueAt(i, 1).toString()));
+            km.setNgayBatDau(XDate.toDate(ngayBatDau, "dd/MM/yyyy"));
+            km.setNgayKetThuc(XDate.toDate(ngayKetThuc, "dd/MM/yyyy"));
+            if (trangThai.equals("Đang hoạt động")) {
+                km.setTrangThai(true);
+            } else {
+                km.setTrangThai(false);
+            }
+            km.setGhiChu(ghiChu);
+
+            kmDAO.insert(km);
+            MsgBox.alert(this, "Thêm mới Khuyến mãi thành công!");
+            this.dispose();
+        } catch (Exception e) {
+            MsgBox.alert(this, "Bạn chưa chọn Khuyến Mãi !!!");
+        }
     }//GEN-LAST:event_btn_ThemKhuyenMaiActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

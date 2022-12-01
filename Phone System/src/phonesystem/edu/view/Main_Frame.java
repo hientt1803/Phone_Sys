@@ -355,7 +355,6 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_Next_DiemDanh = new javax.swing.JButton();
         btn_Last_DiemDanh = new javax.swing.JButton();
         btn_Refesh_DiemDanh = new javax.swing.JButton();
-        btn_TimKiemTheoNgay_DiemDanh = new javax.swing.JButton();
         card_Luong = new javax.swing.JPanel();
         jPanel47 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
@@ -2340,6 +2339,11 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel90.setText("Lọc Ngày Làm Việc");
 
         dcs_LocTheoNgay_DiemDanh.setDateFormatString("dd/MM/yyyy");
+        dcs_LocTheoNgay_DiemDanh.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                dcs_LocTheoNgay_DiemDanhPropertyChange(evt);
+            }
+        });
 
         jLabel91.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel91.setForeground(new java.awt.Color(97, 88, 152));
@@ -2417,14 +2421,6 @@ public class Main_Frame extends javax.swing.JFrame {
             }
         });
 
-        btn_TimKiemTheoNgay_DiemDanh.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_TimKiemTheoNgay_DiemDanh.setText("Tìm kiếm");
-        btn_TimKiemTheoNgay_DiemDanh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_TimKiemTheoNgay_DiemDanhActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout card_DiemDanhLayout = new javax.swing.GroupLayout(card_DiemDanh);
         card_DiemDanh.setLayout(card_DiemDanhLayout);
         card_DiemDanhLayout.setHorizontalGroup(
@@ -2454,36 +2450,33 @@ public class Main_Frame extends javax.swing.JFrame {
                     .addGroup(card_DiemDanhLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jLabel92)
-                        .addContainerGap(592, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_DiemDanhLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_First_DiemDanh)
-                        .addGap(74, 74, 74)
-                        .addComponent(btn_Previous_DiemDanh)
-                        .addGap(62, 62, 62)
-                        .addComponent(btn_Next_DiemDanh)
-                        .addGap(51, 51, 51)
-                        .addComponent(btn_Last_DiemDanh)
-                        .addGap(130, 130, 130))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_DiemDanhLayout.createSequentialGroup()
-                        .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(card_DiemDanhLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, card_DiemDanhLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel90)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(dcs_LocTheoNgay_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_TimKiemTheoNgay_DiemDanh)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel91)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbo_LocTheoCa_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_Refesh_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(41, 41, 41))))
+                        .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_DiemDanhLayout.createSequentialGroup()
+                                .addComponent(btn_First_DiemDanh)
+                                .addGap(74, 74, 74)
+                                .addComponent(btn_Previous_DiemDanh)
+                                .addGap(62, 62, 62)
+                                .addComponent(btn_Next_DiemDanh)
+                                .addGap(51, 51, 51)
+                                .addComponent(btn_Last_DiemDanh)
+                                .addGap(130, 130, 130))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_DiemDanhLayout.createSequentialGroup()
+                                .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(card_DiemDanhLayout.createSequentialGroup()
+                                        .addComponent(jLabel90)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(dcs_LocTheoNgay_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(27, 27, 27)
+                                        .addComponent(jLabel91)
+                                        .addGap(35, 35, 35)
+                                        .addComponent(cbo_LocTheoCa_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(47, 47, 47)
+                                        .addComponent(btn_Refesh_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(41, 41, 41))))))
         );
         card_DiemDanhLayout.setVerticalGroup(
             card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2491,18 +2484,16 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel90, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dcs_LocTheoNgay_DiemDanh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dcs_LocTheoNgay_DiemDanh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                     .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cbo_LocTheoCa_DiemDanh)
                         .addComponent(jLabel91, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_Refesh_DiemDanh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_DiemDanhLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_TimKiemTheoNgay_DiemDanh, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel51)
-                                .addComponent(lbl_MaNhanVien_DiemDanh)))))
+                        .addGap(0, 12, Short.MAX_VALUE)
+                        .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel51)
+                            .addComponent(lbl_MaNhanVien_DiemDanh))))
                 .addGap(18, 18, 18)
                 .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel57)
@@ -2529,7 +2520,7 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel88))
                     .addGroup(card_DiemDanhLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(card_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4404,7 +4395,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         buttonGroup1.add(rdo_NgungHoatDong);
         rdo_NgungHoatDong.setText("Ngừng hoạt động");
-        jPanel33.add(rdo_NgungHoatDong, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
+        jPanel33.add(rdo_NgungHoatDong, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 110, -1));
 
         jLabel79.setText("Ghi chú");
         jPanel33.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
@@ -4428,6 +4419,11 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_CapNhat_KhuyenMai.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_CapNhat_KhuyenMai.setForeground(new java.awt.Color(97, 88, 152));
         btn_CapNhat_KhuyenMai.setText("Cập nhật");
+        btn_CapNhat_KhuyenMai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CapNhat_KhuyenMaiActionPerformed(evt);
+            }
+        });
         jPanel33.add(btn_CapNhat_KhuyenMai, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 106, 42));
 
         btn_Xoa_KhuyenMai.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -5245,10 +5241,6 @@ public class Main_Frame extends javax.swing.JFrame {
         cbo_LocTheoCa_DiemDanh.setSelectedIndex(0);
     }//GEN-LAST:event_btn_Refesh_DiemDanhActionPerformed
 
-    private void btn_TimKiemTheoNgay_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TimKiemTheoNgay_DiemDanhActionPerformed
-        this.Loc_TheoNgayLamViec();
-    }//GEN-LAST:event_btn_TimKiemTheoNgay_DiemDanhActionPerformed
-
     private void btn_DiemDanh_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DiemDanh_DiemDanhActionPerformed
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa");
@@ -5655,6 +5647,7 @@ public class Main_Frame extends javax.swing.JFrame {
             maSP = tbl_DanhSachSanPham_KhuyenMai.getValueAt(i, 0).toString();
             ChonKhuyenMai.maSanPham = maSP;
             new ChonKhuyenMai(this, true).setVisible(true);
+            this.fillTableSanPhamCo_KhuyenMai(i);
         }
         if (evt.getClickCount() == 1) {
             this.fillTableSanPhamCo_KhuyenMai(i);
@@ -5683,8 +5676,18 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_clear_DSHoaDonActionPerformed
 
     private void tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMaiMouseClicked
-
+        row_tbl_KhuyenMai = tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getSelectedRow();
+        this.edit_KhuyenMai();
+        txt_TenKhuyenMai_KhuyenMai.setEnabled(false);
     }//GEN-LAST:event_tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMaiMouseClicked
+
+    private void btn_CapNhat_KhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CapNhat_KhuyenMaiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_CapNhat_KhuyenMaiActionPerformed
+
+    private void dcs_LocTheoNgay_DiemDanhPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dcs_LocTheoNgay_DiemDanhPropertyChange
+       this.Loc_TheoNgayLamViec();
+    }//GEN-LAST:event_dcs_LocTheoNgay_DiemDanhPropertyChange
 
 //    Mouse event
     public void onClick(JPanel jpanel) {
@@ -5800,7 +5803,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JButton btn_Them_SanPham;
     private javax.swing.JButton btn_Them_TaiKhoan;
     private javax.swing.JButton btn_TimKiemLuongTheoNgay_Luong;
-    private javax.swing.JButton btn_TimKiemTheoNgay_DiemDanh;
     private javax.swing.JButton btn_TinhLuong_Luong;
     private javax.swing.JButton btn_Top5BanChay;
     private javax.swing.JButton btn_XoaKhachHang_KhachHang;
@@ -6485,12 +6487,12 @@ public class Main_Frame extends javax.swing.JFrame {
 
         boolean isAM = dateSt.endsWith("AM");
 
-//        if (isAM == true && hInt >= 7 && hInt <= 11) {
-//            lbl_CaLam_DiemDanh.setText("Ca Sáng");
-//        }
-//        if (isAM == false && hInt >= 13 && hInt <= 17) {
-//            lbl_CaLam_DiemDanh.setText("Ca Chiều");
-//        }
+        if (isAM == true && hInt >= 7 && hInt <= 11) {
+            lbl_CaLam_DiemDanh.setText("Ca Sáng");
+        }
+        if (isAM == false && hInt >= 13 && hInt <= 17) {
+            lbl_CaLam_DiemDanh.setText("Ca Chiều");
+        }
         lbl_NgayLamViec_DiemDanh.setText(XDate.toString(new Date(), "dd/MM/yyyy"));
 
         // if ((hInt <= 7 && mInt <= 30 && isAM == true) || (hInt <= 13 && mInt <= 30 && isAM == false)) {
@@ -6533,12 +6535,12 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void setForm_KhuyenMai() {
         row_tbl_KhuyenMai = tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getSelectedRow();
-        String tenKM = (String) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(row_tbl_KhuyenMai, 1);
+        String tenKM = (String) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(row_tbl_KhuyenMai, 0);
         String ngayBatDau = (String) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(row_tbl_KhuyenMai, 2);
         String ngayKetThuc = (String) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(row_tbl_KhuyenMai, 3);
-        float giaGiam = (float) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(row_tbl_KhuyenMai, 4);
-        String trangThai = (String) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(row_tbl_KhuyenMai, 5);
-        String ghiChu = (String) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(row_tbl_KhuyenMai, 6);
+        float giaGiam = (float) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(row_tbl_KhuyenMai, 1);
+        String trangThai = (String) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(row_tbl_KhuyenMai, 4);
+        String ghiChu = (String) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(row_tbl_KhuyenMai, 5);
         txt_TenKhuyenMai_KhuyenMai.setText(tenKM);
         txt_GiamGia_KhuyenMai.setText(giaGiam + "");
         dcs_NgayBatDau_KhuyenMai.setDate(XDate.toDate(ngayBatDau, "dd/MM/yyyy"));
@@ -6568,6 +6570,15 @@ public class Main_Frame extends javax.swing.JFrame {
         return km;
     }
 
+    private void edit_KhuyenMai() {
+        String masp = (String) tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getValueAt(this.row_tbl_KhuyenMai, 0);
+        KhuyenMai km = kmDAO.selectByid(masp);
+        if (km != null) {
+            this.setForm_KhuyenMai();
+            this.updateStatus_DS_KhuyenMai_KhuyenMai();
+        }
+    }
+
     private void clearForm_KhuyenMai() {
         txt_TenKhuyenMai_KhuyenMai.setText("");
         txt_GiamGia_KhuyenMai.setText("");
@@ -6577,6 +6588,8 @@ public class Main_Frame extends javax.swing.JFrame {
         txa_GhiChu_KhuyenMai.setText("");
         this.row_tbl_KhuyenMai = -1;
         this.updateStatus_DS_KhuyenMai_KhuyenMai();
+        txt_TenKhuyenMai_KhuyenMai.setEnabled(true);
+        txt_TenKhuyenMai_KhuyenMai.requestFocus();
     }
 
     public void updateStatus_DS_KhuyenMai_KhuyenMai() {
@@ -6595,8 +6608,8 @@ public class Main_Frame extends javax.swing.JFrame {
             this.fillTable_KhuyenMai();
             MsgBox.alert(this, "Thêm mới Khuyến mãi thành công!");
         } catch (Exception e) {
-            MsgBox.alert(this, "Thêm mới Khuyến mãi thất bại!");
-            e.printStackTrace();
+            MsgBox.alert(this, "Bạn chưa chọn Sản Phẩm !!!");
+            //e.printStackTrace();
         }
     }
 

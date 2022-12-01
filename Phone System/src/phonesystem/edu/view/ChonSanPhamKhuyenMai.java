@@ -33,7 +33,7 @@ public class ChonSanPhamKhuyenMai extends javax.swing.JDialog {
         initComponents();
     }
 
-   private void fillTable_SanPham_KhuyenMai() {
+    private void fillTable_SanPham_KhuyenMai() {
         tableModelSanPham_KhuyenMai = (DefaultTableModel) tbl_DanhSachSanPham_KhuyenMai.getModel();
         tableModelSanPham_KhuyenMai.setRowCount(0);
         try {
@@ -128,7 +128,8 @@ public class ChonSanPhamKhuyenMai extends javax.swing.JDialog {
             maSP = tbl_DanhSachSanPham_KhuyenMai.getValueAt(i, 0).toString();
             Main_Frame.km.setMaSanPham(maSP);
             this.dispose();
-        }   
+        }
+
     }//GEN-LAST:event_tbl_DanhSachSanPham_KhuyenMaiMouseClicked
 
     /**

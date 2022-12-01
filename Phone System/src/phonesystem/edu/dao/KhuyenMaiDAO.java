@@ -24,14 +24,17 @@ import phonesystem.edu.ultil.jdbcHelper;
 public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
 
     String INSERT_SQL = "INSERT INTO KhuyenMai(MaSanPham,TenKhuyenMai,NgayBatDau,NgayKetThuc,GiaGiam,TrangThai,GhiChu) values(?,?,?,?,?,?,?)";
+    String UPDATE_SQL = "UPDATE KhuyenMai set NgayBatDau = ?, NgayKetThuc = ?, GiaGiam = ?, TrangThai = ?, GhiChu = ? WHERE TenKhuyenMai = ?";
     String SELECT_ALL_SQL = "SELECT * FROM KhuyenMai";
     String SELECT_TENSP_SQL = "SELECT sp.TenSanPham FROM SanPham sp JOIN KhuyenMai km ON sp.MaSanPham = km.MaSanPham WHERE km.MaSanPham = ?";
     String SELECT_BY_TENKM_SQL = "SELECT * FROM KhuyenMai WHERE TenKhuyenMai = ?";
-    String SELECT_SP_NOTIN_KHUYENMAI = "select * from KhuyenMai where TenKhuyenMai not in (select TenKhuyenMai from KhuyenMai where MaSanPham = ?)";
-    String SELECT_KHUYENMAI_BY_MASP = "SELECT * FROM KhuyenMai WHERE MaSanPham = ?";
-    String SELECT_KHUYENMAI = "SELECT TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu FROM KhuyenMai\n" +
+    String SELECT_SP_NOTIN_KHUYENMAI = "select TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu from KhuyenMai\n" +
+"where TenKhuyenMai not in (select TenKhuyenMai from KhuyenMai where MaSanPham = ?)\n" +
 "group by TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu";
-   
+    String SELECT_KHUYENMAI_BY_MASP = "SELECT * FROM KhuyenMai WHERE MaSanPham = ?";
+    String SELECT_KHUYENMAI = "SELECT TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu FROM KhuyenMai\n"
+            + "group by TenKhuyenMai,GiaGiam,NgayBatDau,NgayKetThuc,TrangThai,GhiChu";
+
     @Override
     public void insert(KhuyenMai entity) {
         try {
@@ -127,9 +130,31 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
         }
     }
     
-    public List<KhuyenMai> selectSanPhamNotInKhuyenMai(String masp) {
-        return this.selectBySql(SELECT_SP_NOTIN_KHUYENMAI, masp);
+     public List<KhuyenMai> selectSanPhamNotInKhuyenMai(String maSP) {
+        List<KhuyenMai> list = new ArrayList<>();
+        try {
+            ResultSet rs = jdbcHelper.query(SELECT_SP_NOTIN_KHUYENMAI,maSP);
+            while (rs.next()) {
+                KhuyenMai entity = new KhuyenMai();
+                entity.setTenKhuyenMai(rs.getString("TenKhuyenMai"));
+                entity.setGiaGiam(rs.getFloat("GiaGiam"));
+                entity.setNgayBatDau(rs.getDate("NgayBatDau"));
+                entity.setNgayKetThuc(rs.getDate("NgayKetThuc"));
+                entity.setTrangThai(rs.getBoolean("TrangThai"));
+                entity.setGhiChu(rs.getString("GhiChu"));
+
+                list.add(entity);
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+//    public List<KhuyenMai> selectSanPhamNotInKhuyenMai(String masp) {
+//        return this.selectBySql(SELECT_SP_NOTIN_KHUYENMAI, masp);
+//    }
 
     public List<KhuyenMai> selectKhuyenMaiByMaSP(String masp) {
         return this.selectBySql(SELECT_KHUYENMAI_BY_MASP, masp);
@@ -138,5 +163,5 @@ public class KhuyenMaiDAO extends PhoneSysDAO<KhuyenMai, String> {
     public List<KhuyenMai> selectLenTextFielKhuyenMaiByTenKM(String tenKM) {
         return this.selectBySql(SELECT_BY_TENKM_SQL, tenKM);
     }
-
+    
 }
