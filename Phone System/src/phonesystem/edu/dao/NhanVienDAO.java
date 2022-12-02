@@ -3,12 +3,8 @@ package phonesystem.edu.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import phonesystem.edu.entity.NhanVien;
-import phonesystem.edu.entity.TaiKhoan;
 import phonesystem.edu.ultil.jdbcHelper;
 
 /**

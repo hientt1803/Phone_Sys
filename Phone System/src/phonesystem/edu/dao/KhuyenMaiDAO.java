@@ -5,18 +5,14 @@
  */
 package phonesystem.edu.dao;
 
-import java.awt.image.SampleModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import phonesystem.edu.entity.DiemDanh;
 import phonesystem.edu.entity.KhuyenMai;
-import phonesystem.edu.entity.SanPham;
 import phonesystem.edu.ultil.jdbcHelper;
-
 /**
  *
  * @author NP

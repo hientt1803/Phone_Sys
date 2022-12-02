@@ -31,7 +31,8 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     String SELECT_LAST_ID = "select top 1 MaSanPham from SanPham order by MaSanPham desc";
     String RESTORE_SQL = "UPDATE SanPham SET TrangThai = ? WHERE MaSanPham = ?";
     String SELECT_SP_CHUACO_KHUYENMAI = "select * from SanPham where MaSanPham not in (select MaSanPham from KhuyenMai where TenKhuyenMai = ?)";
-
+    String UPDATE_SOLUONG = "UPDATE SanPham set SoLuong = ? WHERE TenSanPham = ?";
+    
     @Override
     public void insert(SanPham entity) {
         try {
@@ -50,6 +51,16 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
             jdbcHelper.update(UPDATE_SQL,
                     entity.getTenSanPham(), entity.getHangSanXuat(), entity.getXuatXu(), entity.getMauSac(),
                     entity.getSoLuong(), entity.getDonGia(), entity.getHinhAnh(), entity.getGhiChu(), entity.getMaSanPham()
+            );
+        } catch (SQLException ex) {
+            Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+     public void update_SoLuong(String tenSp , int soluong) {
+        try {
+            jdbcHelper.update(UPDATE_SOLUONG,
+                    soluong,tenSp
             );
         } catch (SQLException ex) {
             Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);

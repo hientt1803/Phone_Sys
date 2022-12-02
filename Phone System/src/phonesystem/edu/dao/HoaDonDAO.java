@@ -21,7 +21,7 @@ import phonesystem.edu.ultil.jdbcHelper;
 public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
 
     String INSERT_SQL = "INSERT INTO HoaDon(MaHoaDon, MaKhachHang, MaNhanVien, NgayTao, TongTien, GhiChu) values(?,?,?,?,?,?)";
-    String UPDATE_SQL = "UPDATE HoaDon set MaKhachHang = ? , MaNhanVien = ? , NgayTao = ?, TongTien = ? , GhiChu = ? where MaHoaDon = ?";
+//    String UPDATE_SQL = "UPDATE HoaDon set MaKhachHang = ? , MaNhanVien = ? , NgayTao = ?, TongTien = ? , GhiChu = ? where MaHoaDon = ?";
     String DELETE_SQL = "DELETE FROM HoaDon where MaHoaDon = ?";
     String SELECT_ALL_SQL = "{CALL getHD}";
     String SELECT_PROC_GIAGIAM_SQL = "{CALL getGiaGiam(?)}";
@@ -46,13 +46,7 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
 
     @Override
     public void update(HoaDon entity) {
-        try {
-            jdbcHelper.update(INSERT_SQL,
-                    entity.getMaKhachHang(), entity.getMaNhanVien(), entity.getNgayTao(), entity.getTongTien(), entity.getGhiChu(), entity.getMaHoaDon()
-            );
-        } catch (SQLException ex) {
-            Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
 
     @Override
@@ -112,7 +106,6 @@ public class HoaDonDAO extends PhoneSysDAO<HoaDon, String> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return id;
     }
 

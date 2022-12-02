@@ -21,6 +21,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -5381,6 +5382,7 @@ public class Main_Frame extends javax.swing.JFrame {
             this.XoaSP_tblHoaDon_BanHang();
             return true;
         }
+
         this.ThanhTien_HoaDon_BanHang();
         this.getSumGiaGiam_BanHang();
 
@@ -7101,6 +7103,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void getSumGiaGiam_BanHang() {
         double giaGiam = 0;
+
         for (Object[] o : listGiaGiam) {
             if (o[0] == null) {
                 giaGiam = 0;
@@ -7114,31 +7117,44 @@ public class Main_Frame extends javax.swing.JFrame {
         for (Double o : listTongGiaGiam) {
             tongGiaGiam += o;
         }
-
         txt_giaGiam_BanHang.setText(String.valueOf(tongGiaGiam));
     }
 
-    HashMap<String, Double> listGiamGia = new HashMap();
+    String tenSp_tbl_BanHang;
+    int soLuong_now;
 
-    private void getDSGiaGiam(String key, Double value) {
-        listGiamGia.put(key, value);
+    private void updateSoLuong_tbl_SP_HoaDon(boolean isPlus) {
+        int index_selected = tbl_HoaDon_BanHang.getSelectedRow();
+        tenSp_tbl_BanHang = tbl_HoaDon_BanHang.getValueAt(index_selected, 1).toString();
+        String tenSp_tbl_SanPham = "";
+        int index = 0;
 
-        String tenSP = "";
-        for (String key1 : listGiamGia.keySet()) {
-            tenSP = key1;
-            break;
+        for (int i = 0; i < tbl_DS_SanPham_BanHang.getRowCount(); i++) {
+            tenSp_tbl_SanPham = tbl_DS_SanPham_BanHang.getValueAt(i, 0).toString();
+            if (tenSp_tbl_SanPham.equals(tenSp_tbl_BanHang)) {
+                index = i;
+            }
         }
-        System.out.println("Tên sản phẩm: " + tenSP);
-        System.out.println("Gía giảm: " + listGiamGia.get(key));
-        listGiamGia.clear();
+
+        soLuong_now = Integer.parseInt(tbl_DS_SanPham_BanHang.getValueAt(index, 2).toString());
+        if (isPlus) {
+            soLuong_now++;
+            tbl_DS_SanPham_BanHang.setValueAt(soLuong_now, index, 2);
+        } else {
+            soLuong_now--;
+            tbl_DS_SanPham_BanHang.setValueAt(soLuong_now, index, 2);
+        }
     }
+
+    List<SanPham> list_allSP = new ArrayList<>();
 
     private void FillTable_DS_SanPham_BanHang() {
         model_tbl_DS_SanPham_BanHang = (DefaultTableModel) tbl_DS_SanPham_BanHang.getModel();
         model_tbl_DS_SanPham_BanHang.setRowCount(0);
         try {
-            List<SanPham> list = spDAO.selectAll();
-            for (SanPham sp : list) {
+
+            list_allSP = spDAO.selectAll();
+            for (SanPham sp : list_allSP) {
                 Object[] row = {
                     sp.getTenSanPham(), sp.getMauSac(), sp.getSoLuong()
                 };
@@ -7157,11 +7173,16 @@ public class Main_Frame extends javax.swing.JFrame {
 
     HashSet listTenSP = new HashSet();
     List<SanPham> list_SP_TheoTen = null;
+    boolean isClear = false;
 
     private void FillTable_HoaDon_BanHang() {
-
         model_tbl_HoaDon = (DefaultTableModel) tbl_HoaDon_BanHang.getModel();
+
+        int index_selected = tbl_DS_SanPham_BanHang.getSelectedRow();
+        int soLuong_temp = Integer.parseInt(tbl_DS_SanPham_BanHang.getValueAt(index_selected, 2).toString());
+
         try {
+
             String tenSP = (String) tbl_DS_SanPham_BanHang.getValueAt(tbl_DS_SanPham_BanHang.getSelectedRow(), 0);
             list_SP_TheoTen = spDAO.select_All_TheoTenSP(tenSP);
 
@@ -7183,6 +7204,9 @@ public class Main_Frame extends javax.swing.JFrame {
 
             if (!isRemove) {
                 if (listTenSP.add(tenSP)) {
+                    soLuong_temp--;
+                    tbl_DS_SanPham_BanHang.setValueAt(soLuong_temp, index_selected, 2);
+
                     Object[] row = {
                         list_SP_TheoTen.get(index).getMaSanPham(), list_SP_TheoTen.get(index).getTenSanPham(), list_SP_TheoTen.get(index).getHangSanXuat(),
                         list_SP_TheoTen.get(index).getMauSac(), list_SP_TheoTen.get(index).getDonGia(), "1",
@@ -7193,7 +7217,29 @@ public class Main_Frame extends javax.swing.JFrame {
                     listTenSP.add(tenSP);
                     tbl_HoaDon_BanHang.changeSelection(0, 0, false, false);
                     this.getSum_ThanhTien_tbl_HoaDon(thanhTien);
+
+                } else if (!listTenSP.add(tenSP)) {
+//                  if sp tồn tại thì + soLuong
+                    String tenSp_tbl_banhang = "";
+                    int index_tbl_banhang = 0;
+
+                    System.out.println((String) tbl_HoaDon_BanHang.getValueAt(0, 1));
+
+                    for (int i = 0; i <= tbl_HoaDon_BanHang.getRowCount(); i++) {
+                        tenSp_tbl_banhang = (String) tbl_HoaDon_BanHang.getValueAt(i, 1);
+//                        System.out.println("Tên sp table: "+tenSp_tbl_banhang);
+                        if (tenSP.equals(tenSp_tbl_banhang)) {
+                            index_tbl_banhang = i;
+//                            System.out.println("abc"+tenSp_tbl_banhang);
+                            break;
+                        }
+                    }
+                    if (tbl_HoaDon_BanHang.getRowCount() > 0) {
+                        tbl_HoaDon_BanHang.setRowSelectionInterval(index_tbl_banhang, index_tbl_banhang);
+                        this.TangSoLuong_tblHoaDon_BanHang();
+                    }
                 }
+
             }
             isRemove = false;
 
@@ -7212,6 +7258,8 @@ public class Main_Frame extends javax.swing.JFrame {
         SoLuong_tbl_HoaDon_BanHang++;
 
         tbl_HoaDon_BanHang.setValueAt(SoLuong_tbl_HoaDon_BanHang, x, y);
+
+        this.updateSoLuong_tbl_SP_HoaDon(false);
     }
 
     private void GiamSoLuong_tblHoaDon_BanHang() {
@@ -7229,6 +7277,8 @@ public class Main_Frame extends javax.swing.JFrame {
         }
 
         tbl_HoaDon_BanHang.setValueAt(SoLuong_tbl_HoaDon_BanHang, x, y);
+
+        this.updateSoLuong_tbl_SP_HoaDon(true);
     }
 
     private void XoaSP_tblHoaDon_BanHang() {
@@ -7249,14 +7299,20 @@ public class Main_Frame extends javax.swing.JFrame {
         txt_TienKhachDua_BanHang.setText("");
         txt_TienTraLai_Banhang.setText("");
         lbl_TongTienThanhToan_BanHang.setText("");
+        txt_giaGiam_BanHang.setText("");
 
         listTenSP.clear();
+        listGiaGiam.clear();
+        listTongGiaGiam.clear();
+
         this.btn_ThanhToan_BanHang.setEnabled(false);
+        this.FillTable_DS_SanPham_BanHang();
     }
 
     private void clearForm_BanHang() {
         txt_TienKhachDua_BanHang.setText("");
         txt_TienTraLai_Banhang.setText("");
+        txt_giaGiam_BanHang.setText("");
 
         btn_ThanhToan_BanHang.setEnabled(false);
     }
@@ -7286,10 +7342,74 @@ public class Main_Frame extends javax.swing.JFrame {
         tabs_HoaDon.setSelectedIndex(index);
     }
 
-    private void ThanhToan_BanHang_button_click() {
+    Map<String, Integer> list_soLuong_SP_update = new HashMap<>();
+    String tenSP_update = "";
+    int soLuong_update = 0;
 
+    private void update_SoluongSP_DanhSachSP_BanHang() {
+        for (int i = 0; i < tbl_DS_SanPham_BanHang.getRowCount(); i++) {
+            tenSP_update = tbl_DS_SanPham_BanHang.getValueAt(i, 0).toString();
+            list_soLuong_SP_update.put(tenSP_update, 0);
+        }
+
+        for (int i = 0; i < tbl_DS_SanPham_BanHang.getRowCount(); i++) {
+            soLuong_update = Integer.parseInt(tbl_DS_SanPham_BanHang.getValueAt(i, 2).toString());
+            System.out.println(soLuong_update);
+            list_soLuong_SP_update.put(list_allSP.get(i).getTenSanPham(), soLuong_update);
+        }
+
+        list_soLuong_SP_update.forEach(
+                (key, value)
+                -> {
+            System.out.println("Key:" + key);
+            System.out.println("Value:" + value);
+
+            spDAO.update_SoLuong(key, value);
+        });
+    }
+
+    private void ThanhToan_BanHang_button_click() {
         if (lbl_TenKhachHang_BanHang.getText().equals("")) {
             MsgBox.alert(this, "Chưa chọn khách hàng để thêm hóa đơn");
+            onClick(pnl_KhachHang);
+            onLeaveClick(pnl_ThongKe);
+            onLeaveClick(pnl_BanHang);
+            onLeaveClick(pnl_SanPham);
+            onLeaveClick(pnl_HeThong);
+            onLeaveClick(pnl_NhanVien);
+            onLeaveClick(pnl_TaiKhoan);
+            onLeaveClick(pnl_DiemDanh);
+            onLeaveClick(pnl_Luong);
+            onLeaveClick(pnl_KhuyenMai);
+
+            onClickLabel(lbl_KhachHang);
+            onLeaveClickLabel(lbl_ThongKe);
+            onLeaveClickLabel(lbl_BanHang);
+            onLeaveClickLabel(lbl_SanPham);
+            onLeaveClickLabel(lbl_HeThong);
+            onLeaveClickLabel(lbl_DiemDanh);
+            onLeaveClickLabel(lbl_TaiKhoan);
+            onLeaveClickLabel(lbl_NhanVien);
+            onLeaveClickLabel(lbl_Luong);
+            onLeaveClickLabel(lbl_KhuyenMai);
+
+            //        indicators
+            indicator1.setOpaque(false);
+            indicator2.setOpaque(true);
+            indicator3.setOpaque(false);
+            indicator4.setOpaque(false);
+            indicator6.setOpaque(false);
+            indicator7.setOpaque(false);
+            indicator8.setOpaque(false);
+            indicator9.setOpaque(false);
+            indicator10.setOpaque(false);
+            indicator11.setOpaque(false);
+
+            //        Card playout
+            CardLayout playout = (CardLayout) pnl_MainDisplayCard.getLayout();
+            playout.show(pnl_MainDisplayCard, "card_KhachHang");       
+            
+            txt_SoDienThoaiKhachHang_KhachHang.requestFocus();
             return;
         }
 
@@ -7314,6 +7434,9 @@ public class Main_Frame extends javax.swing.JFrame {
                 hdctDAO.insert(hdct);
             }
 
+            this.update_SoluongSP_DanhSachSP_BanHang();
+
+            this.FillTable_DS_SanPham_BanHang();
             this.fillToTableDSHoaDon_BangHang();
 
             tbl_DSHoaDon_BanHang.setRowSelectionInterval(0, 0);
