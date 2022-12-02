@@ -615,11 +615,6 @@ public class Main_Frame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnl_MainChinh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1180,7 +1175,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addComponent(pnl_Luong, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnl_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(lbl_DangXuat)
                 .addGap(17, 17, 17))
         );
@@ -2194,7 +2189,7 @@ public class Main_Frame extends javax.swing.JFrame {
                     .addComponent(rdo_NhanVien_TaiKhoan))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel37Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -5663,27 +5658,6 @@ public class Main_Frame extends javax.swing.JFrame {
         new Login_Frame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lbl_DangXuatMouseClicked
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        Date now = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa");
-        String dateSt = sdf.format(now);
-
-        String hSt = dateSt.substring(0, 2);
-        String mSt = dateSt.substring(3, 5);
-
-        int hInt = Integer.parseInt(hSt);
-        int mInt = Integer.parseInt(mSt);
-
-        boolean isAM = dateSt.endsWith("AM");
-
-        if (isAM == false && hInt >= 4 && hInt <= 41) {
-            lbl_CaLam_DiemDanh.setText("Ca Sáng");
-        }
-        if (isAM == false && hInt >= 4 && hInt == 42) {
-            lbl_CaLam_DiemDanh.setText("Ca Chiều");
-        }
-    }//GEN-LAST:event_formWindowOpened
 
     private void tbl_DanhSachSanPham_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DanhSachSanPham_KhuyenMaiMouseClicked
         int i = tbl_DanhSachSanPham_KhuyenMai.getSelectedRow();
