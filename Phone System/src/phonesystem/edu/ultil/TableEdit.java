@@ -5,6 +5,8 @@
  */
 package phonesystem.edu.ultil;
 
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -22,5 +24,9 @@ public class TableEdit {
         for (int i = 0; i < column; i++) {
             tbl.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
-}
+
+        tbl.getTableHeader().setBackground(new Color(97, 88, 152));
+        tbl.getTableHeader().setForeground(new Color(240, 240, 240));
+        tbl.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+    }
 }

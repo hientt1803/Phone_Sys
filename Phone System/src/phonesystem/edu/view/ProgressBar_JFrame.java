@@ -21,20 +21,18 @@ public final class ProgressBar_JFrame extends javax.swing.JFrame {
     /**
      * Creates new form ProgressBar_JFrame
      */
-    Main_Frame mf = new Main_Frame();
-
     public ProgressBar_JFrame() {
         initComponents();
 //        this.slideShow();
         this.init();
-        this.openMainFrame();
-
     }
     String check = "";
 
     private void init() {
         this.setIconImage(XImage.getAppIcon());
         this.setTitle("Loading - Phone System");
+        Main_Frame mf = new Main_Frame();
+        mf.setVisible(false);
         new Timer(35, (ActionEvent e) -> {
             setLocationRelativeTo(null);
             int value = jProgressBar1.getValue();
@@ -59,10 +57,6 @@ public final class ProgressBar_JFrame extends javax.swing.JFrame {
             }
         }).start();
         check();
-    }
-
-    private void openMainFrame() {
-        mf.setVisible(false);
     }
 
     void check() {
