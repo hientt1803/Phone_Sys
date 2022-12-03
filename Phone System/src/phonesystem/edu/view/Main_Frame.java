@@ -125,6 +125,8 @@ public class Main_Frame extends javax.swing.JFrame {
         lbl_TenNhanVien.setText(Auth.getNameNhanVien());
         lbl_VaiTro.setText(Auth.isManager() == true ? "Quản lí" : "Nhân viên");
 
+        isManager(Auth.isManager());
+
 //      Get user Login recent
         LoginAccount1 = lblLoginAccount1.getText();
         LoginAccount2 = lblLoginAcout2.getText();
@@ -138,9 +140,9 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_HeThong);
-        onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_TaiKhoan);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_KhuyenMai);
 
@@ -170,6 +172,7 @@ public class Main_Frame extends javax.swing.JFrame {
 //        Card playout
         CardLayout playout = (CardLayout) pnl_MainDisplayCard.getLayout();
         playout.show(pnl_MainDisplayCard, "card_ThongKe");
+
     }
 
 //        Timer on right top
@@ -182,6 +185,21 @@ public class Main_Frame extends javax.swing.JFrame {
                 lblTimer.setText(format.format(new Date()));
             }
         }).start();
+    }
+
+    private void isManager(boolean isM) {
+        if (!isM) {
+            pnl_TaiKhoan.setVisible(isM);
+            pnl_NhanVien.setVisible(isM);
+            pnl_Luong.setVisible(isM);
+            pnl_KhuyenMai.setVisible(isM);
+            tabs_thongke.remove(1);
+        } else {
+            pnl_TaiKhoan.setVisible(isM);
+            pnl_NhanVien.setVisible(isM);
+            pnl_Luong.setVisible(isM);
+            pnl_KhuyenMai.setVisible(isM);
+        }
     }
 
     /**
@@ -225,13 +243,13 @@ public class Main_Frame extends javax.swing.JFrame {
         pnl_HeThong = new javax.swing.JPanel();
         indicator6 = new javax.swing.JPanel();
         lbl_HeThong = new javax.swing.JLabel();
-        pnl_NhanVien = new javax.swing.JPanel();
+        pnl_DiemDanh = new javax.swing.JPanel();
         indicator7 = new javax.swing.JPanel();
         lbl_DiemDanh = new javax.swing.JLabel();
         pnl_TaiKhoan = new javax.swing.JPanel();
         indicator8 = new javax.swing.JPanel();
         lbl_TaiKhoan = new javax.swing.JLabel();
-        pnl_DiemDanh = new javax.swing.JPanel();
+        pnl_NhanVien = new javax.swing.JPanel();
         indicator9 = new javax.swing.JPanel();
         lbl_NhanVien = new javax.swing.JLabel();
         pnl_Luong = new javax.swing.JPanel();
@@ -243,7 +261,7 @@ public class Main_Frame extends javax.swing.JFrame {
         pnl_MainDisplayCard = new javax.swing.JPanel();
         card_ThongKe = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tabs_thongke = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
         dcs_NgayBatDau_ThongKe = new com.toedter.calendar.JDateChooser();
         dcs_NgayKetThuc_ThongKe = new com.toedter.calendar.JDateChooser();
@@ -616,7 +634,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         pnl_MainChinh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnl_Top.setBackground(new java.awt.Color(255, 255, 255));
+        pnl_Top.setBackground(new java.awt.Color(236, 231, 231));
         pnl_Top.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(228, 228, 228)));
         pnl_Top.setPreferredSize(new java.awt.Dimension(1000, 70));
         pnl_Top.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -912,12 +930,12 @@ public class Main_Frame extends javax.swing.JFrame {
             .addComponent(lbl_HeThong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pnl_NhanVien.setBackground(new java.awt.Color(255, 255, 255));
-        pnl_NhanVien.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_NhanVien.setMinimumSize(new java.awt.Dimension(180, 43));
-        pnl_NhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnl_DiemDanh.setBackground(new java.awt.Color(255, 255, 255));
+        pnl_DiemDanh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnl_DiemDanh.setMinimumSize(new java.awt.Dimension(180, 43));
+        pnl_DiemDanh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnl_NhanVienMouseClicked(evt);
+                pnl_DiemDanhMouseClicked(evt);
             }
         });
 
@@ -939,18 +957,18 @@ public class Main_Frame extends javax.swing.JFrame {
         lbl_DiemDanh.setForeground(new java.awt.Color(97, 88, 152));
         lbl_DiemDanh.setText("Điểm Danh");
 
-        javax.swing.GroupLayout pnl_NhanVienLayout = new javax.swing.GroupLayout(pnl_NhanVien);
-        pnl_NhanVien.setLayout(pnl_NhanVienLayout);
-        pnl_NhanVienLayout.setHorizontalGroup(
-            pnl_NhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_NhanVienLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnl_DiemDanhLayout = new javax.swing.GroupLayout(pnl_DiemDanh);
+        pnl_DiemDanh.setLayout(pnl_DiemDanhLayout);
+        pnl_DiemDanhLayout.setHorizontalGroup(
+            pnl_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_DiemDanhLayout.createSequentialGroup()
                 .addComponent(indicator7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(lbl_DiemDanh)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        pnl_NhanVienLayout.setVerticalGroup(
-            pnl_NhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnl_DiemDanhLayout.setVerticalGroup(
+            pnl_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(indicator7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lbl_DiemDanh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -998,12 +1016,12 @@ public class Main_Frame extends javax.swing.JFrame {
             .addComponent(lbl_TaiKhoan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pnl_DiemDanh.setBackground(new java.awt.Color(255, 255, 255));
-        pnl_DiemDanh.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnl_DiemDanh.setMinimumSize(new java.awt.Dimension(180, 43));
-        pnl_DiemDanh.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnl_NhanVien.setBackground(new java.awt.Color(255, 255, 255));
+        pnl_NhanVien.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnl_NhanVien.setMinimumSize(new java.awt.Dimension(180, 43));
+        pnl_NhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnl_DiemDanhMouseClicked(evt);
+                pnl_NhanVienMouseClicked(evt);
             }
         });
 
@@ -1025,18 +1043,18 @@ public class Main_Frame extends javax.swing.JFrame {
         lbl_NhanVien.setForeground(new java.awt.Color(97, 88, 152));
         lbl_NhanVien.setText("Nhân Viên");
 
-        javax.swing.GroupLayout pnl_DiemDanhLayout = new javax.swing.GroupLayout(pnl_DiemDanh);
-        pnl_DiemDanh.setLayout(pnl_DiemDanhLayout);
-        pnl_DiemDanhLayout.setHorizontalGroup(
-            pnl_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_DiemDanhLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnl_NhanVienLayout = new javax.swing.GroupLayout(pnl_NhanVien);
+        pnl_NhanVien.setLayout(pnl_NhanVienLayout);
+        pnl_NhanVienLayout.setHorizontalGroup(
+            pnl_NhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_NhanVienLayout.createSequentialGroup()
                 .addComponent(indicator9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbl_NhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
         );
-        pnl_DiemDanhLayout.setVerticalGroup(
-            pnl_DiemDanhLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnl_NhanVienLayout.setVerticalGroup(
+            pnl_NhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(indicator9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lbl_NhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1137,9 +1155,9 @@ public class Main_Frame extends javax.swing.JFrame {
             .addComponent(pnl_BanHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lbl_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_HeThong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnl_NhanVien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnl_DiemDanh, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_TaiKhoan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnl_DiemDanh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnl_NhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_Luong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_KhuyenMai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_MenuLayout.createSequentialGroup()
@@ -1163,11 +1181,11 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnl_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnl_NhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnl_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnl_TaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnl_DiemDanh, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnl_NhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnl_Luong, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1187,9 +1205,9 @@ public class Main_Frame extends javax.swing.JFrame {
         card_ThongKe.setBackground(new java.awt.Color(228, 228, 228));
         card_ThongKe.setLayout(new java.awt.GridLayout(1, 0));
 
-        jTabbedPane1.setForeground(new java.awt.Color(97, 88, 152));
-        jTabbedPane1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jTabbedPane1.setInheritsPopupMenu(true);
+        tabs_thongke.setForeground(new java.awt.Color(97, 88, 152));
+        tabs_thongke.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        tabs_thongke.setInheritsPopupMenu(true);
 
         jPanel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
@@ -1318,7 +1336,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addGap(18, 18, 18))
         );
 
-        jTabbedPane1.addTab("Thống kê", jPanel7);
+        tabs_thongke.addTab("Thống kê", jPanel7);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Doanh Thu Hôm Nay", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 18))); // NOI18N
         jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 5));
@@ -1519,18 +1537,18 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addGap(63, 63, 63))
         );
 
-        jTabbedPane1.addTab("Doanh thu", jPanel8);
+        tabs_thongke.addTab("Doanh thu", jPanel8);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(tabs_thongke, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tabs_thongke, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -2101,6 +2119,12 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel39.add(btn_Xoa_TaiKhoan);
 
         txt_MaNV_TaiKhoan.setEditable(false);
+
+        txt_TenDangNhap_TaiKhoan.setToolTipText("Vui lòng nhập vào tên đăng nhập");
+
+        txt_MatKhau_TaiKhoan.setToolTipText("Vui lòng nhập mật khẩu");
+
+        txt_Confirm_TaiKhoan.setToolTipText("Vui lòng nhập vào xác nhận mật khẩu");
 
         btn_group_VaiTro.add(rdo_QuanLi_TaiKhoan);
         rdo_QuanLi_TaiKhoan.setText("Quản lí");
@@ -4552,9 +4576,9 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_HeThong);
-        onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_TaiKhoan);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_KhuyenMai);
 
@@ -4592,9 +4616,9 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_HeThong);
-        onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_TaiKhoan);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_KhuyenMai);
 
@@ -4632,9 +4656,9 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_KhachHang);
         onLeaveClick(pnl_HeThong);
-        onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_TaiKhoan);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_KhuyenMai);
 
@@ -4672,9 +4696,9 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_HeThong);
-        onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_TaiKhoan);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_KhuyenMai);
 
@@ -4712,9 +4736,9 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
-        onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_TaiKhoan);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_KhuyenMai);
 
@@ -4747,15 +4771,15 @@ public class Main_Frame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_pnl_HeThongMouseClicked
 
-    private void pnl_NhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_NhanVienMouseClicked
-        onClick(pnl_NhanVien);
+    private void pnl_DiemDanhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_DiemDanhMouseClicked
+        onClick(pnl_DiemDanh);
         onLeaveClick(pnl_KhachHang);
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_TaiKhoan);
-        onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_KhuyenMai);
 
@@ -4786,7 +4810,7 @@ public class Main_Frame extends javax.swing.JFrame {
         CardLayout playout = (CardLayout) pnl_MainDisplayCard.getLayout();
         playout.show(pnl_MainDisplayCard, "card_DiemDanh");
 
-    }//GEN-LAST:event_pnl_NhanVienMouseClicked
+    }//GEN-LAST:event_pnl_DiemDanhMouseClicked
 
     private void pnl_TaiKhoanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_TaiKhoanMouseClicked
         onClick(pnl_TaiKhoan);
@@ -4794,9 +4818,9 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
-        onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_KhuyenMai);
 
@@ -4828,13 +4852,13 @@ public class Main_Frame extends javax.swing.JFrame {
         playout.show(pnl_MainDisplayCard, "card_TaiKhoan");
     }//GEN-LAST:event_pnl_TaiKhoanMouseClicked
 
-    private void pnl_DiemDanhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_DiemDanhMouseClicked
-        onClick(pnl_DiemDanh);
+    private void pnl_NhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_NhanVienMouseClicked
+        onClick(pnl_NhanVien);
         onLeaveClick(pnl_KhachHang);
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
-        onLeaveClick(pnl_NhanVien);
+        onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_Luong);
@@ -4866,7 +4890,7 @@ public class Main_Frame extends javax.swing.JFrame {
         //        Card playout
         CardLayout playout = (CardLayout) pnl_MainDisplayCard.getLayout();
         playout.show(pnl_MainDisplayCard, "card_NhanVien");
-    }//GEN-LAST:event_pnl_DiemDanhMouseClicked
+    }//GEN-LAST:event_pnl_NhanVienMouseClicked
 
     private void pnl_LuongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_LuongMouseClicked
         onClick(pnl_Luong);
@@ -4874,9 +4898,9 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
-        onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_KhuyenMai);
 
@@ -4915,9 +4939,9 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_BanHang);
-        onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_HeThong);
         onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_HeThong);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_TaiKhoan);
 
@@ -5226,7 +5250,9 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_KhoiPhucKhachHang_KhachHangActionPerformed
 
     private void btn_Them_TaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Them_TaiKhoanActionPerformed
-        this.insert_tbl_DaCoTaiKhoan_TaiKhoan();
+        if (isNullOnTextFiled(txt_TenDangNhap_TaiKhoan,txt_MatKhau_TaiKhoan,txt_Confirm_TaiKhoan)) {
+            this.insert_tbl_DaCoTaiKhoan_TaiKhoan();
+        }
     }//GEN-LAST:event_btn_Them_TaiKhoanActionPerformed
 
     private void btn_CapNhat_TaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CapNhat_TaiKhoanActionPerformed
@@ -6047,7 +6073,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel lblHinhAnh_SanPham;
     private javax.swing.JLabel lblLoginAccount1;
@@ -6112,6 +6137,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTabbedPane tab_KhuyenMai;
     private javax.swing.JTabbedPane tab_SanPham;
     private javax.swing.JTabbedPane tabs_HoaDon;
+    private javax.swing.JTabbedPane tabs_thongke;
     private javax.swing.JTable tbl_DSChuaTaiKhoan_TaiKhoan;
     private javax.swing.JTable tbl_DSDaCoTaiKhoan_TaiKhoan;
     private javax.swing.JTable tbl_DSHoaDonChiTiet_BanHang;
@@ -6684,8 +6710,15 @@ public class Main_Frame extends javax.swing.JFrame {
         TableEdit.centerRendererTable(tbl_DSDaCoTaiKhoan_TaiKhoan);
     }
 
-    private boolean CheckForm_TaiKhoan() {
-
+    private boolean isNullOnTextFiled(JTextField... args) {
+        System.out.println("abc");
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].getText().equals("")) {
+                MsgBox.alert(this, args[i].getToolTipText());
+                args[i].requestFocus();
+                return false;
+            }
+        }
         return true;
     }
 
@@ -6767,6 +6800,10 @@ public class Main_Frame extends javax.swing.JFrame {
     private void insert_tbl_DaCoTaiKhoan_TaiKhoan() {
         TaiKhoan tk = getForm_ChuaCoTaiKhoan_TaiKhoan();
 
+        if(!txt_Confirm_TaiKhoan.equals(txt_MatKhau_TaiKhoan)){
+            MsgBox.alert(this, "Mật khẩu xác nhận không đúng");
+        }
+        
         try {
             tkDAO.insert(tk);
 
@@ -6799,7 +6836,14 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     private void delete_tbl_DaCoTaiKhoan_TaiKhoan() {
-        if (MsgBox.confirm(this, "Bạn thực sự muốn xóa tài khoản này")) {
+        try {
+            
+            if(tbl_DSDaCoTaiKhoan_TaiKhoan.getSelectedRow() == -1){
+                MsgBox.alert(this, "Vui lòng chọn một dòng trên bảng");
+                return;
+            }
+            
+            if (MsgBox.confirm(this, "Bạn thực sự muốn xóa tài khoản này")) {
             String MaNV = txt_MaNV_TaiKhoan.getText();
             try {
                 tkDAO.delete(MaNV);
@@ -6814,6 +6858,10 @@ public class Main_Frame extends javax.swing.JFrame {
                 e.printStackTrace();
             }
         }
+        } catch (Exception e) {
+            MsgBox.alert(this, e.getMessage());
+        }
+        
     }
 
     public void updateStatus_DS_DaCoTaiKhoan_TaiKhoan() {
@@ -7320,9 +7368,9 @@ public class Main_Frame extends javax.swing.JFrame {
             onLeaveClick(pnl_BanHang);
             onLeaveClick(pnl_SanPham);
             onLeaveClick(pnl_HeThong);
-            onLeaveClick(pnl_NhanVien);
-            onLeaveClick(pnl_TaiKhoan);
             onLeaveClick(pnl_DiemDanh);
+            onLeaveClick(pnl_TaiKhoan);
+            onLeaveClick(pnl_NhanVien);
             onLeaveClick(pnl_Luong);
             onLeaveClick(pnl_KhuyenMai);
 
@@ -7614,9 +7662,9 @@ public class Main_Frame extends javax.swing.JFrame {
             onLeaveClick(pnl_ThongKe);
             onLeaveClick(pnl_SanPham);
             onLeaveClick(pnl_BanHang);
-            onLeaveClick(pnl_NhanVien);
-            onLeaveClick(pnl_HeThong);
             onLeaveClick(pnl_DiemDanh);
+            onLeaveClick(pnl_HeThong);
+            onLeaveClick(pnl_NhanVien);
             onLeaveClick(pnl_Luong);
             onLeaveClick(pnl_KhuyenMai);
 
@@ -7848,9 +7896,9 @@ public class Main_Frame extends javax.swing.JFrame {
         onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
         onLeaveClick(pnl_HeThong);
-        onLeaveClick(pnl_NhanVien);
-        onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_DiemDanh);
+        onLeaveClick(pnl_TaiKhoan);
+        onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_KhuyenMai);
 

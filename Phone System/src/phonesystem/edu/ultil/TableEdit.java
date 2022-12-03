@@ -28,5 +28,7 @@ public class TableEdit {
         tbl.getTableHeader().setBackground(new Color(97, 88, 152));
         tbl.getTableHeader().setForeground(new Color(240, 240, 240));
         tbl.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+        
+        tbl.setFont(new Font("Sans Serif",Font.PLAIN,13));
     }
 }
