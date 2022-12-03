@@ -23,8 +23,8 @@ public class DiemDanhDAO extends PhoneSysDAO<DiemDanh, String> {
 
     String INSERT_SQL = "INSERT INTO DiemDanh(MaNhanVien, CaLamViec, NgayLamViec,GhiChu) values(?,?,?,?)";
     String SELECT_ALL_SQL = "SELECT dd.STT,dd.MaNhanVien,nv.TenNhanVien,dd.CaLamViec,dd.NgayLamViec,dd.GhiChu FROM DiemDanh dd JOIN NhanVien nv ON dd.MaNhanVien = nv.MaNhanVien";
-    String SELECT_LOC_NGAY_SQL = "SELECT dd.STT,dd.MaNhanVien,nv.TenNhanVien,dd.CaLamViec,dd.NgayLamViec,dd.GhiChu FROM DiemDanh dd JOIN NhanVien nv ON dd.MaNhanVien = nv.MaNhanVien WHERE NgayLamViec = ?";
-    String SELECT_LOC_CA_SQL = "SELECT dd.STT,dd.MaNhanVien,nv.TenNhanVien,dd.CaLamViec,dd.NgayLamViec,dd.GhiChu FROM DiemDanh dd JOIN NhanVien nv ON dd.MaNhanVien = nv.MaNhanVien WHERE CaLamViec = ?";
+//    String SELECT_LOC_NGAY_SQL = "SELECT dd.STT,dd.MaNhanVien,nv.TenNhanVien,dd.CaLamViec,dd.NgayLamViec,dd.GhiChu FROM DiemDanh dd JOIN NhanVien nv ON dd.MaNhanVien = nv.MaNhanVien WHERE NgayLamViec = ?";
+//    String SELECT_LOC_CA_SQL = "SELECT dd.STT,dd.MaNhanVien,nv.TenNhanVien,dd.CaLamViec,dd.NgayLamViec,dd.GhiChu FROM DiemDanh dd JOIN NhanVien nv ON dd.MaNhanVien = nv.MaNhanVien WHERE CaLamViec = ?";
     String SELECT_TENNV_SQL = "SELECT nv.TenNhanVien FROM NhanVien nv JOIN TaiKhoan tk ON nv.MaNhanVien = tk.MaNhanVien WHERE tk.MaNhanVien = ?";
     String SELECT_MANHAVIENB_SQL = "select distinct MaNhanVien from DiemDanh where MaNhanVien in \n"
             + "(select MaNhanVien from TaiKhoan)";
@@ -81,14 +81,6 @@ public class DiemDanhDAO extends PhoneSysDAO<DiemDanh, String> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public List<DiemDanh> selectAll_TheoNgayVaoLam(Date ngay) {
-        return (List<DiemDanh>) this.selectBySql(SELECT_LOC_NGAY_SQL, ngay);
-    }
-
-    public List<DiemDanh> selectAll_TheoCaLamViec(String ca) {
-        return (List<DiemDanh>) this.selectBySql(SELECT_LOC_CA_SQL, ca);
     }
 
     public String selectByTenNhanVien(String manv) {

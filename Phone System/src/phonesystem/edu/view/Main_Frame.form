@@ -3184,43 +3184,40 @@
                                   <Component id="btn_DiemDanh_DiemDanh" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="dcs_LocTheoNgay_DiemDanh" min="-2" pref="168" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="cbo_LocTheoCa_DiemDanh" min="-2" pref="145" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                                              <Component id="btn_Refesh_DiemDanh" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel92" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="498" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="528" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jScrollPane6" min="-2" pref="668" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jScrollPane6" min="-2" pref="668" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="btn_First_DiemDanh" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                          <Component id="btn_Previous_DiemDanh" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                          <Component id="btn_Next_DiemDanh" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                          <Component id="btn_Last_DiemDanh" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="btn_First_DiemDanh" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="btn_Previous_DiemDanh" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                                  <Component id="btn_Next_DiemDanh" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                                  <Component id="btn_Last_DiemDanh" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel136" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cbo_DiemDanh_DiemDanh" min="-2" pref="190" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txt_TimDiemDanh_DiemDanh" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -3229,32 +3226,19 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace pref="28" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel90" alignment="1" max="32767" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="cbo_LocTheoCa_DiemDanh" alignment="3" max="32767" attributes="0"/>
-                                          <Component id="jLabel91" alignment="3" max="32767" attributes="0"/>
-                                          <Component id="btn_Refesh_DiemDanh" alignment="3" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbl_MaNhanVien_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_MaNhanVien_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                  <Component id="dcs_LocTheoNgay_DiemDanh" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="3" max="-2" attributes="0">
+                                  <Component id="txt_TimDiemDanh_DiemDanh" alignment="3" pref="31" max="32767" attributes="0"/>
+                                  <Component id="jLabel136" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="cbo_DiemDanh_DiemDanh" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lbl_TenNhanVien_DiemDanh" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -3415,53 +3399,6 @@
                     <Property name="text" type="java.lang.String" value="Ca Chi&#x1ec1;u: T&#x1eeb; 13:00 - 17:00"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel90">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="98" green="58" red="61" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="L&#x1ecd;c Ng&#xe0;y L&#xe0;m Vi&#x1ec7;c"/>
-                  </Properties>
-                </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="dcs_LocTheoNgay_DiemDanh">
-                  <Properties>
-                    <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="dcs_LocTheoNgay_DiemDanhPropertyChange"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel91">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="14" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="98" green="58" red="61" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Ca"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JComboBox" name="cbo_LocTheoCa_DiemDanh">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
-                        <StringItem index="0" value=" "/>
-                        <StringItem index="1" value="Ca S&#xe1;ng"/>
-                        <StringItem index="2" value="Ca Chi&#x1ec1;u"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbo_LocTheoCa_DiemDanhActionPerformed"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane8">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -3604,18 +3541,42 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Last_DiemDanhActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btn_Refesh_DiemDanh">
+                <Component class="javax.swing.JLabel" name="jLabel136">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="14" style="1"/>
                     </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/phonesystem/edu/img/icons8_Reset_30px.png"/>
+                    <Property name="text" type="java.lang.String" value="T&#xec;m theo:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="cbo_DiemDanh_DiemDanh">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Arial" size="14" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Refesh"/>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="6">
+                        <StringItem index="0" value="STT"/>
+                        <StringItem index="1" value="M&#xe3; Nh&#xe2;n Vi&#xea;n"/>
+                        <StringItem index="2" value="T&#xea;n Nh&#xe2;n Vi&#xea;n"/>
+                        <StringItem index="3" value="Ca L&#xe0;m Vi&#x1ec7;c"/>
+                        <StringItem index="4" value="Ng&#xe0;y L&#xe0;m Vi&#x1ec7;c"/>
+                        <StringItem index="5" value="Ghi Ch&#xfa;"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txt_TimDiemDanh_DiemDanh">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Arial" size="12" style="2"/>
+                    </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_Refesh_DiemDanhActionPerformed"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_TimDiemDanh_DiemDanhKeyReleased"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -5126,7 +5087,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jPanel24" pref="212" max="32767" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jPanel2" min="-2" pref="325" max="-2" attributes="0"/>
+                                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5563,7 +5524,7 @@
                                           <Component id="jLabel133" alignment="3" max="32767" attributes="0"/>
                                           <Component id="cbo_SanPham_SanPham" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="7" max="32767" attributes="0"/>
                                       <Component id="jScrollPane2" min="-2" pref="211" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -6658,7 +6619,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jButton8" alignment="1" min="-2" pref="42" max="-2" attributes="0"/>
                                       <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">

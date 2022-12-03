@@ -18,6 +18,7 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
     private String DELETE_SQL = "DELETE NhanVien WHERE MaNhanVien = ?";
     private String SELECT_ALL_SQL = "SELECT * FROM NHANVIEN";
     private String SELECT_BY_ID_SQL = "SELECT * FROM NHANVIEN WHERE MANHANVIEN = ?";
+    private String SELECT_BY_EMAIL = "SELECT EMAIL FROM NHANVIEN WHERE EMAIL = ?";
 
     @Override
     public void insert(NhanVien entity) {
@@ -62,6 +63,15 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
         return list.get(0);
     }
 
+    public boolean kiemTraTrungEmail(String Email) throws SQLException {
+
+        ResultSet rs = jdbcHelper.query(SELECT_BY_EMAIL,Email);
+        while (rs.next() == true) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public List<NhanVien> selectBySql(String sql, Object... args) {
 
@@ -100,6 +110,7 @@ public class NhanVienDAO extends PhoneSysDAO<NhanVien, String> {
     }
 
     private String SELECT_LAST_ID = "select top 1 MaNhanVien from NhanVien order by MaNhanVien  desc";
+
     public String getID_NhanVien() {
         String id = "";
 

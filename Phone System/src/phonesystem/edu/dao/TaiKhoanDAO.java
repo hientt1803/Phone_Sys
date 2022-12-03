@@ -25,6 +25,8 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
     String DELETE_SQL = "DELETE FROM TaiKhoan where MaNhanVien = ?";
     String SELECT_ALL_SQL = "SELECT * FROM TaiKhoan";
     String SELECT_BY_ID_SQL = "SELECT * FROM TaiKhoan where MaNhanVien = ? ";
+    String UPDATE_BY_EMAIL = "UPDATE TaiKhoan SET MatKhau = ?\n"
+            + "where MaNhanVien IN (select MaNhanVien FROM NhanVien WHERE Email = ?)";
 
     @Override
     public void insert(TaiKhoan entity) {
@@ -79,6 +81,16 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
         return list.get(0);
     }
 
+    public void updateByEmail(String matKhau, String Email) {
+        try {
+            jdbcHelper.update(UPDATE_BY_EMAIL,
+                    matKhau, Email
+            );
+        } catch (SQLException ex) {
+            Logger.getLogger(TaiKhoanDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     @Override
     public List<TaiKhoan> selectBySql(String sql, Object... args) {
         List<TaiKhoan> list = new ArrayList<>();
@@ -113,6 +125,7 @@ public class TaiKhoanDAO extends PhoneSysDAO<TaiKhoan, String> {
     }
 
     String UPDATE_PASSWORD = "UPDATE TaiKhoan set MatKhau = ? WHERE TenDangNhap = ?";
+
     public void update_Password_Only(TaiKhoan entity) {
         try {
             jdbcHelper.update(UPDATE_PASSWORD,
