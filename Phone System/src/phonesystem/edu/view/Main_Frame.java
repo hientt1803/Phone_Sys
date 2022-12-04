@@ -3487,8 +3487,14 @@ public class Main_Frame extends javax.swing.JFrame {
 
         txt_MaSanPham_SanPham.setEditable(false);
         jPanel24.add(txt_MaSanPham_SanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 47, 183, -1));
+
+        txt_TenSanPham_SanPham.setToolTipText("Vui lòng nhập Tên sản phẩm");
         jPanel24.add(txt_TenSanPham_SanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 75, 183, -1));
+
+        txt_SoLuong_SanPham.setToolTipText("Vui lòng nhập Số lương");
         jPanel24.add(txt_SoLuong_SanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 109, 183, -1));
+
+        txt_DonGia_SanPham.setToolTipText("Vui lòng nhập Đơn giá");
         jPanel24.add(txt_DonGia_SanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 139, 183, -1));
 
         cbo_HangSanXuat_SanPham.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -4413,7 +4419,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         buttonGroup1.add(rdo_NgungHoatDong);
         rdo_NgungHoatDong.setText("Ngừng hoạt động");
-        jPanel33.add(rdo_NgungHoatDong, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 110, -1));
+        jPanel33.add(rdo_NgungHoatDong, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 120, -1));
 
         jLabel79.setText("Ghi chú");
         jPanel33.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
@@ -4513,8 +4519,8 @@ public class Main_Frame extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -4523,7 +4529,7 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addComponent(cbo_KhuyenMai_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_TimKhuyenMai_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4536,11 +4542,11 @@ public class Main_Frame extends javax.swing.JFrame {
                             .addComponent(jLabel135, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbo_KhuyenMai_KhuyenMai, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         tab_KhuyenMai.addTab("Quản lý Khuyến Mãi", jPanel5);
@@ -5250,7 +5256,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_KhoiPhucKhachHang_KhachHangActionPerformed
 
     private void btn_Them_TaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Them_TaiKhoanActionPerformed
-        if (isNullOnTextFiled(txt_TenDangNhap_TaiKhoan,txt_MatKhau_TaiKhoan,txt_Confirm_TaiKhoan)) {
+        if (isNullOnTextFiled(txt_TenDangNhap_TaiKhoan, txt_MatKhau_TaiKhoan, txt_Confirm_TaiKhoan)) {
             this.insert_tbl_DaCoTaiKhoan_TaiKhoan();
         }
     }//GEN-LAST:event_btn_Them_TaiKhoanActionPerformed
@@ -6482,8 +6488,10 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     private void fillLable_DiemDanh() {
-        lbl_MaNhanVien_DiemDanh.setText(Auth.user.getMaNhanVien());
-        lbl_TenNhanVien_DiemDanh.setText(ddDao.selectByTenNhanVien(Auth.user.getMaNhanVien()));
+        if (Auth.isLogin()) {
+            lbl_MaNhanVien_DiemDanh.setText(Auth.user.getMaNhanVien());
+            lbl_TenNhanVien_DiemDanh.setText(ddDao.selectByTenNhanVien(Auth.user.getMaNhanVien()));
+        }
 
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa");
@@ -6799,10 +6807,10 @@ public class Main_Frame extends javax.swing.JFrame {
     private void insert_tbl_DaCoTaiKhoan_TaiKhoan() {
         TaiKhoan tk = getForm_ChuaCoTaiKhoan_TaiKhoan();
 
-        if(!txt_Confirm_TaiKhoan.equals(txt_MatKhau_TaiKhoan)){
+        if (!txt_Confirm_TaiKhoan.equals(txt_MatKhau_TaiKhoan)) {
             MsgBox.alert(this, "Mật khẩu xác nhận không đúng");
         }
-        
+
         try {
             tkDAO.insert(tk);
 
@@ -6836,31 +6844,31 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void delete_tbl_DaCoTaiKhoan_TaiKhoan() {
         try {
-            
-            if(tbl_DSDaCoTaiKhoan_TaiKhoan.getSelectedRow() == -1){
+
+            if (tbl_DSDaCoTaiKhoan_TaiKhoan.getSelectedRow() == -1) {
                 MsgBox.alert(this, "Vui lòng chọn một dòng trên bảng");
                 return;
             }
-            
+
             if (MsgBox.confirm(this, "Bạn thực sự muốn xóa tài khoản này")) {
-            String MaNV = txt_MaNV_TaiKhoan.getText();
-            try {
-                tkDAO.delete(MaNV);
+                String MaNV = txt_MaNV_TaiKhoan.getText();
+                try {
+                    tkDAO.delete(MaNV);
 
-                this.FillTable_tbl_DSCoTaiKhoan_TaiKhoan();
-                this.FillTable_tbl_DSChuaTaiKhoan_TaiKhoan();
-                this.clearForm_TaiKhoan();
+                    this.FillTable_tbl_DSCoTaiKhoan_TaiKhoan();
+                    this.FillTable_tbl_DSChuaTaiKhoan_TaiKhoan();
+                    this.clearForm_TaiKhoan();
 
-                MsgBox.alert(this, "Xóa thành công");
-            } catch (Exception e) {
-                MsgBox.alert(this, "Xóa thất bại");
-                e.printStackTrace();
+                    MsgBox.alert(this, "Xóa thành công");
+                } catch (Exception e) {
+                    MsgBox.alert(this, "Xóa thất bại");
+                    e.printStackTrace();
+                }
             }
-        }
         } catch (Exception e) {
             MsgBox.alert(this, e.getMessage());
         }
-        
+
     }
 
     public void updateStatus_DS_DaCoTaiKhoan_TaiKhoan() {

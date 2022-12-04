@@ -5342,6 +5342,9 @@
                               </Constraints>
                             </Component>
                             <Component class="javax.swing.JTextField" name="txt_TenSanPham_SanPham">
+                              <Properties>
+                                <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p T&#xea;n s&#x1ea3;n ph&#x1ea9;m"/>
+                              </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                   <AbsoluteConstraints x="139" y="75" width="183" height="-1"/>
@@ -5349,6 +5352,9 @@
                               </Constraints>
                             </Component>
                             <Component class="javax.swing.JTextField" name="txt_SoLuong_SanPham">
+                              <Properties>
+                                <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p S&#x1ed1; l&#x1b0;&#x1a1;ng"/>
+                              </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                   <AbsoluteConstraints x="139" y="109" width="183" height="-1"/>
@@ -5356,6 +5362,9 @@
                               </Constraints>
                             </Component>
                             <Component class="javax.swing.JTextField" name="txt_DonGia_SanPham">
+                              <Properties>
+                                <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p &#x110;&#x1a1;n gi&#xe1;"/>
+                              </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                   <AbsoluteConstraints x="139" y="139" width="183" height="-1"/>
@@ -7227,8 +7236,8 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                  <Component id="jPanel33" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="jPanel33" min="-2" pref="347" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jScrollPane1" min="-2" pref="654" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
@@ -7239,7 +7248,7 @@
                                           <Component id="txt_TimKhuyenMai_KhuyenMai" min="-2" pref="235" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                                  <EmptySpace pref="44" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -7255,14 +7264,14 @@
                                               <Component id="cbo_KhuyenMai_KhuyenMai" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane1" pref="450" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane1" pref="452" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jPanel33" min="-2" pref="497" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="56" max="32767" attributes="0"/>
+                                  <EmptySpace pref="51" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -7394,7 +7403,7 @@
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="230" y="200" width="110" height="-1"/>
+                                  <AbsoluteConstraints x="220" y="200" width="120" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
