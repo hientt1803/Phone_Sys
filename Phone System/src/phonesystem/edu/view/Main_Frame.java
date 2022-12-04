@@ -6482,8 +6482,8 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     private void fillLable_DiemDanh() {
-//        lbl_MaNhanVien_DiemDanh.setText(Auth.user.getMaNhanVien());
-//        lbl_TenNhanVien_DiemDanh.setText(ddDao.selectByTenNhanVien(Auth.user.getMaNhanVien()));
+        lbl_MaNhanVien_DiemDanh.setText(Auth.user.getMaNhanVien());
+        lbl_TenNhanVien_DiemDanh.setText(ddDao.selectByTenNhanVien(Auth.user.getMaNhanVien()));
 
         Date now = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa");
@@ -6506,7 +6506,7 @@ public class Main_Frame extends javax.swing.JFrame {
         lbl_NgayLamViec_DiemDanh.setText(XDate.toString(new Date(), "dd/MM/yyyy"));
 
         // if ((hInt <= 7 && mInt <= 30 && isAM == true) || (hInt <= 13 && mInt <= 30 && isAM == false)) {
-        if ((hInt <= 7 && mInt <= 30 && isAM == true) || (hInt <= 13 && mInt <= 30 && isAM == false)) {
+        if ((hInt <= 7 && hInt < 8 && mInt <= 30 && isAM == true) || (hInt <= 13 && hInt < 14 && mInt <= 30 && isAM == false)) {
             btn_DiemDanh_DiemDanh.setEnabled(true);
         } else {
             btn_DiemDanh_DiemDanh.setEnabled(false);
@@ -6711,7 +6711,6 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     private boolean isNullOnTextFiled(JTextField... args) {
-        System.out.println("abc");
         for (int i = 0; i < args.length; i++) {
             if (args[i].getText().equals("")) {
                 MsgBox.alert(this, args[i].getToolTipText());
