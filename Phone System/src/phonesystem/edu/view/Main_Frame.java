@@ -6738,7 +6738,7 @@ public class Main_Frame extends javax.swing.JFrame {
             MsgBox.alert(this, "Bạn chưa chọn Ngày kết thúc !!!");
             return false;
         }
-        
+
         try {
             if (Float.parseFloat(txt_GiamGia_KhuyenMai.getText()) < 0) {
                 MsgBox.alert(this, "Giá giảm phải lớn hơn 0 !!!");
@@ -7067,16 +7067,6 @@ public class Main_Frame extends javax.swing.JFrame {
     double tienConLai;
     double tongGiaGiam;
     DecimalFormat format = new DecimalFormat("###,###,###");
-
-//    In hoa don variable
-    String invoice_ID = "";
-    String invoice_Emp = "";
-    String invoice_CosName = "";
-    String invoice_total = "";
-
-    List<String> product_invoice = new ArrayList<>();
-    List<String> product_quantity = new ArrayList<>();
-    List<String> product_price = new ArrayList<>();
 
     private void init_BanHang() {
 //        Position row
@@ -7521,7 +7511,10 @@ public class Main_Frame extends javax.swing.JFrame {
             tbl_DSHoaDonChiTiet_BanHang.setRowSelectionInterval(0, 0);
 
 //          dua du lieu vao list
-            this.generateInvoice02();
+            this.generateInvoice();
+            System.out.println(product_invoice);
+            System.out.println(product_quantity);
+            System.out.println(product_price);
 
             MsgBox.alert(this, "Thêm hóa đơn thành công");
             int select_tab = 1;
@@ -7551,34 +7544,44 @@ public class Main_Frame extends javax.swing.JFrame {
 
     double bHeight = 0.0;
 
-    private void generateInvoice02() {
+    //    In hoa don variable
+    String invoice_ID = "";
+    String invoice_Emp = "";
+    String invoice_CosName = "";
+    String invoice_total = "";
+
+    String product_name = "";
+    String quantity = "";
+    String price = "";
+
+    List<String> product_invoice = new ArrayList<>();
+    List<String> product_quantity = new ArrayList<>();
+    List<String> product_price = new ArrayList<>();
+
+    private void generateInvoice() {
 
         invoice_ID = lbl_MaHoaDon_BanHang.getText();
-        invoice_Emp = Auth.getNameNhanVien();
+        invoice_Emp = lbl_NguoiTao_BanHang.getText();
         invoice_CosName = lbl_TenKhachHang_BanHang.getText();
         invoice_total = lbl_TongTienThanhToan_BanHang.getText();
 
         int index = tbl_DSHoaDonChiTiet_BanHang.getSelectedRow();
 
-        String product_name = (String) tbl_DSHoaDonChiTiet_BanHang.getValueAt(index, 1);
-        String quantity = String.valueOf(tbl_DSHoaDonChiTiet_BanHang.getValueAt(index, 3));
-        String price = String.valueOf(tbl_DSHoaDonChiTiet_BanHang.getValueAt(index, 4));
+        product_name = (String) tbl_DSHoaDonChiTiet_BanHang.getModel().getValueAt(index, 1);
+        quantity = String.valueOf(tbl_DSHoaDonChiTiet_BanHang.getModel().getValueAt(index, 3));
+        price = String.valueOf(tbl_DSHoaDonChiTiet_BanHang.getModel().getValueAt(index, 4));
 
-        for (int i = 0; i < tbl_DSHoaDonChiTiet_BanHang.getRowCount(); i++) {
-            product_invoice.add(product_name);
+        for (int i = 0; i < tbl_DSHoaDonChiTiet_BanHang.getModel().getRowCount(); i++) {
+            product_invoice.add(tbl_DSHoaDonChiTiet_BanHang.getModel().getValueAt(i, 1).toString());
         }
 
-        for (int i = 0; i < tbl_DSHoaDonChiTiet_BanHang.getRowCount(); i++) {
-            product_quantity.add(quantity);
+        for (int i = 0; i < tbl_DSHoaDonChiTiet_BanHang.getModel().getRowCount(); i++) {
+            product_quantity.add(tbl_DSHoaDonChiTiet_BanHang.getModel().getValueAt(i, 3).toString());
         }
 
-        for (int i = 0; i < tbl_DSHoaDonChiTiet_BanHang.getRowCount(); i++) {
-            product_price.add(price);
+        for (int i = 0; i < tbl_DSHoaDonChiTiet_BanHang.getModel().getRowCount(); i++) {
+            product_price.add(tbl_DSHoaDonChiTiet_BanHang.getModel().getValueAt(i, 4).toString());
         }
-
-        System.out.println(product_invoice);
-        System.out.println(product_quantity);
-        System.out.println(product_price);
     }
 
     private void printInvoice() {
@@ -7630,7 +7633,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 throws PrinterException {
 
             int r = product_invoice.size();
-            ImageIcon icon = new ImageIcon("All Files	C:\\FPT polytechnic\\DuAnMot_JavaSwing\\Code Project\\Phone System\\Phone System\\src\\phonesystem\\edu\\img\\logo_fpt_mini-size.png");
+            ImageIcon icon = new ImageIcon("C:\\FPT polytechnic\\DuAnMot_JavaSwing\\Code Project\\Phone System\\Phone System\\src\\phonesystem\\edu\\img\\icons8_Old_Live_Journal_logo_100px.png");
             int result = NO_SUCH_PAGE;
             if (pageIndex == 0) {
 
@@ -7646,53 +7649,53 @@ public class Main_Frame extends javax.swing.JFrame {
                     // int headerRectHeighta=40;
 
                     g2d.setFont(new Font("Monospaced", Font.PLAIN, 9));
-                    g2d.drawImage(icon.getImage(), 50, 20, 90, 30, rootPane);
-                    y += yShift + 30;
+                    g2d.drawImage(icon.getImage(), 80, 20, 90, 50, rootPane);
+                    y += yShift + 50;
                     g2d.drawString("-----------------------------------------------", 12, y);
                     y += yShift;
-                    g2d.drawString("         CodeGuid.com        ", 12, y);
+                    g2d.drawString("        Cửa hàng điện thoại Vũ Trụ ", 12, y);
                     y += yShift;
-                    g2d.drawString("   No 00000 Address Line One ", 12, y);
+                    g2d.drawString("           FPT Polytechnic Cần Thơ ", 12, y);
                     y += yShift;
-                    g2d.drawString("   Address Line 02 SRI LANKA ", 12, y);
+                    g2d.drawString("     Nguyễn Văn Linh Ninh Kiều, Cần Thơ ", 12, y);
                     y += yShift;
-                    g2d.drawString("   www.facebook.com/CodeGuid ", 12, y);
+                    g2d.drawString("            HÓA ĐƠN THANH TOÁN      ", 12, y);
                     y += yShift;
-                    g2d.drawString("        +94700000000      ", 12, y);
+                    g2d.drawString(" Mã hóa đơn:             "+invoice_ID, 12, y);
+                    y += yShift;
+                    g2d.drawString(" Tên nhân viên:          "+invoice_Emp, 12, y);
+                    y += yShift;
+                    g2d.drawString(" Tên khách hàng:         "+invoice_CosName, 12, y);
                     y += yShift;
                     g2d.drawString("-----------------------------------------------", 12, y);
                     y += headerRectHeight;
 
-                    g2d.drawString(" Tên sản phầm\t\t\t\t Số lượng  \t\tGiá thành", 10, y);
+                    g2d.drawString(" Tên sản phầm     Số lượng       Giá thành", 10, y);
                     y += yShift;
                     g2d.drawString("------------------------------------------------", 10, y);
                     y += headerRectHeight;
 
                     for (int s = 0; s < r; s++) {
-                        g2d.drawString(" " + product_invoice.get(s) + "                            ", 10, y);
-                        y += yShift;
-                        g2d.drawString("\t\t" + product_quantity.get(s) + " * " + product_price.get(s), 10, y);
+                        g2d.drawString(" "+ product_invoice.get(s) + "           "+product_quantity.get(s)+"   "+product_price.get(s), 10, y);
+//                        g2d.drawString("\t\t" + product_quantity.get(s) + " * " + product_price.get(s), 10, y);
                         y += yShift;
                     }
 
                     g2d.drawString("-----------------------------------------------", 10, y);
                     y += yShift;
-                    g2d.drawString(" Tổng tiền:\t\t\t\t\t\t" + invoice_total + "   ", 10, y);
+                    g2d.drawString(" Tổng tiền:\t\t\t\t\t\t" + format.format(Double.parseDouble(invoice_total)) + "   ", 10, y);
                     y += yShift;
                     g2d.drawString("-----------------------------------------------", 10, y);
                     y += yShift;
 
                     g2d.drawString("***********************************************", 10, y);
                     y += yShift;
-                    g2d.drawString("       THANK YOU ,COME AGAIN            ", 10, y);
+                    g2d.drawString("         THANK YOU ,COME AGAIN            ", 10, y);
                     y += yShift;
                     g2d.drawString("***********************************************", 10, y);
                     y += yShift;
-                    g2d.drawString("       SOFTWARE BY:CODEGUID          ", 10, y);
+                    g2d.drawString("         DESIGN & DEV by GROUP 01          ", 10, y);
                     y += yShift;
-                    g2d.drawString("   CONTACT: contact@codeguid.com       ", 10, y);
-                    y += yShift;
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
