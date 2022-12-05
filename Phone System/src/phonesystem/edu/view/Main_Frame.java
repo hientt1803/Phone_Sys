@@ -6,14 +6,23 @@
 package phonesystem.edu.view;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
+import com.lowagie.text.Document;
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -22,6 +31,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -61,6 +72,11 @@ import phonesystem.edu.ultil.MsgBox;
 import phonesystem.edu.ultil.TableEdit;
 import phonesystem.edu.ultil.XDate;
 import phonesystem.edu.ultil.XImage;
+import java.awt.print.PageFormat;
+import java.awt.print.Paper;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 
 /**
  *
@@ -3926,16 +3942,21 @@ public class Main_Frame extends javax.swing.JFrame {
 
         txt_TienKhachDua_BanHang.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_TienKhachDua_BanHang.setText("0");
+        txt_TienKhachDua_BanHang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_TienKhachDua_BanHangActionPerformed(evt);
+            }
+        });
         txt_TienKhachDua_BanHang.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_TienKhachDua_BanHangKeyReleased(evt);
             }
         });
-        jPanel35.add(txt_TienKhachDua_BanHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 385, 77, 30));
+        jPanel35.add(txt_TienKhachDua_BanHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 385, 110, 30));
 
         jLabel108.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel108.setText("VND");
-        jPanel35.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 392, -1, -1));
+        jPanel35.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, -1, -1));
 
         txt_giaGiam_BanHang.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_giaGiam_BanHang.setText("0");
@@ -3977,7 +3998,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 btn_LamMoi_BanHangActionPerformed(evt);
             }
         });
-        jPanel35.add(btn_LamMoi_BanHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 385, 30, 30));
+        jPanel35.add(btn_LamMoi_BanHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 30, 30));
 
         btn_ThanhToan_BanHang.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_ThanhToan_BanHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phonesystem/edu/img/icons8_bill_30px.png"))); // NOI18N
@@ -5502,6 +5523,8 @@ public class Main_Frame extends javax.swing.JFrame {
         if (evt.getClickCount() == 1) {
             this.row_DS_HoaDon_banhang = tbl_DSHoaDon_BanHang.getSelectedRow();
             this.fillToTableDSHoaDonChiTiet_BanHang();
+        } else if (evt.getClickCount() == 2) {
+
         }
     }//GEN-LAST:event_tbl_DSHoaDon_BanHangMouseClicked
 
@@ -5693,6 +5716,10 @@ public class Main_Frame extends javax.swing.JFrame {
         String keyWord = txt_Loc_DSHoaDon_BanHang.getText();
         filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, keyWord, selectedIndex);
     }//GEN-LAST:event_txt_Loc_DSHoaDon_BanHangKeyReleased
+
+    private void txt_TienKhachDua_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_TienKhachDua_BanHangActionPerformed
+       this.ThanhToan_BanHang_button_click();
+    }//GEN-LAST:event_txt_TienKhachDua_BanHangActionPerformed
 
 //    Mouse evento
     public void onClick(JPanel jpanel) {
@@ -6966,6 +6993,16 @@ public class Main_Frame extends javax.swing.JFrame {
     double tongGiaGiam;
     DecimalFormat format = new DecimalFormat("###,###,###");
 
+//    In hoa don variable
+    String invoice_ID = "";
+    String invoice_Emp = "";
+    String invoice_CosName = "";
+    String invoice_total = "";
+
+    List<String> product_invoice = new ArrayList<>();
+    List<String> product_quantity = new ArrayList<>();
+    List<String> product_price = new ArrayList<>();
+
     private void init_BanHang() {
 //        Position row
         row_DS_HoaDon_banhang = -1;
@@ -6998,7 +7035,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void ThanhTien_HoaDon_BanHang() {
         try {
-
+            
             int x = tbl_HoaDon_BanHang.getSelectedRow();
             int y = 6;
             try {
@@ -7392,31 +7429,202 @@ public class Main_Frame extends javax.swing.JFrame {
                 listHDCT.add(hdct);
             }
 
+//            add vao db
             for (HoaDonChiTiet hdct : listHDCT) {
                 hdctDAO.insert(hdct);
             }
 
+//            Update lai so luong trong dataabase
             this.update_SoluongSP_DanhSachSP_BanHang();
 
+//            Fill lai du lieu
             this.FillTable_DS_SanPham_BanHang();
             this.fillToTableDSHoaDon_BangHang();
 
-            tbl_DSHoaDon_BanHang.setRowSelectionInterval(0, 0);
+            tbl_DSHoaDon_BanHang.setRowSelectionInterval(tbl_DSHoaDon_BanHang.getRowCount() - 1, tbl_DSHoaDon_BanHang.getRowCount() - 1);
             this.fillToTableDSHoaDonChiTiet_BanHang();
+            tbl_DSHoaDonChiTiet_BanHang.setRowSelectionInterval(0, 0);
+            
+//          dua du lieu vao list
+            this.generateInvoice02();
 
             MsgBox.alert(this, "Thêm hóa đơn thành công");
-
-            String otps[] = {"Có, in hóa đơn", "Không, để sau"};
-            if (MsgBox.options(this, "Bạn có muốn in hóa đơn?", otps) == 0) {
-                MsgBox.alert(this, "In hóa đơn thành công");
-            }
-
             int select_tab = 1;
             this.selectTab(select_tab);
             this.HuyGioHang_BanHang();
+            
+            
+//            In hoa don
+            this.InHoaDon();
         } catch (Exception e) {
             MsgBox.alert(this, "Thêm thất bại");
             e.printStackTrace();
+        }
+    }
+
+    private void InHoaDon() {
+        String otps[] = {"Có, in hóa đơn", "Không, để sau"};
+        try {
+            if (MsgBox.options(this, "Bạn có muốn in hóa đơn?", otps) == 0) {
+                this.printInvoice();
+            }
+            MsgBox.alert(this, "In hóa đơn thành công");
+        } catch (Exception e) {
+            MsgBox.alert(this, "In thất bại");
+            e.printStackTrace();
+        }
+    }
+
+    double bHeight = 0.0;
+    private void generateInvoice02() {
+
+        invoice_ID = lbl_MaHoaDon_BanHang.getText();
+        invoice_Emp = Auth.getNameNhanVien();
+        invoice_CosName = lbl_TenKhachHang_BanHang.getText();
+        invoice_total = lbl_TongTienThanhToan_BanHang.getText();
+
+        int index = tbl_DSHoaDonChiTiet_BanHang.getSelectedRow();
+
+        String product_name = (String) tbl_DSHoaDonChiTiet_BanHang.getValueAt(index, 1);
+        String quantity = String.valueOf(tbl_DSHoaDonChiTiet_BanHang.getValueAt(index, 3));
+        String price = String.valueOf(tbl_DSHoaDonChiTiet_BanHang.getValueAt(index, 4));
+
+        for (int i = 0; i < tbl_DSHoaDonChiTiet_BanHang.getRowCount(); i++) {
+            product_invoice.add(product_name);
+        }
+
+        for (int i = 0; i < tbl_DSHoaDonChiTiet_BanHang.getRowCount(); i++) {
+            product_quantity.add(quantity);
+        }
+
+        for (int i = 0; i < tbl_DSHoaDonChiTiet_BanHang.getRowCount(); i++) {
+            product_price.add(price);
+        }
+
+        System.out.println(product_invoice);
+        System.out.println(product_quantity);
+        System.out.println(product_price);
+    }
+
+    private void printInvoice() {
+        bHeight = Double.valueOf(product_invoice.size());
+        //JOptionPane.showMessageDialog(rootPane, bHeight);
+
+        PrinterJob pj = PrinterJob.getPrinterJob();
+        pj.setPrintable(new BillPrintable(), getPageFormat(pj));
+        try {
+            pj.print();
+
+        } catch (PrinterException ex) {
+            MsgBox.alert(this, "rõng");
+            ex.printStackTrace();
+        }
+    }
+
+    public PageFormat getPageFormat(PrinterJob pj) {
+
+        PageFormat pf = pj.defaultPage();
+        Paper paper = pf.getPaper();
+
+        double bodyHeight = bHeight;
+        double headerHeight = 5.0;
+        double footerHeight = 5.0;
+        double width = cm_to_pp(8);
+        double height = cm_to_pp(headerHeight + bodyHeight + footerHeight);
+        paper.setSize(width, height);
+        paper.setImageableArea(0, 10, width, height - cm_to_pp(1));
+
+        pf.setOrientation(PageFormat.PORTRAIT);
+        pf.setPaper(paper);
+
+        return pf;
+    }
+
+    protected static double cm_to_pp(double cm) {
+        return toPPI(cm * 0.393600787);
+    }
+
+    protected static double toPPI(double inch) {
+        return inch * 72d;
+    }
+
+    public class BillPrintable implements Printable {
+
+        @Override
+        public int print(Graphics graphics, PageFormat pageFormat, int pageIndex)
+                throws PrinterException {
+
+            int r = product_invoice.size();
+            ImageIcon icon = new ImageIcon("All Files	C:\\FPT polytechnic\\DuAnMot_JavaSwing\\Code Project\\Phone System\\Phone System\\src\\phonesystem\\edu\\img\\logo_fpt_mini-size.png");
+            int result = NO_SUCH_PAGE;
+            if (pageIndex == 0) {
+
+                Graphics2D g2d = (Graphics2D) graphics;
+                double width = pageFormat.getImageableWidth();
+                g2d.translate((int) pageFormat.getImageableX(), (int) pageFormat.getImageableY());
+
+                //  FontMetrics metrics=g2d.getFontMetrics(new Font("Arial",Font.BOLD,7));
+                try {
+                    int y = 20;
+                    int yShift = 10;
+                    int headerRectHeight = 15;
+                    // int headerRectHeighta=40;
+
+                    g2d.setFont(new Font("Monospaced", Font.PLAIN, 9));
+                    g2d.drawImage(icon.getImage(), 50, 20, 90, 30, rootPane);
+                    y += yShift + 30;
+                    g2d.drawString("-----------------------------------------------", 12, y);
+                    y += yShift;
+                    g2d.drawString("         CodeGuid.com        ", 12, y);
+                    y += yShift;
+                    g2d.drawString("   No 00000 Address Line One ", 12, y);
+                    y += yShift;
+                    g2d.drawString("   Address Line 02 SRI LANKA ", 12, y);
+                    y += yShift;
+                    g2d.drawString("   www.facebook.com/CodeGuid ", 12, y);
+                    y += yShift;
+                    g2d.drawString("        +94700000000      ", 12, y);
+                    y += yShift;
+                    g2d.drawString("-----------------------------------------------", 12, y);
+                    y += headerRectHeight;
+
+                    g2d.drawString(" Tên sản phầm\t\t\t\t Số lượng  \t\tGiá thành", 10, y);
+                    y += yShift;
+                    g2d.drawString("------------------------------------------------", 10, y);
+                    y += headerRectHeight;
+
+                    for (int s = 0; s < r; s++) {
+                        g2d.drawString(" " + product_invoice.get(s) + "                            ", 10, y);
+                        y += yShift;
+                        g2d.drawString("\t\t" + product_quantity.get(s) + " * " + product_price.get(s), 10, y);
+                        y += yShift;
+                    }
+
+                    g2d.drawString("-----------------------------------------------", 10, y);
+                    y += yShift;
+                    g2d.drawString(" Tổng tiền:\t\t\t\t\t\t" + invoice_total + "   ", 10, y);
+                    y += yShift;
+                    g2d.drawString("-----------------------------------------------", 10, y);
+                    y += yShift;
+
+                    g2d.drawString("***********************************************", 10, y);
+                    y += yShift;
+                    g2d.drawString("       THANK YOU ,COME AGAIN            ", 10, y);
+                    y += yShift;
+                    g2d.drawString("***********************************************", 10, y);
+                    y += yShift;
+                    g2d.drawString("       SOFTWARE BY:CODEGUID          ", 10, y);
+                    y += yShift;
+                    g2d.drawString("   CONTACT: contact@codeguid.com       ", 10, y);
+                    y += yShift;
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                result = PAGE_EXISTS;
+            }
+            return result;
         }
     }
 
@@ -7486,7 +7694,7 @@ public class Main_Frame extends javax.swing.JFrame {
         boolean edit = (this.row_DS_HoaDon_banhang >= 0);
         boolean first = (this.row_DS_HoaDon_banhang == 0);
         boolean last = (this.row_DS_HoaDon_banhang == tbl_DSHoaDon_BanHang.getRowCount() - 1);
-        
+
 // Trạng thái điều hướng
         btn_First_DSHoaDon_BanHang.setEnabled(edit && !first);
         btn_prev_DSHoaDon_BanHang.setEnabled(edit && !first);

@@ -31,8 +31,10 @@ public final class ProgressBar_JFrame extends javax.swing.JFrame {
     private void init() {
         this.setIconImage(XImage.getAppIcon());
         this.setTitle("Loading - Phone System");
+        
         Main_Frame mf = new Main_Frame();
         mf.setVisible(false);
+        
         new Timer(35, (ActionEvent e) -> {
             setLocationRelativeTo(null);
             int value = jProgressBar1.getValue();
