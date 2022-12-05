@@ -89,6 +89,7 @@ public class Main_Frame extends javax.swing.JFrame {
     /**
      * Creates new form Main_Frame
      */
+
 //    Account recent check
     static Boolean checkBox1 = false;
     static Boolean checkBox2 = false;
@@ -135,44 +136,43 @@ public class Main_Frame extends javax.swing.JFrame {
         this.Clock();
 
 //        Default menu active
-        onClick(pnl_ThongKe);
+        onClick(pnl_DiemDanh);
         onLeaveClick(pnl_KhachHang);
-        onLeaveClick(pnl_BanHang);
+        onLeaveClick(pnl_ThongKe);
         onLeaveClick(pnl_SanPham);
+        onLeaveClick(pnl_BanHang);
         onLeaveClick(pnl_HeThong);
-        onLeaveClick(pnl_DiemDanh);
         onLeaveClick(pnl_TaiKhoan);
         onLeaveClick(pnl_NhanVien);
         onLeaveClick(pnl_Luong);
         onLeaveClick(pnl_KhuyenMai);
 
-        onClickLabel(lbl_ThongKe);
+        onClickLabel(lbl_DiemDanh);
         onLeaveClickLabel(lbl_KhachHang);
-        onLeaveClickLabel(lbl_BanHang);
+        onLeaveClickLabel(lbl_ThongKe);
         onLeaveClickLabel(lbl_SanPham);
+        onLeaveClickLabel(lbl_BanHang);
         onLeaveClickLabel(lbl_HeThong);
-        onLeaveClickLabel(lbl_DiemDanh);
         onLeaveClickLabel(lbl_TaiKhoan);
         onLeaveClickLabel(lbl_NhanVien);
         onLeaveClickLabel(lbl_Luong);
         onLeaveClickLabel(lbl_KhuyenMai);
 
-//        indicators
-        indicator1.setOpaque(true);
+        //        indicators
+        indicator1.setOpaque(false);
         indicator2.setOpaque(false);
         indicator3.setOpaque(false);
         indicator4.setOpaque(false);
         indicator6.setOpaque(false);
-        indicator7.setOpaque(false);
+        indicator7.setOpaque(true);
         indicator8.setOpaque(false);
         indicator9.setOpaque(false);
         indicator10.setOpaque(false);
         indicator11.setOpaque(false);
 
-//        Card playout
+        //        Card playout
         CardLayout playout = (CardLayout) pnl_MainDisplayCard.getLayout();
-        playout.show(pnl_MainDisplayCard, "card_ThongKe");
-
+        playout.show(pnl_MainDisplayCard, "card_DiemDanh");
     }
 
 //        Timer on right top
@@ -586,8 +586,8 @@ public class Main_Frame extends javax.swing.JFrame {
         btn_prev_DSHoaDon_BanHang = new javax.swing.JButton();
         btn_next_DSHoaDon_BanHang = new javax.swing.JButton();
         btn_last_DSHoaDon_BanHang = new javax.swing.JButton();
-        dcs_locNgayTao_BanHang = new com.toedter.calendar.JDateChooser();
-        btn_clear_DSHoaDon = new javax.swing.JButton();
+        cbo_loc_DSHoaDon_BanHang = new javax.swing.JComboBox<>();
+        txt_Loc_DSHoaDon_BanHang = new javax.swing.JTextField();
         card_KhuyenMai = new javax.swing.JPanel();
         tab_KhuyenMai = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
@@ -634,7 +634,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         pnl_MainChinh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnl_Top.setBackground(new java.awt.Color(236, 231, 231));
+        pnl_Top.setBackground(new java.awt.Color(250, 250, 250));
         pnl_Top.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(228, 228, 228)));
         pnl_Top.setPreferredSize(new java.awt.Dimension(1000, 70));
         pnl_Top.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -4047,7 +4047,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
         jLabel111.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel111.setForeground(new java.awt.Color(34, 51, 102));
-        jLabel111.setText("Lọc ngày tạo");
+        jLabel111.setText("Lọc hóa đơn theo");
 
         tbl_DSHoaDon_BanHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -4114,7 +4114,7 @@ public class Main_Frame extends javax.swing.JFrame {
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel36Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -4154,17 +4154,11 @@ public class Main_Frame extends javax.swing.JFrame {
             }
         });
 
-        dcs_locNgayTao_BanHang.setDateFormatString("yyyy-MM-dd");
-        dcs_locNgayTao_BanHang.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                dcs_locNgayTao_BanHangPropertyChange(evt);
-            }
-        });
+        cbo_loc_DSHoaDon_BanHang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã hóa đơn", "Người tạo", "Tên khách hàng", "Ngày Tạo", "Tổng tiền" }));
 
-        btn_clear_DSHoaDon.setText("X");
-        btn_clear_DSHoaDon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_clear_DSHoaDonActionPerformed(evt);
+        txt_Loc_DSHoaDon_BanHang.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_Loc_DSHoaDon_BanHangKeyReleased(evt);
             }
         });
 
@@ -4180,9 +4174,9 @@ public class Main_Frame extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createSequentialGroup()
                                 .addComponent(jLabel111)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(dcs_locNgayTao_BanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_clear_DSHoaDon)
+                                .addComponent(cbo_loc_DSHoaDon_BanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_Loc_DSHoaDon_BanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton8))
                             .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -4201,15 +4195,13 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(11, Short.MAX_VALUE)
                 .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel34Layout.createSequentialGroup()
-                            .addComponent(btn_clear_DSHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGap(1, 1, 1))
-                        .addComponent(dcs_locNgayTao_BanHang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel111, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel111)
+                        .addComponent(cbo_loc_DSHoaDon_BanHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_Loc_DSHoaDon_BanHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -5507,59 +5499,27 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_TinhLuong_LuongActionPerformed
 
     private void tbl_DSHoaDon_BanHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DSHoaDon_BanHangMouseClicked
-        this.fillToTableDSHoaDonChiTiet_BanHang();
+        if (evt.getClickCount() == 1) {
+            this.row_DS_HoaDon_banhang = tbl_DSHoaDon_BanHang.getSelectedRow();
+            this.fillToTableDSHoaDonChiTiet_BanHang();
+        }
     }//GEN-LAST:event_tbl_DSHoaDon_BanHangMouseClicked
 
     private void btn_First_DSHoaDon_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_First_DSHoaDon_BanHangActionPerformed
-        if (tbl_DSHoaDon_BanHang.getRowCount() != 0) {
-            this.row_banhang = 0;
-            tbl_DSHoaDon_BanHang.setRowSelectionInterval(row_banhang, row_banhang);
-            this.updateStatus_DSHoaDon_BanHang();
-        }
+        this.first_DSHoaDon_BanHang();
     }//GEN-LAST:event_btn_First_DSHoaDon_BanHangActionPerformed
 
     private void btn_prev_DSHoaDon_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prev_DSHoaDon_BanHangActionPerformed
-        if (tbl_DSHoaDon_BanHang.getRowCount() != 0) {
-            if (row_banhang < 0) {
-                btn_last_DSHoaDon_BanHangActionPerformed(evt);
-            } else if (row_banhang == 0) {
-                btn_last_DSHoaDon_BanHangActionPerformed(evt);
-            } else {
-                row_banhang--;
-            }
-            tbl_DSHoaDon_BanHang.setRowSelectionInterval(row_banhang, row_banhang);
-            this.updateStatus_DSHoaDon_BanHang();
-        }
+        this.prev_DSHoaDon_BanHang();
     }//GEN-LAST:event_btn_prev_DSHoaDon_BanHangActionPerformed
 
     private void btn_next_DSHoaDon_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_next_DSHoaDon_BanHangActionPerformed
-        if (tbl_DSHoaDon_BanHang.getRowCount() != 0) {
-            if (row_banhang == tbl_DSHoaDon_BanHang.getRowCount() - 1) {
-                btn_First_DSHoaDon_BanHangActionPerformed(evt);
-            } else {
-                row_banhang++;
-            }
-            tbl_DSHoaDon_BanHang.setRowSelectionInterval(row_banhang, row_banhang);
-            this.updateStatus_DSHoaDon_BanHang();
-        }
+        this.next_DSHoaDon_BanHang();
     }//GEN-LAST:event_btn_next_DSHoaDon_BanHangActionPerformed
 
     private void btn_last_DSHoaDon_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_last_DSHoaDon_BanHangActionPerformed
-        if (tbl_DSHoaDon_BanHang.getRowCount() != 0) {
-            row_banhang = tbl_DSHoaDon_BanHang.getRowCount() - 1;
-            tbl_DSHoaDon_BanHang.setRowSelectionInterval(row_banhang, row_banhang);
-            this.updateStatus_DSHoaDon_BanHang();
-        }
+        this.last_DSHoaDon_BanHang();
     }//GEN-LAST:event_btn_last_DSHoaDon_BanHangActionPerformed
-
-    private void dcs_locNgayTao_BanHangPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dcs_locNgayTao_BanHangPropertyChange
-        if ("calendar".equals(evt.getPropertyName())
-                || "date".equals(evt.getPropertyName())) {
-            int index = 3;
-            String date = XDate.toString(dcs_locNgayTao_BanHang.getDate(), "dd/MM/yyyy");
-            this.filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, date, index);
-        }
-    }//GEN-LAST:event_dcs_locNgayTao_BanHangPropertyChange
 
     private void btn_Them_KhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Them_KhuyenMaiActionPerformed
         this.insert_KhuyenMai();
@@ -5702,10 +5662,6 @@ public class Main_Frame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txt_TenKhuyenMai_KhuyenMaiKeyReleased
 
-    private void btn_clear_DSHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clear_DSHoaDonActionPerformed
-        this.filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, "", 3);
-    }//GEN-LAST:event_btn_clear_DSHoaDonActionPerformed
-
     private void tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMaiMouseClicked
         row_tbl_KhuyenMai = tbl_DanhSachKhuyenMaiCoSanPham_KhuyenMai.getSelectedRow();
         this.edit_KhuyenMai();
@@ -5732,7 +5688,13 @@ public class Main_Frame extends javax.swing.JFrame {
         filterOnTextfield(model_DiemDanh, tbl_DanhSachDiemDanh_DiemDanh, keyWord, selectedIndex);
     }//GEN-LAST:event_txt_TimDiemDanh_DiemDanhKeyReleased
 
-//    Mouse event
+    private void txt_Loc_DSHoaDon_BanHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_Loc_DSHoaDon_BanHangKeyReleased
+        int selectedIndex = cbo_loc_DSHoaDon_BanHang.getSelectedIndex();
+        String keyWord = txt_Loc_DSHoaDon_BanHang.getText();
+        filterOnTextfield(model_tbl_DSHoaDon, tbl_DSHoaDon_BanHang, keyWord, selectedIndex);
+    }//GEN-LAST:event_txt_Loc_DSHoaDon_BanHangKeyReleased
+
+//    Mouse evento
     public void onClick(JPanel jpanel) {
         jpanel.setBackground(new Color(34, 51, 102));
     }
@@ -5851,7 +5813,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JButton btn_Xoa_KhuyenMai;
     private javax.swing.JButton btn_Xoa_SanPham;
     private javax.swing.JButton btn_Xoa_TaiKhoan;
-    private javax.swing.JButton btn_clear_DSHoaDon;
     private javax.swing.ButtonGroup btn_group_GioiTinh_NhanVien;
     private javax.swing.ButtonGroup btn_group_TrangThai_NhanVien;
     private javax.swing.ButtonGroup btn_group_VaiTro;
@@ -5883,6 +5844,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbo_NhanVien_NhanVien;
     private javax.swing.JComboBox<String> cbo_SanPham_SanPham;
     public static javax.swing.JComboBox<String> cbo_XuatXu_SanPham;
+    private javax.swing.JComboBox<String> cbo_loc_DSHoaDon_BanHang;
     private com.toedter.calendar.JDateChooser dc_NgaySinh_NhanVien;
     private com.toedter.calendar.JDateChooser dcs_LocTheoNgayNhan_Luong;
     private com.toedter.calendar.JDateChooser dcs_NgayBatDau_KhuyenMai;
@@ -5891,7 +5853,6 @@ public class Main_Frame extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser dcs_NgayKetThuc_KhuyenMai;
     private com.toedter.calendar.JDateChooser dcs_NgayKetThuc_ThongKe;
     private com.toedter.calendar.JDateChooser dcs_NgayKetThuc_ThongKe1;
-    private com.toedter.calendar.JDateChooser dcs_locNgayTao_BanHang;
     private javax.swing.JPanel indicator1;
     private javax.swing.JPanel indicator10;
     private javax.swing.JPanel indicator11;
@@ -6177,6 +6138,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTextArea txt_GhiChu_NhanVien;
     private javax.swing.JTextField txt_GhiChu_SanPham;
     private javax.swing.JTextField txt_GiamGia_KhuyenMai;
+    private javax.swing.JTextField txt_Loc_DSHoaDon_BanHang;
     private javax.swing.JTextField txt_Luong_Luong;
     private javax.swing.JTextField txt_MaKhachHang_KhachHang;
     private javax.swing.JTextField txt_MaNV_TaiKhoan;
@@ -6775,7 +6737,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
 //    private void getForm_DaCoTaiKhoan_TaiKhoan() {
-//
+//  
 //    }
     private void setForm_DaCoTaiKhoan_TaiKhoan(TaiKhoan tk) {
 //        get data from TaiKhoan.Entity
@@ -6807,8 +6769,9 @@ public class Main_Frame extends javax.swing.JFrame {
     private void insert_tbl_DaCoTaiKhoan_TaiKhoan() {
         TaiKhoan tk = getForm_ChuaCoTaiKhoan_TaiKhoan();
 
-        if (!txt_Confirm_TaiKhoan.equals(txt_MatKhau_TaiKhoan)) {
+        if (!txt_Confirm_TaiKhoan.getText().equals(txt_MatKhau_TaiKhoan.getText())) {
             MsgBox.alert(this, "Mật khẩu xác nhận không đúng");
+            return;
         }
 
         try {
@@ -6873,8 +6836,8 @@ public class Main_Frame extends javax.swing.JFrame {
 
     public void updateStatus_DS_DaCoTaiKhoan_TaiKhoan() {
         boolean edit = (this.row_tbl_TaiKhoan >= 0);
-        boolean first = (this.row_banhang == 0);
-        boolean last = (this.row_banhang == tbl_DSHoaDon_BanHang.getRowCount() - 1);
+        boolean first = (this.row_DS_HoaDon_banhang == 0);
+        boolean last = (this.row_DS_HoaDon_banhang == tbl_DSHoaDon_BanHang.getRowCount() - 1);
 //        Trạng thái form
         btn_Them_TaiKhoan.setEnabled(!edit);
         btn_CapNhat_TaiKhoan.setEnabled(edit);
@@ -6985,7 +6948,8 @@ public class Main_Frame extends javax.swing.JFrame {
 
 //                          END_CARD_HETHONG  
     //                          START_CARD_BanHang  
-    int row_banhang = -1;
+    int row_DS_HoaDon_banhang = -1;
+
     DefaultTableModel model_tbl_HoaDon;
     DefaultTableModel model_tbl_DSHoaDon;
     DefaultTableModel model_tbl_DSHoaDonChiTiet;
@@ -7004,7 +6968,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void init_BanHang() {
 //        Position row
-        this.row_banhang = -1;
+        row_DS_HoaDon_banhang = -1;
 
 //        Format Table
         TableEdit.centerRendererTable(tbl_HoaDon_BanHang);
@@ -7051,7 +7015,7 @@ public class Main_Frame extends javax.swing.JFrame {
             this.getSum_ThanhTien_tbl_HoaDon(thanhTien);
 
         } catch (NumberFormatException e) {
-            System.out.println("lỗi tính thành tiền");
+            MsgBox.alert(this, "Lỗi tính thành tiền");
             e.printStackTrace();
         }
     }
@@ -7223,8 +7187,7 @@ public class Main_Frame extends javax.swing.JFrame {
                     String tenSp_tbl_banhang = "";
                     int index_tbl_banhang = 0;
 
-                    System.out.println((String) tbl_HoaDon_BanHang.getValueAt(0, 1));
-
+//                    System.out.println((String) tbl_HoaDon_BanHang.getValueAt(0, 1));
                     for (int i = 0; i <= tbl_HoaDon_BanHang.getRowCount(); i++) {
                         tenSp_tbl_banhang = (String) tbl_HoaDon_BanHang.getValueAt(i, 1);
 //                        System.out.println("Tên sp table: "+tenSp_tbl_banhang);
@@ -7353,15 +7316,15 @@ public class Main_Frame extends javax.swing.JFrame {
 
         for (int i = 0; i < tbl_DS_SanPham_BanHang.getRowCount(); i++) {
             soLuong_update = Integer.parseInt(tbl_DS_SanPham_BanHang.getValueAt(i, 2).toString());
-            System.out.println(soLuong_update);
+//            System.out.println(soLuong_update);
             list_soLuong_SP_update.put(list_allSP.get(i).getTenSanPham(), soLuong_update);
         }
 
         list_soLuong_SP_update.forEach(
                 (key, value)
                 -> {
-            System.out.println("Key:" + key);
-            System.out.println("Value:" + value);
+//            System.out.println("Key:" + key);
+//            System.out.println("Value:" + value);
 
             spDAO.update_SoLuong(key, value);
         });
@@ -7452,7 +7415,7 @@ public class Main_Frame extends javax.swing.JFrame {
             this.selectTab(select_tab);
             this.HuyGioHang_BanHang();
         } catch (Exception e) {
-            System.out.println("Thêm thất bại");
+            MsgBox.alert(this, "Thêm thất bại");
             e.printStackTrace();
         }
     }
@@ -7495,10 +7458,35 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
 //    Điều hướng hệ thống
+    public void first_DSHoaDon_BanHang() {
+        this.row_DS_HoaDon_banhang = 0;
+        this.updateStatus_DSHoaDon_BanHang();
+    }
+
+    public void prev_DSHoaDon_BanHang() {
+        if (this.row_DS_HoaDon_banhang > 0) {
+            this.row_DS_HoaDon_banhang--;
+            this.updateStatus_DSHoaDon_BanHang();
+        }
+    }
+
+    public void next_DSHoaDon_BanHang() {
+        if (this.row_DS_HoaDon_banhang < tbl_DSHoaDon_BanHang.getRowCount() - 1) {
+            this.row_DS_HoaDon_banhang++;
+            this.updateStatus_DSHoaDon_BanHang();
+        }
+    }
+
+    public void last_DSHoaDon_BanHang() {
+        this.row_DS_HoaDon_banhang = tbl_DSHoaDon_BanHang.getRowCount() - 1;
+        this.updateStatus_DSHoaDon_BanHang();
+    }
+
     public void updateStatus_DSHoaDon_BanHang() {
-        boolean edit = (this.row_banhang >= 0);
-        boolean first = (this.row_banhang == 0);
-        boolean last = (this.row_banhang == tbl_DSHoaDon_BanHang.getRowCount() - 1);
+        boolean edit = (this.row_DS_HoaDon_banhang >= 0);
+        boolean first = (this.row_DS_HoaDon_banhang == 0);
+        boolean last = (this.row_DS_HoaDon_banhang == tbl_DSHoaDon_BanHang.getRowCount() - 1);
+        
 // Trạng thái điều hướng
         btn_First_DSHoaDon_BanHang.setEnabled(edit && !first);
         btn_prev_DSHoaDon_BanHang.setEnabled(edit && !first);
@@ -7750,10 +7738,10 @@ public class Main_Frame extends javax.swing.JFrame {
     DefaultTableModel tableModelKhachHang_KhachHang, tableModelKhachHang_KhachHang_DaXoa;
     KhachHangDAO khachHangDAO = new KhachHangDAO();
     KhachHang kh = new KhachHang();
-
 //    private void initCardKhachHang() {    KhachHangDAO khachHangDAO = new KhachHangDAO();
 //    KhachHang kh = new KhachHang();
 //    }
+
     private void initCardKhachHang() {
         fillToTableKhachHang_KhachHang();
 

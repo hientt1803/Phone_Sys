@@ -51,7 +51,7 @@
         <Container class="javax.swing.JPanel" name="pnl_Top">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="e7" green="e7" red="ec" type="rgb"/>
+              <Color blue="fa" green="fa" red="fa" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -6609,9 +6609,9 @@
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Component id="jLabel111" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="dcs_locNgayTao_BanHang" min="-2" pref="201" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="btn_clear_DSHoaDon" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="cbo_loc_DSHoaDon_BanHang" min="-2" pref="151" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="txt_Loc_DSHoaDon_BanHang" min="-2" pref="181" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
                                                   <Component id="jButton8" min="-2" max="-2" attributes="0"/>
                                               </Group>
@@ -6637,16 +6637,13 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="11" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jButton8" alignment="1" min="-2" pref="42" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="btn_clear_DSHoaDon" pref="0" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="dcs_locNgayTao_BanHang" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel111" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel111" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbo_loc_DSHoaDon_BanHang" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txt_Loc_DSHoaDon_BanHang" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -6674,7 +6671,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="66" green="33" red="22" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="L&#x1ecd;c ng&#xe0;y t&#x1ea1;o"/>
+                            <Property name="text" type="java.lang.String" value="L&#x1ecd;c h&#xf3;a &#x111;&#x1a1;n theo"/>
                           </Properties>
                         </Component>
                         <Container class="javax.swing.JScrollPane" name="jScrollPane10">
@@ -6774,7 +6771,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane11" pref="219" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane11" pref="220" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -6893,20 +6890,25 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_last_DSHoaDon_BanHangActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="com.toedter.calendar.JDateChooser" name="dcs_locNgayTao_BanHang">
+                        <Component class="javax.swing.JComboBox" name="cbo_loc_DSHoaDon_BanHang">
                           <Properties>
-                            <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="5">
+                                <StringItem index="0" value="M&#xe3; h&#xf3;a &#x111;&#x1a1;n"/>
+                                <StringItem index="1" value="Ng&#x1b0;&#x1edd;i t&#x1ea1;o"/>
+                                <StringItem index="2" value="T&#xea;n kh&#xe1;ch h&#xe0;ng"/>
+                                <StringItem index="3" value="Ng&#xe0;y T&#x1ea1;o"/>
+                                <StringItem index="4" value="T&#x1ed5;ng ti&#x1ec1;n"/>
+                              </StringArray>
+                            </Property>
                           </Properties>
-                          <Events>
-                            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="dcs_locNgayTao_BanHangPropertyChange"/>
-                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JButton" name="btn_clear_DSHoaDon">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="X"/>
-                          </Properties>
+                        <Component class="javax.swing.JTextField" name="txt_Loc_DSHoaDon_BanHang">
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_clear_DSHoaDonActionPerformed"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_Loc_DSHoaDon_BanHangKeyReleased"/>
                           </Events>
                         </Component>
                       </SubComponents>
