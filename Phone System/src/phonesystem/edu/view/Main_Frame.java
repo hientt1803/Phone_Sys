@@ -3504,13 +3504,13 @@ public class Main_Frame extends javax.swing.JFrame {
         txt_MaSanPham_SanPham.setEditable(false);
         jPanel24.add(txt_MaSanPham_SanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 47, 183, -1));
 
-        txt_TenSanPham_SanPham.setToolTipText("Vui lòng nhập Tên sản phẩm");
+        txt_TenSanPham_SanPham.setToolTipText("Vui lòng nhập Tên sản phẩm !!!");
         jPanel24.add(txt_TenSanPham_SanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 75, 183, -1));
 
-        txt_SoLuong_SanPham.setToolTipText("Vui lòng nhập Số lương");
+        txt_SoLuong_SanPham.setToolTipText("Vui lòng nhập Số lượng !!!");
         jPanel24.add(txt_SoLuong_SanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 109, 183, -1));
 
-        txt_DonGia_SanPham.setToolTipText("Vui lòng nhập Đơn giá");
+        txt_DonGia_SanPham.setToolTipText("Vui lòng nhập Đơn giá !!!");
         jPanel24.add(txt_DonGia_SanPham, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 139, 183, -1));
 
         cbo_HangSanXuat_SanPham.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -4216,7 +4216,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -4396,6 +4396,7 @@ public class Main_Frame extends javax.swing.JFrame {
         jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quản lý khuyến mãi", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 16), new java.awt.Color(34, 51, 102))); // NOI18N
         jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txt_TenKhuyenMai_KhuyenMai.setToolTipText("Vui lòng nhập Tên khuyến mãi !!!");
         txt_TenKhuyenMai_KhuyenMai.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_TenKhuyenMai_KhuyenMaiKeyReleased(evt);
@@ -4405,6 +4406,8 @@ public class Main_Frame extends javax.swing.JFrame {
 
         jLabel65.setText("Tên khuyến mãi");
         jPanel33.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 32, -1, -1));
+
+        txt_GiamGia_KhuyenMai.setToolTipText("Vui lòng nhập Giảm giá !!!");
         jPanel33.add(txt_GiamGia_KhuyenMai, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 67, 183, -1));
 
         jLabel68.setText("Giảm giá");
@@ -4413,12 +4416,14 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel69.setText("Ngày bắt đầu");
         jPanel33.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 105, -1, -1));
 
+        dcs_NgayBatDau_KhuyenMai.setToolTipText("");
         dcs_NgayBatDau_KhuyenMai.setDateFormatString("dd/MM/yyyy");
         jPanel33.add(dcs_NgayBatDau_KhuyenMai, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 105, 187, -1));
 
         jLabel77.setText("Ngày kết thúc");
         jPanel33.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 136, -1, -1));
 
+        dcs_NgayKetThuc_KhuyenMai.setToolTipText("");
         dcs_NgayKetThuc_KhuyenMai.setDateFormatString("dd/MM/yyyy");
         jPanel33.add(dcs_NgayKetThuc_KhuyenMai, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 136, 187, -1));
 
@@ -5059,11 +5064,19 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_lblHinhAnh_SanPhamMouseClicked
 
     private void btn_Them_SanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Them_SanPhamActionPerformed
-        this.insert_SanPham();
+        if (isNullOnTextFiled(txt_TenSanPham_SanPham, txt_SoLuong_SanPham, txt_DonGia_SanPham)) {
+            if (kiemTraSanPham() == true) {
+                this.insert_SanPham();
+            }
+        }
     }//GEN-LAST:event_btn_Them_SanPhamActionPerformed
 
     private void btn_CapNhat_SanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CapNhat_SanPhamActionPerformed
-        this.update_SanPham();
+        if (isNullOnTextFiled(txt_TenSanPham_SanPham, txt_SoLuong_SanPham, txt_DonGia_SanPham)) {
+            if (kiemTraSanPham() == true) {
+                this.update_SanPham();
+            }
+        }
     }//GEN-LAST:event_btn_CapNhat_SanPhamActionPerformed
 
     private void btn_Xoa_SanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Xoa_SanPhamActionPerformed
@@ -5545,7 +5558,11 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_last_DSHoaDon_BanHangActionPerformed
 
     private void btn_Them_KhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Them_KhuyenMaiActionPerformed
-        this.insert_KhuyenMai();
+        if (isNullOnTextFiled(txt_TenKhuyenMai_KhuyenMai, txt_GiamGia_KhuyenMai)) {
+            if (kiemTraKhuyenMai() == true) {
+                this.insert_KhuyenMai();
+            }
+        }
     }//GEN-LAST:event_btn_Them_KhuyenMaiActionPerformed
 
     private void btn_Moi_KhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Moi_KhuyenMaiActionPerformed
@@ -5718,7 +5735,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_Loc_DSHoaDon_BanHangKeyReleased
 
     private void txt_TienKhachDua_BanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_TienKhachDua_BanHangActionPerformed
-       this.ThanhToan_BanHang_button_click();
+        this.ThanhToan_BanHang_button_click();
     }//GEN-LAST:event_txt_TienKhachDua_BanHangActionPerformed
 
 //    Mouse evento
@@ -6423,6 +6440,28 @@ public class Main_Frame extends javax.swing.JFrame {
         model.addElement("Khác");
     }
 
+    public boolean kiemTraSanPham() {
+        try {
+            if (Integer.parseInt(txt_SoLuong_SanPham.getText()) < 0) {
+                MsgBox.alert(this, "Số lượng Sản phẩm không được nhỏ hơn 0 !!!");
+                return false;
+            }
+        } catch (Exception e) {
+            MsgBox.alert(this, "Số lượng Sản phẩm phải là giá trị số nguyên !!!");
+            return false;
+        }
+        try {
+            if (Integer.parseInt(txt_DonGia_SanPham.getText()) < 0) {
+                MsgBox.alert(this, "Đơn giá Sản phẩm không được nhỏ hơn 0 !!!");
+                return false;
+            }
+        } catch (Exception e) {
+            MsgBox.alert(this, "Đơn giá Sản phẩm phải là giá trị số !!!");
+            return false;
+        }
+        return true;
+    }
+
 //                          END_CARD_SANPHAM  
     DiemDanhDAO ddDao = new DiemDanhDAO();
     int row_tbl_DiemDanh = -1;
@@ -6689,6 +6728,42 @@ public class Main_Frame extends javax.swing.JFrame {
             e.printStackTrace();
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
         }
+    }
+
+    public boolean kiemTraKhuyenMai() {
+        if (dcs_NgayBatDau_KhuyenMai.getCalendar() == null) {
+            MsgBox.alert(this, "Bạn chưa chọn Ngày bắt đầu !!!");
+            return false;
+        } else if (dcs_NgayKetThuc_KhuyenMai.getCalendar() == null) {
+            MsgBox.alert(this, "Bạn chưa chọn Ngày kết thúc !!!");
+            return false;
+        }
+        
+        try {
+            if (Float.parseFloat(txt_GiamGia_KhuyenMai.getText()) < 0) {
+                MsgBox.alert(this, "Giá giảm phải lớn hơn 0 !!!");
+                return false;
+            }
+        } catch (Exception e) {
+            MsgBox.alert(this, "Giá giảm phải là giá trị số !!!");
+            return false;
+        }
+
+        Date dateNgayBatDau, dateNgayKetThuc;
+        dateNgayBatDau = dcs_NgayBatDau_KhuyenMai.getDate();
+        dateNgayKetThuc = dcs_NgayKetThuc_KhuyenMai.getDate();
+
+        if (dateNgayBatDau.getYear() > dateNgayKetThuc.getYear()) {
+            MsgBox.alert(this, "Ngày kết thúc không thể trước ngày ngày bắt đầu !!!");
+            return false;
+        } else if (dateNgayBatDau.getYear() == dateNgayKetThuc.getYear() && dateNgayBatDau.getMonth() > dateNgayKetThuc.getMonth()) {
+            MsgBox.alert(this, "Ngày kết thúc không thể trước ngày ngày bắt đầu !!!");
+            return false;
+        } else if (dateNgayBatDau.getYear() == dateNgayKetThuc.getYear() && dateNgayBatDau.getMonth() == dateNgayKetThuc.getMonth() && dateNgayBatDau.getDay() > dateNgayKetThuc.getDay()) {
+            MsgBox.alert(this, "Ngày kết thúc không thể trước ngày ngày bắt đầu!!!");
+            return false;
+        }
+        return true;
     }
 
 //                       END_CARD_KHUYENMAI
@@ -7035,7 +7110,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void ThanhTien_HoaDon_BanHang() {
         try {
-            
+
             int x = tbl_HoaDon_BanHang.getSelectedRow();
             int y = 6;
             try {
@@ -7444,7 +7519,7 @@ public class Main_Frame extends javax.swing.JFrame {
             tbl_DSHoaDon_BanHang.setRowSelectionInterval(tbl_DSHoaDon_BanHang.getRowCount() - 1, tbl_DSHoaDon_BanHang.getRowCount() - 1);
             this.fillToTableDSHoaDonChiTiet_BanHang();
             tbl_DSHoaDonChiTiet_BanHang.setRowSelectionInterval(0, 0);
-            
+
 //          dua du lieu vao list
             this.generateInvoice02();
 
@@ -7452,8 +7527,7 @@ public class Main_Frame extends javax.swing.JFrame {
             int select_tab = 1;
             this.selectTab(select_tab);
             this.HuyGioHang_BanHang();
-            
-            
+
 //            In hoa don
             this.InHoaDon();
         } catch (Exception e) {
@@ -7476,6 +7550,7 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     double bHeight = 0.0;
+
     private void generateInvoice02() {
 
         invoice_ID = lbl_MaHoaDon_BanHang.getText();
