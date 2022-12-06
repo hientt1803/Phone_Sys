@@ -60,6 +60,7 @@ public class ChonKhuyenMai extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -79,6 +80,8 @@ public class ChonKhuyenMai extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(tbl_DanhSachKhuyenMai_KhuyenMai);
 
+        btn_ThemKhuyenMai.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_ThemKhuyenMai.setForeground(new java.awt.Color(0, 102, 255));
         btn_ThemKhuyenMai.setText("Thêm Khuyến Mãi");
         btn_ThemKhuyenMai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +90,7 @@ public class ChonKhuyenMai extends javax.swing.JDialog {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 255));
         jLabel1.setText("DANH SÁCH KHUYẾN MÃI");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
