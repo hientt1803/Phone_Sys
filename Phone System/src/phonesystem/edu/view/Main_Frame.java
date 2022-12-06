@@ -6,10 +6,6 @@
 package phonesystem.edu.view;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
-import com.lowagie.text.Document;
-import com.lowagie.text.DocumentException;
-import com.lowagie.text.pdf.PdfPTable;
-import com.lowagie.text.pdf.PdfWriter;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -21,8 +17,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,8 +25,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -77,6 +69,14 @@ import java.awt.print.Paper;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+import java.util.Hashtable;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
+import phonesystem.edu.ultil.jdbcHelper;
 
 /**
  *
@@ -7146,16 +7146,27 @@ public class Main_Frame extends javax.swing.JFrame {
 
             String TienKhachDua_Str = txt_TienKhachDua_BanHang.getText();
             double TienKhachDua_dou = Double.parseDouble(TienKhachDua_Str);
+
             String TongThanhTien_Str = lbl_TongTienThanhToan_BanHang.getText();
             double TongThanhTien_dou = Double.parseDouble(TongThanhTien_Str);
+
             double TienTraLai = (TienKhachDua_dou - TongThanhTien_dou);
 
             if (TienTraLai >= 0 && tbl_HoaDon_BanHang.getRowCount() > 0) {
                 txt_TienTraLai_Banhang.setText(String.valueOf(TienTraLai));
                 btn_ThanhToan_BanHang.setEnabled(true);
-            } else if (TienTraLai <= 0) {
-                txt_TienTraLai_Banhang.setText("");
+            } else {
                 this.btn_ThanhToan_BanHang.setEnabled(false);
+            }
+
+            if (TienKhachDua_dou < TongThanhTien_dou) {
+                btn_ThanhToan_BanHang.setEnabled(false);
+                return;
+            }
+
+            if (TienTraLai <= 0) {
+                txt_TienTraLai_Banhang.setText("0");
+                return;
             }
 
             txt_TienTraLai_Banhang.setText(String.valueOf(TienTraLai));
@@ -7203,12 +7214,12 @@ public class Main_Frame extends javax.swing.JFrame {
         }
 
         soLuong_now = Integer.parseInt(tbl_DS_SanPham_BanHang.getValueAt(index, 2).toString());
-        
-        if(soLuong_now == 0){
+
+        if (soLuong_now == 0) {
             MsgBox.alert(this, "Sản phẩm đã hết");
             return;
-        }             
-                
+        }
+
         if (isPlus) {
             soLuong_now++;
             tbl_DS_SanPham_BanHang.setValueAt(soLuong_now, index, 2);
@@ -7511,26 +7522,50 @@ public class Main_Frame extends javax.swing.JFrame {
             this.FillTable_DS_SanPham_BanHang();
             this.fillToTableDSHoaDon_BangHang();
 
-            tbl_DSHoaDon_BanHang.setRowSelectionInterval(tbl_DSHoaDon_BanHang.getRowCount() - 1, tbl_DSHoaDon_BanHang.getRowCount() - 1);
+            tbl_DSHoaDon_BanHang.setRowSelectionInterval(tbl_DSHoaDon_BanHang.getRowCount() - 1, 
+                    tbl_DSHoaDon_BanHang.getRowCount() - 1);
             this.fillToTableDSHoaDonChiTiet_BanHang();
             tbl_DSHoaDonChiTiet_BanHang.setRowSelectionInterval(0, 0);
 
 //          dua du lieu vao list
-            this.generateInvoice();
-            System.out.println(product_invoice);
-            System.out.println(product_quantity);
-            System.out.println(product_price);
-
+//            this.generateInvoice();
+//            System.out.println(product_invoice);
+//            System.out.println(product_quantity);
+//            System.out.println(product_price);
             MsgBox.alert(this, "Thêm hóa đơn thành công");
             int select_tab = 1;
             this.selectTab(select_tab);
-            this.HuyGioHang_BanHang();
 
+            String maXuatHD = tbl_DSHoaDon_BanHang.getValueAt(tbl_DSHoaDon_BanHang.getSelectedRow(), 0).toString();
+            this.XuatHoaDon(maXuatHD);
+
+            this.HuyGioHang_BanHang();
 //            In hoa don
-            this.InHoaDon();
+//            this.InHoaDon();
         } catch (Exception e) {
             MsgBox.alert(this, "Thêm thất bại");
             e.printStackTrace();
+        }
+    }
+
+    //Tạo hàm xuất hóa đơn
+    public void XuatHoaDon(String maHD) {
+        try {
+
+            Hashtable map = new Hashtable();
+            JasperReport report = JasperCompileManager.compileReport("src/phonesystem/edu/view/HoaDon_report.jrxml");
+
+            map.put("MaHoaDon", maHD);
+
+            JasperPrint p = JasperFillManager.fillReport(report, map, jdbcHelper.conn);
+            JasperViewer.viewReport(p, false);
+            JasperExportManager.exportReportToPdfFile(p, "test.pdf");
+
+            MsgBox.alert(this, "Xuất hóa đơn thành công");
+        } catch (Exception ex) {
+            MsgBox.alert(this, "Xuất hóa đơn thất bại");
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
     }
 

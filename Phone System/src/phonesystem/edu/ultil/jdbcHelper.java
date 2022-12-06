@@ -22,6 +22,7 @@ public class jdbcHelper {
             + "encrypt=true;trustServerCertificate=true";
     static String user = "sa";
     static String pass = "123";
+    public static Connection conn;
 
     static {
         try {
@@ -32,7 +33,7 @@ public class jdbcHelper {
     }
 
     public static PreparedStatement getStmt(String sql, Object... args) throws SQLException {
-        Connection conn = DriverManager.getConnection(dburl, user, pass);
+        conn = DriverManager.getConnection(dburl, user, pass);
         PreparedStatement stmt;
         if (sql.trim().startsWith("{")) {
             stmt = conn.prepareCall(sql); // Proc
@@ -45,13 +46,11 @@ public class jdbcHelper {
 
         return stmt;
     }
-    
+
     public static int update(String sql, Object... args) throws SQLException {
         try {
             PreparedStatement stmt = jdbcHelper.getStmt(sql, args);
-
             return stmt.executeUpdate();
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -61,14 +60,14 @@ public class jdbcHelper {
         PreparedStatement stmt = jdbcHelper.getStmt(sql, args);
         return stmt.executeQuery();
     }
-     
+
     public static Object value(String sql, Object... args) {
         try {
             ResultSet rs = jdbcHelper.query(sql, args);
             if (rs.next()) {
                 return rs.getObject(0);
             }
-            rs.getStatement().getConnection().close();
+            rs.getStatement().getConnection();
             return null;
         } catch (SQLException e) {
             throw new RuntimeException(e);
