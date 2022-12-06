@@ -7154,7 +7154,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 txt_TienTraLai_Banhang.setText(String.valueOf(TienTraLai));
                 btn_ThanhToan_BanHang.setEnabled(true);
             } else if (TienTraLai <= 0) {
-                txt_TienTraLai_Banhang.setText("0");
+                txt_TienTraLai_Banhang.setText("");
                 this.btn_ThanhToan_BanHang.setEnabled(false);
             }
 
@@ -7203,6 +7203,12 @@ public class Main_Frame extends javax.swing.JFrame {
         }
 
         soLuong_now = Integer.parseInt(tbl_DS_SanPham_BanHang.getValueAt(index, 2).toString());
+        
+        if(soLuong_now == 0){
+            MsgBox.alert(this, "Sản phẩm đã hết");
+            return;
+        }             
+                
         if (isPlus) {
             soLuong_now++;
             tbl_DS_SanPham_BanHang.setValueAt(soLuong_now, index, 2);
@@ -7281,6 +7287,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
                     model_tbl_HoaDon.addRow(row);
                     listTenSP.add(tenSP);
+
                     tbl_HoaDon_BanHang.changeSelection(0, 0, false, false);
                     this.getSum_ThanhTien_tbl_HoaDon(thanhTien);
 
@@ -7289,19 +7296,18 @@ public class Main_Frame extends javax.swing.JFrame {
                     String tenSp_tbl_banhang = "";
                     int index_tbl_banhang = 0;
 
-//                    System.out.println((String) tbl_HoaDon_BanHang.getValueAt(0, 1));
                     for (int i = 0; i <= tbl_HoaDon_BanHang.getRowCount(); i++) {
                         tenSp_tbl_banhang = (String) tbl_HoaDon_BanHang.getValueAt(i, 1);
-//                        System.out.println("Tên sp table: "+tenSp_tbl_banhang);
                         if (tenSP.equals(tenSp_tbl_banhang)) {
                             index_tbl_banhang = i;
-//                            System.out.println("abc"+tenSp_tbl_banhang);
                             break;
                         }
                     }
+
                     if (tbl_HoaDon_BanHang.getRowCount() > 0) {
                         tbl_HoaDon_BanHang.setRowSelectionInterval(index_tbl_banhang, index_tbl_banhang);
                         this.TangSoLuong_tblHoaDon_BanHang();
+                        this.ThanhTien_HoaDon_BanHang();
                     }
                 }
 
@@ -7418,7 +7424,6 @@ public class Main_Frame extends javax.swing.JFrame {
 
         for (int i = 0; i < tbl_DS_SanPham_BanHang.getRowCount(); i++) {
             soLuong_update = Integer.parseInt(tbl_DS_SanPham_BanHang.getValueAt(i, 2).toString());
-//            System.out.println(soLuong_update);
             list_soLuong_SP_update.put(list_allSP.get(i).getTenSanPham(), soLuong_update);
         }
 
@@ -7633,7 +7638,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 throws PrinterException {
 
             int r = product_invoice.size();
-            ImageIcon icon = new ImageIcon("C:\\FPT polytechnic\\DuAnMot_JavaSwing\\Code Project\\Phone System\\Phone System\\src\\phonesystem\\edu\\img\\icons8_Old_Live_Journal_logo_100px.png");
+            ImageIcon icon = new ImageIcon("src\\phonesystem\\edu\\img\\icons8_Old_Live_Journal_logo_100px.png");
             int result = NO_SUCH_PAGE;
             if (pageIndex == 0) {
 
@@ -7649,9 +7654,9 @@ public class Main_Frame extends javax.swing.JFrame {
                     // int headerRectHeighta=40;
 
                     g2d.setFont(new Font("Monospaced", Font.PLAIN, 9));
-                    g2d.drawImage(icon.getImage(), 80, 20, 90, 50, rootPane);
-                    y += yShift + 50;
-                    g2d.drawString("-----------------------------------------------", 12, y);
+                    g2d.drawImage(icon.getImage(), 80, 20, 90, 65, rootPane);
+                    y += yShift + 80;
+                    g2d.drawString("------------------------------------------------------------------", 12, y);
                     y += yShift;
                     g2d.drawString("        Cửa hàng điện thoại Vũ Trụ ", 12, y);
                     y += yShift;
@@ -7661,42 +7666,42 @@ public class Main_Frame extends javax.swing.JFrame {
                     y += yShift;
                     g2d.drawString("            HÓA ĐƠN THANH TOÁN      ", 12, y);
                     y += yShift;
-                    g2d.drawString(" Mã hóa đơn:             "+invoice_ID, 12, y);
+                    g2d.drawString(" Mã hóa đơn:             " + invoice_ID, 12, y);
                     y += yShift;
-                    g2d.drawString(" Tên nhân viên:          "+invoice_Emp, 12, y);
+                    g2d.drawString(" Tên nhân viên:          " + invoice_Emp, 12, y);
                     y += yShift;
-                    g2d.drawString(" Tên khách hàng:         "+invoice_CosName, 12, y);
+                    g2d.drawString(" Tên khách hàng:         " + invoice_CosName, 12, y);
                     y += yShift;
-                    g2d.drawString("-----------------------------------------------", 12, y);
+                    g2d.drawString("------------------------------------------------------------------", 12, y);
                     y += headerRectHeight;
 
-                    g2d.drawString(" Tên sản phầm     Số lượng       Giá thành", 10, y);
+                    g2d.drawString(" Tên sản phầm    |    SL   |   Giá thành", 10, y);
                     y += yShift;
-                    g2d.drawString("------------------------------------------------", 10, y);
+                    g2d.drawString("-------------------------------------------------------------------", 10, y);
                     y += headerRectHeight;
 
                     for (int s = 0; s < r; s++) {
-                        g2d.drawString(" "+ product_invoice.get(s) + "           "+product_quantity.get(s)+"   "+product_price.get(s), 10, y);
+                        g2d.drawString(" " + product_invoice.get(s) + "           " + product_quantity.get(s) + "    " + product_price.get(s), 10, y);
 //                        g2d.drawString("\t\t" + product_quantity.get(s) + " * " + product_price.get(s), 10, y);
                         y += yShift;
                     }
 
-                    g2d.drawString("-----------------------------------------------", 10, y);
+                    g2d.drawString("------------------------------------------------------------------", 10, y);
                     y += yShift;
-                    g2d.drawString(" Tổng tiền:\t\t\t\t\t\t" + format.format(Double.parseDouble(invoice_total)) + "   ", 10, y);
+                    g2d.drawString(" Tổng tiền:                " + format.format(Double.parseDouble(invoice_total)) + "VNĐ", 10, y);
                     y += yShift;
-                    g2d.drawString("-----------------------------------------------", 10, y);
+                    g2d.drawString("------------------------------------------------------------------", 10, y);
                     y += yShift;
 
-                    g2d.drawString("***********************************************", 10, y);
+                    g2d.drawString("*********************************************************", 10, y);
                     y += yShift;
-                    g2d.drawString("         THANK YOU ,COME AGAIN            ", 10, y);
+                    g2d.drawString("          THANK YOU ,COME AGAIN                 ", 10, y);
                     y += yShift;
-                    g2d.drawString("***********************************************", 10, y);
+                    g2d.drawString("*********************************************************", 10, y);
                     y += yShift;
-                    g2d.drawString("         DESIGN & DEV by GROUP 01          ", 10, y);
+                    g2d.drawString("        DESIGN & DEV BY GROUP 01                ", 10, y);
                     y += yShift;
-                } catch (Exception e) {
+                } catch (NumberFormatException e) {
                     e.printStackTrace();
                 }
 
