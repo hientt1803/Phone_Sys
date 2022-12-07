@@ -5351,19 +5351,13 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_tbl_DSChuaTaiKhoan_TaiKhoanMouseClicked
 
     private void btn_DiemDanh_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DiemDanh_DiemDanhActionPerformed
-        Date now = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa");
-        String dateSt = sdf.format(now);
-
-        String hSt = dateSt.substring(0, 2);
-        String mSt = dateSt.substring(3, 5);
-
-        int hInt = Integer.parseInt(hSt);
-        int mInt = Integer.parseInt(mSt);
-
-        boolean isAM = dateSt.endsWith("AM");
+        if(kiemTraDiemDanh()==true){
         this.insert_DiemDanh();
         btn_DiemDanh_DiemDanh.setEnabled(false);
+        }else{
+            MsgBox.alert(this, "Bạn đã điểm danh rồi !!!");
+            btn_DiemDanh_DiemDanh.setEnabled(false);
+        }
     }//GEN-LAST:event_btn_DiemDanh_DiemDanhActionPerformed
 
     private void btn_First_DiemDanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_First_DiemDanhActionPerformed
@@ -6528,6 +6522,34 @@ public class Main_Frame extends javax.swing.JFrame {
     }
 
     DefaultTableModel model_DiemDanh;
+    
+    private boolean kiemTraDiemDanh() {
+        String dateSt = XDate.toString(XDate.now(), "HH:mm aa");
+
+        String hSt = dateSt.substring(0, 2);
+        String mSt = dateSt.substring(3, 5);
+
+        int hInt = Integer.parseInt(hSt);
+        int mInt = Integer.parseInt(mSt);
+        boolean isAM = dateSt.endsWith("AM");
+
+        String maNV = Auth.user.getMaNhanVien();
+        String caLam = "";
+        if (isAM == true) {
+            caLam = "Ca Sáng";
+        }
+        if (isAM == false) {
+            caLam = "Ca Chiều";
+        }
+        String ngayLamViec = (XDate.toString(XDate.now(), "dd/MM/yyyy"));
+
+        for (int i = 0; i < tbl_DanhSachDiemDanh_DiemDanh.getRowCount(); i++) {
+            if (tbl_DanhSachDiemDanh_DiemDanh.getValueAt(i, 1).toString().equals(maNV) && tbl_DanhSachDiemDanh_DiemDanh.getValueAt(i, 3).toString().equals(caLam) && tbl_DanhSachDiemDanh_DiemDanh.getValueAt(i, 4).toString().equals(ngayLamViec)) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     private void fillTable_DiemDanh() {
         model_DiemDanh = (DefaultTableModel) tbl_DanhSachDiemDanh_DiemDanh.getModel();
@@ -6587,16 +6609,16 @@ public class Main_Frame extends javax.swing.JFrame {
 
         boolean isAM = dateSt.endsWith("AM");
 
-        if (isAM == true && hInt >= 7 && hInt <= 11 && mInt == 00) {
+        if (isAM == true) {
             lbl_CaLam_DiemDanh.setText("Ca Sáng");
         }
-        if (isAM == false && hInt >= 13 && hInt <= 17 && mInt == 00) {
+        if (isAM == false) {
             lbl_CaLam_DiemDanh.setText("Ca Chiều");
         }
         lbl_NgayLamViec_DiemDanh.setText(XDate.toString(new Date(), "dd/MM/yyyy"));
 
         // if ((hInt <= 7 && mInt <= 30 && isAM == true) || (hInt <= 13 && mInt <= 30 && isAM == false)) {
-        if ((hInt <= 7 && hInt < 8 && mInt <= 30 && isAM == true) || (hInt <= 13 && hInt < 14 && mInt <= 30 && isAM == false)) {
+        if ((hInt >= 7 && hInt < 8 && mInt <= 30 && isAM == true) || (hInt >= 12 && hInt < 14 && mInt <= 30 && isAM == false)) {
             btn_DiemDanh_DiemDanh.setEnabled(true);
         } else {
             btn_DiemDanh_DiemDanh.setEnabled(false);
