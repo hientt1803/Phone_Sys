@@ -359,11 +359,11 @@ public class Main_Frame extends javax.swing.JFrame {
         txt_TenDangNhap_HeThong = new javax.swing.JTextField();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
-        txt_MatKhau_HeThong = new javax.swing.JTextField();
         jLabel73 = new javax.swing.JLabel();
-        txt_MatKhauMoi_HeThong = new javax.swing.JTextField();
         jLabel74 = new javax.swing.JLabel();
-        txt_Confirm_HeThong = new javax.swing.JTextField();
+        txt_MatKhau_HeThong = new javax.swing.JPasswordField();
+        txt_MatKhauMoi_HeThong = new javax.swing.JPasswordField();
+        txt_Confirm_HeThong = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         lblLoginAccount1 = new javax.swing.JLabel();
@@ -1981,6 +1981,24 @@ public class Main_Frame extends javax.swing.JFrame {
         jLabel74.setForeground(new java.awt.Color(51, 51, 51));
         jLabel74.setText("Nhập lại mật khẩu:");
 
+        txt_MatKhau_HeThong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_MatKhau_HeThongActionPerformed(evt);
+            }
+        });
+
+        txt_MatKhauMoi_HeThong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_MatKhauMoi_HeThongActionPerformed(evt);
+            }
+        });
+
+        txt_Confirm_HeThong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_Confirm_HeThongActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
@@ -1992,18 +2010,16 @@ public class Main_Frame extends javax.swing.JFrame {
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel21Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txt_MatKhau_HeThong)
-                                .addComponent(jLabel72)
-                                .addComponent(jLabel71)
-                                .addComponent(txt_TenDangNhap_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btn_submit_HeThong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_Confirm_HeThong)
-                                .addComponent(jLabel74)
-                                .addComponent(jLabel73)
-                                .addComponent(txt_MatKhauMoi_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txt_Confirm_HeThong, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+                            .addComponent(txt_MatKhauMoi_HeThong, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_MatKhau_HeThong, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel72, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel71, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_TenDangNhap_HeThong, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_submit_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel74, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel73, javax.swing.GroupLayout.Alignment.LEADING))))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
@@ -2017,19 +2033,17 @@ public class Main_Frame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel72)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_MatKhau_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_MatKhau_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel73)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_MatKhauMoi_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addComponent(jLabel74)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_Confirm_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38))
-                    .addComponent(btn_submit_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txt_MatKhauMoi_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel74)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_Confirm_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_submit_HeThong, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -2136,11 +2150,11 @@ public class Main_Frame extends javax.swing.JFrame {
 
         txt_MaNV_TaiKhoan.setEditable(false);
 
-        txt_TenDangNhap_TaiKhoan.setToolTipText("Vui lòng nhập vào tên đăng nhập");
+        txt_TenDangNhap_TaiKhoan.setToolTipText(" tên đăng nhập");
 
-        txt_MatKhau_TaiKhoan.setToolTipText("Vui lòng nhập mật khẩu");
+        txt_MatKhau_TaiKhoan.setToolTipText(" mật khẩu");
 
-        txt_Confirm_TaiKhoan.setToolTipText("Vui lòng nhập vào xác nhận mật khẩu");
+        txt_Confirm_TaiKhoan.setToolTipText(" xác nhận mật khẩu");
 
         btn_group_VaiTro.add(rdo_QuanLi_TaiKhoan);
         rdo_QuanLi_TaiKhoan.setText("Quản lí");
@@ -3956,16 +3970,16 @@ public class Main_Frame extends javax.swing.JFrame {
 
         jLabel108.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel108.setText("VND");
-        jPanel35.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, -1, -1));
+        jPanel35.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 395, -1, -1));
 
+        txt_giaGiam_BanHang.setEditable(false);
         txt_giaGiam_BanHang.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_giaGiam_BanHang.setText("0");
-        txt_giaGiam_BanHang.setEnabled(false);
         jPanel35.add(txt_giaGiam_BanHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 345, 120, -1));
 
+        txt_TienTraLai_Banhang.setEditable(false);
         txt_TienTraLai_Banhang.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txt_TienTraLai_Banhang.setText("0");
-        txt_TienTraLai_Banhang.setEnabled(false);
         jPanel35.add(txt_TienTraLai_Banhang, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 388, 120, -1));
 
         jLabel109.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -3998,7 +4012,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 btn_LamMoi_BanHangActionPerformed(evt);
             }
         });
-        jPanel35.add(btn_LamMoi_BanHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 30, 30));
+        jPanel35.add(btn_LamMoi_BanHang, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 385, 30, 30));
 
         btn_ThanhToan_BanHang.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_ThanhToan_BanHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/phonesystem/edu/img/icons8_bill_30px.png"))); // NOI18N
@@ -4244,7 +4258,7 @@ public class Main_Frame extends javax.swing.JFrame {
             card_BanHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(card_BanHangLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tabs_HoaDon, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
+                .addComponent(tabs_HoaDon)
                 .addContainerGap())
         );
         card_BanHangLayout.setVerticalGroup(
@@ -4591,7 +4605,12 @@ public class Main_Frame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbl_Close_WindowsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_Close_WindowsMouseClicked
-        System.exit(0);
+
+        if (MsgBox.confirm(this, "Bạn có chắc muốn thoát chương trình không ?")) {
+            System.exit(0);
+        } else {
+
+        }
     }//GEN-LAST:event_lbl_Close_WindowsMouseClicked
 
     private void pnl_ThongKeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl_ThongKeMouseClicked
@@ -5202,7 +5221,7 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void btn_KhoiPhuc_SanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_KhoiPhuc_SanPhamActionPerformed
         System.out.println(row_tbl_SanPham_DaXoa);
-        if (row_tbl_SanPham_DaXoa !=-1) {
+        if (row_tbl_SanPham_DaXoa != -1) {
             this.khoiPhuc_SanPham_DaXoa();
         } else {
             MsgBox.alert(this, "Bạn chưa chọn Sản phẩm !!!");
@@ -5312,6 +5331,8 @@ public class Main_Frame extends javax.swing.JFrame {
         if (evt.getClickCount() == 1) {
             this.row_tbl_TaiKhoan = tbl_DSDaCoTaiKhoan_TaiKhoan.getSelectedRow();
             this.edit_DS_DaCoTaiKhoan_TaiKhoan();
+            this.checkManager_action();
+            this.defaultData(false);
         }
     }//GEN-LAST:event_tbl_DSDaCoTaiKhoan_TaiKhoanMouseClicked
 
@@ -5323,8 +5344,8 @@ public class Main_Frame extends javax.swing.JFrame {
         if (evt.getClickCount() == 1) {
             this.row_tbl_TaiKhoan = tbl_DSChuaTaiKhoan_TaiKhoan.getSelectedRow();
             this.edit_DS_ChuaCoTaiKhoan_TaiKhoan();
+            this.defaultData(true);
         }
-
         txt_TenDangNhap_TaiKhoan.requestFocus();
 
     }//GEN-LAST:event_tbl_DSChuaTaiKhoan_TaiKhoanMouseClicked
@@ -5519,10 +5540,6 @@ public class Main_Frame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cbo_MaNhanVien_LuongActionPerformed
 
-    private void txt_TienKhachDua_BanHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_TienKhachDua_BanHangKeyReleased
-        tinhTienTraLai_HoaDon_BanHang();
-    }//GEN-LAST:event_txt_TienKhachDua_BanHangKeyReleased
-
     private void txt_TimSanPham_SanPhamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_TimSanPham_SanPhamKeyReleased
         int selectedIndex = cbo_SanPham_SanPham.getSelectedIndex();
         String keyWord = txt_TimSanPham_SanPham.getText();
@@ -5680,8 +5697,12 @@ public class Main_Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel114MouseClicked
 
     private void lbl_DangXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_DangXuatMouseClicked
-        new Login_Frame().setVisible(true);
-        this.dispose();
+        if (MsgBox.confirm(this, "Bạn có chắc muốn đăng xuất không ?")) {
+            new Login_Frame().setVisible(true);
+            this.dispose();
+        } else {
+
+        }
     }//GEN-LAST:event_lbl_DangXuatMouseClicked
 
     private void tbl_DanhSachSanPham_KhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_DanhSachSanPham_KhuyenMaiMouseClicked
@@ -5751,7 +5772,23 @@ public class Main_Frame extends javax.swing.JFrame {
         this.ThanhToan_BanHang_button_click();
     }//GEN-LAST:event_txt_TienKhachDua_BanHangActionPerformed
 
-//    Mouse evento
+    private void txt_TienKhachDua_BanHangKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_TienKhachDua_BanHangKeyReleased
+        this.tinhTienTraLai_HoaDon_BanHang();
+    }//GEN-LAST:event_txt_TienKhachDua_BanHangKeyReleased
+
+    private void txt_MatKhau_HeThongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_MatKhau_HeThongActionPerformed
+        this.CapNhatMatKhau_HeThong();
+    }//GEN-LAST:event_txt_MatKhau_HeThongActionPerformed
+
+    private void txt_MatKhauMoi_HeThongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_MatKhauMoi_HeThongActionPerformed
+        this.CapNhatMatKhau_HeThong();
+    }//GEN-LAST:event_txt_MatKhauMoi_HeThongActionPerformed
+
+    private void txt_Confirm_HeThongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_Confirm_HeThongActionPerformed
+        this.CapNhatMatKhau_HeThong();
+    }//GEN-LAST:event_txt_Confirm_HeThongActionPerformed
+
+//    Mouse event
     public void onClick(JPanel jpanel) {
         jpanel.setBackground(new Color(34, 51, 102));
     }
@@ -6183,7 +6220,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTextArea txa_GhiChu_DiemDanh;
     private javax.swing.JTextArea txa_GhiChu_KhuyenMai;
     private javax.swing.JTextField txt_CCCD_NhanVien;
-    private javax.swing.JTextField txt_Confirm_HeThong;
+    private javax.swing.JPasswordField txt_Confirm_HeThong;
     private javax.swing.JPasswordField txt_Confirm_TaiKhoan;
     private javax.swing.JTextField txt_DiaChi_NhanVien;
     private javax.swing.JTextField txt_DonGia_SanPham;
@@ -6201,8 +6238,8 @@ public class Main_Frame extends javax.swing.JFrame {
     private javax.swing.JTextField txt_MaNV_TaiKhoan;
     private javax.swing.JTextField txt_MaNhanVien_NhanVien;
     private javax.swing.JTextField txt_MaSanPham_SanPham;
-    private javax.swing.JTextField txt_MatKhauMoi_HeThong;
-    private javax.swing.JTextField txt_MatKhau_HeThong;
+    private javax.swing.JPasswordField txt_MatKhauMoi_HeThong;
+    private javax.swing.JPasswordField txt_MatKhau_HeThong;
     private javax.swing.JPasswordField txt_MatKhau_TaiKhoan;
     private javax.swing.JTextField txt_SoDienThoaiKhachHang_KhachHang;
     private javax.swing.JTextField txt_SoDienThoai_NhanVien;
@@ -6358,6 +6395,7 @@ public class Main_Frame extends javax.swing.JFrame {
             spDAO.update(sp);
             this.fillTable_SanPham();
             MsgBox.alert(this, "Cập nhật Sản phẩm thành công!");
+            this.FillTable_DS_SanPham_BanHang();
         } catch (Exception e) {
             MsgBox.alert(this, "Cập nhật Sản phẩm thất bại!");
             e.printStackTrace();
@@ -6370,6 +6408,7 @@ public class Main_Frame extends javax.swing.JFrame {
         spDAO.restore(maSanPham);
         this.fillTable_SanPham();
         this.fillTable_SanPham_DaXoa();
+        this.FillTable_DS_SanPham_BanHang();
         tab_SanPham.setSelectedIndex(0);
         MsgBox.alert(this, "Khôi phục Sản Phẩm thành công !");
 
@@ -6385,6 +6424,7 @@ public class Main_Frame extends javax.swing.JFrame {
                 tab_SanPham.setSelectedIndex(1);
                 MsgBox.alert(this, "Xóa Sản phẩm thành công!");
                 this.clearForm_SanPham();
+                this.FillTable_DS_SanPham_BanHang();
             } catch (Exception e) {
 
                 e.printStackTrace();
@@ -6460,16 +6500,16 @@ public class Main_Frame extends javax.swing.JFrame {
                 MsgBox.alert(this, "Số lượng Sản phẩm không được nhỏ hơn 0 !!!");
                 return false;
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             MsgBox.alert(this, "Số lượng Sản phẩm phải là giá trị số nguyên !!!");
             return false;
         }
         try {
-            if (Integer.parseInt(txt_DonGia_SanPham.getText()) < 0) {
+            if (Float.parseFloat(txt_DonGia_SanPham.getText()) < 0) {
                 MsgBox.alert(this, "Đơn giá Sản phẩm không được nhỏ hơn 0 !!!");
                 return false;
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             MsgBox.alert(this, "Đơn giá Sản phẩm phải là giá trị số !!!");
             return false;
         }
@@ -6794,12 +6834,31 @@ public class Main_Frame extends javax.swing.JFrame {
 //        Table format
         TableEdit.centerRendererTable(tbl_DSChuaTaiKhoan_TaiKhoan);
         TableEdit.centerRendererTable(tbl_DSDaCoTaiKhoan_TaiKhoan);
+
+        if (Auth.isLogin()) {
+            this.checkManager_action();
+        }
+    }
+
+    private void checkManager_action() {
+        if (txt_MaNV_TaiKhoan.getText().equals(Auth.user.getMaNhanVien()) && Auth.isManager()) {
+            rdo_NhanVien_TaiKhoan.setEnabled(false);
+            btn_Xoa_TaiKhoan.setEnabled(false);
+        } else {
+            rdo_NhanVien_TaiKhoan.setEnabled(true);
+        }
+    }
+    
+    private void defaultData(boolean isEnabled){
+        txt_TenDangNhap_TaiKhoan.setEditable(isEnabled);
+        txt_MatKhau_TaiKhoan.setEditable(isEnabled);
+        txt_Confirm_TaiKhoan.setEditable(isEnabled);
     }
 
     private boolean isNullOnTextFiled(JTextField... args) {
         for (int i = 0; i < args.length; i++) {
             if (args[i].getText().equals("")) {
-                MsgBox.alert(this, args[i].getToolTipText());
+                MsgBox.alert(this, "Vui lòng nhập vào" + args[i].getToolTipText());
                 args[i].requestFocus();
                 return false;
             }
@@ -6833,7 +6892,7 @@ public class Main_Frame extends javax.swing.JFrame {
             for (NhanVien nv : list) {
                 Object[] row = {
                     nv.getMaNhanVien(), nv.getTenNhanVien(), nv.getNgaySinh(), nv.getGioiTinh() ? "Nam" : "Nữ", nv.getSDT(), nv.getEmail(), nv.getDiaChi(),
-                    nv.getCCCD(), nv.getTrangThai(), nv.getHinhAnh(), nv.getGhiChu()
+                    nv.getCCCD(), nv.getTrangThai() ? "Chưa có tài khoản" : "Đã có tài khoản", nv.getHinhAnh(), nv.getGhiChu()
                 };
                 model.addRow(row);
             }
@@ -7002,7 +7061,7 @@ public class Main_Frame extends javax.swing.JFrame {
     private boolean checkForm_HeThong() {
         if (txt_MatKhau_HeThong.getText().equals("")) {
             txt_MatKhau_HeThong.requestFocus();
-            MsgBox.alert(this, "không để trống mật khẩu");
+            MsgBox.alert(this, "Không để trống mật khẩu");
             return false;
         }
 
@@ -7014,6 +7073,10 @@ public class Main_Frame extends javax.swing.JFrame {
 
         if (txt_MatKhauMoi_HeThong.getText().equals("")) {
             MsgBox.alert(this, "Chưa nhập vào mật khẩu mới");
+            txt_MatKhauMoi_HeThong.requestFocus();
+            return false;
+        } else if (txt_MatKhauMoi_HeThong.getText().equals(txt_MatKhau_HeThong.getText())) {
+            MsgBox.alert(this, "Mật khẩu mới không được trùng với mật khẩu cũ");
             txt_MatKhauMoi_HeThong.requestFocus();
             return false;
         }
@@ -7152,19 +7215,25 @@ public class Main_Frame extends javax.swing.JFrame {
         }
     }
 
+    String TienKhachDua_Str = "";
+    double TienKhachDua_dou = 0.0;
+    String TongThanhTien_Str = "";
+    double TongThanhTien_dou = 0.0;
+    double TienTraLai = 0.0;
+
     private void tinhTienTraLai_HoaDon_BanHang() {
         try {
             if (txt_TienKhachDua_BanHang.getText().length() == 0) {
                 return;
             }
 
-            String TienKhachDua_Str = txt_TienKhachDua_BanHang.getText();
-            double TienKhachDua_dou = Double.parseDouble(TienKhachDua_Str);
+            TienKhachDua_Str = txt_TienKhachDua_BanHang.getText();
+            TienKhachDua_dou = Double.parseDouble(TienKhachDua_Str);
 
-            String TongThanhTien_Str = lbl_TongTienThanhToan_BanHang.getText();
-            double TongThanhTien_dou = Double.parseDouble(TongThanhTien_Str);
+            TongThanhTien_Str = lbl_TongTienThanhToan_BanHang.getText();
+            TongThanhTien_dou = Double.parseDouble(TongThanhTien_Str);
 
-            double TienTraLai = (TienKhachDua_dou - TongThanhTien_dou);
+            TienTraLai = (TienKhachDua_dou - TongThanhTien_dou);
 
             if (TienTraLai >= 0 && tbl_HoaDon_BanHang.getRowCount() > 0) {
                 txt_TienTraLai_Banhang.setText(String.valueOf(TienTraLai));
@@ -7174,14 +7243,16 @@ public class Main_Frame extends javax.swing.JFrame {
             }
 
             if (TienKhachDua_dou < TongThanhTien_dou) {
+                txt_TienTraLai_Banhang.setText("0");
                 btn_ThanhToan_BanHang.setEnabled(false);
                 return;
             }
-
-            if (TienTraLai <= 0) {
-                txt_TienTraLai_Banhang.setText("0");
-                return;
-            }
+//
+//            if (TienTraLai <= 0) {
+//                txt_TienTraLai_Banhang.setText("0");
+//                return;
+//            }         
+//  
 
             txt_TienTraLai_Banhang.setText(String.valueOf(TienTraLai));
         } catch (NumberFormatException e) {
@@ -7229,11 +7300,6 @@ public class Main_Frame extends javax.swing.JFrame {
 
         soLuong_now = Integer.parseInt(tbl_DS_SanPham_BanHang.getValueAt(index, 2).toString());
 
-        if (soLuong_now == 0) {
-            MsgBox.alert(this, "Sản phẩm đã hết");
-            return;
-        }
-
         if (isPlus) {
             soLuong_now++;
             tbl_DS_SanPham_BanHang.setValueAt(soLuong_now, index, 2);
@@ -7249,15 +7315,14 @@ public class Main_Frame extends javax.swing.JFrame {
         model_tbl_DS_SanPham_BanHang = (DefaultTableModel) tbl_DS_SanPham_BanHang.getModel();
         model_tbl_DS_SanPham_BanHang.setRowCount(0);
         try {
-
             list_allSP = spDAO.selectAll();
             for (SanPham sp : list_allSP) {
-                Object[] row = {
-                    sp.getTenSanPham(), sp.getMauSac(), sp.getSoLuong()
-                };
-                model_tbl_DS_SanPham_BanHang.addRow(row);
+                if (sp.isTrangThai()) {
+                    Object[] row = {
+                        sp.getTenSanPham(), sp.getMauSac(), sp.getSoLuong()};
+                    model_tbl_DS_SanPham_BanHang.addRow(row);
+                }
             }
-
         } catch (Exception e) {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
             e.printStackTrace();
@@ -7271,6 +7336,7 @@ public class Main_Frame extends javax.swing.JFrame {
     HashSet listTenSP = new HashSet();
     List<SanPham> list_SP_TheoTen = null;
     boolean isClear = false;
+    List<String> list_tenSP_hetHang = new ArrayList<>();
 
     private void FillTable_HoaDon_BanHang() {
         model_tbl_HoaDon = (DefaultTableModel) tbl_HoaDon_BanHang.getModel();
@@ -7315,6 +7381,9 @@ public class Main_Frame extends javax.swing.JFrame {
 
                     tbl_HoaDon_BanHang.changeSelection(0, 0, false, false);
                     this.getSum_ThanhTien_tbl_HoaDon(thanhTien);
+                    this.ThanhTien_HoaDon_BanHang();
+                    this.tinhTienTraLai_HoaDon_BanHang();
+                    txt_TienTraLai_Banhang.setText("0");
 
                 } else if (!listTenSP.add(tenSP)) {
 //                  if sp tồn tại thì + soLuong
@@ -7329,10 +7398,25 @@ public class Main_Frame extends javax.swing.JFrame {
                         }
                     }
 
+//                    bat loi khong tang duoc thanh tien
                     if (tbl_HoaDon_BanHang.getRowCount() > 0) {
                         tbl_HoaDon_BanHang.setRowSelectionInterval(index_tbl_banhang, index_tbl_banhang);
                         this.TangSoLuong_tblHoaDon_BanHang();
                         this.ThanhTien_HoaDon_BanHang();
+                    }
+
+//                    Bat loi so luong sp = 0
+                    if (soLuong_now <= 0) {
+                        MsgBox.alert(this, "Sản phẩm đã hết, vui lòng nhập hàng hoặc xóa sản phẩm");
+                        tbl_DS_SanPham_BanHang.setValueAt(0, tbl_DS_SanPham_BanHang.getSelectedRow(), 2);
+
+//                    Remove rows one by one from the end of the table
+                        DefaultTableModel model = (DefaultTableModel) this.tbl_DS_SanPham_BanHang.getModel();
+                        int[] rows = tbl_DS_SanPham_BanHang.getSelectedRows();
+                        for (int i = 0; i < rows.length; i++) {
+                            list_tenSP_hetHang.add(tbl_DS_SanPham_BanHang.getValueAt(i, 0).toString());
+                            model.removeRow(rows[i] - i);
+                        }
                     }
                 }
 
@@ -7356,6 +7440,20 @@ public class Main_Frame extends javax.swing.JFrame {
         tbl_HoaDon_BanHang.setValueAt(SoLuong_tbl_HoaDon_BanHang, x, y);
 
         this.updateSoLuong_tbl_SP_HoaDon(false);
+
+        //                    Bat loi so luong sp = 0
+        if (soLuong_now <= 0) {
+            MsgBox.alert(this, "Sản phẩm đã hết, vui lòng nhập hàng hoặc xóa sản phẩm");
+            tbl_DS_SanPham_BanHang.setValueAt(0, tbl_DS_SanPham_BanHang.getSelectedRow(), 2);
+
+//                    Remove rows one by one from the end of the table
+            DefaultTableModel model = (DefaultTableModel) this.tbl_DS_SanPham_BanHang.getModel();
+            int[] rows = tbl_DS_SanPham_BanHang.getSelectedRows();
+            for (int i = 0; i < rows.length; i++) {
+                list_tenSP_hetHang.add(tbl_DS_SanPham_BanHang.getValueAt(i, 0).toString());
+                model.removeRow(rows[i] - i);
+            }
+        }
     }
 
     private void GiamSoLuong_tblHoaDon_BanHang() {
@@ -7375,6 +7473,20 @@ public class Main_Frame extends javax.swing.JFrame {
         tbl_HoaDon_BanHang.setValueAt(SoLuong_tbl_HoaDon_BanHang, x, y);
 
         this.updateSoLuong_tbl_SP_HoaDon(true);
+
+        //                    Bat loi so luong sp = 0
+        if (soLuong_now <= 0) {
+            MsgBox.alert(this, "Sản phẩm đã hết, vui lòng nhập hàng hoặc xóa sản phẩm");
+            tbl_DS_SanPham_BanHang.setValueAt(0, tbl_DS_SanPham_BanHang.getSelectedRow(), 2);
+
+//                    Remove rows one by one from the end of the table
+            DefaultTableModel model = (DefaultTableModel) this.tbl_DS_SanPham_BanHang.getModel();
+            int[] rows = tbl_DS_SanPham_BanHang.getSelectedRows();
+            for (int i = 0; i < rows.length; i++) {
+                list_tenSP_hetHang.add(tbl_DS_SanPham_BanHang.getValueAt(i, 0).toString());
+                model.removeRow(rows[i] - i);
+            }
+        }
     }
 
     private void XoaSP_tblHoaDon_BanHang() {
@@ -7550,12 +7662,24 @@ public class Main_Frame extends javax.swing.JFrame {
             int select_tab = 1;
             this.selectTab(select_tab);
 
-            String maXuatHD = tbl_DSHoaDon_BanHang.getValueAt(tbl_DSHoaDon_BanHang.getSelectedRow(), 0).toString();
-            this.XuatHoaDon(maXuatHD);
+//          set lai trang thai san pham da het hang
+            if (!list_tenSP_hetHang.isEmpty()) {
+                for (String str : list_tenSP_hetHang) {
+                    spDAO.update_trangThai(str);
+                }
+            }
+
+            this.FillTable_DS_SanPham_BanHang();
+            this.fillTable_SanPham();
+            this.fillTable_SanPham_DaXoa();
+
+//            String maXuatHD = lbl_MaHoaDon_BanHang.getText();
+            //            this.XuatHoaDon(maXuatHD);
+            this.generateInvoice();
 
             this.HuyGioHang_BanHang();
 //            In hoa don
-//            this.InHoaDon();
+            this.InHoaDon();
         } catch (Exception e) {
             MsgBox.alert(this, "Thêm thất bại");
             e.printStackTrace();
@@ -7567,7 +7691,7 @@ public class Main_Frame extends javax.swing.JFrame {
         try {
 
             Hashtable map = new Hashtable();
-            JasperReport report = JasperCompileManager.compileReport("src/phonesystem/edu/view/HoaDon_report.jrxml");
+            JasperReport report = JasperCompileManager.compileReport("src\\phonesystem\\edu\\view\\HoaDon_report.jrxml");
 
             map.put("MaHoaDon", maHD);
 
@@ -7589,7 +7713,6 @@ public class Main_Frame extends javax.swing.JFrame {
             if (MsgBox.options(this, "Bạn có muốn in hóa đơn?", otps) == 0) {
                 this.printInvoice();
             }
-            MsgBox.alert(this, "In hóa đơn thành công");
         } catch (Exception e) {
             MsgBox.alert(this, "In thất bại");
             e.printStackTrace();
@@ -7647,8 +7770,9 @@ public class Main_Frame extends javax.swing.JFrame {
         try {
             pj.print();
 
+            MsgBox.alert(this, "In hóa đơn thành công");
         } catch (PrinterException ex) {
-            MsgBox.alert(this, "rõng");
+            MsgBox.alert(this, "Chưa chọn đường dẫn lưu file");
             ex.printStackTrace();
         }
     }
@@ -7702,9 +7826,9 @@ public class Main_Frame extends javax.swing.JFrame {
                     int headerRectHeight = 15;
                     // int headerRectHeighta=40;
 
-                    g2d.setFont(new Font("Monospaced", Font.PLAIN, 9));
+                    g2d.setFont(new Font("Monospaced", Font.PLAIN, 7));
                     g2d.drawImage(icon.getImage(), 80, 20, 90, 65, rootPane);
-                    y += yShift + 80;
+                    y += yShift + 5;
                     g2d.drawString("------------------------------------------------------------------", 12, y);
                     y += yShift;
                     g2d.drawString("        Cửa hàng điện thoại Vũ Trụ ", 12, y);
@@ -7714,7 +7838,7 @@ public class Main_Frame extends javax.swing.JFrame {
                     g2d.drawString("     Nguyễn Văn Linh Ninh Kiều, Cần Thơ ", 12, y);
                     y += yShift;
                     g2d.drawString("            HÓA ĐƠN THANH TOÁN      ", 12, y);
-                    y += yShift;
+                    y += yShift + 50;
                     g2d.drawString(" Mã hóa đơn:             " + invoice_ID, 12, y);
                     y += yShift;
                     g2d.drawString(" Tên nhân viên:          " + invoice_Emp, 12, y);
@@ -7724,20 +7848,19 @@ public class Main_Frame extends javax.swing.JFrame {
                     g2d.drawString("------------------------------------------------------------------", 12, y);
                     y += headerRectHeight;
 
-                    g2d.drawString(" Tên sản phầm    |    SL   |   Giá thành", 10, y);
+                    g2d.drawString(" SL    |    Giá Thành   |   Tên sản phẩm", 10, y);
                     y += yShift;
                     g2d.drawString("-------------------------------------------------------------------", 10, y);
                     y += headerRectHeight;
 
                     for (int s = 0; s < r; s++) {
-                        g2d.drawString(" " + product_invoice.get(s) + "           " + product_quantity.get(s) + "    " + product_price.get(s), 10, y);
-//                        g2d.drawString("\t\t" + product_quantity.get(s) + " * " + product_price.get(s), 10, y);
+                        g2d.drawString(" " + product_quantity.get(s) + "           " + product_price.get(s) + "    " + product_invoice.get(s), 7, y);
                         y += yShift;
                     }
 
                     g2d.drawString("------------------------------------------------------------------", 10, y);
                     y += yShift;
-                    g2d.drawString(" Tổng tiền:                " + format.format(Double.parseDouble(invoice_total)) + "VNĐ", 10, y);
+                    g2d.drawString(" Tổng tiền:               " + format.format(Double.parseDouble(invoice_total)) + " VNĐ", 10, y);
                     y += yShift;
                     g2d.drawString("------------------------------------------------------------------", 10, y);
                     y += yShift;
@@ -8041,6 +8164,7 @@ public class Main_Frame extends javax.swing.JFrame {
         nhanVienDAO.update(nv);
         MsgBox.alert(this, "Cập nhật thông tin Nhân Viên thành công !");
         this.fillToTable_NhanVien_NhanVien();
+        this.FillTable_tbl_DSChuaTaiKhoan_TaiKhoan();
 
     }
 
@@ -8111,7 +8235,6 @@ public class Main_Frame extends javax.swing.JFrame {
             }
 
         });
-
     }
 
     private void setFormKhachHang() {

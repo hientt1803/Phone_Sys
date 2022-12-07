@@ -30,9 +30,10 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     String SELECT_BY_XUATXU_SQL = "SELECT DISTINCT XuatXu FROM SanPham";
     String SELECT_LAST_ID = "select top 1 MaSanPham from SanPham order by MaSanPham desc";
     String RESTORE_SQL = "UPDATE SanPham SET TrangThai = ? WHERE MaSanPham = ?";
+    String UPDATE_TRANGTHAI = "UPDATE SanPham SET TrangThai = ? WHERE TenSanPham = ?";
     String SELECT_SP_CHUACO_KHUYENMAI = "select * from SanPham where MaSanPham not in (select MaSanPham from KhuyenMai where TenKhuyenMai = ?)";
     String UPDATE_SOLUONG = "UPDATE SanPham set SoLuong = ? WHERE TenSanPham = ?";
-    
+
     @Override
     public void insert(SanPham entity) {
         try {
@@ -56,11 +57,11 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
             Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-     public void update_SoLuong(String tenSp , int soluong) {
+
+    public void update_SoLuong(String tenSp, int soluong) {
         try {
             jdbcHelper.update(UPDATE_SOLUONG,
-                    soluong,tenSp
+                    soluong, tenSp
             );
         } catch (SQLException ex) {
             Logger.getLogger(HoaDonDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -89,6 +90,14 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     public void restore(String id) {
         try {
             jdbcHelper.update(RESTORE_SQL, "True", id);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void update_trangThai(String tenSP) {
+        try {
+            jdbcHelper.update(UPDATE_TRANGTHAI, "false", tenSP);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -196,13 +205,13 @@ public class SanPhamDAO extends PhoneSysDAO<SanPham, String> {
     }
 
     public List<SanPham> selectSanPhamChuaCoKhuyenMai(String tenKM) {
-       return this.selectBySql(SELECT_SP_CHUACO_KHUYENMAI,tenKM);
+        return this.selectBySql(SELECT_SP_CHUACO_KHUYENMAI, tenKM);
     }
-    
+
     public static void main(String[] args) {
         SanPhamDAO sp = new SanPhamDAO();
         List<SanPham> l = null;
-      //  l = sp.select_All_TheoTenSP("SamSung J4");
+        //  l = sp.select_All_TheoTenSP("SamSung J4");
         l = sp.selectSanPhamChuaCoKhuyenMai("Noel an lành");
         System.out.println(l);
     }

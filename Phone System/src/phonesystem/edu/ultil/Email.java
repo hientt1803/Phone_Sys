@@ -61,7 +61,7 @@ public class Email {
             msq.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to, false));
 
             // Tiêu đề
-            msq.setSubject("Quên mật khẩu");
+            msq.setSubject("Cửa hàng điện thoại di dộng Vũ Trụ - Mã xác nhận khôi phục mật khẩu");
 
             // Quy định ngày gửi
             msq.setSentDate(new Date());
@@ -69,7 +69,7 @@ public class Email {
             // Nội dung
             Random rand = new Random();
             int ranNum = rand.nextInt(9999);
-            msq.setText("Mã code: " + ranNum);
+            msq.setText("Mã OTP: " + ranNum);
             ranDom = ranNum;
             
             // Gửi mail

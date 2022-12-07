@@ -2360,20 +2360,16 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="txt_MatKhau_HeThong" max="32767" attributes="0"/>
-                                              <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txt_TenDangNhap_HeThong" alignment="0" min="-2" pref="334" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="btn_submit_HeThong" alignment="1" min="-2" pref="90" max="-2" attributes="0"/>
-                                              <Component id="txt_Confirm_HeThong" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jLabel74" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel73" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txt_MatKhauMoi_HeThong" alignment="0" min="-2" pref="334" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="txt_Confirm_HeThong" alignment="0" pref="334" max="32767" attributes="0"/>
+                                          <Component id="txt_MatKhauMoi_HeThong" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txt_MatKhau_HeThong" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel72" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel71" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txt_TenDangNhap_HeThong" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="btn_submit_HeThong" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
+                                          <Component id="jLabel74" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel73" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -2392,21 +2388,17 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txt_MatKhau_HeThong" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_MatKhau_HeThong" min="-2" pref="24" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel73" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txt_MatKhauMoi_HeThong" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txt_Confirm_HeThong" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="btn_submit_HeThong" min="-2" pref="25" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="txt_MatKhauMoi_HeThong" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txt_Confirm_HeThong" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                              <Component id="btn_submit_HeThong" min="-2" pref="25" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2465,8 +2457,6 @@
                         <Property name="text" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txt_MatKhau_HeThong">
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel73">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2477,8 +2467,6 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="M&#x1ead;t kh&#x1ea9;u m&#x1edb;i:"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="txt_MatKhauMoi_HeThong">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel74">
                       <Properties>
@@ -2491,7 +2479,20 @@
                         <Property name="text" type="java.lang.String" value="Nh&#x1ead;p l&#x1ea1;i m&#x1ead;t kh&#x1ea9;u:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txt_Confirm_HeThong">
+                    <Component class="javax.swing.JPasswordField" name="txt_MatKhau_HeThong">
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_MatKhau_HeThongActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JPasswordField" name="txt_MatKhauMoi_HeThong">
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_MatKhauMoi_HeThongActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JPasswordField" name="txt_Confirm_HeThong">
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_Confirm_HeThongActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2870,17 +2871,17 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="txt_TenDangNhap_TaiKhoan">
                       <Properties>
-                        <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p v&#xe0;o t&#xea;n &#x111;&#x103;ng nh&#x1ead;p"/>
+                        <Property name="toolTipText" type="java.lang.String" value=" t&#xea;n &#x111;&#x103;ng nh&#x1ead;p"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JPasswordField" name="txt_MatKhau_TaiKhoan">
                       <Properties>
-                        <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p m&#x1ead;t kh&#x1ea9;u"/>
+                        <Property name="toolTipText" type="java.lang.String" value=" m&#x1ead;t kh&#x1ea9;u"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JPasswordField" name="txt_Confirm_TaiKhoan">
                       <Properties>
-                        <Property name="toolTipText" type="java.lang.String" value="Vui l&#xf2;ng nh&#x1ead;p v&#xe0;o x&#xe1;c nh&#x1ead;n m&#x1ead;t kh&#x1ea9;u"/>
+                        <Property name="toolTipText" type="java.lang.String" value=" x&#xe1;c nh&#x1ead;n m&#x1ead;t kh&#x1ea9;u"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="rdo_QuanLi_TaiKhoan">
@@ -5955,7 +5956,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tabs_HoaDon" pref="1080" max="32767" attributes="0"/>
+                          <Component id="tabs_HoaDon" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -6382,17 +6383,17 @@
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="240" y="390" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="240" y="395" width="-1" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
                             <Component class="javax.swing.JTextField" name="txt_giaGiam_BanHang">
                               <Properties>
+                                <Property name="editable" type="boolean" value="false"/>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Arial" size="14" style="0"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="0"/>
-                                <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -6402,11 +6403,11 @@
                             </Component>
                             <Component class="javax.swing.JTextField" name="txt_TienTraLai_Banhang">
                               <Properties>
+                                <Property name="editable" type="boolean" value="false"/>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Arial" size="14" style="0"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="0"/>
-                                <Property name="enabled" type="boolean" value="false"/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -6480,7 +6481,7 @@
                               </Events>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="280" y="380" width="30" height="30"/>
+                                  <AbsoluteConstraints x="280" y="385" width="30" height="30"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
